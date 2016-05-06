@@ -8,7 +8,7 @@ node_js:
 script:
   - 'npm test'
 after_success:
-  - if [ "$TRAVIS_NODE_VERSION" == "6.0" ]; bash ./deploy.sh; fi
+  - if [ "$TRAVIS_NODE_VERSION" == "6.0" ]; then bash ./deploy.sh; fi
 env:
   global:
     - ENCRYPTION_LABEL: "0a6446eb3ae3"
