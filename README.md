@@ -13,15 +13,15 @@ var doc = new GedcomX()
     new GedcomX.Person()
       .addFact(
         new GedcomX.Fact()
-          .setType('Birth') // Or should this be GedcomX.factType.BIRTH?
-          .setDate('+2014-04-09') // Should we support https://github.com/trepo/gedcomx-date-js objects?
-          .setPlace('Verona') // Automatically converted into a PlaceReference?
+          .setType('Birth')
+          .setDate('+2014-04-09')
+          .setPlace('Verona')
       )
   )
   .addRelationship(
     new GedcomX.Relationship()
       .setType('Couple')
-      .setPerson1('person1') // This should probably be automatically converted into a ResourceReference
+      .setPerson1('person1')
       .setPerson2('person2')
   );
   
@@ -69,23 +69,3 @@ var doc = new GedcomX({
 });
   
 ```
-
-## Questions & Issues
-
-* Should we require that `new` be used?
-* Need consistency for when shortcuts are used and what their format is.
-    * Creating objects
-        * Always allow JSON
-        * Accept most common attributes via the constructor?
-        * Always provide getters and setters
-    * Using enums: should we have shortcuts `fact.type('Birth')` or always 
-      require direct reference such as `GedcomX.factType.BIRTH`?
-* Should we use `get`, `set`, and `add` prefixes? Imagine the scenario where
-  we didn't use them.
-    * Get: `Person.facts()` to get facts.
-    * Set: `Person.id('person1')`. What would `Person.facts(data)` be expected
-      to do? Would that set the facts property or add data to the facts list?
-    * Add: `Person.addFact(new Fact())` to add a fact. There's really no other
-      option. We wouldn't want to do `Person.fact(new Fact())` because that
-      would be inconcistent with the behavior of setting properties.
-* Should we support the [gedcomx-date-js](https://github.com/trepo/gedcomx-date-js) library?
