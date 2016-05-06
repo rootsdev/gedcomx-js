@@ -1,5 +1,8 @@
 /**
  * A set of data that supports extension elements.
+ * 
+ * @constructor
+ * @param {Object} json
  */
 var ExtensibleData = function(json){
   
@@ -15,10 +18,21 @@ var ExtensibleData = function(json){
   return instance;
 };
 
+/**
+ * Get the object's id.
+ * 
+ * @returns {String} Id 
+ */
 ExtensibleData.prototype.getId = function(){
   return this.id;
 };
 
+/**
+ * Set the object's id.
+ * 
+ * @param {String} id
+ * @return {Object} This object, for chaining.
+ */
 ExtensibleData.prototype.setId = function(id){
   this.id = id;
   return this;

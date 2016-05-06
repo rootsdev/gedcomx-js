@@ -5,10 +5,12 @@
   "main": "src/index.js",
   "devDependencies": {
     "chai": "^3.5.0",
+    "jsdoc": "^3.4.0",
     "mocha": "^2.4.5"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "docs": "jsdoc src"
   },
   "repository": {
     "type": "git",
