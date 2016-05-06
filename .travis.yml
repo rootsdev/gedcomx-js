@@ -11,7 +11,7 @@ after_success:
   - if [ "$TRAVIS_NODE_VERSION" == "6.0" ]; then bash ./deploy.sh; fi
 env:
   global:
-    - ENCRYPTION_LABEL: "0a6446eb3ae3"
+    - ENCRYPTION_LABEL: "26b4962af0e7"
     - COMMIT_AUTHOR_EMAIL: "justincyork@gmail.com"
 notifications:
   email:
