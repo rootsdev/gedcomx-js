@@ -1,0 +1,29 @@
+{
+  "name": "gedcomx-js",
+  "version": "0.1.0",
+  "description": "JavaScript object model for GEDCOM X",
+  "main": "src/index.js",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdoc": "^3.4.0",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "mocha",
+    "docs": "jsdoc src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rootsdev/gedcomx-js.git"
+  },
+  "keywords": [
+    "gedcomx",
+    "genealogy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rootsdev/gedcomx-js/issues"
+  },
+  "homepage": "https://github.com/rootsdev/gedcomx-js#readme"
+}

@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - '0.10'
+  - '0.12'
+  - '4.0'
+  - '5.0'
+  - '6.0'
+script:
+  - 'npm test'
+after_success:
+  - if [ "$TRAVIS_NODE_VERSION" == "6.0" ]; then bash ./deploy.sh; fi
+env:
+  global:
+    - ENCRYPTION_LABEL: "26b4962af0e7"
+    - COMMIT_AUTHOR_EMAIL: "justincyork@gmail.com"
+notifications:
+  email:
+    on_success: never
+    on_failure: always
