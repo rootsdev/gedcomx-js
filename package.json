@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "description": "JavaScript object model for GEDCOM X",
   "main": "src/index.js",
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "jsdoc": "^3.4.0",
-    "mocha": "^2.4.5"
-  },
   "scripts": {
     "test": "mocha",
-    "docs": "jsdoc src"
+    "docs": "jsdoc src",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "codecov": "^1.0.1",
+    "istanbul": "^0.4.3",
+    "jsdoc": "^3.4.0",
+    "mocha": "^2.4.5"
   },
   "repository": {
     "type": "git",

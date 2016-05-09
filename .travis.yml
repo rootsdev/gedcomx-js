@@ -6,7 +6,7 @@ node_js:
   - '5.0'
   - '6.0'
 script:
-  - 'npm test'
+  - 'npm run coverage'
 after_success:
   - if [ "$TRAVIS_NODE_VERSION" == "6.0" ]; then bash ./deploy.sh; fi
 env:
