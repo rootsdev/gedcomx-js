@@ -1,10 +1,10 @@
 # GEDCOM X JS
 
 [![Build Status](https://travis-ci.org/rootsdev/gedcomx-js.svg?branch=master)](https://travis-ci.org/rootsdev/gedcomx-js)
+[![codecov](https://codecov.io/gh/rootsdev/gedcomx-js/branch/master/graph/badge.svg)](https://codecov.io/gh/rootsdev/gedcomx-js)
 
 A JavaScript library for the [GEDCOM X](http://www.gedcomx.org/) data model.
-This library does _not_ implement the [GEDCOM X RS specification](https://github.com/FamilySearch/gedcomx-rs)
-for RESTful APIs.
+This library does _not_ support the [GEDCOM X RS specification](https://github.com/FamilySearch/gedcomx-rs).
 
 ## Usage
 
