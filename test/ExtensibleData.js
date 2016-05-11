@@ -24,7 +24,7 @@ describe('ExtensibleData', function(){
   it('toJSON()', function(){
     var ed = ExtensibleData({ id: 'firstId' });
     ed.setId('newId');
-    assert.deepEqual(ed.toJSON(), {id:'newId'}, 'JSON export incorrect');
+    assert.deepEqual(ed.toJSON(), {id:'newId'}, 'JSON export is incorrect');
   });
   
 });
