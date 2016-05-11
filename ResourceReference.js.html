@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: ExtensibleData.js</title>
+    <title>JSDoc: Source: ResourceReference.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: ExtensibleData.js</h1>
+    <h1 class="page-title">Source: ResourceReference.js</h1>
 
     
 
@@ -27,19 +27,19 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * A set of data that supports extension elements.
+ * A generic reference to a resource.
  * 
  * @constructor
  * @param {Object} json
  */
-var ExtensibleData = function(json){
+var ResourceReference = function(json){
   
   // Prevent errors when creating an object without using `new`
-  var instance = Object.create(ExtensibleData.prototype);
+  var instance = Object.create(ResourceReference.prototype);
   
   if(json){
-    if(json.id){
-      instance.id = json.id;
+    if(json.resource){
+      instance.resource = json.resource;
     }
   }
   
@@ -47,22 +47,22 @@ var ExtensibleData = function(json){
 };
 
 /**
- * Get the object's id.
+ * Get the resource URI
  * 
- * @returns {String} Id 
+ * @returns {String} Resource
  */
-ExtensibleData.prototype.getId = function(){
-  return this.id;
+ResourceReference.prototype.getResource = function(){
+  return this.resource;
 };
 
 /**
- * Set the object's id.
+ * Set the resource URI
  * 
- * @param {String} id
- * @return {Object} This object, for chaining.
+ * @param {String} uri
+ * @returns {Object} this object
  */
-ExtensibleData.prototype.setId = function(id){
-  this.id = id;
+ResourceReference.prototype.setResource = function(uri){
+  this.resource = uri;
   return this;
 };
 
@@ -71,13 +71,13 @@ ExtensibleData.prototype.setId = function(id){
  * 
  * @return {Object} JSON object
  */
-ExtensibleData.prototype.toJSON = function(){
+ResourceReference.prototype.toJSON = function(){
   return {
-    id: this.getId()
+    resource: this.getResource()
   };
 };
 
-module.exports = ExtensibleData;</code></pre>
+module.exports = ResourceReference;</code></pre>
         </article>
     </section>
 
