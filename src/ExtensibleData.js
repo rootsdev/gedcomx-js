@@ -38,4 +38,15 @@ ExtensibleData.prototype.setId = function(id){
   return this;
 };
 
+/**
+ * Export the object as JSON
+ * 
+ * @return {Object} JSON object
+ */
+ExtensibleData.prototype.toJSON = function(){
+  return {
+    id: this.getId()
+  };
+};
+
 module.exports = ExtensibleData;
