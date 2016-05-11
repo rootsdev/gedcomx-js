@@ -10,9 +10,7 @@ var ResourceReference = function(json){
   var instance = Object.create(ResourceReference.prototype);
   
   if(json){
-    if(json.resource){
-      instance.resource = json.resource;
-    }
+    instance.setResource(json.resource);
   }
   
   return instance;
@@ -31,7 +29,7 @@ ResourceReference.prototype.getResource = function(){
  * Set the resource URI
  * 
  * @param {String} uri
- * @returns {Object} this object
+ * @returns {ResourceReference} this object
  */
 ResourceReference.prototype.setResource = function(uri){
   this.resource = uri;

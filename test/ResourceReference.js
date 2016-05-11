@@ -7,7 +7,7 @@ describe('ResourceReference', function(){
     var newRR = new ResourceReference(),
         rr = ResourceReference();
     assert.instanceOf(newRR, ResourceReference, 'An instance of ResourceReference is not returned when calling the constructor with new.');
-    assert.instanceOf(rr, ResourceReference, 'An instance of ResourceReference is not returned when calling the constructor without `new`.');
+    assert.instanceOf(rr, ResourceReference, 'An instance of ResourceReference is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){

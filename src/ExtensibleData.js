@@ -10,9 +10,7 @@ var ExtensibleData = function(json){
   var instance = Object.create(ExtensibleData.prototype);
   
   if(json){
-    if(json.id){
-      instance.id = json.id;
-    }
+    instance.setId(json.id);
   }
   
   return instance;
@@ -31,7 +29,7 @@ ExtensibleData.prototype.getId = function(){
  * Set the object's id.
  * 
  * @param {String} id
- * @return {Object} This object, for chaining.
+ * @return {ExtensibleData} This object, for chaining.
  */
 ExtensibleData.prototype.setId = function(id){
   this.id = id;
