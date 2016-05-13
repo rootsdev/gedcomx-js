@@ -41,4 +41,17 @@ describe('Attribution', function(){
     assert.equal(attr.getModified().getTime(), 1111338494969, 'Modified date not saved when created with mixed data');
   });
   
+  it('toJSON', function(){
+    var attrData = { 
+        id: 'attr-id',
+        changeMessage: 'It changed',
+        contributor: { resource: 'https://myapp.com/contributor'},
+        created: 1111338494969,
+        creator: { resource: 'https://myapp.com/creator'},
+        modified: 1111338494969
+      },
+      attr = Attribution(attrData);
+    assert.deepEqual(attr.toJSON(), attrData, 'toJSON export does not equal original data.');
+  });
+  
 });

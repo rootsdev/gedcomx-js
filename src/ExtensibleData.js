@@ -6,14 +6,14 @@
  */
 var ExtensibleData = function(json){
   
-  // Prevent errors when creating an object without using `new`
-  var instance = Object.create(ExtensibleData.prototype);
-  
-  if(json){
-    instance.setId(json.id);
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof ExtensibleData)){
+    return new ExtensibleData(json);
   }
   
-  return instance;
+  if(json){
+    this.setId(json.id);
+  }
 };
 
 /**
@@ -42,9 +42,11 @@ ExtensibleData.prototype.setId = function(id){
  * @return {Object} JSON object
  */
 ExtensibleData.prototype.toJSON = function(){
-  return {
-    id: this.getId()
-  };
+  var json = {};
+  if(this.id){
+    json.id = this.id;
+  }
+  return json;
 };
 
 module.exports = ExtensibleData;

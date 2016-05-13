@@ -6,14 +6,14 @@
  */
 var ResourceReference = function(json){
   
-  // Prevent errors when creating an object without using `new`
-  var instance = Object.create(ResourceReference.prototype);
-  
-  if(json){
-    instance.setResource(json.resource);
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof ResourceReference)){
+    return new ResourceReference(json);
   }
   
-  return instance;
+  if(json){
+    this.setResource(json.resource);
+  }
 };
 
 /**
