@@ -97,9 +97,12 @@ Note.prototype.getAttribution = function(){
  * Set the attribution
  * 
  * @param {Object|Attribution} attribution
+ * @returns {Note} This instance.
  */
 Note.prototype.setAttribution = function(attribution){
-  this.attribution = new Attribution(attribution);
+  if(attribution){
+    this.attribution = new Attribution(attribution);
+  }
   return this;
 };
 

@@ -57,9 +57,12 @@ SourceReference.prototype.getAttribution = function(){
  * Set the attribution
  * 
  * @param {Object|Attribution} attribution
+ * @returns {SourceReference} This instance.
  */
 SourceReference.prototype.setAttribution = function(attribution){
-  this.attribution = new Attribution(attribution);
+  if(attribution){
+    this.attribution = new Attribution(attribution);
+  }
   return this;
 };
 
