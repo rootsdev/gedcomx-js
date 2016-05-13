@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Note.js</title>
+    <title>JSDoc: Source: SourceReference.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Note.js</h1>
+    <h1 class="page-title">Source: SourceReference.js</h1>
 
     
 
@@ -30,85 +30,45 @@
     Attribution = require('./Attribution');
 
 /**
- * A note about a resource.
+ * A reference to a discription of a source.
  * 
  * @constructor
  * @param {Object} json
  */
-var Note = function(json){
+var SourceReference = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof Note)){
-    return new Note(json);
+  if(!(this instanceof SourceReference)){
+    return new SourceReference(json);
   }
   
   ExtensibleData.call(this, json);
   
   if(json){
-    this.setLang(json.lang);
-    this.setSubject(json.subject);
-    this.setText(json.text);
+    this.setDescription(json.description);
     this.setAttribution(json.attribution);
   }
 };
 
-Note.prototype = Object.create(ExtensibleData.prototype);
+SourceReference.prototype = Object.create(ExtensibleData.prototype);
 
 /**
- * Get the language identifier.
+ * Get the description.
  * 
- * @returns {String} lang
+ * @returns {String}
  */
-Note.prototype.getLang = function(){
-  return this.lang;
+SourceReference.prototype.getDescription = function(){
+  return this.description;
 };
 
 /**
- * Set the language identifier.
+ * Set the description.
  * 
- * @param {String} lang
- * @returns {Note} This instance.
+ * @param {String} description
+ * @returns {SourceReference} This instance.
  */
-Note.prototype.setLang = function(lang){
-  this.lang = lang;
-  return this;
-};
-
-/**
- * Get the subject.
- */
-Note.prototype.getSubject = function(){
-  return this.subject;
-};
-
-/**
- * Set the subject.
- * 
- * @params {String} subject
- * @returns {Note} This note.
- */
-Note.prototype.setSubject = function(subject){
-  this.subject = subject;
-  return this;
-};
-
-/**
- * Get the text.
- * 
- * @returns {String} text
- */
-Note.prototype.getText = function(){
-  return this.text;
-};
-
-/**
- * Set the text.
- * 
- * @param {String} text
- * @returns {Note} This note.
- */
-Note.prototype.setText = function(text){
-  this.text = text;
+SourceReference.prototype.setDescription = function(description){
+  this.description = description;
   return this;
 };
 
@@ -117,7 +77,7 @@ Note.prototype.setText = function(text){
  * 
  * @returns {Attribution}
  */
-Note.prototype.getAttribution = function(){
+SourceReference.prototype.getAttribution = function(){
   return this.attribution;
 };
 
@@ -126,7 +86,7 @@ Note.prototype.getAttribution = function(){
  * 
  * @param {Object|Attribution} attribution
  */
-Note.prototype.setAttribution = function(attribution){
+SourceReference.prototype.setAttribution = function(attribution){
   this.attribution = new Attribution(attribution);
   return this;
 };
@@ -136,19 +96,11 @@ Note.prototype.setAttribution = function(attribution){
  * 
  * @return {Object} JSON object
  */
-Note.prototype.toJSON = function(){
+SourceReference.prototype.toJSON = function(){
   var json = ExtensibleData.prototype.toJSON.call(this);
   
-  if(this.lang){
-    json.lang = this.lang;
-  }
-  
-  if(this.subject){
-    json.subject = this.subject;
-  }
-  
-  if(this.text){
-    json.text = this.text;
+  if(this.description){
+    json.description = this.description;
   }
   
   if(this.attribution){
@@ -158,7 +110,7 @@ Note.prototype.toJSON = function(){
   return json;
 };
 
-module.exports = Note;</code></pre>
+module.exports = SourceReference;</code></pre>
         </article>
     </section>
 
