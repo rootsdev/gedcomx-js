@@ -41,6 +41,20 @@ describe('Attribution', function(){
     assert.equal(attr.getModified().getTime(), 1111338494969, 'Modified date not saved when created with mixed data');
   });
   
+  it('Build', function(){
+    var attr = Attribution()
+      .setChangeMessage('It changed')
+      .setContributor({ resource: 'https://myapp.com/contributor'})
+      .setCreated(1111338494969)
+      .setCreator({ resource: 'https://myapp.com/creator'})
+      .setModified(1111338494969);
+    assert.equal(attr.getChangeMessage(), 'It changed', 'Change message not saved properly when created with mixed data');
+    assert.equal(attr.getContributor().getResource(), 'https://myapp.com/contributor', 'Contributor not saved when created with mixed data');
+    assert.equal(attr.getCreated().getTime(), 1111338494969, 'Created date not saved when created with mixed data');
+    assert.equal(attr.getCreator().getResource(), 'https://myapp.com/creator', 'Creator not saved when created with mixed data');
+    assert.equal(attr.getModified().getTime(), 1111338494969, 'Modified date not saved when created with mixed data');
+  });
+  
   it('toJSON', function(){
     var attrData = { 
         id: 'attr-id',

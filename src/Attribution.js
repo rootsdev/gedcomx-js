@@ -86,7 +86,9 @@ Attribution.prototype.getCreated = function(){
  * @returns {Attribution} This instance
  */
 Attribution.prototype.setCreated = function(date){
-  this.created = new Date(date);
+  if(date){
+    this.created = new Date(date);
+  }
   return this;
 };
 
@@ -109,6 +111,7 @@ Attribution.prototype.setCreator = function(creator){
   if(creator){
     this.creator = new ResourceReference(creator);
   }
+  return this;
 };
 
 /**
@@ -127,7 +130,9 @@ Attribution.prototype.getModified = function(){
  * @returns {Attribution} This instance
  */
 Attribution.prototype.setModified = function(date){
-  this.modified = new Date(date);
+  if(date){
+    this.modified = new Date(date);
+  }
   return this;
 };
 
