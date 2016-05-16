@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: SourceReference.js</title>
+    <title>JSDoc: Source: EvidenceReference.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: SourceReference.js</h1>
+    <h1 class="page-title">Source: EvidenceReference.js</h1>
 
     
 
@@ -26,58 +26,37 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData'),
+            <pre class="prettyprint source linenums"><code>var ResourceReference = require('./ResourceReference'),
     Attribution = require('./Attribution');
 
 /**
- * A reference to a discription of a source.
+ * A generic reference to a resource.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var SourceReference = function(json){
+var EvidenceReference = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof SourceReference)){
-    return new SourceReference(json);
+  if(!(this instanceof EvidenceReference)){
+    return new EvidenceReference(json);
   }
   
-  ExtensibleData.call(this, json);
+  ResourceReference.call(this, json);
   
   if(json){
-    this.setDescription(json.description);
     this.setAttribution(json.attribution);
   }
 };
 
-SourceReference.prototype = Object.create(ExtensibleData.prototype);
-
-/**
- * Get the description.
- * 
- * @returns {String}
- */
-SourceReference.prototype.getDescription = function(){
-  return this.description;
-};
-
-/**
- * Set the description.
- * 
- * @param {String} description
- * @returns {SourceReference} This instance.
- */
-SourceReference.prototype.setDescription = function(description){
-  this.description = description;
-  return this;
-};
+EvidenceReference.prototype = Object.create(ResourceReference.prototype);
 
 /**
  * Get the attribution.
  * 
  * @returns {Attribution}
  */
-SourceReference.prototype.getAttribution = function(){
+EvidenceReference.prototype.getAttribution = function(){
   return this.attribution;
 };
 
@@ -85,9 +64,9 @@ SourceReference.prototype.getAttribution = function(){
  * Set the attribution
  * 
  * @param {Object|Attribution} attribution
- * @returns {SourceReference} This instance.
+ * @returns {EvidenceReference} This instance.
  */
-SourceReference.prototype.setAttribution = function(attribution){
+EvidenceReference.prototype.setAttribution = function(attribution){
   if(attribution){
     this.attribution = new Attribution(attribution);
   }
@@ -99,12 +78,8 @@ SourceReference.prototype.setAttribution = function(attribution){
  * 
  * @return {Object} JSON object
  */
-SourceReference.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.description){
-    json.description = this.description;
-  }
+EvidenceReference.prototype.toJSON = function(){
+  var json = ResourceReference.prototype.toJSON.call(this);
   
   if(this.attribution){
     json.attribution = this.attribution.toJSON();
@@ -113,7 +88,7 @@ SourceReference.prototype.toJSON = function(){
   return json;
 };
 
-module.exports = SourceReference;</code></pre>
+module.exports = EvidenceReference;</code></pre>
         </article>
     </section>
 
