@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: ResourceReference.js</title>
+    <title>JSDoc: Source: Identifiers.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: ResourceReference.js</h1>
+    <h1 class="page-title">Source: Identifiers.js</h1>
 
     
 
@@ -27,41 +27,23 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * A generic reference to a resource.
+ * Manage the set of identifers for an object.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var ResourceReference = function(json){
+var Identifiers = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof ResourceReference)){
-    return new ResourceReference(json);
+  if(!(this instanceof Identifiers)){
+    return new Identifiers(json);
   }
   
+  this.identifiers = {};
+  
   if(json){
-    this.setResource(json.resource);
+    this.identifiers = json;
   }
-};
-
-/**
- * Get the resource URI
- * 
- * @returns {String} Resource
- */
-ResourceReference.prototype.getResource = function(){
-  return this.resource;
-};
-
-/**
- * Set the resource URI
- * 
- * @param {String} uri
- * @returns {ResourceReference} this object
- */
-ResourceReference.prototype.setResource = function(uri){
-  this.resource = uri;
-  return this;
 };
 
 /**
@@ -69,13 +51,11 @@ ResourceReference.prototype.setResource = function(uri){
  * 
  * @return {Object} JSON object
  */
-ResourceReference.prototype.toJSON = function(){
-  return {
-    resource: this.getResource()
-  };
+Identifiers.prototype.toJSON = function(){
+  return this.identifiers;
 };
 
-module.exports = ResourceReference;</code></pre>
+module.exports = Identifiers;</code></pre>
         </article>
     </section>
 
