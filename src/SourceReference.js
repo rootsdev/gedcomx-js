@@ -5,7 +5,7 @@ var ExtensibleData = require('./ExtensibleData'),
  * A reference to a discription of a source.
  * 
  * @constructor
- * @param {Object} json
+ * @param {Object} [json]
  */
 var SourceReference = function(json){
   

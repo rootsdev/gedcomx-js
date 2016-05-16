@@ -8,7 +8,7 @@ var ExtensibleData = require('./ExtensibleData'),
  * An abstract concept for a basic genealogical data item.
  * 
  * @constructor
- * @param {Object} json
+ * @param {Object} [json]
  */
 var Conclusion = function(json){
   

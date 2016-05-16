@@ -2,7 +2,7 @@
  * A generic reference to a resource.
  * 
  * @constructor
- * @param {Object} json
+ * @param {Object} [json]
  */
 var ResourceReference = function(json){
   

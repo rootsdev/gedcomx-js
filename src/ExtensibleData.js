@@ -2,7 +2,7 @@
  * A set of data that supports extension elements.
  * 
  * @constructor
- * @param {Object} json
+ * @param {Object} [json]
  */
 var ExtensibleData = function(json){
   

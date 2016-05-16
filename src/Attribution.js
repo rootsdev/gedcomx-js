@@ -6,7 +6,7 @@ var ExtensibleData = require('./ExtensibleData'),
  * and why they are making the contribution.
  * 
  * @constructor
- * @param {Object} json
+ * @param {Object} [json]
  */
 var Attribution = function(json){
   

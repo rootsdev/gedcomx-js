@@ -5,7 +5,7 @@ var ExtensibleData = require('./ExtensibleData'),
  * A note about a resource.
  * 
  * @constructor
- * @param {Object} json
+ * @param {Object} [json]
  */
 var Note = function(json){
   
