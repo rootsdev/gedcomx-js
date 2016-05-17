@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: Gender.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,77 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: Gender.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var Conclusion = require('./Conclusion');
 
+/**
+ * A gender conclusion.
+ * 
+ * @constructor
+ * @param {Object} [json]
+ */
+var Gender = function(json){
+  
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof Gender)){
+    return new Gender(json);
+  }
+  
+  Conclusion.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+  }
+};
 
-    <h3> </h3>
+Gender.prototype = Object.create(Conclusion.prototype);
 
+/**
+ * Get the gender type
+ * 
+ * @returns {String} gender
+ */
+Gender.prototype.getType = function(){
+  return this.type;
+};
 
+/**
+ * Set the gender type
+ * 
+ * @params {String} gender
+ * @returns {Gender} This instance
+ */
+Gender.prototype.setType = function(gender){
+  this.type = gender;
+  return this;
+};
 
+/**
+ * Export the object as JSON
+ * 
+ * @return {Object} JSON object
+ */
+Gender.prototype.toJSON = function(){
+  var json = Conclusion.prototype.toJSON.call(this);
+  
+  if(this.type){
+    json.type = this.type;
+  }
+  
+  return json;
+};
 
-
-
-
-
-
-
-    
-
-
-
-
-
+module.exports = Gender;</code></pre>
+        </article>
+    </section>
 
 
 
