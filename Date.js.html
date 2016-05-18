@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: ResourceReference.js</title>
+    <title>JSDoc: Source: Date.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: ResourceReference.js</h1>
+    <h1 class="page-title">Source: Date.js</h1>
 
     
 
@@ -26,41 +26,69 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * A generic reference to a resource.
+            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData');
+
+/**
+ * A date.
  * 
  * @constructor
  * @param {Object} [json]
+ * @alias Date
  */
-var ResourceReference = function(json){
+var GDate = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof ResourceReference)){
-    return new ResourceReference(json);
+  if(!(this instanceof GDate)){
+    return new GDate(json);
   }
   
+  ExtensibleData.call(this, json);
+  
   if(json){
-    this.setResource(json.resource);
+    this.setOriginal(json.original);
+    this.setFormal(json.formal);
   }
 };
 
+GDate.prototype = Object.create(ExtensibleData.prototype);
+
 /**
- * Get the resource URI
+ * Get the original date value
  * 
- * @returns {String} Resource
+ * @returns {String} original
  */
-ResourceReference.prototype.getResource = function(){
-  return this.resource;
+GDate.prototype.getOriginal = function(){
+  return this.original;
 };
 
 /**
- * Set the resource URI
+ * Set the original date value
  * 
- * @param {String} uri
- * @returns {ResourceReference} this object
+ * @param {String} original
+ * @returns {Date} This instance.
  */
-ResourceReference.prototype.setResource = function(uri){
-  this.resource = uri;
+GDate.prototype.setOriginal = function(original){
+  this.original = original;
+  return this;
+};
+
+/**
+ * Get the formal date value
+ * 
+ * @returns {String}
+ */
+GDate.prototype.getFormal = function(){
+  return this.formal;
+};
+
+/**
+ * Set the formal date value
+ * 
+ * @params {String} formal
+ * @returns {Date} This instance.
+ */
+GDate.prototype.setFormal = function(formal){
+  this.formal = formal;
   return this;
 };
 
@@ -69,13 +97,21 @@ ResourceReference.prototype.setResource = function(uri){
  * 
  * @return {Object} JSON object
  */
-ResourceReference.prototype.toJSON = function(){
-  return {
-    resource: this.getResource()
-  };
+GDate.prototype.toJSON = function(){
+  var json = ExtensibleData.prototype.toJSON.call(this);
+  
+  if(this.original){
+    json.original = this.original;
+  }
+  
+  if(this.formal){
+    json.formal = this.formal;
+  }
+  
+  return json;
 };
 
-module.exports = ResourceReference;</code></pre>
+module.exports = GDate;</code></pre>
         </article>
     </section>
 

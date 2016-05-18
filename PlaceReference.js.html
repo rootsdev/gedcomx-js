@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: ResourceReference.js</title>
+    <title>JSDoc: Source: PlaceReference.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: ResourceReference.js</h1>
+    <h1 class="page-title">Source: PlaceReference.js</h1>
 
     
 
@@ -26,41 +26,68 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * A generic reference to a resource.
+            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData');
+
+/**
+ * A reference to a {@link PlaceDescription}.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var ResourceReference = function(json){
+var PlaceReference = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof ResourceReference)){
-    return new ResourceReference(json);
+  if(!(this instanceof PlaceReference)){
+    return new PlaceReference(json);
   }
   
+  ExtensibleData.call(this, json);
+  
   if(json){
-    this.setResource(json.resource);
+    this.setOriginal(json.original);
+    this.setDescription(json.description);
   }
 };
 
+PlaceReference.prototype = Object.create(ExtensibleData.prototype);
+
 /**
- * Get the resource URI
+ * Get the original text
  * 
- * @returns {String} Resource
+ * @returns {String} original
  */
-ResourceReference.prototype.getResource = function(){
-  return this.resource;
+PlaceReference.prototype.getOriginal = function(){
+  return this.original;
 };
 
 /**
- * Set the resource URI
+ * Set the original text
  * 
- * @param {String} uri
- * @returns {ResourceReference} this object
+ * @param {String} original
+ * @returns {PlaceReference} This instance.
  */
-ResourceReference.prototype.setResource = function(uri){
-  this.resource = uri;
+PlaceReference.prototype.setOriginal = function(original){
+  this.original = original;
+  return this;
+};
+
+/**
+ * Get the description
+ * 
+ * @returns {String}
+ */
+PlaceReference.prototype.getDescription = function(){
+  return this.description;
+};
+
+/**
+ * Set the description
+ * 
+ * @params {String} description
+ * @returns {PlaceReference} This instance.
+ */
+PlaceReference.prototype.setDescription = function(description){
+  this.description = description;
   return this;
 };
 
@@ -69,13 +96,21 @@ ResourceReference.prototype.setResource = function(uri){
  * 
  * @return {Object} JSON object
  */
-ResourceReference.prototype.toJSON = function(){
-  return {
-    resource: this.getResource()
-  };
+PlaceReference.prototype.toJSON = function(){
+  var json = ExtensibleData.prototype.toJSON.call(this);
+  
+  if(this.original){
+    json.original = this.original;
+  }
+  
+  if(this.description){
+    json.description = this.description;
+  }
+  
+  return json;
 };
 
-module.exports = ResourceReference;</code></pre>
+module.exports = PlaceReference;</code></pre>
         </article>
     </section>
 
