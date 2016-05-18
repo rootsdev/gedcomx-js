@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Note.js</title>
+    <title>JSDoc: Source: Name.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Note.js</h1>
+    <h1 class="page-title">Source: Name.js</h1>
 
     
 
@@ -26,110 +26,113 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData'),
-    Attribution = require('./Attribution');
+            <pre class="prettyprint source linenums"><code>var Conclusion = require('./Conclusion'),
+    NameForm = require('./NameForm'),
+    GDate = require('./Date');
 
 /**
- * A note about a resource.
+ * A name.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var Note = function(json){
+var Name = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof Note)){
-    return new Note(json);
+  if(!(this instanceof Name)){
+    return new Name(json);
   }
   
-  ExtensibleData.call(this, json);
+  Conclusion.call(this, json);
   
   if(json){
-    this.setLang(json.lang);
-    this.setSubject(json.subject);
-    this.setText(json.text);
-    this.setAttribution(json.attribution);
+    this.setType(json.type);
+    this.setDate(json.date);
+    this.setNameForms(json.nameForms);
   }
 };
 
-Note.prototype = Object.create(ExtensibleData.prototype);
+Name.prototype = Object.create(Conclusion.prototype);
 
 /**
- * Get the language identifier.
+ * Get the name type
  * 
- * @returns {String} lang
+ * @returns {String} type
  */
-Note.prototype.getLang = function(){
-  return this.lang;
+Name.prototype.getType = function(){
+  return this.type;
 };
 
 /**
- * Set the language identifier.
+ * Set the name type
  * 
- * @param {String} lang
- * @returns {Note} This instance.
+ * @param {String} type
+ * @returns {Name} This instance
  */
-Note.prototype.setLang = function(lang){
-  this.lang = lang;
+Name.prototype.setType = function(type){
+  this.type = type;
   return this;
 };
 
 /**
- * Get the subject.
+ * Get the date
+ * 
+ * @returns {Date} date
  */
-Note.prototype.getSubject = function(){
-  return this.subject;
+Name.prototype.getDate = function(){
+  return this.date;
 };
 
 /**
- * Set the subject.
+ * Set the date
  * 
- * @param {String} subject
- * @returns {Note} This note.
+ * @param {Date|Object} date
+ * @returns {Fact} This instance
  */
-Note.prototype.setSubject = function(subject){
-  this.subject = subject;
+Name.prototype.setDate = function(date){
+  if(date){
+    this.date = GDate(date);
+  }
   return this;
 };
 
 /**
- * Get the text.
+ * Get the name forms
  * 
- * @returns {String} text
+ * @return {NameForm[]}
  */
-Note.prototype.getText = function(){
-  return this.text;
+Name.prototype.getNameForms = function(){
+  return this.nameForms || [];
 };
 
 /**
- * Set the text.
+ * Set the name forms
  * 
- * @param {String} text
- * @returns {Note} This note.
+ * @param {NameForm[]|Object[]} nameForms
+ * @returns {Name} This instance
  */
-Note.prototype.setText = function(text){
-  this.text = text;
-  return this;
+Name.prototype.setNameForms = function(nameForms){
+  if(Array.isArray(nameForms)){
+    this.nameForms = [];
+    var name = this;
+    nameForms.forEach(function(n){
+      name.addNameForm(n);
+    });
+  }
 };
 
 /**
- * Get the attribution.
+ * Add a name form
  * 
- * @returns {Attribution}
+ * @param {NameForm|Object} nameForm
+ * @returns {Name} This instance
  */
-Note.prototype.getAttribution = function(){
-  return this.attribution;
-};
-
-/**
- * Set the attribution
- * 
- * @param {Object|Attribution} attribution
- * @returns {Note} This instance.
- */
-Note.prototype.setAttribution = function(attribution){
-  if(attribution){
-    this.attribution = new Attribution(attribution);
+Name.prototype.addNameForm = function(nameForm){
+  if(nameForm){
+    if(!Array.isArray(this.nameForms)){
+      this.nameForms = [];
+    }
+    this.nameForms.push(NameForm(nameForm));
   }
   return this;
 };
@@ -139,29 +142,27 @@ Note.prototype.setAttribution = function(attribution){
  * 
  * @return {Object} JSON object
  */
-Note.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
+Name.prototype.toJSON = function(){
+  var json = Conclusion.prototype.toJSON.call(this);
   
-  if(this.lang){
-    json.lang = this.lang;
+  if(this.type){
+    json.type = this.type;
   }
   
-  if(this.subject){
-    json.subject = this.subject;
+  if(this.date){
+    json.date = this.date.toJSON();
   }
   
-  if(this.text){
-    json.text = this.text;
-  }
-  
-  if(this.attribution){
-    json.attribution = this.attribution.toJSON();
+  if(this.nameForms){
+    json.nameForms = this.nameForms.map(function(n){
+      return n.toJSON();
+    });
   }
   
   return json;
 };
 
-module.exports = Note;</code></pre>
+module.exports = Name;</code></pre>
         </article>
     </section>
 
