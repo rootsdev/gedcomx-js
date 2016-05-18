@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Person.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Person.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var Subject = require('./Subject'),
+    Gender = require('./Gender'),
+    Name = require('./Name'),
+    Fact = require('./Fact');
+    
+/**
+ * A person.
+ * 
+ * @constructor
+ * @param {Object} [json]
+ */
+var Person = function(json){
+  
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof Person)){
+    return new Person(json);
+  }
+  
+  Subject.call(this, json);
+  
+  if(json){
+    this.setPrivate(json.private);
+    this.setGender(json.gender);
+    this.setNames(json.names);
+    this.setFacts(json.facts);
+  }
+};
+
+Person.prototype = Object.create(Subject.prototype);
+
+/**
+ * Check whether the person is marked as private
+ * 
+ * @returns {Boolean} private
+ */
+Person.prototype.isPrivate = function(){
+  return !!this.private;
+};
+
+/**
+ * Set the private flag
+ * 
+ * @param {Boolean} isPrivate
+ * @returns {Person} This instance
+ */
+Person.prototype.setPrivate = function(isPrivate){
+  this.private = isPrivate;
+  return this;
+};
+
+/**
+ * Get the person's gender
+ * 
+ * @returns {Gender} gender
+ */
+Person.prototype.getGender = function(){
+  return this.gender;
+};
+
+/**
+ * Set the person's gender
+ * 
+ * @param {Gender} gender
+ * @returns {Person} This instance
+ */
+Person.prototype.setGender = function(gender){
+  if(gender){
+    this.gender = Gender(gender);
+  }
+  return this;
+};
+
+/**
+ * Get the names
+ * 
+ * @return {Name[]}
+ */
+Person.prototype.getNames = function(){
+  return this.names || [];
+};
+
+/**
+ * Set the names
+ * 
+ * @param {Name[]|Object[]} names
+ * @returns {Person} This instance
+ */
+Person.prototype.setNames = function(names){
+  if(Array.isArray(names)){
+    this.names = [];
+    var person = this;
+    names.forEach(function(n){
+      person.addName(n);
+    });
+  }
+};
+
+/**
+ * Add a name
+ * 
+ * @param {NameForm|Object} name
+ * @returns {Person} This instance
+ */
+Person.prototype.addName = function(name){
+  if(name){
+    if(!Array.isArray(this.names)){
+      this.names = [];
+    }
+    this.names.push(Name(name));
+  }
+  return this;
+};
+
+/**
+ * Get the facts
+ * 
+ * @return {Fact[]}
+ */
+Person.prototype.getFacts = function(){
+  return this.facts || [];
+};
+
+/**
+ * Set the facts
+ * 
+ * @param {Fact[]|Object[]} facts
+ * @returns {Person} This instance
+ */
+Person.prototype.setFacts = function(facts){
+  if(Array.isArray(facts)){
+    this.facts = [];
+    var person = this;
+    facts.forEach(function(n){
+      person.addFact(n);
+    });
+  }
+};
+
+/**
+ * Add a fact
+ * 
+ * @param {Fact|Object} fact
+ * @returns {Person} This instance
+ */
+Person.prototype.addFact = function(fact){
+  if(fact){
+    if(!Array.isArray(this.facts)){
+      this.facts = [];
+    }
+    this.facts.push(Fact(fact));
+  }
+  return this;
+};
+
+/**
+ * Export the object as JSON
+ * 
+ * @return {Object} JSON object
+ */
+Person.prototype.toJSON = function(){
+  var json = Subject.prototype.toJSON.call(this);
+  
+  if(typeof this.private === 'boolean'){
+    json.private = this.private;
+  }
+  
+  if(this.gender){
+    json.gender = this.gender.toJSON();
+  }
+  
+  if(this.names){
+    json.names = this.names.map(function(n){
+      return n.toJSON();
+    });
+  }
+  
+  if(this.facts){
+    json.facts = this.facts.map(function(f){
+      return f.toJSON();
+    });
+  }
+  
+  return json;
+};
+
+module.exports = Person;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Attribution.html">Attribution</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Date.html">Date</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed May 18 2016 20:49:45 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
