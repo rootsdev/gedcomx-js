@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: NamePart.js</title>
+    <title>JSDoc: Source: NameForm.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: NamePart.js</h1>
+    <h1 class="page-title">Source: NameForm.js</h1>
 
     
 
@@ -27,109 +27,110 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData'),
-    Qualifier = require('./Qualifier');
+    NamePart = require('./NamePart');
 
 /**
- * A part of a name.
+ * A form of a name.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var NamePart = function(json){
+var NameForm = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof NamePart)){
-    return new NamePart(json);
+  if(!(this instanceof NameForm)){
+    return new NameForm(json);
   }
   
   ExtensibleData.call(this, json);
   
   if(json){
-    this.setValue(json.value);
-    this.setType(json.type);
-    this.setQualifiers(json.qualifiers);
+    this.setLang(json.lang);
+    this.setFullText(json.fullText);
+    this.setParts(json.parts);
   }
 };
 
-NamePart.prototype = Object.create(ExtensibleData.prototype);
+NameForm.prototype = Object.create(ExtensibleData.prototype);
 
 /**
- * Get the gender type
+ * Get the lang tag
  * 
- * @returns {String} type
+ * @returns {String} lang
  */
-NamePart.prototype.getType = function(){
-  return this.type;
+NameForm.prototype.getLang = function(){
+  return this.lang;
 };
 
 /**
- * Set the gender type
+ * Set the lang tag
  * 
- * @param {String} type
- * @returns {NamePart} This instance
+ * @param {String} lang
+ * @returns {NameForm} This instance
  */
-NamePart.prototype.setType = function(type){
-  this.type = type;
+NameForm.prototype.setLang = function(lang){
+  this.lang = lang;
   return this;
 };
 
 /**
- * Get the value
+ * Get the full text
  * 
- * @returns {String}
+ * @returns {String} fullText
  */
-NamePart.prototype.getValue = function(){
-  return this.value;
+NameForm.prototype.getFullText = function(){
+  return this.fullText;
 };
 
 /**
- * Set the value
+ * Set the full text
  * 
- * @param {String} value
- * @returns {NamePart} This instance
+ * @param {String} fullText
+ * @returns {NameForm} This instance
  */
-NamePart.prototype.setValue = function(value){
-  this.value = value;
+NameForm.prototype.setFullText = function(fullText){
+  this.fullText = fullText;
   return this;
 };
 
 /**
- * Get qualifiers
+ * Get the name parts
  * 
- * @return {Qualifer[]}
+ * @returns {NamePart[]}
  */
-NamePart.prototype.getQualifiers = function(){
-  return this.qualifiers || [];
+NameForm.prototype.getParts = function(){
+  return this.parts || [];
 };
 
 /**
- * Set the qualifiers
+ * Set the name parts
  * 
- * @param {Qualifer[]|Object[]} qualifiers
- * @returns {NamePart} This instance
+ * @param {NamePart[]|Object[]} parts
+ * @returns {NameForm} This instance
  */
-NamePart.prototype.setQualifiers = function(qualifiers){
-  if(Array.isArray(qualifiers)){
-    this.qualifiers = [];
-    var fact = this;
-    qualifiers.forEach(function(q){
-      fact.addQualifier(q);
+NameForm.prototype.setParts = function(parts){
+  if(Array.isArray(parts)){
+    var nameForm = this;
+    nameForm.parts = [];
+    parts.forEach(function(part){
+      nameForm.addPart(part);
     });
   }
+  return this;
 };
 
 /**
- * Add a qualifier
+ * Add a name part
  * 
- * @param {Qualifier|Object} qualifier
- * @returns {NamePart} This instance
+ * @param {NamePart|Object}
+ * @returns {NameForm}
  */
-NamePart.prototype.addQualifier = function(qualifier){
-  if(qualifier){
-    if(!Array.isArray(this.qualifiers)){
-      this.qualifiers = [];
+NameForm.prototype.addPart = function(part){
+  if(part){
+    if(!Array.isArray(this.parts)){
+      this.parts = [];
     }
-    this.qualifiers.push(Qualifier(qualifier));
+    this.parts.push(NamePart(part));
   }
   return this;
 };
@@ -139,27 +140,27 @@ NamePart.prototype.addQualifier = function(qualifier){
  * 
  * @return {Object} JSON object
  */
-NamePart.prototype.toJSON = function(){
+NameForm.prototype.toJSON = function(){
   var json = ExtensibleData.prototype.toJSON.call(this);
   
-  if(this.type){
-    json.type = this.type;
+  if(this.lang){
+    json.lang = this.lang;
   }
   
-  if(this.value){
-    json.value = this.value;
+  if(this.fullText){
+    json.fullText = this.fullText;
   }
   
-  if(this.qualifiers){
-    json.qualifiers = this.qualifiers.map(function(q){
-      return q.toJSON();
+  if(this.parts){
+    json.parts = this.parts.map(function(p){
+      return p.toJSON();
     });
   }
   
   return json;
 };
 
-module.exports = NamePart;</code></pre>
+module.exports = NameForm;</code></pre>
         </article>
     </section>
 
