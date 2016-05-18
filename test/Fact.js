@@ -53,10 +53,10 @@ describe('Fact', function(){
       }),
       value: 'Birth value',
       qualifiers: [
-        {
+        Qualifier({
           name: 'http://gedcomx.org/Age',
           value: '0'
-        }  
+        })
       ]
     });
     assert.equal(fact.getId(), 'fact');
