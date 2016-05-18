@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Fact.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Fact.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var Conclusion = require('./Conclusion'),
+    PlaceReference = require('./PlaceReference'),
+    GDate = require('./Date'),
+    Qualifier = require('./Qualifier');
+
+/**
+ * A fact for a person or relationship.
+ * 
+ * @constructor
+ * @param {Object} [json]
+ */
+var Fact = function(json){
+  
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof Fact)){
+    return new Fact(json);
+  }
+  
+  Conclusion.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+    this.setDate(json.date);
+    this.setPlace(json.place);
+    this.setValue(json.value);
+    this.setQualifiers(json.qualifiers);
+  }
+};
+
+Fact.prototype = Object.create(Conclusion.prototype);
+
+/**
+ * Get the gender type
+ * 
+ * @returns {String} type
+ */
+Fact.prototype.getType = function(){
+  return this.type;
+};
+
+/**
+ * Set the gender type
+ * 
+ * @param {String} type
+ * @returns {Fact} This instance
+ */
+Fact.prototype.setType = function(type){
+  this.type = type;
+  return this;
+};
+
+/**
+ * Get the date
+ * 
+ * @returns {Date} date
+ */
+Fact.prototype.getDate = function(){
+  return this.date;
+};
+
+/**
+ * Set the date
+ * 
+ * @param {Date|Object} date
+ * @returns {Fact} This instance
+ */
+Fact.prototype.setDate = function(date){
+  if(date){
+    this.date = GDate(date);
+  }
+  return this;
+};
+
+/**
+ * Get the place reference
+ * 
+ * @returns {PlaceReference}
+ */
+Fact.prototype.getPlace = function(){
+  return this.place;
+};
+
+/**
+ * Set the place reference
+ *
+ * @param {PlaceReference|Object} place
+ * @returns {Fact} This instance
+ */
+Fact.prototype.setPlace = function(place){
+  if(place){
+    this.place = PlaceReference(place);
+  }
+  return this;
+};
+
+/**
+ * Get the value
+ * 
+ * @returns {String}
+ */
+Fact.prototype.getValue = function(){
+  return this.value;
+};
+
+/**
+ * Set the value
+ * 
+ * @param {String} value
+ * @returns {Fact} This instance
+ */
+Fact.prototype.setValue = function(value){
+  this.value = value;
+  return this;
+};
+
+/**
+ * Get qualifiers
+ * 
+ * @return {Qualifer[]}
+ */
+Fact.prototype.getQualifiers = function(){
+  return this.qualifiers || [];
+};
+
+/**
+ * Set the qualifiers
+ * 
+ * @param {Qualifer[]|Object[]} qualifiers
+ * @returns {Fact} This instance
+ */
+Fact.prototype.setQualifiers = function(qualifiers){
+  if(Array.isArray(qualifiers)){
+    this.qualifiers = [];
+    var fact = this;
+    qualifiers.forEach(function(q){
+      fact.addQualifier(q);
+    });
+  }
+};
+
+/**
+ * Add a qualifier
+ * 
+ * @param {Qualifier|Object} qualifier
+ * @returns {Fact} This instance
+ */
+Fact.prototype.addQualifier = function(qualifier){
+  if(qualifier){
+    if(!Array.isArray(this.qualifiers)){
+      this.qualifiers = [];
+    }
+    this.qualifiers.push(Qualifier(qualifier));
+  }
+  return this;
+};
+
+/**
+ * Export the object as JSON
+ * 
+ * @return {Object} JSON object
+ */
+Fact.prototype.toJSON = function(){
+  var json = Conclusion.prototype.toJSON.call(this);
+  
+  if(this.type){
+    json.type = this.type;
+  }
+  
+  if(this.date){
+    json.date = this.date.toJSON();
+  }
+  
+  if(this.place){
+    json.place = this.place.toJSON();
+  }
+  
+  if(this.value){
+    json.value = this.value;
+  }
+  
+  if(this.qualifiers){
+    json.qualifiers = this.qualifiers.map(function(q){
+      return q.toJSON();
+    });
+  }
+  
+  return json;
+};
+
+module.exports = Fact;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Attribution.html">Attribution</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Date.html">Date</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="Note.html">Note</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed May 18 2016 15:42:24 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
