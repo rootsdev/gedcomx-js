@@ -56,7 +56,7 @@ GDate.prototype.getFormal = function(){
 /**
  * Set the formal date value
  * 
- * @params {String} formal
+ * @param {String} formal
  * @returns {Date} This instance.
  */
 GDate.prototype.setFormal = function(formal){

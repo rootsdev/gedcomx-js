@@ -34,7 +34,7 @@ Gender.prototype.getType = function(){
 /**
  * Set the gender type
  * 
- * @params {String} gender
+ * @param {String} gender
  * @returns {Gender} This instance
  */
 Gender.prototype.setType = function(gender){

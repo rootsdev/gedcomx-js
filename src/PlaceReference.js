@@ -55,7 +55,7 @@ PlaceReference.prototype.getDescription = function(){
 /**
  * Set the description
  * 
- * @params {String} description
+ * @param {String} description
  * @returns {PlaceReference} This instance.
  */
 PlaceReference.prototype.setDescription = function(description){

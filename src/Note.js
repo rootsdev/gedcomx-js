@@ -56,7 +56,7 @@ Note.prototype.getSubject = function(){
 /**
  * Set the subject.
  * 
- * @params {String} subject
+ * @param {String} subject
  * @returns {Note} This note.
  */
 Note.prototype.setSubject = function(subject){

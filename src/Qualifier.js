@@ -49,7 +49,7 @@ Qualifier.prototype.getValue = function(){
 /**
  * Set the value
  * 
- * @params {String} value
+ * @param {String} value
  * @returns {Qualifier} This instance.
  */
 Qualifier.prototype.setValue = function(value){
