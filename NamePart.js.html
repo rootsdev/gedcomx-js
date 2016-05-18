@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: PlaceReference.js</title>
+    <title>JSDoc: Source: NamePart.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: PlaceReference.js</h1>
+    <h1 class="page-title">Source: NamePart.js</h1>
 
     
 
@@ -26,68 +26,111 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData');
+            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData'),
+    Qualifier = require('./Qualifier');
 
 /**
- * A reference to a {@link PlaceDescription}.
+ * A part of a name.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var PlaceReference = function(json){
+var NamePart = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof PlaceReference)){
-    return new PlaceReference(json);
+  if(!(this instanceof NamePart)){
+    return new NamePart(json);
   }
   
   ExtensibleData.call(this, json);
   
   if(json){
-    this.setOriginal(json.original);
-    this.setDescription(json.description);
+    this.setValue(json.value);
+    this.setType(json.type);
+    this.setQualifiers(json.qualifiers);
   }
 };
 
-PlaceReference.prototype = Object.create(ExtensibleData.prototype);
+NamePart.prototype = Object.create(ExtensibleData.prototype);
 
 /**
- * Get the original text
+ * Get the gender type
  * 
- * @returns {String} original
+ * @returns {String} type
  */
-PlaceReference.prototype.getOriginal = function(){
-  return this.original;
+NamePart.prototype.getType = function(){
+  return this.type;
 };
 
 /**
- * Set the original text
+ * Set the gender type
  * 
- * @param {String} original
- * @returns {PlaceReference} This instance.
+ * @param {String} type
+ * @returns {NamePart} This instance
  */
-PlaceReference.prototype.setOriginal = function(original){
-  this.original = original;
+NamePart.prototype.setType = function(type){
+  this.type = type;
   return this;
 };
 
 /**
- * Get the description
+ * Get the value
  * 
  * @returns {String}
  */
-PlaceReference.prototype.getDescription = function(){
-  return this.description;
+NamePart.prototype.getValue = function(){
+  return this.value;
 };
 
 /**
- * Set the description
+ * Set the value
  * 
- * @param {String} description
- * @returns {PlaceReference} This instance.
+ * @param {String} value
+ * @returns {NamePart} This instance
  */
-PlaceReference.prototype.setDescription = function(description){
-  this.description = description;
+NamePart.prototype.setValue = function(value){
+  this.value = value;
+  return this;
+};
+
+/**
+ * Get qualifiers
+ * 
+ * @return {Qualifer[]}
+ */
+NamePart.prototype.getQualifiers = function(){
+  return this.qualifiers || [];
+};
+
+/**
+ * Set the qualifiers
+ * 
+ * @param {Qualifer[]|Object[]} qualifiers
+ * @returns {NamePart} This instance
+ */
+NamePart.prototype.setQualifiers = function(qualifiers){
+  if(Array.isArray(qualifiers)){
+    this.qualifiers = [];
+    var fact = this;
+    qualifiers.forEach(function(q){
+      fact.addQualifier(q);
+    });
+  }
+};
+
+/**
+ * Add a qualifier
+ * 
+ * @param {Qualifier|Object} qualifier
+ * @returns {NamePart} This instance
+ */
+NamePart.prototype.addQualifier = function(qualifier){
+  if(qualifier){
+    if(!Array.isArray(this.qualifiers)){
+      this.qualifiers = [];
+    }
+    this.qualifiers.push(Qualifier(qualifier));
+  }
   return this;
 };
 
@@ -96,21 +139,27 @@ PlaceReference.prototype.setDescription = function(description){
  * 
  * @return {Object} JSON object
  */
-PlaceReference.prototype.toJSON = function(){
+NamePart.prototype.toJSON = function(){
   var json = ExtensibleData.prototype.toJSON.call(this);
   
-  if(this.original){
-    json.original = this.original;
+  if(this.type){
+    json.type = this.type;
   }
   
-  if(this.description){
-    json.description = this.description;
+  if(this.value){
+    json.value = this.value;
+  }
+  
+  if(this.qualifiers){
+    json.qualifiers = this.qualifiers.map(function(q){
+      return q.toJSON();
+    });
   }
   
   return json;
 };
 
-module.exports = PlaceReference;</code></pre>
+module.exports = NamePart;</code></pre>
         </article>
     </section>
 
