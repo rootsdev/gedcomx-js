@@ -26,7 +26,7 @@ var NamePart = function(json){
 NamePart.prototype = Object.create(ExtensibleData.prototype);
 
 /**
- * Get the gender type
+ * Get the type
  * 
  * @returns {String} type
  */
@@ -35,7 +35,7 @@ NamePart.prototype.getType = function(){
 };
 
 /**
- * Set the gender type
+ * Set the type
  * 
  * @param {String} type
  * @returns {NamePart} This instance
