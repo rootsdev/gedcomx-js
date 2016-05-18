@@ -1,7 +1,7 @@
 var assert = require('chai').assert,
     Gender = require('../src/Gender');
 
-describe('Conclusion', function(){
+describe('Gender', function(){
   
   it('Create plain', function(){
     var newGender = new Gender(),
