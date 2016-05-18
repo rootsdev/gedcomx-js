@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Identifiers.js</title>
+    <title>JSDoc: Source: Qualifier.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Identifiers.js</h1>
+    <h1 class="page-title">Source: Qualifier.js</h1>
 
     
 
@@ -27,23 +27,62 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Manage the set of identifers for an object.
+ * Qualifiers are used to supply additional details about a piece of data.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var Identifiers = function(json){
+var Qualifier = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof Identifiers)){
-    return new Identifiers(json);
+  if(!(this instanceof Qualifier)){
+    return new Qualifier(json);
   }
-  
-  this.identifiers = {};
   
   if(json){
-    this.identifiers = json;
+    this.setName(json.name);
+    this.setValue(json.value);
   }
+};
+
+/**
+ * Get the name
+ * 
+ * @returns {String} name
+ */
+Qualifier.prototype.getName = function(){
+  return this.name;
+};
+
+/**
+ * Set the name
+ * 
+ * @param {String} name
+ * @returns {Qualifier} This instance.
+ */
+Qualifier.prototype.setName = function(name){
+  this.name = name;
+  return this;
+};
+
+/**
+ * Get the value
+ * 
+ * @returns {String}
+ */
+Qualifier.prototype.getValue = function(){
+  return this.value;
+};
+
+/**
+ * Set the value
+ * 
+ * @params {String} value
+ * @returns {Qualifier} This instance.
+ */
+Qualifier.prototype.setValue = function(value){
+  this.value = value;
+  return this;
 };
 
 /**
@@ -51,11 +90,21 @@ var Identifiers = function(json){
  * 
  * @return {Object} JSON object
  */
-Identifiers.prototype.toJSON = function(){
-  return this.identifiers;
+Qualifier.prototype.toJSON = function(){
+  var json = {};
+  
+  if(this.name){
+    json.name = this.name;
+  }
+  
+  if(this.value){
+    json.value = this.value;
+  }
+  
+  return json;
 };
 
-module.exports = Identifiers;</code></pre>
+module.exports = Qualifier;</code></pre>
         </article>
     </section>
 

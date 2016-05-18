@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: ResourceReference</title>
+    <title>JSDoc: Class: Qualifier</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: ResourceReference</h1>
+    <h1 class="page-title">Class: Qualifier</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2>ResourceReference</h2>
+        <h2>Qualifier</h2>
         
     
 </header>
@@ -40,14 +40,14 @@
 
     
 
-    <h4 class="name" id="ResourceReference"><span class="type-signature"></span>new ResourceReference<span class="signature">(json<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Qualifier"><span class="type-signature"></span>new Qualifier<span class="signature">(json<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    A generic reference to a resource.
+    Qualifiers are used to supply additional details about a piece of data.
 </div>
 
 
@@ -152,7 +152,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ResourceReference.js.html">ResourceReference.js</a>, <a href="ResourceReference.js.html#line7">line 7</a>
+        <a href="Qualifier.js.html">Qualifier.js</a>, <a href="Qualifier.js.html#line7">line 7</a>
     </li></ul></dd>
     
 
@@ -201,14 +201,14 @@
 
     
 
-    <h4 class="name" id="getResource"><span class="type-signature"></span>getResource<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+    <h4 class="name" id="getName"><span class="type-signature"></span>getName<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
 
     
 
 
 
 <div class="description">
-    Get the resource URI
+    Get the name
 </div>
 
 
@@ -252,7 +252,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ResourceReference.js.html">ResourceReference.js</a>, <a href="ResourceReference.js.html#line24">line 24</a>
+        <a href="Qualifier.js.html">Qualifier.js</a>, <a href="Qualifier.js.html#line25">line 25</a>
     </li></ul></dd>
     
 
@@ -279,7 +279,7 @@
 
         
 <div class="param-desc">
-    Resource
+    name
 </div>
 
 
@@ -305,14 +305,114 @@
 
     
 
-    <h4 class="name" id="setResource"><span class="type-signature"></span>setResource<span class="signature">(uri)</span><span class="type-signature"> &rarr; {<a href="ResourceReference.html">ResourceReference</a>}</span></h4>
+    <h4 class="name" id="getValue"><span class="type-signature"></span>getValue<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
 
     
 
 
 
 <div class="description">
-    Set the resource URI
+    Get the value
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Qualifier.js.html">Qualifier.js</a>, <a href="Qualifier.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setName"><span class="type-signature"></span>setName<span class="signature">(name)</span><span class="type-signature"> &rarr; {<a href="Qualifier.html">Qualifier</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Set the name
 </div>
 
 
@@ -348,7 +448,7 @@
 
         <tr>
             
-                <td class="name"><code>uri</code></td>
+                <td class="name"><code>name</code></td>
             
 
             <td class="type">
@@ -405,7 +505,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ResourceReference.js.html">ResourceReference.js</a>, <a href="ResourceReference.js.html#line34">line 34</a>
+        <a href="Qualifier.js.html">Qualifier.js</a>, <a href="Qualifier.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -432,7 +532,7 @@
 
         
 <div class="param-desc">
-    this object
+    This instance.
 </div>
 
 
@@ -443,7 +543,111 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
+<span class="param-type"><a href="Qualifier.html">Qualifier</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setValue"><span class="type-signature"></span>setValue<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Qualifier.html">Qualifier</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Set the value
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Qualifier.js.html">Qualifier.js</a>, <a href="Qualifier.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    This instance.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Qualifier.html">Qualifier</a></span>
 
 
     </dd>
@@ -509,7 +713,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="ResourceReference.js.html">ResourceReference.js</a>, <a href="ResourceReference.js.html#line44">line 44</a>
+        <a href="Qualifier.js.html">Qualifier.js</a>, <a href="Qualifier.js.html#line65">line 65</a>
     </li></ul></dd>
     
 
