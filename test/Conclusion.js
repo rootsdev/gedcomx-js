@@ -1,19 +1,17 @@
 var assert = require('chai').assert,
-    Conclusion = require('../src/Conclusion'),
-    SourceReference = require('../src/SourceReference'),
-    Note = require('../src/Note');
+    GedcomX = require('../');
 
 describe('Conclusion', function(){
   
   it('Create plain', function(){
-    var newConclusion = new Conclusion(),
-        conclusion = Conclusion();
-    assert.instanceOf(newConclusion, Conclusion, 'An instance of Conclusion is not returned when calling the constructor with new.');
-    assert.instanceOf(conclusion, Conclusion, 'An instance of Conclusion is not returned when calling the constructor without new.');
+    var newConclusion = new GedcomX.Conclusion(),
+        conclusion = GedcomX.Conclusion();
+    assert.instanceOf(newConclusion, GedcomX.Conclusion, 'An instance of Conclusion is not returned when calling the constructor with new.');
+    assert.instanceOf(conclusion, GedcomX.Conclusion, 'An instance of Conclusion is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var conclusion = Conclusion({
+    var conclusion = GedcomX.Conclusion({
       id: 'conclusion',
       lang: 'en',
       analysis: {
@@ -48,15 +46,15 @@ describe('Conclusion', function(){
   });
   
   it('Create with mixed data', function(){
-    var conclusion = Conclusion({
+    var conclusion = GedcomX.Conclusion({
       id: 'conclusion',
       lang: 'en',
       confidence: 'http://gedcomx.org/High',
       sources: [
-        SourceReference({ description: 'http://description/uri' })
+        GedcomX.SourceReference({ description: 'http://description/uri' })
       ],
       notes: [
-        Note({
+        GedcomX.Note({
           subject: 'Note title',
           text: 'Note text'
         })
@@ -73,16 +71,16 @@ describe('Conclusion', function(){
   });
   
   it('Build', function(){
-    var conclusion = Conclusion()
+    var conclusion = GedcomX.Conclusion()
       .setId('conclusion')
       .setLang('en')
       .setConfidence('http://gedcomx.org/High')
       .addSource(
-        SourceReference()
+        GedcomX.SourceReference()
           .setDescription('http://description/uri')
       )
       .addNote(
-        Note()
+        GedcomX.Note()
           .setSubject('Note title')
           .setText('Note text')
       );
@@ -119,7 +117,7 @@ describe('Conclusion', function(){
           }
         ]
       },
-      conclusion = Conclusion(conclusionData);
+      conclusion = GedcomX.Conclusion(conclusionData);
     assert.deepEqual(conclusion.toJSON(), conclusionData);
   });
   

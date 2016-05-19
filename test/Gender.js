@@ -1,17 +1,17 @@
 var assert = require('chai').assert,
-    Gender = require('../src/Gender');
+    GedcomX = require('../');
 
 describe('Gender', function(){
   
   it('Create plain', function(){
-    var newGender = new Gender(),
-        gender = Gender();
-    assert.instanceOf(newGender, Gender, 'An instance of Gender is not returned when calling the constructor with new.');
-    assert.instanceOf(gender, Gender, 'An instance of Gender is not returned when calling the constructor without new.');
+    var newGender = new GedcomX.Gender(),
+        gender = GedcomX.Gender();
+    assert.instanceOf(newGender, GedcomX.Gender, 'An instance of Gender is not returned when calling the constructor with new.');
+    assert.instanceOf(gender, GedcomX.Gender, 'An instance of Gender is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var gender = Gender({
+    var gender = GedcomX.Gender({
       id: 'gender',
       type: 'http://gedcomx.org/Male',
       confidence: 'http://gedcomx.org/High',
@@ -26,7 +26,7 @@ describe('Gender', function(){
   });
   
   it('Build', function(){
-    var gender = Gender()
+    var gender = GedcomX.Gender()
       .setId('gender')
       .setType('http://gedcomx.org/Female')
       .setConfidence('http://gedcomx.org/High')
@@ -47,7 +47,7 @@ describe('Gender', function(){
         attribution: {
           created: 1145667891
         }
-      }, gender = Gender(genderData);
+      }, gender = GedcomX.Gender(genderData);
     assert.deepEqual(gender.toJSON(), genderData);
   });
   

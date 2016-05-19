@@ -1,17 +1,17 @@
 var assert = require('chai').assert,
-    Qualifier = require('../src/Qualifier');
+    GedcomX = require('../');
 
 describe('Qualifier', function(){
   
   it('Create plain', function(){
-    var newRef = new Qualifier(),
-        ref = Qualifier();
-    assert.instanceOf(newRef, Qualifier, 'An instance of Qualifier is not returned when calling the constructor with new.');
-    assert.instanceOf(ref, Qualifier, 'An instance of Qualifier is not returned when calling the constructor without new.');
+    var newRef = new GedcomX.Qualifier(),
+        ref = GedcomX.Qualifier();
+    assert.instanceOf(newRef, GedcomX.Qualifier, 'An instance of Qualifier is not returned when calling the constructor with new.');
+    assert.instanceOf(ref, GedcomX.Qualifier, 'An instance of Qualifier is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var ref = Qualifier({
+    var ref = GedcomX.Qualifier({
       name: 'http://gedcomx.org/Age',
       value: '37'
     });
@@ -20,7 +20,7 @@ describe('Qualifier', function(){
   });
   
   it('Build', function(){
-    var ref = Qualifier()
+    var ref = GedcomX.Qualifier()
       .setName('http://gedcomx.org/Age')
       .setValue('37');
     assert.equal(ref.getName(), 'http://gedcomx.org/Age');
@@ -31,7 +31,7 @@ describe('Qualifier', function(){
     var data = {
       name: 'http://gedcomx.org/Age',
       value: '37'
-    }, ref = Qualifier(data);
+    }, ref = GedcomX.Qualifier(data);
     assert.deepEqual(ref.toJSON(), data);
   });
   

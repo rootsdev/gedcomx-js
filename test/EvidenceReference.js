@@ -1,17 +1,17 @@
 var assert = require('chai').assert,
-    EvidenceReference = require('../src/EvidenceReference');
+    GedcomX = require('../');
 
 describe('EvidenceReference', function(){
   
   it('Create plain', function(){
-    var newER = new EvidenceReference(),
-        er = EvidenceReference();
-    assert.instanceOf(newER, EvidenceReference, 'An instance of EvidenceReference is not returned when calling the constructor with new.');
-    assert.instanceOf(er, EvidenceReference, 'An instance of EvidenceReference is not returned when calling the constructor without new.');
+    var newER = new GedcomX.EvidenceReference(),
+        er = GedcomX.EvidenceReference();
+    assert.instanceOf(newER, GedcomX.EvidenceReference, 'An instance of EvidenceReference is not returned when calling the constructor with new.');
+    assert.instanceOf(er, GedcomX.EvidenceReference, 'An instance of EvidenceReference is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var er = EvidenceReference({ 
+    var er = GedcomX.EvidenceReference({ 
       resource: 'http://example.com',
       attribution: {
         created: 1248942374
@@ -22,7 +22,7 @@ describe('EvidenceReference', function(){
   });
   
   it('Build', function(){
-    var er = EvidenceReference()
+    var er = GedcomX.EvidenceReference()
       .setResource('http://newuri.com')
       .setAttribution({
         created: new Date(1248942374)
@@ -38,7 +38,7 @@ describe('EvidenceReference', function(){
           created: 1248942374
         }
       },
-      er = EvidenceReference(erData);
+      er = GedcomX.EvidenceReference(erData);
     assert.deepEqual(er.toJSON(), erData);
   });
   

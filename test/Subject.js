@@ -1,20 +1,17 @@
 var assert = require('chai').assert,
-    Subject = require('../src/Subject'),
-    EvidenceReference = require('../src/EvidenceReference'),
-    SourceReference = require('../src/SourceReference'),
-    Identifiers = require('../src/Identifiers');
+    GedcomX = require('../');
 
 describe('Subject', function(){
   
   it('Create plain', function(){
-    var newSubject = new Subject(),
-        subject = Subject();
-    assert.instanceOf(newSubject, Subject, 'An instance of Subject is not returned when calling the constructor with new.');
-    assert.instanceOf(subject, Subject, 'An instance of Subject is not returned when calling the constructor without new.');
+    var newSubject = new GedcomX.Subject(),
+        subject = GedcomX.Subject();
+    assert.instanceOf(newSubject, GedcomX.Subject, 'An instance of Subject is not returned when calling the constructor with new.');
+    assert.instanceOf(subject, GedcomX.Subject, 'An instance of Subject is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var subject = Subject({
+    var subject = GedcomX.Subject({
       extracted: true,
       evidence: [
         { 
@@ -39,17 +36,17 @@ describe('Subject', function(){
     });
     assert(subject.isExtracted());
     assert.lengthOf(subject.getEvidence(), 1);
-    assert.instanceOf(subject.getEvidence()[0], EvidenceReference);
+    assert.instanceOf(subject.getEvidence()[0], GedcomX.EvidenceReference);
     assert.lengthOf(subject.getMedia(), 1);
-    assert.instanceOf(subject.getMedia()[0], SourceReference);
-    assert.instanceOf(subject.getIdentifiers(), Identifiers);
+    assert.instanceOf(subject.getMedia()[0], GedcomX.SourceReference);
+    assert.instanceOf(subject.getIdentifiers(), GedcomX.Identifiers);
   });
   
   it('Create with mixed data', function(){
-    var subject = Subject({
+    var subject = GedcomX.Subject({
       extracted: true,
       evidence: [
-        EvidenceReference({ 
+        GedcomX.EvidenceReference({ 
           resource: 'http://example.com',
           attribution: {
             created: 1248942374
@@ -57,7 +54,7 @@ describe('Subject', function(){
         })
       ],
       media: [
-        SourceReference({
+        GedcomX.SourceReference({
           id: 'source-ref',
           description: 'http://some/uri',
           attribution: {
@@ -71,14 +68,14 @@ describe('Subject', function(){
     });
     assert(subject.isExtracted());
     assert.lengthOf(subject.getEvidence(), 1);
-    assert.instanceOf(subject.getEvidence()[0], EvidenceReference);
+    assert.instanceOf(subject.getEvidence()[0], GedcomX.EvidenceReference);
     assert.lengthOf(subject.getMedia(), 1);
-    assert.instanceOf(subject.getMedia()[0], SourceReference);
-    assert.instanceOf(subject.getIdentifiers(), Identifiers);
+    assert.instanceOf(subject.getMedia()[0], GedcomX.SourceReference);
+    assert.instanceOf(subject.getIdentifiers(), GedcomX.Identifiers);
   });
   
   it('Build', function(){
-    var subject = Subject()
+    var subject = GedcomX.Subject()
       .setExtracted(true)
       .addEvidence({ 
         resource: 'http://example.com',
@@ -98,10 +95,10 @@ describe('Subject', function(){
       });
     assert(subject.isExtracted());
     assert.lengthOf(subject.getEvidence(), 1);
-    assert.instanceOf(subject.getEvidence()[0], EvidenceReference);
+    assert.instanceOf(subject.getEvidence()[0], GedcomX.EvidenceReference);
     assert.lengthOf(subject.getMedia(), 1);
-    assert.instanceOf(subject.getMedia()[0], SourceReference);
-    assert.instanceOf(subject.getIdentifiers(), Identifiers);
+    assert.instanceOf(subject.getMedia()[0], GedcomX.SourceReference);
+    assert.instanceOf(subject.getIdentifiers(), GedcomX.Identifiers);
   });
   
   it('toJSON', function(){
@@ -128,7 +125,7 @@ describe('Subject', function(){
           '$': 'SOMEID'
         }
       },
-      subject = Subject(subjectData);
+      subject = GedcomX.Subject(subjectData);
     assert.deepEqual(subjectData, subject.toJSON());
   });
   

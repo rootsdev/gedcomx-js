@@ -1,20 +1,17 @@
 var assert = require('chai').assert,
-    NamePart = require('../src/NamePart'),
-    NameForm = require('../src/NameForm'),
-    Name = require('../src/Name'),
-    GDate = require('../src/Date');
+    GedcomX = require('../');
 
 describe('Name', function(){
   
   it('Create plain', function(){
-    var newName = new Name(),
-        name = Name();
-    assert.instanceOf(newName, Name, 'An instance of Name is not returned when calling the constructor with new.');
-    assert.instanceOf(name, Name, 'An instance of Name is not returned when calling the constructor without new.');
+    var newName = new GedcomX.Name(),
+        name = GedcomX.Name();
+    assert.instanceOf(newName, GedcomX.Name, 'An instance of Name is not returned when calling the constructor with new.');
+    assert.instanceOf(name, GedcomX.Name, 'An instance of Name is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var name = Name({
+    var name = GedcomX.Name({
       type: 'http://gedcomx.org/BirthName',
       date: {
         original: '1 June 1567'
@@ -48,21 +45,21 @@ describe('Name', function(){
   });
   
   it('Create with mixed data', function(){
-    var name = Name({
+    var name = GedcomX.Name({
       type: 'http://gedcomx.org/BirthName',
-      date: GDate({
+      date: GedcomX.Date({
         original: '1 June 1567'
       }),
       nameForms: [
-        NameForm({
+        GedcomX.NameForm({
           lang: 'en',
           fullText: 'Jonathan Burrows',
           parts: [
-            NamePart({
+            GedcomX.NamePart({
               type: 'http://gedcomx.org/Given',
               value: 'Jonathan'
             }),
-            NamePart({
+            GedcomX.NamePart({
               type: 'http://gedcomx.org/Surname',
               value: 'Burrows'
             })
@@ -82,14 +79,14 @@ describe('Name', function(){
   });
   
   it('Build', function(){
-    var name = Name()
+    var name = GedcomX.Name()
       .setType('http://gedcomx.org/BirthName')
-      .setDate(GDate().setOriginal('1 June 1567'))
+      .setDate(GedcomX.Date().setOriginal('1 June 1567'))
       .addNameForm(
-        NameForm()
+        GedcomX.NameForm()
           .setFullText('Jonathan Burrows')
-          .addPart(NamePart().setType('http://gedcomx.org/Given').setValue('Jonathan'))
-          .addPart(NamePart().setType('http://gedcomx.org/Surname').setValue('Burrows'))
+          .addPart(GedcomX.NamePart().setType('http://gedcomx.org/Given').setValue('Jonathan'))
+          .addPart(GedcomX.NamePart().setType('http://gedcomx.org/Surname').setValue('Burrows'))
       );
     assert.equal(name.getType(), 'http://gedcomx.org/BirthName');
     assert.equal(name.getDate().getOriginal(), '1 June 1567');
@@ -124,7 +121,7 @@ describe('Name', function(){
           ]
         }
       ]
-    }, name = Name(data);
+    }, name = GedcomX.Name(data);
     assert.deepEqual(name.toJSON(), data);
   });
   

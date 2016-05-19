@@ -1,18 +1,17 @@
 var assert = require('chai').assert,
-    Note = require('../src/Note'),
-    Attribution = require('../src/Attribution');
+    GedcomX = require('../');
 
 describe('Note', function(){
   
   it('Create plain', function(){
-    var newNote = new Note(),
-        note = Note();
-    assert.instanceOf(newNote, Note, 'An instance of Note is not returned when calling the constructor with new.');
-    assert.instanceOf(note, Note, 'An instance of Note is not returned when calling the constructor without new.');
+    var newNote = new GedcomX.Note(),
+        note = GedcomX.Note();
+    assert.instanceOf(newNote, GedcomX.Note, 'An instance of Note is not returned when calling the constructor with new.');
+    assert.instanceOf(note, GedcomX.Note, 'An instance of Note is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var note = Note({
+    var note = GedcomX.Note({
       id: 'note',
       lang: 'en',
       subject: 'A subject',
@@ -30,12 +29,12 @@ describe('Note', function(){
   });
   
   it('Create with mixed data', function(){
-    var note = Note({
+    var note = GedcomX.Note({
       id: 'note',
       lang: 'en',
       subject: 'A subject',
       text: 'Lots of text',
-      attribution: new Attribution({
+      attribution: new GedcomX.Attribution({
         changeMessage: 'It changed',
         contributor: { resource: 'https://myapp.com/contributor'}
       })
@@ -48,7 +47,7 @@ describe('Note', function(){
   });
   
   it('Build', function(){
-    var note = Note()
+    var note = GedcomX.Note()
       .setId('note')
       .setLang('en')
       .setSubject('A subject')
@@ -75,7 +74,7 @@ describe('Note', function(){
           contributor: { resource: 'https://myapp.com/contributor'}
         }
       },
-      note = Note(noteData);
+      note = GedcomX.Note(noteData);
     assert.deepEqual(note.toJSON(), noteData);
   });
   

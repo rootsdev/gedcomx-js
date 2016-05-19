@@ -2,7 +2,7 @@
   "name": "gedcomx-js",
   "version": "0.1.0",
   "description": "JavaScript object model for GEDCOM X",
-  "main": "src/index.js",
+  "main": "src/GedcomX.js",
   "scripts": {
     "test": "mocha",
     "docs": "jsdoc src",

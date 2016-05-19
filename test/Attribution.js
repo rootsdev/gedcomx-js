@@ -1,18 +1,17 @@
 var assert = require('chai').assert,
-    Attribution = require('../src/Attribution'),
-    ResourceReference = require('../src/ResourceReference');
+    GedcomX = require('../');
 
 describe('Attribution', function(){
   
   it('Create plain', function(){
-    var newAttr = new Attribution(),
-        attr = Attribution();
-    assert.instanceOf(newAttr, Attribution, 'An instance of Attribution is not returned when calling the constructor with new.');
-    assert.instanceOf(attr, Attribution, 'An instance of Attribution is not returned when calling the constructor without new.');
+    var newAttr = new GedcomX.Attribution(),
+        attr = GedcomX.Attribution();
+    assert.instanceOf(newAttr, GedcomX.Attribution, 'An instance of Attribution is not returned when calling the constructor with new.');
+    assert.instanceOf(attr, GedcomX.Attribution, 'An instance of Attribution is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var attr = Attribution({ 
+    var attr = GedcomX.Attribution({ 
       changeMessage: 'It changed',
       contributor: { resource: 'https://myapp.com/contributor'},
       created: 1111338494969,
@@ -27,11 +26,11 @@ describe('Attribution', function(){
   });
   
   it('Create with mixed data', function(){
-    var attr = Attribution({ 
+    var attr = GedcomX.Attribution({ 
       changeMessage: 'It changed',
-      contributor: ResourceReference({ resource: 'https://myapp.com/contributor'}),
+      contributor: GedcomX.ResourceReference({ resource: 'https://myapp.com/contributor'}),
       created: new Date(1111338494969),
-      creator: ResourceReference({ resource: 'https://myapp.com/creator'}),
+      creator: GedcomX.ResourceReference({ resource: 'https://myapp.com/creator'}),
       modified: new Date(1111338494969)
     });
     assert.equal(attr.getChangeMessage(), 'It changed', 'Change message not saved properly when created with mixed data');
@@ -42,7 +41,7 @@ describe('Attribution', function(){
   });
   
   it('Build', function(){
-    var attr = Attribution()
+    var attr = GedcomX.Attribution()
       .setChangeMessage('It changed')
       .setContributor({ resource: 'https://myapp.com/contributor'})
       .setCreated(1111338494969)
@@ -64,7 +63,7 @@ describe('Attribution', function(){
         creator: { resource: 'https://myapp.com/creator'},
         modified: 1111338494969
       },
-      attr = Attribution(attrData);
+      attr = GedcomX.Attribution(attrData);
     assert.deepEqual(attr.toJSON(), attrData, 'toJSON export does not equal original data.');
   });
   

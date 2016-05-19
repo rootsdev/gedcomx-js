@@ -1,20 +1,17 @@
 var assert = require('chai').assert,
-    Fact = require('../src/Fact'),
-    GDate = require('../src/Date'),
-    PlaceReference = require('../src/PlaceReference'),
-    Qualifier = require('../src/Qualifier');
+    GedcomX = require('../');
 
 describe('Fact', function(){
   
   it('Create plain', function(){
-    var newFact = new Fact(),
-        fact = Fact();
-    assert.instanceOf(newFact, Fact, 'An instance of Fact is not returned when calling the constructor with new.');
-    assert.instanceOf(fact, Fact, 'An instance of Fact is not returned when calling the constructor without new.');
+    var newFact = new GedcomX.Fact(),
+        fact = GedcomX.Fact();
+    assert.instanceOf(newFact, GedcomX.Fact, 'An instance of Fact is not returned when calling the constructor with new.');
+    assert.instanceOf(fact, GedcomX.Fact, 'An instance of Fact is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var fact = Fact({
+    var fact = GedcomX.Fact({
       id: 'fact',
       type: 'http://gedcomx.org/Birth',
       date: {
@@ -42,18 +39,18 @@ describe('Fact', function(){
   });
   
   it('Create with mixed data', function(){
-    var fact = Fact({
+    var fact = GedcomX.Fact({
       id: 'fact',
       type: 'http://gedcomx.org/Birth',
-      date: GDate({
+      date: GedcomX.Date({
         original: '1845'
       }),
-      place: PlaceReference({
+      place: GedcomX.PlaceReference({
         original: 'Casper, Wyoming'
       }),
       value: 'Birth value',
       qualifiers: [
-        Qualifier({
+        GedcomX.Qualifier({
           name: 'http://gedcomx.org/Age',
           value: '0'
         })
@@ -70,13 +67,13 @@ describe('Fact', function(){
   });
   
   it('Build', function(){
-    var fact = Fact()
+    var fact = GedcomX.Fact()
       .setId('fact')
       .setType('http://gedcomx.org/Birth')
-      .setDate(GDate().setOriginal('1845'))
-      .setPlace(PlaceReference().setOriginal('Casper, Wyoming'))
+      .setDate(GedcomX.Date().setOriginal('1845'))
+      .setPlace(GedcomX.PlaceReference().setOriginal('Casper, Wyoming'))
       .setValue('Birth value')
-      .addQualifier(Qualifier().setName('http://gedcomx.org/Age').setValue('0'));
+      .addQualifier(GedcomX.Qualifier().setName('http://gedcomx.org/Age').setValue('0'));
     assert.equal(fact.getId(), 'fact');
     assert.equal(fact.getType(), 'http://gedcomx.org/Birth');
     assert.equal(fact.getDate().getOriginal(), '1845');
@@ -104,7 +101,7 @@ describe('Fact', function(){
           value: '0'
         }  
       ]
-    }, fact = Fact(data);
+    }, fact = GedcomX.Fact(data);
     assert.deepEqual(fact.toJSON(), data);
   });
   

@@ -1,18 +1,17 @@
 var assert = require('chai').assert,
-    NamePart = require('../src/NamePart'),
-    Qualifier = require('../src/Qualifier');
+    GedcomX = require('../');
 
 describe('NamePart', function(){
   
   it('Create plain', function(){
-    var newNamePart = new NamePart(),
-        part = NamePart();
-    assert.instanceOf(newNamePart, NamePart, 'An instance of NamePart is not returned when calling the constructor with new.');
-    assert.instanceOf(part, NamePart, 'An instance of NamePart is not returned when calling the constructor without new.');
+    var newNamePart = new GedcomX.NamePart(),
+        part = GedcomX.NamePart();
+    assert.instanceOf(newNamePart, GedcomX.NamePart, 'An instance of NamePart is not returned when calling the constructor with new.');
+    assert.instanceOf(part, GedcomX.NamePart, 'An instance of NamePart is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var part = NamePart({
+    var part = GedcomX.NamePart({
       id: 'namepart',
       type: 'http://gedcomx.org/Given',
       value: 'Jonathan',
@@ -30,12 +29,12 @@ describe('NamePart', function(){
   });
   
   it('Create with mixed data', function(){
-    var part = NamePart({
+    var part = GedcomX.NamePart({
       id: 'namepart',
       type: 'http://gedcomx.org/Given',
       value: 'Jonathan',
       qualifiers: [
-        Qualifier({
+        GedcomX.Qualifier({
           name: 'http://gedcomx.org/Primary'
         })
       ]
@@ -48,11 +47,11 @@ describe('NamePart', function(){
   });
   
   it('Build', function(){
-    var part = NamePart()
+    var part = GedcomX.NamePart()
       .setId('namepart')
       .setType('http://gedcomx.org/Given')
       .setValue('Jonathan')
-      .addQualifier(Qualifier().setName('http://gedcomx.org/Primary'));
+      .addQualifier(GedcomX.Qualifier().setName('http://gedcomx.org/Primary'));
     assert.equal(part.getId(), 'namepart');
     assert.equal(part.getType(), 'http://gedcomx.org/Given');
     assert.equal(part.getValue(), 'Jonathan');
@@ -70,7 +69,7 @@ describe('NamePart', function(){
           name: 'http://gedcomx.org/Primary'
         }  
       ]
-    }, part = NamePart(data);
+    }, part = GedcomX.NamePart(data);
     assert.deepEqual(part.toJSON(), data);
   });
   

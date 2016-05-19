@@ -1,17 +1,17 @@
 var assert = require('chai').assert,
-    PlaceReference = require('../src/PlaceReference');
+    GedcomX = require('../');
 
 describe('PlaceReference', function(){
   
   it('Create plain', function(){
-    var newRef = new PlaceReference(),
-        ref = PlaceReference();
-    assert.instanceOf(newRef, PlaceReference, 'An instance of PlaceReference is not returned when calling the constructor with new.');
-    assert.instanceOf(ref, PlaceReference, 'An instance of PlaceReference is not returned when calling the constructor without new.');
+    var newRef = new GedcomX.PlaceReference(),
+        ref = GedcomX.PlaceReference();
+    assert.instanceOf(newRef, GedcomX.PlaceReference, 'An instance of PlaceReference is not returned when calling the constructor with new.');
+    assert.instanceOf(ref, GedcomX.PlaceReference, 'An instance of PlaceReference is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var ref = PlaceReference({
+    var ref = GedcomX.PlaceReference({
       id: 'ref',
       original: 'Miami, Missouri',
       description: 'http://place/description'
@@ -22,7 +22,7 @@ describe('PlaceReference', function(){
   });
   
   it('Build', function(){
-    var ref = PlaceReference()
+    var ref = GedcomX.PlaceReference()
       .setId('ref')
       .setOriginal('Miami, Missouri')
       .setDescription('http://place/description');
@@ -36,7 +36,7 @@ describe('PlaceReference', function(){
       id: 'ref',
       original: 'Miami, Missouri',
       description: 'http://place/description'
-    }, ref = PlaceReference(data);
+    }, ref = GedcomX.PlaceReference(data);
     assert.deepEqual(ref.toJSON(), data);
   });
   

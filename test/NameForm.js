@@ -1,18 +1,17 @@
 var assert = require('chai').assert,
-    NamePart = require('../src/NamePart'),
-    NameForm = require('../src/NameForm');
+    GedcomX = require('../');
 
 describe('NameForm', function(){
   
   it('Create plain', function(){
-    var newNameform = new NameForm(),
-        form = NameForm();
-    assert.instanceOf(newNameform, NameForm, 'An instance of NameForm is not returned when calling the constructor with new.');
-    assert.instanceOf(form, NameForm, 'An instance of NameForm is not returned when calling the constructor without new.');
+    var newNameform = new GedcomX.NameForm(),
+        form = GedcomX.NameForm();
+    assert.instanceOf(newNameform, GedcomX.NameForm, 'An instance of NameForm is not returned when calling the constructor with new.');
+    assert.instanceOf(form, GedcomX.NameForm, 'An instance of NameForm is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var nameForm = NameForm({
+    var nameForm = GedcomX.NameForm({
       id: 'nameform',
       lang: 'en',
       fullText: 'Jonathan Burrows',
@@ -38,16 +37,16 @@ describe('NameForm', function(){
   });
   
   it('Create with mixed data', function(){
-    var nameForm = NameForm({
+    var nameForm = GedcomX.NameForm({
       id: 'nameform',
       lang: 'en',
       fullText: 'Jonathan Burrows',
       parts: [
-        NamePart({
+        GedcomX.NamePart({
           type: 'http://gedcomx.org/Given',
           value: 'Jonathan'
         }),
-        NamePart({
+        GedcomX.NamePart({
           type: 'http://gedcomx.org/Surname',
           value: 'Burrows'
         })
@@ -64,12 +63,12 @@ describe('NameForm', function(){
   });
   
   it('Build', function(){
-    var nameForm = new NameForm()
+    var nameForm = new GedcomX.NameForm()
       .setId('nameform')
       .setLang('en')
       .setFullText('Jonathan Burrows')
-      .addPart(NamePart().setType('http://gedcomx.org/Given').setValue('Jonathan'))
-      .addPart(NamePart().setType('http://gedcomx.org/Surname').setValue('Burrows'));
+      .addPart(GedcomX.NamePart().setType('http://gedcomx.org/Given').setValue('Jonathan'))
+      .addPart(GedcomX.NamePart().setType('http://gedcomx.org/Surname').setValue('Burrows'));
     assert.equal(nameForm.getId(), 'nameform');
     assert.equal(nameForm.getLang(), 'en');
     assert.equal(nameForm.getFullText(), 'Jonathan Burrows');
@@ -95,7 +94,7 @@ describe('NameForm', function(){
           value: 'Burrows'
         }
       ]
-    }, nameForm = NameForm(data);
+    }, nameForm = GedcomX.NameForm(data);
     assert.deepEqual(nameForm.toJSON(), data);
   });
   

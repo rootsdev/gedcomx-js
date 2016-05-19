@@ -1,18 +1,17 @@
 var assert = require('chai').assert,
-    SourceReference = require('../src/SourceReference'),
-    Attribution = require('../src/Attribution');
+    GedcomX = require('../');
 
 describe('SourceReference', function(){
   
   it('Create plain', function(){
-    var newSourceRef = new SourceReference(),
-        sourceRef = SourceReference();
-    assert.instanceOf(newSourceRef, SourceReference, 'An instance of SourceReference is not returned when calling the constructor with new.');
-    assert.instanceOf(sourceRef, SourceReference, 'An instance of SourceReference is not returned when calling the constructor without new.');
+    var newSourceRef = new GedcomX.SourceReference(),
+        sourceRef = GedcomX.SourceReference();
+    assert.instanceOf(newSourceRef, GedcomX.SourceReference, 'An instance of SourceReference is not returned when calling the constructor with new.');
+    assert.instanceOf(sourceRef, GedcomX.SourceReference, 'An instance of SourceReference is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
-    var ref = SourceReference({
+    var ref = GedcomX.SourceReference({
       id: 'source-ref',
       description: 'http://some/uri',
       attribution: {
@@ -25,10 +24,10 @@ describe('SourceReference', function(){
   });
   
   it('Create with mixed data', function(){
-    var ref = SourceReference({
+    var ref = GedcomX.SourceReference({
       id: 'source-ref',
       description: 'http://some/uri',
-      attribution: Attribution({
+      attribution: GedcomX.Attribution({
         created: 11121211112
       })
     });
@@ -38,7 +37,7 @@ describe('SourceReference', function(){
   });
   
   it('Build', function(){
-    var ref = SourceReference()
+    var ref = GedcomX.SourceReference()
       .setId('source-ref')
       .setDescription('http://some/uri')
       .setAttribution({ created: 11121211112 });
@@ -55,7 +54,7 @@ describe('SourceReference', function(){
           created: 11121211112
         }
       },
-      ref = SourceReference(refData);
+      ref = GedcomX.SourceReference(refData);
     assert.deepEqual(ref.toJSON(), refData);
   });
   
