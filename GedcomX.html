@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Gender</title>
+    <title>JSDoc: Class: GedcomX</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Gender</h1>
+    <h1 class="page-title">Class: GedcomX</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2>Gender</h2>
+        <h2>GedcomX</h2>
         
     
 </header>
@@ -40,14 +40,14 @@
 
     
 
-    <h4 class="name" id="Gender"><span class="type-signature"></span>new Gender<span class="signature">(json<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="GedcomX"><span class="type-signature"></span>new GedcomX<span class="signature">(json<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    A gender conclusion.
+    A GEDCOM X document.
 </div>
 
 
@@ -152,7 +152,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Gender.js.html">Gender.js</a>, <a href="Gender.js.html#line9">line 9</a>
+        <a href="GedcomX.js.html">GedcomX.js</a>, <a href="GedcomX.js.html#line9">line 9</a>
     </li></ul></dd>
     
 
@@ -201,118 +201,14 @@
 
     
 
-    <h4 class="name" id="getType"><span class="type-signature"></span>getType<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+    <h4 class="name" id="addPerson"><span class="type-signature"></span>addPerson<span class="signature">(person)</span><span class="type-signature"> &rarr; {<a href="GedcomX.html">GedcomX</a>}</span></h4>
 
     
 
 
 
 <div class="description">
-    Get the gender type
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Gender.js.html">Gender.js</a>, <a href="Gender.js.html#line30">line 30</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    gender
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">String</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="setType"><span class="type-signature"></span>setType<span class="signature">(gender)</span><span class="type-signature"> &rarr; {<a href="Gender.html">Gender</a>}</span></h4>
-
-    
-
-
-
-<div class="description">
-    Set the gender type
+    Add a person
 </div>
 
 
@@ -348,13 +244,16 @@
 
         <tr>
             
-                <td class="name"><code>gender</code></td>
+                <td class="name"><code>person</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type"><a href="Person.html">Person</a></span>
+|
+
+<span class="param-type">Object</span>
 
 
             
@@ -405,7 +304,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Gender.js.html">Gender.js</a>, <a href="Gender.js.html#line40">line 40</a>
+        <a href="GedcomX.js.html">GedcomX.js</a>, <a href="GedcomX.js.html#line56">line 56</a>
     </li></ul></dd>
     
 
@@ -443,7 +342,263 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Gender.html">Gender</a></span>
+<span class="param-type"><a href="GedcomX.html">GedcomX</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getPersons"><span class="type-signature"></span>getPersons<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="Person.html">Person</a>>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Get the persons
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="GedcomX.js.html">GedcomX.js</a>, <a href="GedcomX.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="Person.html">Person</a>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setPersons"><span class="type-signature"></span>setPersons<span class="signature">(persons)</span><span class="type-signature"> &rarr; {<a href="GedcomX.html">GedcomX</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Set the persons
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>persons</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="Person.html">Person</a>></span>
+|
+
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="GedcomX.js.html">GedcomX.js</a>, <a href="GedcomX.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    This instance
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="GedcomX.html">GedcomX</a></span>
 
 
     </dd>
@@ -509,7 +664,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Gender.js.html">Gender.js</a>, <a href="Gender.js.html#line50">line 50</a>
+        <a href="GedcomX.js.html">GedcomX.js</a>, <a href="GedcomX.js.html#line71">line 71</a>
     </li></ul></dd>
     
 

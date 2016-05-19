@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: PlaceReference.js</title>
+    <title>JSDoc: Source: GedcomX.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: PlaceReference.js</h1>
+    <h1 class="page-title">Source: GedcomX.js</h1>
 
     
 
@@ -26,68 +26,68 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData');
+            <pre class="prettyprint source linenums"><code>var Person = require('./Person');
 
 /**
- * A reference to a {@link PlaceDescription}.
+ * A GEDCOM X document.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var PlaceReference = function(json){
+var GedcomX = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof PlaceReference)){
-    return new PlaceReference(json);
+  if(!(this instanceof GedcomX)){
+    return new GedcomX(json);
   }
-  
-  ExtensibleData.call(this, json);
   
   if(json){
-    this.setOriginal(json.original);
-    this.setDescription(json.description);
+    this.setPersons(json.persons);
+    // this.setRelationships(json.relationships);
+    // this.setSourceDescriptions(json.sourceDescriptions);
   }
-};
-
-PlaceReference.prototype = Object.create(ExtensibleData.prototype);
-
-/**
- * Get the original text
- * 
- * @returns {String} original
- */
-PlaceReference.prototype.getOriginal = function(){
-  return this.original;
+  
 };
 
 /**
- * Set the original text
+ * Get the persons
  * 
- * @param {String} original
- * @returns {PlaceReference} This instance.
+ * @returns {Person[]}
  */
-PlaceReference.prototype.setOriginal = function(original){
-  this.original = original;
+GedcomX.prototype.getPersons = function(){
+  return this.persons || [];
+};
+
+/**
+ * Set the persons
+ * 
+ * @param {Person[]|Object[]} persons
+ * @returns {GedcomX} This instance
+ */
+GedcomX.prototype.setPersons = function(persons){
+  if(Array.isArray(persons)){
+    var gedx = this;
+    gedx.persons = [];
+    persons.forEach(function(p){
+      gedx.addPerson(p);
+    });
+  }
   return this;
 };
 
 /**
- * Get the description
+ * Add a person
  * 
- * @returns {String}
+ * @param {Person|Object}
+ * @returns {GedcomX} This instance
  */
-PlaceReference.prototype.getDescription = function(){
-  return this.description;
-};
-
-/**
- * Set the description
- * 
- * @param {String} description
- * @returns {PlaceReference} This instance.
- */
-PlaceReference.prototype.setDescription = function(description){
-  this.description = description;
+GedcomX.prototype.addPerson = function(person){
+  if(person){
+    if(!Array.isArray(this.persons)){
+      this.persons = [];
+    }
+    this.persons.push(Person(person));
+  }
   return this;
 };
 
@@ -96,21 +96,39 @@ PlaceReference.prototype.setDescription = function(description){
  * 
  * @return {Object} JSON object
  */
-PlaceReference.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
+GedcomX.prototype.toJSON = function(){
+  var json = {};
   
-  if(this.original){
-    json.original = this.original;
-  }
-  
-  if(this.description){
-    json.description = this.description;
+  if(this.persons){
+    json.persons = this.persons.map(function(p){
+      return p.toJSON();
+    });
   }
   
   return json;
 };
 
-module.exports = PlaceReference;</code></pre>
+// Expose all classes
+GedcomX.Attribution = require('./Attribution');
+GedcomX.Conclusion = require('./Conclusion');
+GedcomX.Date = require('./Date');
+GedcomX.EvidenceReference = require('./EvidenceReference');
+GedcomX.ExtensibleData = require('./ExtensibleData');
+GedcomX.Fact = require('./Fact');
+GedcomX.Gender = require('./Gender');
+GedcomX.Identifiers = require('./Identifiers');
+GedcomX.Name = require('./Name');
+GedcomX.NameForm = require('./NameForm');
+GedcomX.NamePart = require('./NamePart');
+GedcomX.Note = require('./Note');
+GedcomX.Person = Person;
+GedcomX.PlaceReference = require('./PlaceReference');
+GedcomX.Qualifier = require('./Qualifier');
+GedcomX.ResourceReference = require('./ResourceReference');
+GedcomX.SourceReference = require('./SourceReference');
+GedcomX.Subject = require('./Subject');
+
+module.exports = GedcomX;</code></pre>
         </article>
     </section>
 
