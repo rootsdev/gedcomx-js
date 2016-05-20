@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Person.js</title>
+    <title>JSDoc: Source: Relationship.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Person.js</h1>
+    <h1 class="page-title">Source: Relationship.js</h1>
 
     
 
@@ -27,114 +27,94 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>var Subject = require('./Subject'),
-    Gender = require('./Gender'),
-    Name = require('./Name'),
-    Fact = require('./Fact');
+    Fact = require('./Fact'),
+    ResourceReference = require('./ResourceReference');
     
 /**
- * A person.
+ * A relationship.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var Person = function(json){
+var Relationship = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof Person)){
-    return new Person(json);
+  if(!(this instanceof Relationship)){
+    return new Relationship(json);
   }
   
   Subject.call(this, json);
   
   if(json){
-    this.setPrivate(json.private);
-    this.setGender(json.gender);
-    this.setNames(json.names);
+    this.setType(json.type);
+    this.setPerson1(json.person1);
+    this.setPerson2(json.person2);
     this.setFacts(json.facts);
   }
 };
 
-Person.prototype = Object.create(Subject.prototype);
+Relationship.prototype = Object.create(Subject.prototype);
 
 /**
- * Check whether the person is marked as private
+ * Get the relationship type
  * 
- * @returns {Boolean} private
+ * @returns {String} type
  */
-Person.prototype.isPrivate = function(){
-  return !!this.private;
+Relationship.prototype.getType = function(){
+  return this.type;
 };
 
 /**
- * Set the private flag
+ * Set the relationship type
  * 
- * @param {Boolean} isPrivate
- * @returns {Person} This instance
+ * @param {String} type
+ * @returns {Relationship} This instance
  */
-Person.prototype.setPrivate = function(isPrivate){
-  this.private = isPrivate;
+Relationship.prototype.setType = function(type){
+  this.type = type;
   return this;
 };
 
 /**
- * Get the person's gender
+ * Get person1 reference
  * 
- * @returns {Gender} gender
+ * @returns {ResourceReference}
  */
-Person.prototype.getGender = function(){
-  return this.gender;
+Relationship.prototype.getPerson1 = function(){
+  return this.person1;
 };
 
 /**
- * Set the person's gender
+ * Set the person1 reference
  * 
- * @param {Gender} gender
- * @returns {Person} This instance
+ * @param {ResourceReference} person1
+ * @returns {Relationship} This instance
  */
-Person.prototype.setGender = function(gender){
-  if(gender){
-    this.gender = Gender(gender);
+Relationship.prototype.setPerson1 = function(person1){
+  if(person1){
+    this.person1 = ResourceReference(person1);
   }
   return this;
 };
 
 /**
- * Get the names
+ * Get person2 reference
  * 
- * @return {Name[]}
+ * @returns {ResourceReference}
  */
-Person.prototype.getNames = function(){
-  return this.names || [];
+Relationship.prototype.getPerson2 = function(){
+  return this.person2;
 };
 
 /**
- * Set the names
+ * Set the person1 reference
  * 
- * @param {Name[]|Object[]} names
- * @returns {Person} This instance
+ * @param {ResourceReference} person2
+ * @returns {Relationship} This instance
  */
-Person.prototype.setNames = function(names){
-  if(Array.isArray(names)){
-    this.names = [];
-    var person = this;
-    names.forEach(function(n){
-      person.addName(n);
-    });
-  }
-};
-
-/**
- * Add a name
- * 
- * @param {NameForm|Object} name
- * @returns {Person} This instance
- */
-Person.prototype.addName = function(name){
-  if(name){
-    if(!Array.isArray(this.names)){
-      this.names = [];
-    }
-    this.names.push(Name(name));
+Relationship.prototype.setPerson2 = function(person2){
+  if(person2){
+    this.person2 = ResourceReference(person2);
   }
   return this;
 };
@@ -144,7 +124,7 @@ Person.prototype.addName = function(name){
  * 
  * @return {Fact[]}
  */
-Person.prototype.getFacts = function(){
+Relationship.prototype.getFacts = function(){
   return this.facts || [];
 };
 
@@ -152,9 +132,9 @@ Person.prototype.getFacts = function(){
  * Set the facts
  * 
  * @param {Fact[]|Object[]} facts
- * @returns {Person} This instance
+ * @returns {Relationship} This instance
  */
-Person.prototype.setFacts = function(facts){
+Relationship.prototype.setFacts = function(facts){
   if(Array.isArray(facts)){
     this.facts = [];
     var person = this;
@@ -168,9 +148,9 @@ Person.prototype.setFacts = function(facts){
  * Add a fact
  * 
  * @param {Fact|Object} fact
- * @returns {Person} This instance
+ * @returns {Relationship} This instance
  */
-Person.prototype.addFact = function(fact){
+Relationship.prototype.addFact = function(fact){
   if(fact){
     if(!Array.isArray(this.facts)){
       this.facts = [];
@@ -185,21 +165,19 @@ Person.prototype.addFact = function(fact){
  * 
  * @return {Object} JSON object
  */
-Person.prototype.toJSON = function(){
+Relationship.prototype.toJSON = function(){
   var json = Subject.prototype.toJSON.call(this);
   
-  if(typeof this.private === 'boolean'){
-    json.private = this.private;
+  if(this.type){
+    json.type = this.type;
   }
   
-  if(this.gender){
-    json.gender = this.gender.toJSON();
+  if(this.person1){
+    json.person1 = this.person1.toJSON();
   }
   
-  if(this.names){
-    json.names = this.names.map(function(n){
-      return n.toJSON();
-    });
+  if(this.person2){
+    json.person2 = this.person2.toJSON();
   }
   
   if(this.facts){
@@ -211,7 +189,7 @@ Person.prototype.toJSON = function(){
   return json;
 };
 
-module.exports = Person;</code></pre>
+module.exports = Relationship;</code></pre>
         </article>
     </section>
 
