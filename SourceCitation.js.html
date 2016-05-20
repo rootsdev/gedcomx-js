@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Name.js</title>
+    <title>JSDoc: Source: SourceCitation.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Name.js</h1>
+    <h1 class="page-title">Source: SourceCitation.js</h1>
 
     
 
@@ -26,114 +26,68 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var Conclusion = require('./Conclusion'),
-    NameForm = require('./NameForm'),
-    GDate = require('./Date');
+            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData');
 
 /**
- * A name.
+ * A source citation.
  * 
  * @constructor
- * @param {Object} [json]
+ * @apram {Object} [json]
  */
-var Name = function(json){
+var SourceCitation = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof Name)){
-    return new Name(json);
+  if(!(this instanceof SourceCitation)){
+    return new SourceCitation(json);
   }
   
-  Conclusion.call(this, json);
+  ExtensibleData.call(this, json);
   
   if(json){
-    this.setType(json.type);
-    this.setDate(json.date);
-    this.setNameForms(json.nameForms);
+    this.setLang(json.lang);
+    this.setValue(json.value);
   }
 };
 
-Name.prototype = Object.create(Conclusion.prototype);
+SourceCitation.prototype = Object.create(ExtensibleData.prototype);
 
 /**
- * Get the name type
+ * Get the lang
  * 
- * @returns {String} type
+ * @returns {String} lang
  */
-Name.prototype.getType = function(){
-  return this.type;
+SourceCitation.prototype.getLang = function(){
+  return this.lang;
 };
 
 /**
- * Set the name type
+ * Set the lang
  * 
- * @param {String} type
- * @returns {Name} This instance
+ * @param {String} lang
+ * @returns {SourceCitation} This instance
  */
-Name.prototype.setType = function(type){
-  this.type = type;
+SourceCitation.prototype.setLang = function(lang){
+  this.lang = lang;
   return this;
 };
 
 /**
- * Get the date
+ * Get the value
  * 
- * @returns {Date} date
+ * @returns {String} value
  */
-Name.prototype.getDate = function(){
-  return this.date;
+SourceCitation.prototype.getValue = function(){
+  return this.value;
 };
 
 /**
- * Set the date
+ * Set the value
  * 
- * @param {Date|Object} date
- * @returns {Fact} This instance
+ * @param {String} value
+ * @returns {SourceCitation} This instance
  */
-Name.prototype.setDate = function(date){
-  if(date){
-    this.date = GDate(date);
-  }
-  return this;
-};
-
-/**
- * Get the name forms
- * 
- * @return {NameForm[]}
- */
-Name.prototype.getNameForms = function(){
-  return this.nameForms || [];
-};
-
-/**
- * Set the name forms
- * 
- * @param {NameForm[]|Object[]} nameForms
- * @returns {Name} This instance
- */
-Name.prototype.setNameForms = function(nameForms){
-  if(Array.isArray(nameForms)){
-    this.nameForms = [];
-    var name = this;
-    nameForms.forEach(function(n){
-      name.addNameForm(n);
-    });
-  }
-};
-
-/**
- * Add a name form
- * 
- * @param {NameForm|Object} nameForm
- * @returns {Name} This instance
- */
-Name.prototype.addNameForm = function(nameForm){
-  if(nameForm){
-    if(!Array.isArray(this.nameForms)){
-      this.nameForms = [];
-    }
-    this.nameForms.push(NameForm(nameForm));
-  }
+SourceCitation.prototype.setValue = function(value){
+  this.value = value;
   return this;
 };
 
@@ -142,27 +96,21 @@ Name.prototype.addNameForm = function(nameForm){
  * 
  * @return {Object} JSON object
  */
-Name.prototype.toJSON = function(){
-  var json = Conclusion.prototype.toJSON.call(this);
+SourceCitation.prototype.toJSON = function(){
+  var json = ExtensibleData.prototype.toJSON.call(this);
   
-  if(this.type){
-    json.type = this.type;
+  if(this.lang){
+    json.lang = this.lang;
   }
   
-  if(this.date){
-    json.date = this.date.toJSON();
-  }
-  
-  if(this.nameForms){
-    json.nameForms = this.nameForms.map(function(n){
-      return n.toJSON();
-    });
+  if(this.value){
+    json.value = this.value;
   }
   
   return json;
 };
 
-module.exports = Name;</code></pre>
+module.exports = SourceCitation;</code></pre>
         </article>
     </section>
 
