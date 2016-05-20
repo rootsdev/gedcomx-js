@@ -30,7 +30,7 @@ var Fact = function(json){
 Fact.prototype = Object.create(Conclusion.prototype);
 
 /**
- * Get the gender type
+ * Get the fact type
  * 
  * @returns {String} type
  */
@@ -39,7 +39,7 @@ Fact.prototype.getType = function(){
 };
 
 /**
- * Set the gender type
+ * Set the fact type
  * 
  * @param {String} type
  * @returns {Fact} This instance
