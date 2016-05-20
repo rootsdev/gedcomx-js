@@ -83,6 +83,7 @@ GedcomX.prototype.toJSON = function(){
 // Expose all classes
 GedcomX.Attribution = require('./Attribution');
 GedcomX.Conclusion = require('./Conclusion');
+GedcomX.Coverage = require('./Coverage');
 GedcomX.Date = require('./Date');
 GedcomX.EvidenceReference = require('./EvidenceReference');
 GedcomX.ExtensibleData = require('./ExtensibleData');

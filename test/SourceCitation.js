@@ -4,10 +4,8 @@ var assert = require('chai').assert,
 describe('SourceCitation', function(){
   
   it('Create plain', function(){
-    var newCitation = new GedcomX.SourceCitation(),
-        citation = GedcomX.SourceCitation();
-    assert.instanceOf(newCitation, GedcomX.SourceCitation, 'An instance of SourceCitation is not returned when calling the constructor with new.');
-    assert.instanceOf(citation, GedcomX.SourceCitation, 'An instance of SourceCitation is not returned when calling the constructor without new.');
+    assert.instanceOf(new GedcomX.SourceCitation(), GedcomX.SourceCitation, 'An instance of SourceCitation is not returned when calling the constructor with new.');
+    assert.instanceOf(GedcomX.SourceCitation(), GedcomX.SourceCitation, 'An instance of SourceCitation is not returned when calling the constructor without new.');
   });
   
   it('Create with JSON', function(){
