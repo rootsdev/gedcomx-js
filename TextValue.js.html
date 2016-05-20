@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Qualifier.js</title>
+    <title>JSDoc: Source: TextValue.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Qualifier.js</h1>
+    <h1 class="page-title">Source: TextValue.js</h1>
 
     
 
@@ -27,50 +27,50 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Qualifiers are used to supply additional details about a piece of data.
+ * A text value in a specific language.
  * 
  * @constructor
- * @param {Object} [json]
+ * @apram {Object} [json]
  */
-var Qualifier = function(json){
+var TextValue = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof Qualifier)){
-    return new Qualifier(json);
+  if(!(this instanceof TextValue)){
+    return new TextValue(json);
   }
   
   if(json){
-    this.setName(json.name);
+    this.setLang(json.lang);
     this.setValue(json.value);
   }
 };
 
 /**
- * Get the name
+ * Get the lang
  * 
- * @returns {String} name
+ * @returns {String} lang
  */
-Qualifier.prototype.getName = function(){
-  return this.name;
+TextValue.prototype.getLang = function(){
+  return this.lang;
 };
 
 /**
- * Set the name
+ * Set the lang
  * 
- * @param {String} name
- * @returns {Qualifier} This instance.
+ * @param {String} lang
+ * @returns {TextValue} This instance
  */
-Qualifier.prototype.setName = function(name){
-  this.name = name;
+TextValue.prototype.setLang = function(lang){
+  this.lang = lang;
   return this;
 };
 
 /**
  * Get the value
  * 
- * @returns {String}
+ * @returns {String} value
  */
-Qualifier.prototype.getValue = function(){
+TextValue.prototype.getValue = function(){
   return this.value;
 };
 
@@ -78,9 +78,9 @@ Qualifier.prototype.getValue = function(){
  * Set the value
  * 
  * @param {String} value
- * @returns {Qualifier} This instance.
+ * @returns {TextValue} This instance
  */
-Qualifier.prototype.setValue = function(value){
+TextValue.prototype.setValue = function(value){
   this.value = value;
   return this;
 };
@@ -90,11 +90,11 @@ Qualifier.prototype.setValue = function(value){
  * 
  * @return {Object} JSON object
  */
-Qualifier.prototype.toJSON = function(){
+TextValue.prototype.toJSON = function(){
   var json = {};
   
-  if(this.name){
-    json.name = this.name;
+  if(this.lang){
+    json.lang = this.lang;
   }
   
   if(this.value){
@@ -104,7 +104,7 @@ Qualifier.prototype.toJSON = function(){
   return json;
 };
 
-module.exports = Qualifier;</code></pre>
+module.exports = TextValue;</code></pre>
         </article>
     </section>
 
