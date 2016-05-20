@@ -98,6 +98,7 @@ GedcomX.PlaceReference = require('./PlaceReference');
 GedcomX.Qualifier = require('./Qualifier');
 GedcomX.Relationship = require('./Relationship');
 GedcomX.ResourceReference = require('./ResourceReference');
+GedcomX.SourceCitation = require('./SourceCitation');
 GedcomX.SourceReference = require('./SourceReference');
 GedcomX.Subject = require('./Subject');
 
