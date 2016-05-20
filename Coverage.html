@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: Gender</title>
+    <title>JSDoc: Class: Coverage</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: Gender</h1>
+    <h1 class="page-title">Class: Coverage</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2>Gender</h2>
+        <h2>Coverage</h2>
         
     
 </header>
@@ -40,14 +40,14 @@
 
     
 
-    <h4 class="name" id="Gender"><span class="type-signature"></span>new Gender<span class="signature">(json<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Coverage"><span class="type-signature"></span>new Coverage<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    A gender conclusion.
+    A description of the spatial and temporal coverage of a resource.
 </div>
 
 
@@ -56,67 +56,6 @@
 
 
 
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>json</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -152,7 +91,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Gender.js.html">Gender.js</a>, <a href="Gender.js.html#line9">line 9</a>
+        <a href="Coverage.js.html">Coverage.js</a>, <a href="Coverage.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -201,14 +140,14 @@
 
     
 
-    <h4 class="name" id="getType"><span class="type-signature"></span>getType<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+    <h4 class="name" id="getSpatial"><span class="type-signature"></span>getSpatial<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="PlaceReference.html">PlaceReference</a>}</span></h4>
 
     
 
 
 
 <div class="description">
-    Get the gender type
+    Get the spatial coverage
 </div>
 
 
@@ -252,7 +191,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Gender.js.html">Gender.js</a>, <a href="Gender.js.html#line30">line 30</a>
+        <a href="Coverage.js.html">Coverage.js</a>, <a href="Coverage.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -278,10 +217,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    gender
-</div>
-
 
 
 <dl>
@@ -290,7 +225,7 @@
     </dt>
     <dd>
         
-<span class="param-type">String</span>
+<span class="param-type"><a href="PlaceReference.html">PlaceReference</a></span>
 
 
     </dd>
@@ -305,14 +240,114 @@
 
     
 
-    <h4 class="name" id="setType"><span class="type-signature"></span>setType<span class="signature">(gender)</span><span class="type-signature"> &rarr; {<a href="Gender.html">Gender</a>}</span></h4>
+    <h4 class="name" id="getTemporal"><span class="type-signature"></span>getTemporal<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
 
     
 
 
 
 <div class="description">
-    Set the gender type
+    Get the temporal coverage
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Coverage.js.html">Coverage.js</a>, <a href="Coverage.js.html#line55">line 55</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setSpatial"><span class="type-signature"></span>setSpatial<span class="signature">(spatial)</span><span class="type-signature"> &rarr; {<a href="Coverage.html">Coverage</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Set the spatial coverage
 </div>
 
 
@@ -348,13 +383,13 @@
 
         <tr>
             
-                <td class="name"><code>gender</code></td>
+                <td class="name"><code>spatial</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type"><a href="PlaceReference.html">PlaceReference</a></span>
 
 
             
@@ -405,7 +440,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Gender.js.html">Gender.js</a>, <a href="Gender.js.html#line40">line 40</a>
+        <a href="Coverage.js.html">Coverage.js</a>, <a href="Coverage.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -431,10 +466,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    This instance
-</div>
-
 
 
 <dl>
@@ -443,7 +474,156 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Gender.html">Gender</a></span>
+<span class="param-type"><a href="Coverage.html">Coverage</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setTemporal"><span class="type-signature"></span>setTemporal<span class="signature">(temporal)</span><span class="type-signature"> &rarr; {<a href="Coverage.html">Coverage</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Set the temporal coverage
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>temporal</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Coverage.js.html">Coverage.js</a>, <a href="Coverage.js.html#line65">line 65</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Coverage.html">Coverage</a></span>
 
 
     </dd>
@@ -509,7 +689,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Gender.js.html">Gender.js</a>, <a href="Gender.js.html#line50">line 50</a>
+        <a href="Coverage.js.html">Coverage.js</a>, <a href="Coverage.js.html#line77">line 77</a>
     </li></ul></dd>
     
 

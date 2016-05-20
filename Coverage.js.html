@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: SourceCitation.js</title>
+    <title>JSDoc: Source: Coverage.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: SourceCitation.js</h1>
+    <h1 class="page-title">Source: Coverage.js</h1>
 
     
 
@@ -26,68 +26,74 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData');
+            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData'),
+    GDate = require('./Date'),
+    PlaceReference = require('./PlaceReference');
 
 /**
- * A source citation.
+ * A description of the spatial and temporal coverage of a resource.
  * 
  * @constructor
  * @apram {Object} [json]
  */
-var SourceCitation = function(json){
+var Coverage = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof SourceCitation)){
-    return new SourceCitation(json);
+  if(!(this instanceof Coverage)){
+    return new Coverage(json);
   }
   
   ExtensibleData.call(this, json);
   
   if(json){
-    this.setLang(json.lang);
-    this.setValue(json.value);
+    this.setSpatial(json.spatial);
+    this.setTemporal(json.temporal);
   }
 };
 
-SourceCitation.prototype = Object.create(ExtensibleData.prototype);
+Coverage.prototype = Object.create(ExtensibleData.prototype);
 
 /**
- * Get the lang
+ * Get the spatial coverage
  * 
- * @returns {String} lang
+ * @returns {PlaceReference}
  */
-SourceCitation.prototype.getLang = function(){
-  return this.lang;
+Coverage.prototype.getSpatial = function(){
+  return this.spatial;
 };
 
 /**
- * Set the lang
+ * Set the spatial coverage
  * 
- * @param {String} lang
- * @returns {SourceCitation} This instance
+ * @param {PlaceReference} spatial
+ * @returns {Coverage}
  */
-SourceCitation.prototype.setLang = function(lang){
-  this.lang = lang;
+Coverage.prototype.setSpatial = function(spatial){
+  if(spatial){
+    this.spatial = PlaceReference(spatial);
+  }
   return this;
 };
 
 /**
- * Get the value
+ * Get the temporal coverage
  * 
- * @returns {String} value
+ * @returns {Date}
  */
-SourceCitation.prototype.getValue = function(){
-  return this.value;
+Coverage.prototype.getTemporal = function(){
+  return this.temporal;
 };
 
 /**
- * Set the value
+ * Set the temporal coverage
  * 
- * @param {String} value
- * @returns {SourceCitation} This instance
+ * @param {Date} temporal
+ * @returns {Coverage}
  */
-SourceCitation.prototype.setValue = function(value){
-  this.value = value;
+Coverage.prototype.setTemporal = function(temporal){
+  if(temporal){
+    this.temporal = GDate(temporal);
+  }
   return this;
 };
 
@@ -96,21 +102,21 @@ SourceCitation.prototype.setValue = function(value){
  * 
  * @return {Object} JSON object
  */
-SourceCitation.prototype.toJSON = function(){
+Coverage.prototype.toJSON = function(){
   var json = ExtensibleData.prototype.toJSON.call(this);
   
-  if(this.lang){
-    json.lang = this.lang;
+  if(this.spatial){
+    json.spatial = this.spatial.toJSON();
   }
   
-  if(this.value){
-    json.value = this.value;
+  if(this.temporal){
+    json.temporal = this.temporal.toJSON();
   }
   
   return json;
 };
 
-module.exports = SourceCitation;</code></pre>
+module.exports = Coverage;</code></pre>
         </article>
     </section>
 
