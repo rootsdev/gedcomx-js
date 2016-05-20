@@ -101,5 +101,6 @@ GedcomX.ResourceReference = require('./ResourceReference');
 GedcomX.SourceCitation = require('./SourceCitation');
 GedcomX.SourceReference = require('./SourceReference');
 GedcomX.Subject = require('./Subject');
+GedcomX.TextValue = require('./TextValue');
 
 module.exports = GedcomX;
