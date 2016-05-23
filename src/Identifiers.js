@@ -14,7 +14,11 @@ var Identifiers = function(json){
   this.identifiers = {};
   
   if(json){
-    this.identifiers = json;
+    if(json instanceof Identifiers){
+      this.identifiers = json.identifiers;
+    } else {
+      this.identifiers = json;
+    }
   }
 };
 
