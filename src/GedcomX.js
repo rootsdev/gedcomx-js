@@ -1,4 +1,6 @@
-var Person = require('./Person');
+var Person = require('./Person'),
+    Relationship = require('./Relationship'),
+    SourceDescription = require('./SourceDescription');
 
 /**
  * A GEDCOM X document.
@@ -15,8 +17,8 @@ var GedcomX = function(json){
   
   if(json){
     this.setPersons(json.persons);
-    // this.setRelationships(json.relationships);
-    // this.setSourceDescriptions(json.sourceDescriptions);
+    this.setRelationships(json.relationships);
+    this.setSourceDescriptions(json.sourceDescriptions);
   }
   
 };
@@ -64,6 +66,90 @@ GedcomX.prototype.addPerson = function(person){
 };
 
 /**
+ * Get the relationships
+ * 
+ * @returns {Relationship[]}
+ */
+GedcomX.prototype.getRelationships = function(){
+  return this.relationships || [];
+};
+
+/**
+ * Set the relationships
+ * 
+ * @param {Relationship[]|Object[]} relationships
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.setRelationships = function(relationships){
+  if(Array.isArray(relationships)){
+    var gedx = this;
+    gedx.relationships = [];
+    relationships.forEach(function(r){
+      gedx.addRelationship(r);
+    });
+  }
+  return this;
+};
+
+/**
+ * Add a relationship
+ * 
+ * @param {Relationship|Object} relationship
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.addRelationship = function(relationship){
+  if(relationship){
+    if(!Array.isArray(this.relationships)){
+      this.relationships = [];
+    }
+    this.relationships.push(Relationship(relationship));
+  }
+  return this;
+};
+
+/**
+ * Get the source descriptions
+ * 
+ * @returns {SourceDescription[]}
+ */
+GedcomX.prototype.getSourceDescriptions = function(){
+  return this.sourceDescriptions || [];
+};
+
+/**
+ * Set the source descriptions
+ * 
+ * @param {SourceDescription[]|Object[]} sourceDescriptions
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.setSourceDescriptions = function(sourceDescriptions){
+  if(Array.isArray(sourceDescriptions)){
+    var gedx = this;
+    gedx.sourceDescriptions = [];
+    sourceDescriptions.forEach(function(s){
+      gedx.addSourceDescription(s);
+    });
+  }
+  return this;
+};
+
+/**
+ * Add a ource description
+ * 
+ * @param {SourceDescription|Object} sourceDescription
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.addSourceDescription = function(sourceDescription){
+  if(sourceDescription){
+    if(!Array.isArray(this.sourceDescriptions)){
+      this.sourceDescriptions = [];
+    }
+    this.sourceDescriptions.push(SourceDescription(sourceDescription));
+  }
+  return this;
+};
+
+/**
  * Export the object as JSON
  * 
  * @return {Object} JSON object
@@ -74,6 +160,18 @@ GedcomX.prototype.toJSON = function(){
   if(this.persons){
     json.persons = this.persons.map(function(p){
       return p.toJSON();
+    });
+  }
+  
+  if(this.relationships){
+    json.relationships = this.relationships.map(function(r){
+      return r.toJSON();
+    });
+  }
+  
+  if(this.sourceDescriptions){
+    json.sourceDescriptions = this.sourceDescriptions.map(function(s){
+      return s.toJSON();
     });
   }
   
@@ -97,10 +195,10 @@ GedcomX.Note = require('./Note');
 GedcomX.Person = Person;
 GedcomX.PlaceReference = require('./PlaceReference');
 GedcomX.Qualifier = require('./Qualifier');
-GedcomX.Relationship = require('./Relationship');
+GedcomX.Relationship = Relationship;
 GedcomX.ResourceReference = require('./ResourceReference');
 GedcomX.SourceCitation = require('./SourceCitation');
-GedcomX.SourceDescription = require('./SourceDescription');
+GedcomX.SourceDescription = SourceDescription;
 GedcomX.SourceReference = require('./SourceReference');
 GedcomX.Subject = require('./Subject');
 GedcomX.TextValue = require('./TextValue');

@@ -12,7 +12,7 @@
     "chai": "^3.5.0",
     "chai-json-schema": "chaijs/chai-json-schema#85ebeb3a98",
     "codecov": "^1.0.1",
-    "gedcomx-json-schema": "^1.0.0",
+    "gedcomx-json-schema": "^1.0.1",
     "istanbul": "^0.4.3",
     "jsdoc": "^3.4.0",
     "mocha": "^2.4.5"
