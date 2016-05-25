@@ -8,6 +8,14 @@ var assert = chai.assert,
 describe('GedcomX', function(){
   
   var fullJSON = {
+    id: 'gedcomx',
+    attribution: { 
+      changeMessage: 'It changed',
+      contributor: { resource: 'https://myapp.com/contributor'},
+      created: 1111338494969,
+      creator: { resource: 'https://myapp.com/creator'},
+      modified: 1111338494969
+    },
     persons: [
       {
         private: false,
@@ -233,12 +241,19 @@ describe('GedcomX', function(){
   
   it('Create with JSON', function(){
     var gedx = GedcomX(fullJSON);
-    
     tests(gedx);
   });
   
   it('Create with mixed data', function(){
     var gedx = GedcomX({
+      id: 'gedcomx',
+      attribution: GedcomX.Attribution({ 
+        changeMessage: 'It changed',
+        contributor: GedcomX.ResourceReference({ resource: 'https://myapp.com/contributor'}),
+        created: new Date(1111338494969),
+        creator: GedcomX.ResourceReference({ resource: 'https://myapp.com/creator'}),
+        modified: new Date(1111338494969)
+      }),
       persons: [
         GedcomX.Person({
           gender: {
@@ -457,6 +472,13 @@ describe('GedcomX', function(){
   
   it('Build', function(){
     var gedx = GedcomX()
+      .setId('gedcomx')
+      .setAttribution(GedcomX.Attribution()
+        .setChangeMessage('It changed')
+        .setContributor({ resource: 'https://myapp.com/contributor'})
+        .setCreated(1111338494969)
+        .setCreator({ resource: 'https://myapp.com/creator'})
+        .setModified(1111338494969))
       .addPerson(
         GedcomX.Person()
           .setId('testPerson')
@@ -558,6 +580,15 @@ describe('GedcomX', function(){
 });
 
 function tests(gedx){
+  assert.equal(gedx.getId(), 'gedcomx');
+  
+  var attribution = gedx.getAttribution();
+  assert.equal(attribution.getChangeMessage(), 'It changed', 'Change message not saved properly when created with JSON');
+  assert.equal(attribution.getContributor().getResource(), 'https://myapp.com/contributor', 'Contributor not saved when created with JSON');
+  assert.equal(attribution.getCreated().getTime(), 1111338494969, 'Created date not saved when created with JSON');
+  assert.equal(attribution.getCreator().getResource(), 'https://myapp.com/creator', 'Creator not saved when created with JSON');
+  assert.equal(attribution.getModified().getTime(), 1111338494969, 'Modified date not saved when created with JSON');
+  
   assert.equal(gedx.getPersons().length, 1);
   var person = gedx.getPersons()[0];
   assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');

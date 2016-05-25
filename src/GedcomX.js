@@ -1,10 +1,12 @@
-var Person = require('./Person'),
+var ExtensibleData = require('./ExtensibleData'),
+    Person = require('./Person'),
     Relationship = require('./Relationship'),
     SourceDescription = require('./SourceDescription'),
     Agent = require('./Agent'),
     Event = require('./Event'),
     Document = require('./Document'),
-    PlaceDescription = require('./PlaceDescription');
+    PlaceDescription = require('./PlaceDescription'),
+    Attribution = require('./Attribution');
 
 /**
  * A GEDCOM X document.
@@ -19,6 +21,8 @@ var GedcomX = function(json){
     return new GedcomX(json);
   }
   
+  ExtensibleData.call(this, json);
+  
   if(json){
     this.setPersons(json.persons);
     this.setRelationships(json.relationships);
@@ -27,9 +31,11 @@ var GedcomX = function(json){
     this.setEvents(json.events);
     this.setDocuments(json.documents);
     this.setPlaces(json.places);
+    this.setAttribution(json.attribution);
   }
-  
 };
+
+GedcomX.prototype = Object.create(ExtensibleData.prototype);
 
 /**
  * Get the persons
@@ -326,12 +332,34 @@ GedcomX.prototype.addPlace = function(place){
 };
 
 /**
+ * Get attritbution
+ * 
+ * @returns {Attribution}
+ */
+GedcomX.prototype.getAttribution = function(){
+  return this.attribution;
+};
+
+/**
+ * Set attribution
+ * 
+ * @param {Attribution} attribution
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.setAttribution = function(attribution){
+  if(attribution){
+    this.attribution = Attribution(attribution);
+  }
+  return this;
+};
+
+/**
  * Export the object as JSON
  * 
  * @return {Object} JSON object
  */
 GedcomX.prototype.toJSON = function(){
-  var json = {};
+  var json = ExtensibleData.prototype.toJSON.call(this);
   
   if(this.persons){
     json.persons = this.persons.map(function(p){
@@ -375,13 +403,17 @@ GedcomX.prototype.toJSON = function(){
     });
   }
   
+  if(this.attribution){
+    json.attribution = this.attribution.toJSON();
+  }
+  
   return json;
 };
 
 // Expose all classes
 GedcomX.Address = require('./Address');
 GedcomX.Agent = Agent;
-GedcomX.Attribution = require('./Attribution');
+GedcomX.Attribution = Attribution;
 GedcomX.Conclusion = require('./Conclusion');
 GedcomX.Coverage = require('./Coverage');
 GedcomX.Date = require('./Date');
@@ -389,7 +421,7 @@ GedcomX.Document = Document;
 GedcomX.Event = Event;
 GedcomX.EventRole = require('./EventRole');
 GedcomX.EvidenceReference = require('./EvidenceReference');
-GedcomX.ExtensibleData = require('./ExtensibleData');
+GedcomX.ExtensibleData = ExtensibleData;
 GedcomX.Fact = require('./Fact');
 GedcomX.Gender = require('./Gender');
 GedcomX.Identifiers = require('./Identifiers');
