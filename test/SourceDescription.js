@@ -269,7 +269,6 @@ describe('SourceDescription', function(){
     assert.equal(description.getCoverage().getSpatial().getOriginal(), 'A place');
     assert.equal(description.getDescriptions().length, 1);
     assert.equal(description.getDescriptions()[0].getValue(), 'A description');
-    console.log(description.getIdentifiers());
     assert.equal(description.getIdentifiers().identifiers.$, 'identifier');
     assert.equal(description.getCreated(), 1000000);
     assert.equal(description.getModified(), 11111111);

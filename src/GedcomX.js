@@ -192,6 +192,7 @@ GedcomX.Name = require('./Name');
 GedcomX.NameForm = require('./NameForm');
 GedcomX.NamePart = require('./NamePart');
 GedcomX.Note = require('./Note');
+GedcomX.OnlineAccount = require('./OnlineAccount');
 GedcomX.Person = Person;
 GedcomX.PlaceReference = require('./PlaceReference');
 GedcomX.Qualifier = require('./Qualifier');
