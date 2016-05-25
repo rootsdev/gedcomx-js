@@ -3,7 +3,8 @@ var Person = require('./Person'),
     SourceDescription = require('./SourceDescription'),
     Agent = require('./Agent'),
     Event = require('./Event'),
-    Document = require('./Document');
+    Document = require('./Document'),
+    PlaceDescription = require('./PlaceDescription');
 
 /**
  * A GEDCOM X document.
@@ -25,6 +26,7 @@ var GedcomX = function(json){
     this.setAgents(json.agents);
     this.setEvents(json.events);
     this.setDocuments(json.documents);
+    this.setPlaces(json.places);
   }
   
 };
@@ -282,6 +284,48 @@ GedcomX.prototype.addDocument = function(doc){
 };
 
 /**
+ * Get places
+ * 
+ * @returns {PlaceDescription[]}
+ */
+GedcomX.prototype.getPlaces = function(){
+  return this.places || [];
+};
+
+/**
+ * Set the places
+ * 
+ * @param {PlaceDescription[]|Object} places
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.setPlaces = function(places){
+  if(Array.isArray(places)){
+    var gedx = this;
+    gedx.places = [];
+    places.forEach(function(place){
+      gedx.addPlace(place);
+    });
+  }
+  return this;
+};
+
+/**
+ * Add a place
+ * 
+ * @param {PlaceDescription} place
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.addPlace = function(place){
+  if(place){
+    if(!Array.isArray(this.places)){
+      this.places = [];
+    }
+    this.places.push(PlaceDescription(place));
+  }
+  return this;
+};
+
+/**
  * Export the object as JSON
  * 
  * @return {Object} JSON object
@@ -325,6 +369,12 @@ GedcomX.prototype.toJSON = function(){
     });
   }
   
+  if(this.places){
+    json.places = this.places.map(function(p){
+      return p.toJSON();
+    });
+  }
+  
   return json;
 };
 
@@ -349,6 +399,7 @@ GedcomX.NamePart = require('./NamePart');
 GedcomX.Note = require('./Note');
 GedcomX.OnlineAccount = require('./OnlineAccount');
 GedcomX.Person = Person;
+GedcomX.PlaceDescription = PlaceDescription;
 GedcomX.PlaceReference = require('./PlaceReference');
 GedcomX.Qualifier = require('./Qualifier');
 GedcomX.Relationship = Relationship;

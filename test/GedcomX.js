@@ -198,6 +198,27 @@ describe('GedcomX', function(){
           created: 123456789
         }
       }  
+    ],
+    places: [
+      {
+        names : [ 
+          {
+            lang : 'en',
+            value : 'Pope\'s Creek, Westmoreland, Virginia, United States'
+          }
+        ],
+        type : 'http://identifier/for/the/place/type',
+        place : { resource : 'http://place' },
+        jurisdiction : { resource : 'http://jurisdiction' },
+        latitude : 27.9883575,
+        longitude : 86.9252014,
+        temporalDescription : { 
+          formal: '+1899-01-04'
+        },
+        spatialDescription : {
+          resource : 'http://uri/for/KML/document'
+        }
+      }
     ]
   };
   
@@ -213,91 +234,7 @@ describe('GedcomX', function(){
   it('Create with JSON', function(){
     var gedx = GedcomX(fullJSON);
     
-    assert.equal(gedx.getPersons().length, 1);
-    var person = gedx.getPersons()[0];
-    assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');
-    assert.equal(person.getNames().length, 1);
-    assert.equal(person.getFacts().length, 1);
-    
-    assert.equal(gedx.getRelationships().length, 1);
-    var relationship = gedx.getRelationships()[0];
-    assert.equal(relationship.getType(), 'http://gedcomx.org/Couple');
-    assert.equal(relationship.getPerson1().getResource(), 'http://identifier/for/person/1');
-    assert.equal(relationship.getPerson2().getResource(), 'http://identifier/for/person/2');
-    assert.equal(relationship.getFacts().length, 1);
-    assert.equal(relationship.getFacts()[0].getType(), 'http://gedcomx.org/Marriage');
-    
-    assert.equal(gedx.getSourceDescriptions().length, 1);
-    var description = gedx.getSourceDescriptions()[0];
-    assert.equal(description.getResourceType(), 'http://some/type');
-    assert.equal(description.getCitations().length, 1);
-    assert.equal(description.getCitations()[0].getLang(), 'en');
-    assert.equal(description.getCitations()[0].getValue(), 'Long source citation');
-    assert.equal(description.getMediaType(), 'book');
-    assert.equal(description.getAbout(), 'http://a/resource');
-    assert.equal(description.getMediator().getResource(), 'http://mediator');
-    assert.equal(description.getSources().length, 1);
-    assert.equal(description.getSources()[0].getDescription(), 'http://source/reference');
-    assert.equal(description.getAnalysis().getResource(), 'http://analysis');
-    assert.equal(description.getComponentOf().getDescription(), 'http://container');
-    assert.equal(description.getTitles().length, 2);
-    assert.equal(description.getTitles()[0].getLang(), 'en');
-    assert.equal(description.getTitles()[0].getValue(), 'Title');
-    assert.equal(description.getTitles()[1].getLang(), 'es');
-    assert.equal(description.getTitles()[1].getValue(), 'Titulo');
-    assert.equal(description.getNotes().length, 1);
-    assert.equal(description.getNotes()[0].getSubject(), 'Note');
-    assert.equal(description.getNotes()[0].getText(), 'Some note text');
-    assert.equal(description.getAttribution().getCreated().getTime(), 1234578129);
-    assert.equal(description.getRights().length, 1);
-    assert.equal(description.getRights()[0].getResource(), 'https://some/right');
-    assert.equal(description.getCoverage().getTemporal().getFormal(), '+2015');
-    assert.equal(description.getCoverage().getSpatial().getOriginal(), 'A place');
-    assert.equal(description.getDescriptions().length, 1);
-    assert.equal(description.getDescriptions()[0].getValue(), 'A description');
-    assert.equal(description.getIdentifiers().identifiers.$, 'identifier');
-    assert.equal(description.getCreated(), 1000000);
-    assert.equal(description.getModified(), 11111111);
-    assert.equal(description.getRepository().getResource(), 'http://repository');
-    
-    assert.equal(gedx.getAgents().length, 1);
-    var agent = gedx.getAgents()[0];
-    assert.equal(agent.getId(), 'agent');
-    assert.equal(agent.getIdentifiers().identifiers.$, 'ident');
-    assert.equal(agent.getNames().length, 1);
-    assert.equal(agent.getNames()[0].getLang(), 'en');
-    assert.equal(agent.getNames()[0].getValue(), 'Name');
-    assert.equal(agent.getHomepage().getResource(), 'http://homepage');
-    assert.equal(agent.getOpenid().getResource(), 'http://openid');
-    assert.equal(agent.getAccounts().length, 1);
-    assert.equal(agent.getAccounts()[0].getAccountName(), 'jimbo');
-    assert.equal(agent.getEmails().length, 1);
-    assert.equal(agent.getEmails()[0].getResource(), 'http://email');
-    assert.equal(agent.getPhones().length, 1);
-    assert.equal(agent.getPhones()[0].getResource(), 'http://phone');
-    assert.equal(agent.getAddresses().length, 1);
-    assert.equal(agent.getAddresses()[0].getValue(), 'big long address');
-    assert.equal(agent.getAddresses()[0].getPostalCode(), '123456');
-    assert.equal(agent.getPerson().getResource(), 'http://person');
-    
-    assert.equal(gedx.getEvents().length, 1);
-    var event = gedx.getEvents()[0];
-    assert.equal(event.getType(), 'http://gedcomx.org/Marriage');
-    assert.equal(event.getDate().getFormal(), '+2002-06-06');
-    assert.equal(event.getPlace().getOriginal(), 'Her town, MN');
-    assert.equal(event.getRoles().length, 1);
-    assert.equal(event.getRoles()[0].getPerson().getResource(), 'http://groom');
-    assert.equal(event.getRoles()[0].getType(), 'http://gedcomx.org/Participant');
-    
-    assert.equal(gedx.getDocuments().length, 1);
-    var doc = gedx.getDocuments()[0];
-    assert.equal(doc.getType(), 'http://gedcomx.org/Abstract');
-    assert.equal(doc.getExtracted(), false);
-    assert.equal(doc.getTextType(), 'plain');
-    assert.equal(doc.getText(), 'Lots of text');
-    assert.equal(doc.getAttribution().getCreated().getTime(), 123456789);
-    
-    assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
+    tests(gedx);
   });
   
   it('Create with mixed data', function(){
@@ -491,94 +428,31 @@ describe('GedcomX', function(){
             created: 123456789
           })
         })
+      ],
+      places: [
+        GedcomX.PlaceDescription({
+          names : [ 
+            GedcomX.TextValue({
+              lang : 'en',
+              value : 'Pope\'s Creek, Westmoreland, Virginia, United States'
+            })
+          ],
+          type : 'http://identifier/for/the/place/type',
+          place : GedcomX.ResourceReference({ resource : 'http://place' }),
+          jurisdiction : GedcomX.ResourceReference({ resource : 'http://jurisdiction' }),
+          latitude : 27.9883575,
+          longitude : 86.9252014,
+          temporalDescription : GedcomX.Date({ 
+            formal: '+1899-01-04'
+          }),
+          spatialDescription : GedcomX.ResourceReference({
+            resource : 'http://uri/for/KML/document'
+          })
+        })  
       ]
     });
     
-    assert.equal(gedx.getPersons().length, 1);
-    var person = gedx.getPersons()[0];
-    assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');
-    assert.equal(person.getNames().length, 1);
-    assert.equal(person.getFacts().length, 1);
-    
-    assert.equal(gedx.getRelationships().length, 1);
-    var relationship = gedx.getRelationships()[0];
-    assert.equal(relationship.getType(), 'http://gedcomx.org/Couple');
-    assert.equal(relationship.getPerson1().getResource(), 'http://identifier/for/person/1');
-    assert.equal(relationship.getPerson2().getResource(), 'http://identifier/for/person/2');
-    assert.equal(relationship.getFacts().length, 1);
-    assert.equal(relationship.getFacts()[0].getType(), 'http://gedcomx.org/Marriage');
-    
-    assert.equal(gedx.getSourceDescriptions().length, 1);
-    var description = gedx.getSourceDescriptions()[0];
-    assert.equal(description.getResourceType(), 'http://some/type');
-    assert.equal(description.getCitations().length, 1);
-    assert.equal(description.getCitations()[0].getLang(), 'en');
-    assert.equal(description.getCitations()[0].getValue(), 'Long source citation');
-    assert.equal(description.getMediaType(), 'book');
-    assert.equal(description.getAbout(), 'http://a/resource');
-    assert.equal(description.getMediator().getResource(), 'http://mediator');
-    assert.equal(description.getSources().length, 1);
-    assert.equal(description.getSources()[0].getDescription(), 'http://source/reference');
-    assert.equal(description.getAnalysis().getResource(), 'http://analysis');
-    assert.equal(description.getComponentOf().getDescription(), 'http://container');
-    assert.equal(description.getTitles().length, 2);
-    assert.equal(description.getTitles()[0].getLang(), 'en');
-    assert.equal(description.getTitles()[0].getValue(), 'Title');
-    assert.equal(description.getTitles()[1].getLang(), 'es');
-    assert.equal(description.getTitles()[1].getValue(), 'Titulo');
-    assert.equal(description.getNotes().length, 1);
-    assert.equal(description.getNotes()[0].getSubject(), 'Note');
-    assert.equal(description.getNotes()[0].getText(), 'Some note text');
-    assert.equal(description.getAttribution().getCreated().getTime(), 1234578129);
-    assert.equal(description.getRights().length, 1);
-    assert.equal(description.getRights()[0].getResource(), 'https://some/right');
-    assert.equal(description.getCoverage().getTemporal().getFormal(), '+2015');
-    assert.equal(description.getCoverage().getSpatial().getOriginal(), 'A place');
-    assert.equal(description.getDescriptions().length, 1);
-    assert.equal(description.getDescriptions()[0].getValue(), 'A description');
-    assert.equal(description.getIdentifiers().identifiers.$, 'identifier');
-    assert.equal(description.getCreated(), 1000000);
-    assert.equal(description.getModified(), 11111111);
-    assert.equal(description.getRepository().getResource(), 'http://repository');
-    
-    assert.equal(gedx.getAgents().length, 1);
-    var agent = gedx.getAgents()[0];
-    assert.equal(agent.getId(), 'agent');
-    assert.equal(agent.getIdentifiers().identifiers.$, 'ident');
-    assert.equal(agent.getNames().length, 1);
-    assert.equal(agent.getNames()[0].getLang(), 'en');
-    assert.equal(agent.getNames()[0].getValue(), 'Name');
-    assert.equal(agent.getHomepage().getResource(), 'http://homepage');
-    assert.equal(agent.getOpenid().getResource(), 'http://openid');
-    assert.equal(agent.getAccounts().length, 1);
-    assert.equal(agent.getAccounts()[0].getAccountName(), 'jimbo');
-    assert.equal(agent.getEmails().length, 1);
-    assert.equal(agent.getEmails()[0].getResource(), 'http://email');
-    assert.equal(agent.getPhones().length, 1);
-    assert.equal(agent.getPhones()[0].getResource(), 'http://phone');
-    assert.equal(agent.getAddresses().length, 1);
-    assert.equal(agent.getAddresses()[0].getValue(), 'big long address');
-    assert.equal(agent.getAddresses()[0].getPostalCode(), '123456');
-    assert.equal(agent.getPerson().getResource(), 'http://person');
-    
-    assert.equal(gedx.getEvents().length, 1);
-    var event = gedx.getEvents()[0];
-    assert.equal(event.getType(), 'http://gedcomx.org/Marriage');
-    assert.equal(event.getDate().getFormal(), '+2002-06-06');
-    assert.equal(event.getPlace().getOriginal(), 'Her town, MN');
-    assert.equal(event.getRoles().length, 1);
-    assert.equal(event.getRoles()[0].getPerson().getResource(), 'http://groom');
-    assert.equal(event.getRoles()[0].getType(), 'http://gedcomx.org/Participant');
-    
-    assert.equal(gedx.getDocuments().length, 1);
-    var doc = gedx.getDocuments()[0];
-    assert.equal(doc.getType(), 'http://gedcomx.org/Abstract');
-    assert.equal(doc.getExtracted(), false);
-    assert.equal(doc.getTextType(), 'plain');
-    assert.equal(doc.getText(), 'Lots of text');
-    assert.equal(doc.getAttribution().getCreated().getTime(), 123456789);
-    
-    assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
+    tests(gedx);
   });
   
   it('Build', function(){
@@ -655,93 +529,24 @@ describe('GedcomX', function(){
         .setTextType('plain')
         .setText('Lots of text')
         .setAttribution(GedcomX.Attribution().setCreated(123456789))          
+      )
+      .addPlace(
+        GedcomX.PlaceDescription()
+          .addName(GedcomX.TextValue().setLang('en').setValue('Pope\'s Creek, Westmoreland, Virginia, United States'))
+          .setType('http://identifier/for/the/place/type')
+          .setPlace(GedcomX.ResourceReference({ resource : 'http://place' }))
+          .setJurisdiction(GedcomX.ResourceReference({ resource : 'http://jurisdiction' }))
+          .setLatitude(27.9883575)
+          .setLongitude(86.9252014)
+          .setTemporalDescription(GedcomX.Date({ 
+            formal: '+1899-01-04'
+          }))
+          .setSpatialDescription(GedcomX.ResourceReference({
+            resource : 'http://uri/for/KML/document'
+          }))
       );
     
-    assert.equal(gedx.getPersons().length, 1);
-    var person = gedx.getPersons()[0];
-    assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');
-    assert.equal(person.getNames().length, 1);
-    assert.equal(person.getFacts().length, 1);
-    
-    assert.equal(gedx.getRelationships().length, 1);
-    var relationship = gedx.getRelationships()[0];
-    assert.equal(relationship.getType(), 'http://gedcomx.org/Couple');
-    assert.equal(relationship.getPerson1().getResource(), 'http://identifier/for/person/1');
-    assert.equal(relationship.getPerson2().getResource(), 'http://identifier/for/person/2');
-    assert.equal(relationship.getFacts().length, 1);
-    assert.equal(relationship.getFacts()[0].getType(), 'http://gedcomx.org/Marriage');
-    
-    assert.equal(gedx.getSourceDescriptions().length, 1);
-    var description = gedx.getSourceDescriptions()[0];
-    assert.equal(description.getResourceType(), 'http://some/type');
-    assert.equal(description.getCitations().length, 1);
-    assert.equal(description.getCitations()[0].getLang(), 'en');
-    assert.equal(description.getCitations()[0].getValue(), 'Long source citation');
-    assert.equal(description.getMediaType(), 'book');
-    assert.equal(description.getAbout(), 'http://a/resource');
-    assert.equal(description.getMediator().getResource(), 'http://mediator');
-    assert.equal(description.getSources().length, 1);
-    assert.equal(description.getSources()[0].getDescription(), 'http://source/reference');
-    assert.equal(description.getAnalysis().getResource(), 'http://analysis');
-    assert.equal(description.getComponentOf().getDescription(), 'http://container');
-    assert.equal(description.getTitles().length, 2);
-    assert.equal(description.getTitles()[0].getLang(), 'en');
-    assert.equal(description.getTitles()[0].getValue(), 'Title');
-    assert.equal(description.getTitles()[1].getLang(), 'es');
-    assert.equal(description.getTitles()[1].getValue(), 'Titulo');
-    assert.equal(description.getNotes().length, 1);
-    assert.equal(description.getNotes()[0].getSubject(), 'Note');
-    assert.equal(description.getNotes()[0].getText(), 'Some note text');
-    assert.equal(description.getAttribution().getCreated().getTime(), 1234578129);
-    assert.equal(description.getRights().length, 1);
-    assert.equal(description.getRights()[0].getResource(), 'https://some/right');
-    assert.equal(description.getCoverage().getTemporal().getFormal(), '+2015');
-    assert.equal(description.getCoverage().getSpatial().getOriginal(), 'A place');
-    assert.equal(description.getDescriptions().length, 1);
-    assert.equal(description.getDescriptions()[0].getValue(), 'A description');
-    assert.equal(description.getIdentifiers().identifiers.$, 'identifier');
-    assert.equal(description.getCreated(), 1000000);
-    assert.equal(description.getModified(), 11111111);
-    assert.equal(description.getRepository().getResource(), 'http://repository');
-    
-    assert.equal(gedx.getAgents().length, 1);
-    var agent = gedx.getAgents()[0];
-    assert.equal(agent.getId(), 'agent');
-    assert.equal(agent.getIdentifiers().identifiers.$, 'ident');
-    assert.equal(agent.getNames().length, 1);
-    assert.equal(agent.getNames()[0].getLang(), 'en');
-    assert.equal(agent.getNames()[0].getValue(), 'Name');
-    assert.equal(agent.getHomepage().getResource(), 'http://homepage');
-    assert.equal(agent.getOpenid().getResource(), 'http://openid');
-    assert.equal(agent.getAccounts().length, 1);
-    assert.equal(agent.getAccounts()[0].getAccountName(), 'jimbo');
-    assert.equal(agent.getEmails().length, 1);
-    assert.equal(agent.getEmails()[0].getResource(), 'http://email');
-    assert.equal(agent.getPhones().length, 1);
-    assert.equal(agent.getPhones()[0].getResource(), 'http://phone');
-    assert.equal(agent.getAddresses().length, 1);
-    assert.equal(agent.getAddresses()[0].getValue(), 'big long address');
-    assert.equal(agent.getAddresses()[0].getPostalCode(), '123456');
-    assert.equal(agent.getPerson().getResource(), 'http://person');
-    
-    assert.equal(gedx.getEvents().length, 1);
-    var event = gedx.getEvents()[0];
-    assert.equal(event.getType(), 'http://gedcomx.org/Marriage');
-    assert.equal(event.getDate().getFormal(), '+2002-06-06');
-    assert.equal(event.getPlace().getOriginal(), 'Her town, MN');
-    assert.equal(event.getRoles().length, 1);
-    assert.equal(event.getRoles()[0].getPerson().getResource(), 'http://groom');
-    assert.equal(event.getRoles()[0].getType(), 'http://gedcomx.org/Participant');
-    
-    assert.equal(gedx.getDocuments().length, 1);
-    var doc = gedx.getDocuments()[0];
-    assert.equal(doc.getType(), 'http://gedcomx.org/Abstract');
-    assert.equal(doc.getExtracted(), false);
-    assert.equal(doc.getTextType(), 'plain');
-    assert.equal(doc.getText(), 'Lots of text');
-    assert.equal(doc.getAttribution().getCreated().getTime(), 123456789);
-    
-    assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
+    tests(gedx);
   });
   
   it('toJSON', function(){
@@ -751,3 +556,104 @@ describe('GedcomX', function(){
   });
   
 });
+
+function tests(gedx){
+  assert.equal(gedx.getPersons().length, 1);
+  var person = gedx.getPersons()[0];
+  assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');
+  assert.equal(person.getNames().length, 1);
+  assert.equal(person.getFacts().length, 1);
+  
+  assert.equal(gedx.getRelationships().length, 1);
+  var relationship = gedx.getRelationships()[0];
+  assert.equal(relationship.getType(), 'http://gedcomx.org/Couple');
+  assert.equal(relationship.getPerson1().getResource(), 'http://identifier/for/person/1');
+  assert.equal(relationship.getPerson2().getResource(), 'http://identifier/for/person/2');
+  assert.equal(relationship.getFacts().length, 1);
+  assert.equal(relationship.getFacts()[0].getType(), 'http://gedcomx.org/Marriage');
+  
+  assert.equal(gedx.getSourceDescriptions().length, 1);
+  var description = gedx.getSourceDescriptions()[0];
+  assert.equal(description.getResourceType(), 'http://some/type');
+  assert.equal(description.getCitations().length, 1);
+  assert.equal(description.getCitations()[0].getLang(), 'en');
+  assert.equal(description.getCitations()[0].getValue(), 'Long source citation');
+  assert.equal(description.getMediaType(), 'book');
+  assert.equal(description.getAbout(), 'http://a/resource');
+  assert.equal(description.getMediator().getResource(), 'http://mediator');
+  assert.equal(description.getSources().length, 1);
+  assert.equal(description.getSources()[0].getDescription(), 'http://source/reference');
+  assert.equal(description.getAnalysis().getResource(), 'http://analysis');
+  assert.equal(description.getComponentOf().getDescription(), 'http://container');
+  assert.equal(description.getTitles().length, 2);
+  assert.equal(description.getTitles()[0].getLang(), 'en');
+  assert.equal(description.getTitles()[0].getValue(), 'Title');
+  assert.equal(description.getTitles()[1].getLang(), 'es');
+  assert.equal(description.getTitles()[1].getValue(), 'Titulo');
+  assert.equal(description.getNotes().length, 1);
+  assert.equal(description.getNotes()[0].getSubject(), 'Note');
+  assert.equal(description.getNotes()[0].getText(), 'Some note text');
+  assert.equal(description.getAttribution().getCreated().getTime(), 1234578129);
+  assert.equal(description.getRights().length, 1);
+  assert.equal(description.getRights()[0].getResource(), 'https://some/right');
+  assert.equal(description.getCoverage().getTemporal().getFormal(), '+2015');
+  assert.equal(description.getCoverage().getSpatial().getOriginal(), 'A place');
+  assert.equal(description.getDescriptions().length, 1);
+  assert.equal(description.getDescriptions()[0].getValue(), 'A description');
+  assert.equal(description.getIdentifiers().identifiers.$, 'identifier');
+  assert.equal(description.getCreated(), 1000000);
+  assert.equal(description.getModified(), 11111111);
+  assert.equal(description.getRepository().getResource(), 'http://repository');
+  
+  assert.equal(gedx.getAgents().length, 1);
+  var agent = gedx.getAgents()[0];
+  assert.equal(agent.getId(), 'agent');
+  assert.equal(agent.getIdentifiers().identifiers.$, 'ident');
+  assert.equal(agent.getNames().length, 1);
+  assert.equal(agent.getNames()[0].getLang(), 'en');
+  assert.equal(agent.getNames()[0].getValue(), 'Name');
+  assert.equal(agent.getHomepage().getResource(), 'http://homepage');
+  assert.equal(agent.getOpenid().getResource(), 'http://openid');
+  assert.equal(agent.getAccounts().length, 1);
+  assert.equal(agent.getAccounts()[0].getAccountName(), 'jimbo');
+  assert.equal(agent.getEmails().length, 1);
+  assert.equal(agent.getEmails()[0].getResource(), 'http://email');
+  assert.equal(agent.getPhones().length, 1);
+  assert.equal(agent.getPhones()[0].getResource(), 'http://phone');
+  assert.equal(agent.getAddresses().length, 1);
+  assert.equal(agent.getAddresses()[0].getValue(), 'big long address');
+  assert.equal(agent.getAddresses()[0].getPostalCode(), '123456');
+  assert.equal(agent.getPerson().getResource(), 'http://person');
+  
+  assert.equal(gedx.getEvents().length, 1);
+  var event = gedx.getEvents()[0];
+  assert.equal(event.getType(), 'http://gedcomx.org/Marriage');
+  assert.equal(event.getDate().getFormal(), '+2002-06-06');
+  assert.equal(event.getPlace().getOriginal(), 'Her town, MN');
+  assert.equal(event.getRoles().length, 1);
+  assert.equal(event.getRoles()[0].getPerson().getResource(), 'http://groom');
+  assert.equal(event.getRoles()[0].getType(), 'http://gedcomx.org/Participant');
+  
+  assert.equal(gedx.getDocuments().length, 1);
+  var doc = gedx.getDocuments()[0];
+  assert.equal(doc.getType(), 'http://gedcomx.org/Abstract');
+  assert.equal(doc.getExtracted(), false);
+  assert.equal(doc.getTextType(), 'plain');
+  assert.equal(doc.getText(), 'Lots of text');
+  assert.equal(doc.getAttribution().getCreated().getTime(), 123456789);
+  
+  assert.equal(gedx.getPlaces().length, 1);
+  var place = gedx.getPlaces()[0];
+  assert.equal(place.getNames().length, 1);
+  assert.equal(place.getNames()[0].getLang(), 'en');
+  assert.equal(place.getNames()[0].getValue(), 'Pope\'s Creek, Westmoreland, Virginia, United States');
+  assert.equal(place.getType(), 'http://identifier/for/the/place/type');
+  assert.equal(place.getPlace().getResource(), 'http://place');
+  assert.equal(place.getJurisdiction().getResource(), 'http://jurisdiction');
+  assert.equal(place.getLatitude(), 27.9883575);
+  assert.equal(place.getLongitude(), 86.9252014);
+  assert.equal(place.getTemporalDescription().getFormal(), '+1899-01-04');
+  assert.equal(place.getSpatialDescription().getResource(), 'http://uri/for/KML/document');
+  
+  assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
+}
