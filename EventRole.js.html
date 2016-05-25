@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Gender.js</title>
+    <title>JSDoc: Source: EventRole.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Gender.js</h1>
+    <h1 class="page-title">Source: EventRole.js</h1>
 
     
 
@@ -26,47 +26,92 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var Conclusion = require('./Conclusion');
+            <pre class="prettyprint source linenums"><code>var Conclusion = require('./Conclusion'),
+    ResourceReference = require('./ResourceReference');
 
 /**
- * A gender conclusion.
+ * A role that a specific person plays in an event.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var Gender = function(json){
+var EventRole = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof Gender)){
-    return new Gender(json);
+  if(!(this instanceof EventRole)){
+    return new EventRole(json);
   }
   
   Conclusion.call(this, json);
   
   if(json){
+    this.setPerson(json.person);
     this.setType(json.type);
+    this.setDetails(json.details);
   }
 };
 
-Gender.prototype = Object.create(Conclusion.prototype);
+EventRole.prototype = Object.create(Conclusion.prototype);
 
 /**
- * Get the gender type
+ * Get the person
  * 
- * @returns {String} gender
+ * @returns {ResourceReference}
  */
-Gender.prototype.getType = function(){
+EventRole.prototype.getPerson = function(){
+  return this.person;
+};
+
+/**
+ * Set the person
+ * 
+ * @param {ResourceReference} person
+ * @returns {EventRole}
+ */
+EventRole.prototype.setPerson = function(person){
+  if(person){
+    this.person = ResourceReference(person);
+  }
+  return this;
+};
+
+/**
+ * Get the type
+ * 
+ * @returns {String}
+ */
+EventRole.prototype.getType = function(){
   return this.type;
 };
 
 /**
- * Set the gender type
+ * Set the type
  * 
- * @param {String} gender
- * @returns {Gender} This instance
+ * @param {String} type
+ * @returns {EventRole}
  */
-Gender.prototype.setType = function(gender){
-  this.type = gender;
+EventRole.prototype.setType = function(type){
+  this.type = type;
+  return this;
+};
+
+/**
+ * Get the details
+ * 
+ * @returns {String}
+ */
+EventRole.prototype.getDetails = function(){
+  return this.details;
+};
+
+/**
+ * Set the details
+ * 
+ * @param {String} details
+ * @returns {EventRole}
+ */
+EventRole.prototype.setDetails = function(details){
+  this.details = details;
   return this;
 };
 
@@ -75,17 +120,25 @@ Gender.prototype.setType = function(gender){
  * 
  * @return {Object} JSON object
  */
-Gender.prototype.toJSON = function(){
+EventRole.prototype.toJSON = function(){
   var json = Conclusion.prototype.toJSON.call(this);
+  
+  if(this.person){
+    json.person = this.person.toJSON();
+  }
   
   if(this.type){
     json.type = this.type;
   }
   
+  if(this.details){
+    json.details = this.details;
+  }
+  
   return json;
 };
 
-module.exports = Gender;</code></pre>
+module.exports = EventRole;</code></pre>
         </article>
     </section>
 
