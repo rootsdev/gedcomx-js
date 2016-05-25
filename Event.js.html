@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: PlaceReference.js</title>
+    <title>JSDoc: Source: Event.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: PlaceReference.js</h1>
+    <h1 class="page-title">Source: Event.js</h1>
 
     
 
@@ -26,68 +26,139 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData');
+            <pre class="prettyprint source linenums"><code>var Subject = require('./Subject'),
+    GDate = require('./Date'),
+    PlaceReference = require('./PlaceReference'),
+    EventRole = require('./EventRole');
 
 /**
- * A reference to a {@link PlaceDescription}.
+ * An event.
  * 
  * @constructor
  * @param {Object} [json]
  */
-var PlaceReference = function(json){
+var Event = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof PlaceReference)){
-    return new PlaceReference(json);
+  if(!(this instanceof Event)){
+    return new Event(json);
   }
   
-  ExtensibleData.call(this, json);
+  Subject.call(this, json);
   
   if(json){
-    this.setOriginal(json.original);
-    this.setDescription(json.description);
+    this.setType(json.type);
+    this.setDate(json.date);
+    this.setPlace(json.place);
+    this.setRoles(json.roles);
   }
 };
 
-PlaceReference.prototype = Object.create(ExtensibleData.prototype);
+Event.prototype = Object.create(Subject.prototype);
 
 /**
- * Get the original text
+ * Get the type
  * 
- * @returns {String} original
+ * @returns {String}
  */
-PlaceReference.prototype.getOriginal = function(){
-  return this.original;
+Event.prototype.getType = function(){
+  return this.type;
 };
 
 /**
- * Set the original text
+ * Set the type
  * 
- * @param {String} original
- * @returns {PlaceReference} This instance.
+ * @param {String} type
+ * @returns {Event}
  */
-PlaceReference.prototype.setOriginal = function(original){
-  this.original = original;
+Event.prototype.setType = function(type){
+  this.type = type;
   return this;
 };
 
 /**
- * Get the description
+ * Get the date
  * 
- * @returns {String}
+ * @returns {Date}
  */
-PlaceReference.prototype.getDescription = function(){
-  return this.description;
+Event.prototype.getDate = function(){
+  return this.date;
 };
 
 /**
- * Set the description
+ * Set the date
  * 
- * @param {String} description
- * @returns {PlaceReference} This instance.
+ * @param {Date} date
+ * @returns {Event}
  */
-PlaceReference.prototype.setDescription = function(description){
-  this.description = description;
+Event.prototype.setDate = function(date){
+  if(date){
+    this.date = GDate(date);
+  }
+  return this;
+};
+
+/**
+ * Get the place
+ * 
+ * @returns {PlaceReference}
+ */
+Event.prototype.getPlace = function(){
+  return this.place;
+};
+
+/**
+ * Set the place
+ * 
+ * @param {PlaceReference} place
+ * @returns {Event}
+ */
+Event.prototype.setPlace = function(place){
+  if(place){
+    this.place = PlaceReference(place);
+  }
+  return this;
+};
+
+/**
+ * Get the roles
+ * 
+ * @returns {EventRole[]}
+ */
+Event.prototype.getRoles = function(){
+  return this.roles || [];
+};
+
+/**
+ * Set the roles
+ * 
+ * @param {EventRole[]|Object[]} roles
+ * @returns {Event}
+ */
+Event.prototype.setRoles = function(roles){
+  if(Array.isArray(roles)){
+    var event = this;
+    event.roles = [];
+    roles.forEach(function(r){
+      event.addRole(r);
+    });
+  }
+  return this;
+};
+
+/**
+ * Add a role
+ * 
+ * @param {EventRole|Object} role
+ * @returns {Event}
+ */
+Event.prototype.addRole = function(role){
+  if(role){
+    if(!Array.isArray(this.roles)){
+      this.roles = [];
+    }
+    this.roles.push(EventRole(role));
+  }
   return this;
 };
 
@@ -96,21 +167,31 @@ PlaceReference.prototype.setDescription = function(description){
  * 
  * @return {Object} JSON object
  */
-PlaceReference.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
+Event.prototype.toJSON = function(){
+  var json = Subject.prototype.toJSON.call(this);
   
-  if(this.original){
-    json.original = this.original;
+  if(this.type){
+    json.type = this.type;
   }
   
-  if(this.description){
-    json.description = this.description;
+  if(this.date){
+    json.date = this.date.toJSON();
+  }
+  
+  if(this.place){
+    json.place = this.place.toJSON();
+  }
+  
+  if(this.roles){
+    json.roles = this.roles.map(function(r){
+      return r.toJSON();
+    });
   }
   
   return json;
 };
 
-module.exports = PlaceReference;</code></pre>
+module.exports = Event;</code></pre>
         </article>
     </section>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: NameForm</title>
+    <title>JSDoc: Class: Event</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: NameForm</h1>
+    <h1 class="page-title">Class: Event</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2>NameForm</h2>
+        <h2>Event</h2>
         
     
 </header>
@@ -40,14 +40,14 @@
 
     
 
-    <h4 class="name" id="NameForm"><span class="type-signature"></span>new NameForm<span class="signature">(json<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Event"><span class="type-signature"></span>new Event<span class="signature">(json<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    A form of a name.
+    An event.
 </div>
 
 
@@ -152,7 +152,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NameForm.js.html">NameForm.js</a>, <a href="NameForm.js.html#line10">line 10</a>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -201,14 +201,14 @@
 
     
 
-    <h4 class="name" id="addPart"><span class="type-signature"></span>addPart<span class="signature">(part)</span><span class="type-signature"> &rarr; {<a href="NameForm.html">NameForm</a>}</span></h4>
+    <h4 class="name" id="addRole"><span class="type-signature"></span>addRole<span class="signature">(role)</span><span class="type-signature"> &rarr; {<a href="Event.html">Event</a>}</span></h4>
 
     
 
 
 
 <div class="description">
-    Add a name part
+    Add a role
 </div>
 
 
@@ -244,13 +244,13 @@
 
         <tr>
             
-                <td class="name"><code>part</code></td>
+                <td class="name"><code>role</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="NamePart.html">NamePart</a></span>
+<span class="param-type"><a href="EventRole.html">EventRole</a></span>
 |
 
 <span class="param-type">Object</span>
@@ -304,7 +304,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NameForm.js.html">NameForm.js</a>, <a href="NameForm.js.html#line100">line 100</a>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line127">line 127</a>
     </li></ul></dd>
     
 
@@ -338,7 +338,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="NameForm.html">NameForm</a></span>
+<span class="param-type"><a href="Event.html">Event</a></span>
 
 
     </dd>
@@ -353,14 +353,14 @@
 
     
 
-    <h4 class="name" id="getFullText"><span class="type-signature"></span>getFullText<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+    <h4 class="name" id="getDate"><span class="type-signature"></span>getDate<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
 
     
 
 
 
 <div class="description">
-    Get the full text
+    Get the date
 </div>
 
 
@@ -404,7 +404,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NameForm.js.html">NameForm.js</a>, <a href="NameForm.js.html#line53">line 53</a>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line56">line 56</a>
     </li></ul></dd>
     
 
@@ -430,10 +430,306 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    fullText
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Date.html">Date</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getPlace"><span class="type-signature"></span>getPlace<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="PlaceReference.html">PlaceReference</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Get the place
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="PlaceReference.html">PlaceReference</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getRoles"><span class="type-signature"></span>getRoles<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="EventRole.html">EventRole</a>>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Get the roles
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line100">line 100</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="EventRole.html">EventRole</a>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getType"><span class="type-signature"></span>getType<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Get the type
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
 
 
 <dl>
@@ -457,218 +753,14 @@
 
     
 
-    <h4 class="name" id="getLang"><span class="type-signature"></span>getLang<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+    <h4 class="name" id="setDate"><span class="type-signature"></span>setDate<span class="signature">(date)</span><span class="type-signature"> &rarr; {<a href="Event.html">Event</a>}</span></h4>
 
     
 
 
 
 <div class="description">
-    Get the lang tag
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NameForm.js.html">NameForm.js</a>, <a href="NameForm.js.html#line33">line 33</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    lang
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">String</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="getParts"><span class="type-signature"></span>getParts<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="NamePart.html">NamePart</a>>}</span></h4>
-
-    
-
-
-
-<div class="description">
-    Get the name parts
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NameForm.js.html">NameForm.js</a>, <a href="NameForm.js.html#line73">line 73</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;<a href="NamePart.html">NamePart</a>></span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="setFullText"><span class="type-signature"></span>setFullText<span class="signature">(fullText)</span><span class="type-signature"> &rarr; {<a href="NameForm.html">NameForm</a>}</span></h4>
-
-    
-
-
-
-<div class="description">
-    Set the full text
+    Set the date
 </div>
 
 
@@ -704,13 +796,13 @@
 
         <tr>
             
-                <td class="name"><code>fullText</code></td>
+                <td class="name"><code>date</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type"><a href="Date.html">Date</a></span>
 
 
             
@@ -761,7 +853,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NameForm.js.html">NameForm.js</a>, <a href="NameForm.js.html#line63">line 63</a>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line66">line 66</a>
     </li></ul></dd>
     
 
@@ -787,10 +879,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    This instance
-</div>
-
 
 
 <dl>
@@ -799,7 +887,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="NameForm.html">NameForm</a></span>
+<span class="param-type"><a href="Event.html">Event</a></span>
 
 
     </dd>
@@ -814,14 +902,14 @@
 
     
 
-    <h4 class="name" id="setLang"><span class="type-signature"></span>setLang<span class="signature">(lang)</span><span class="type-signature"> &rarr; {<a href="NameForm.html">NameForm</a>}</span></h4>
+    <h4 class="name" id="setPlace"><span class="type-signature"></span>setPlace<span class="signature">(place)</span><span class="type-signature"> &rarr; {<a href="Event.html">Event</a>}</span></h4>
 
     
 
 
 
 <div class="description">
-    Set the lang tag
+    Set the place
 </div>
 
 
@@ -857,13 +945,13 @@
 
         <tr>
             
-                <td class="name"><code>lang</code></td>
+                <td class="name"><code>place</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type"><a href="PlaceReference.html">PlaceReference</a></span>
 
 
             
@@ -914,7 +1002,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NameForm.js.html">NameForm.js</a>, <a href="NameForm.js.html#line43">line 43</a>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -940,10 +1028,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    This instance
-</div>
-
 
 
 <dl>
@@ -952,7 +1036,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="NameForm.html">NameForm</a></span>
+<span class="param-type"><a href="Event.html">Event</a></span>
 
 
     </dd>
@@ -967,14 +1051,14 @@
 
     
 
-    <h4 class="name" id="setParts"><span class="type-signature"></span>setParts<span class="signature">(parts)</span><span class="type-signature"> &rarr; {<a href="NameForm.html">NameForm</a>}</span></h4>
+    <h4 class="name" id="setRoles"><span class="type-signature"></span>setRoles<span class="signature">(roles)</span><span class="type-signature"> &rarr; {<a href="Event.html">Event</a>}</span></h4>
 
     
 
 
 
 <div class="description">
-    Set the name parts
+    Set the roles
 </div>
 
 
@@ -1010,13 +1094,13 @@
 
         <tr>
             
-                <td class="name"><code>parts</code></td>
+                <td class="name"><code>roles</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array.&lt;<a href="NamePart.html">NamePart</a>></span>
+<span class="param-type">Array.&lt;<a href="EventRole.html">EventRole</a>></span>
 |
 
 <span class="param-type">Array.&lt;Object></span>
@@ -1070,7 +1154,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NameForm.js.html">NameForm.js</a>, <a href="NameForm.js.html#line83">line 83</a>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line110">line 110</a>
     </li></ul></dd>
     
 
@@ -1096,10 +1180,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    This instance
-</div>
-
 
 
 <dl>
@@ -1108,7 +1188,156 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="NameForm.html">NameForm</a></span>
+<span class="param-type"><a href="Event.html">Event</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setType"><span class="type-signature"></span>setType<span class="signature">(type)</span><span class="type-signature"> &rarr; {<a href="Event.html">Event</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Set the type
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line46">line 46</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Event.html">Event</a></span>
 
 
     </dd>
@@ -1174,7 +1403,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="NameForm.js.html">NameForm.js</a>, <a href="NameForm.js.html#line115">line 115</a>
+        <a href="Event.js.html">Event.js</a>, <a href="Event.js.html#line142">line 142</a>
     </li></ul></dd>
     
 
@@ -1244,7 +1473,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed May 25 2016 19:10:10 GMT+0000 (UTC)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed May 25 2016 19:10:09 GMT+0000 (UTC)
 </footer>
 
 <script> prettyPrint(); </script>
