@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Event.js</title>
+    <title>JSDoc: Source: Document.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Event.js</h1>
+    <h1 class="page-title">Source: Document.js</h1>
 
     
 
@@ -26,42 +26,41 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var Subject = require('./Subject'),
-    GDate = require('./Date'),
-    PlaceReference = require('./PlaceReference'),
-    EventRole = require('./EventRole');
+            <pre class="prettyprint source linenums"><code>var Conclusion = require('./Conclusion'),
+    Attribution = require('./Attribution');
 
 /**
- * An event.
+ * A textual document
  * 
  * @constructor
  * @param {Object} [json]
  */
-var Event = function(json){
+var Document = function(json){
   
   // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof Event)){
-    return new Event(json);
+  if(!(this instanceof Document)){
+    return new Document(json);
   }
   
-  Subject.call(this, json);
+  Conclusion.call(this, json);
   
   if(json){
     this.setType(json.type);
-    this.setDate(json.date);
-    this.setPlace(json.place);
-    this.setRoles(json.roles);
+    this.setExtracted(json.extracted);
+    this.setTextType(json.textType);
+    this.setText(json.text);
+    this.setAttribution(json.attribution);
   }
 };
 
-Event.prototype = Object.create(Subject.prototype);
+Document.prototype = Object.create(Conclusion.prototype);
 
 /**
  * Get the type
  * 
  * @returns {String}
  */
-Event.prototype.getType = function(){
+Document.prototype.getType = function(){
   return this.type;
 };
 
@@ -69,95 +68,93 @@ Event.prototype.getType = function(){
  * Set the type
  * 
  * @param {String} type
- * @returns {Event}
+ * @returns {Document}
  */
-Event.prototype.setType = function(type){
+Document.prototype.setType = function(type){
   this.type = type;
   return this;
 };
 
 /**
- * Get the date
+ * Get the extracted flag
  * 
- * @returns {Date}
+ * @returns {Boolean} extracted
  */
-Event.prototype.getDate = function(){
-  return this.date;
+Document.prototype.getExtracted = function(){
+  
+  // Spec says it defaults to false so we force undefined to become false
+  return !!this.extracted;
 };
 
 /**
- * Set the date
+ * Set the extracted flag
  * 
- * @param {Date} date
- * @returns {Event}
+ * @param {Boolean} extracted
+ * @returns {Document}
  */
-Event.prototype.setDate = function(date){
-  if(date){
-    this.date = GDate(date);
-  }
+Document.prototype.setExtracted = function(extracted){
+  this.extracted = !!extracted;
   return this;
 };
 
 /**
- * Get the place
+ * Get the text type
  * 
- * @returns {PlaceReference}
+ * @returns {String}
  */
-Event.prototype.getPlace = function(){
-  return this.place;
+Document.prototype.getTextType = function(){
+  return this.textType;
 };
 
 /**
- * Set the place
+ * Set the text type
  * 
- * @param {PlaceReference} place
- * @returns {Event}
+ * @param {String} textType
+ * @returns {Document}
  */
-Event.prototype.setPlace = function(place){
-  if(place){
-    this.place = PlaceReference(place);
-  }
+Document.prototype.setTextType = function(textType){
+  this.textType = textType;
   return this;
 };
 
 /**
- * Get the roles
+ * Get the text
  * 
- * @returns {EventRole[]}
+ * @returns {String}
  */
-Event.prototype.getRoles = function(){
-  return this.roles || [];
+Document.prototype.getText = function(){
+  return this.text;
 };
 
 /**
- * Set the roles
+ * Set the text
  * 
- * @param {EventRole[]|Object[]} roles
- * @returns {Event}
+ * @param {String} text
+ * @returns {Document}
  */
-Event.prototype.setRoles = function(roles){
-  if(Array.isArray(roles)){
-    var event = this;
-    event.roles = [];
-    roles.forEach(function(r){
-      event.addRole(r);
-    });
-  }
+Document.prototype.setText = function(text){
+  this.text = text;
   return this;
 };
 
 /**
- * Add a role
+ * Get the attribution
  * 
- * @param {EventRole|Object} role
- * @returns {Event}
+ * @returns {Attribution}
  */
-Event.prototype.addRole = function(role){
-  if(role){
-    if(!Array.isArray(this.roles)){
-      this.roles = [];
-    }
-    this.roles.push(EventRole(role));
+Document.prototype.getAttribution = function(){
+  return this.attribution;
+};
+
+/**
+ * Set the attribution
+ * 
+ * @param {Attribution} attribution
+ * @returns {Document}
+ */
+Document.prototype.setAttribution = function(attribution){
+  if(attribution){
+    this.attribution = Attribution(attribution);
   }
   return this;
 };
@@ -167,31 +164,33 @@ Event.prototype.addRole = function(role){
  * 
  * @return {Object} JSON object
  */
-Event.prototype.toJSON = function(){
-  var json = Subject.prototype.toJSON.call(this);
+Document.prototype.toJSON = function(){
+  var json = Conclusion.prototype.toJSON.call(this);
   
   if(this.type){
     json.type = this.type;
   }
   
-  if(this.date){
-    json.date = this.date.toJSON();
+  if(typeof this.extracted === 'boolean'){
+    json.extracted = this.extracted;
   }
   
-  if(this.place){
-    json.place = this.place.toJSON();
+  if(this.textType){
+    json.textType = this.textType;
   }
   
-  if(this.roles){
-    json.roles = this.roles.map(function(r){
-      return r.toJSON();
-    });
+  if(this.text){
+    json.text = this.text;
+  }
+  
+  if(this.attribution){
+    json.attribution = this.attribution.toJSON();
   }
   
   return json;
 };
 
-module.exports = Event;</code></pre>
+module.exports = Document;</code></pre>
         </article>
     </section>
 
