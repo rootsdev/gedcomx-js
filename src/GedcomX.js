@@ -2,7 +2,8 @@ var Person = require('./Person'),
     Relationship = require('./Relationship'),
     SourceDescription = require('./SourceDescription'),
     Agent = require('./Agent'),
-    Event = require('./Event');
+    Event = require('./Event'),
+    Document = require('./Document');
 
 /**
  * A GEDCOM X document.
@@ -23,6 +24,7 @@ var GedcomX = function(json){
     this.setSourceDescriptions(json.sourceDescriptions);
     this.setAgents(json.agents);
     this.setEvents(json.events);
+    this.setDocuments(json.documents);
   }
   
 };
@@ -238,6 +240,48 @@ GedcomX.prototype.addEvent = function(event){
 };
 
 /**
+ * Get the documents
+ * 
+ * @returns {Document[]}
+ */
+GedcomX.prototype.getDocuments = function(){
+  return this.documents || [];
+};
+
+/**
+ * Set the documents
+ * 
+ * @param {Documents[]|Object[]} documents
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.setDocuments = function(documents){
+  if(Array.isArray(documents)){
+    var gedx = this;
+    gedx.documents = [];
+    documents.forEach(function(doc){
+      gedx.addDocument(doc);
+    });
+  }
+  return this;
+};
+
+/**
+ * Add a document
+ * 
+ * @param {Document|Object} doc
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.addDocument = function(doc){
+  if(doc){
+    if(!Array.isArray(this.documents)){
+      this.documents = [];
+    }
+    this.documents.push(Document(doc));
+  }
+  return this;
+};
+
+/**
  * Export the object as JSON
  * 
  * @return {Object} JSON object
@@ -275,6 +319,12 @@ GedcomX.prototype.toJSON = function(){
     });
   }
   
+  if(this.documents){
+    json.documents = this.documents.map(function(d){
+      return d.toJSON();
+    });
+  }
+  
   return json;
 };
 
@@ -285,7 +335,8 @@ GedcomX.Attribution = require('./Attribution');
 GedcomX.Conclusion = require('./Conclusion');
 GedcomX.Coverage = require('./Coverage');
 GedcomX.Date = require('./Date');
-GedcomX.Event = require('./Event');
+GedcomX.Document = Document;
+GedcomX.Event = Event;
 GedcomX.EventRole = require('./EventRole');
 GedcomX.EvidenceReference = require('./EvidenceReference');
 GedcomX.ExtensibleData = require('./ExtensibleData');

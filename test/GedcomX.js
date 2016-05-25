@@ -187,6 +187,17 @@ describe('GedcomX', function(){
           }
         ]
       }  
+    ],
+    documents: [
+      {
+        type: 'http://gedcomx.org/Abstract',
+        extracted: false,
+        textType: 'plain',
+        text: 'Lots of text',
+        attribution: {
+          created: 123456789
+        }
+      }  
     ]
   };
   
@@ -277,6 +288,14 @@ describe('GedcomX', function(){
     assert.equal(event.getRoles().length, 1);
     assert.equal(event.getRoles()[0].getPerson().getResource(), 'http://groom');
     assert.equal(event.getRoles()[0].getType(), 'http://gedcomx.org/Participant');
+    
+    assert.equal(gedx.getDocuments().length, 1);
+    var doc = gedx.getDocuments()[0];
+    assert.equal(doc.getType(), 'http://gedcomx.org/Abstract');
+    assert.equal(doc.getExtracted(), false);
+    assert.equal(doc.getTextType(), 'plain');
+    assert.equal(doc.getText(), 'Lots of text');
+    assert.equal(doc.getAttribution().getCreated().getTime(), 123456789);
     
     assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
   });
@@ -461,6 +480,17 @@ describe('GedcomX', function(){
             })
           ]
         })  
+      ],
+      documents: [
+        GedcomX.Document({
+          type: 'http://gedcomx.org/Abstract',
+          extracted: false,
+          textType: 'plain',
+          text: 'Lots of text',
+          attribution: GedcomX.Attribution({
+            created: 123456789
+          })
+        })
       ]
     });
     
@@ -540,6 +570,14 @@ describe('GedcomX', function(){
     assert.equal(event.getRoles()[0].getPerson().getResource(), 'http://groom');
     assert.equal(event.getRoles()[0].getType(), 'http://gedcomx.org/Participant');
     
+    assert.equal(gedx.getDocuments().length, 1);
+    var doc = gedx.getDocuments()[0];
+    assert.equal(doc.getType(), 'http://gedcomx.org/Abstract');
+    assert.equal(doc.getExtracted(), false);
+    assert.equal(doc.getTextType(), 'plain');
+    assert.equal(doc.getText(), 'Lots of text');
+    assert.equal(doc.getAttribution().getCreated().getTime(), 123456789);
+    
     assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
   });
   
@@ -609,6 +647,14 @@ describe('GedcomX', function(){
           .addRole(GedcomX.EventRole()
             .setType('http://gedcomx.org/Participant')
             .setPerson(GedcomX.ResourceReference().setResource('http://groom')))  
+      )
+      .addDocument(
+        GedcomX.Document()
+        .setType('http://gedcomx.org/Abstract')
+        .setExtracted(false)
+        .setTextType('plain')
+        .setText('Lots of text')
+        .setAttribution(GedcomX.Attribution().setCreated(123456789))          
       );
     
     assert.equal(gedx.getPersons().length, 1);
@@ -686,6 +732,14 @@ describe('GedcomX', function(){
     assert.equal(event.getRoles().length, 1);
     assert.equal(event.getRoles()[0].getPerson().getResource(), 'http://groom');
     assert.equal(event.getRoles()[0].getType(), 'http://gedcomx.org/Participant');
+    
+    assert.equal(gedx.getDocuments().length, 1);
+    var doc = gedx.getDocuments()[0];
+    assert.equal(doc.getType(), 'http://gedcomx.org/Abstract');
+    assert.equal(doc.getExtracted(), false);
+    assert.equal(doc.getTextType(), 'plain');
+    assert.equal(doc.getText(), 'Lots of text');
+    assert.equal(doc.getAttribution().getCreated().getTime(), 123456789);
     
     assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
   });
