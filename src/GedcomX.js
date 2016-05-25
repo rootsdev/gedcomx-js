@@ -235,6 +235,7 @@ GedcomX.Attribution = require('./Attribution');
 GedcomX.Conclusion = require('./Conclusion');
 GedcomX.Coverage = require('./Coverage');
 GedcomX.Date = require('./Date');
+GedcomX.EventRole = require('./EventRole');
 GedcomX.EvidenceReference = require('./EvidenceReference');
 GedcomX.ExtensibleData = require('./ExtensibleData');
 GedcomX.Fact = require('./Fact');
