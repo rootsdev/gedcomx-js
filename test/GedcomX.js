@@ -168,6 +168,25 @@ describe('GedcomX', function(){
           resource: 'http://person'
         }
       }  
+    ],
+    events: [
+      {
+        type: 'http://gedcomx.org/Marriage',
+        date: {
+          formal: '+2002-06-06'
+        },
+        place: {
+          original: 'Her town, MN'
+        },
+        roles: [
+          {
+            person: {
+              resource: 'http://groom'
+            },
+            type: 'http://gedcomx.org/Participant'
+          }
+        ]
+      }  
     ]
   };
   
@@ -249,6 +268,15 @@ describe('GedcomX', function(){
     assert.equal(agent.getAddresses()[0].getValue(), 'big long address');
     assert.equal(agent.getAddresses()[0].getPostalCode(), '123456');
     assert.equal(agent.getPerson().getResource(), 'http://person');
+    
+    assert.equal(gedx.getEvents().length, 1);
+    var event = gedx.getEvents()[0];
+    assert.equal(event.getType(), 'http://gedcomx.org/Marriage');
+    assert.equal(event.getDate().getFormal(), '+2002-06-06');
+    assert.equal(event.getPlace().getOriginal(), 'Her town, MN');
+    assert.equal(event.getRoles().length, 1);
+    assert.equal(event.getRoles()[0].getPerson().getResource(), 'http://groom');
+    assert.equal(event.getRoles()[0].getType(), 'http://gedcomx.org/Participant');
     
     assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
   });
@@ -414,6 +442,25 @@ describe('GedcomX', function(){
             resource: 'http://person'
           })
         })  
+      ],
+      events: [
+        GedcomX.Event({
+          type: 'http://gedcomx.org/Marriage',
+          date: GedcomX.Date({
+            formal: '+2002-06-06'
+          }),
+          place: GedcomX.PlaceReference({
+            original: 'Her town, MN'
+          }),
+          roles: [
+            GedcomX.EventRole({
+              person: {
+                resource: 'http://groom'
+              },
+              type: 'http://gedcomx.org/Participant'
+            })
+          ]
+        })  
       ]
     });
     
@@ -484,6 +531,15 @@ describe('GedcomX', function(){
     assert.equal(agent.getAddresses()[0].getPostalCode(), '123456');
     assert.equal(agent.getPerson().getResource(), 'http://person');
     
+    assert.equal(gedx.getEvents().length, 1);
+    var event = gedx.getEvents()[0];
+    assert.equal(event.getType(), 'http://gedcomx.org/Marriage');
+    assert.equal(event.getDate().getFormal(), '+2002-06-06');
+    assert.equal(event.getPlace().getOriginal(), 'Her town, MN');
+    assert.equal(event.getRoles().length, 1);
+    assert.equal(event.getRoles()[0].getPerson().getResource(), 'http://groom');
+    assert.equal(event.getRoles()[0].getType(), 'http://gedcomx.org/Participant');
+    
     assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
   });
   
@@ -544,6 +600,15 @@ describe('GedcomX', function(){
           .addPhone(GedcomX.ResourceReference().setResource('http://phone'))
           .addAddress(GedcomX.Address().setValue('big long address').setPostalCode('123456'))
           .setPerson(GedcomX.ResourceReference().setResource('http://person'))  
+      )
+      .addEvent(
+        GedcomX.Event()
+          .setType('http://gedcomx.org/Marriage')
+          .setDate(GedcomX.Date().setFormal('+2002-06-06'))
+          .setPlace(GedcomX.PlaceReference().setOriginal('Her town, MN'))
+          .addRole(GedcomX.EventRole()
+            .setType('http://gedcomx.org/Participant')
+            .setPerson(GedcomX.ResourceReference().setResource('http://groom')))  
       );
     
     assert.equal(gedx.getPersons().length, 1);
@@ -612,6 +677,15 @@ describe('GedcomX', function(){
     assert.equal(agent.getAddresses()[0].getValue(), 'big long address');
     assert.equal(agent.getAddresses()[0].getPostalCode(), '123456');
     assert.equal(agent.getPerson().getResource(), 'http://person');
+    
+    assert.equal(gedx.getEvents().length, 1);
+    var event = gedx.getEvents()[0];
+    assert.equal(event.getType(), 'http://gedcomx.org/Marriage');
+    assert.equal(event.getDate().getFormal(), '+2002-06-06');
+    assert.equal(event.getPlace().getOriginal(), 'Her town, MN');
+    assert.equal(event.getRoles().length, 1);
+    assert.equal(event.getRoles()[0].getPerson().getResource(), 'http://groom');
+    assert.equal(event.getRoles()[0].getType(), 'http://gedcomx.org/Participant');
     
     assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
   });
