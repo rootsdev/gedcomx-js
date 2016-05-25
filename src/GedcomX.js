@@ -179,6 +179,7 @@ GedcomX.prototype.toJSON = function(){
 };
 
 // Expose all classes
+GedcomX.Address = require('./Address');
 GedcomX.Attribution = require('./Attribution');
 GedcomX.Conclusion = require('./Conclusion');
 GedcomX.Coverage = require('./Coverage');
