@@ -1,6 +1,7 @@
 var Person = require('./Person'),
     Relationship = require('./Relationship'),
-    SourceDescription = require('./SourceDescription');
+    SourceDescription = require('./SourceDescription'),
+    Agent = require('./Agent');
 
 /**
  * A GEDCOM X document.
@@ -19,6 +20,7 @@ var GedcomX = function(json){
     this.setPersons(json.persons);
     this.setRelationships(json.relationships);
     this.setSourceDescriptions(json.sourceDescriptions);
+    this.setAgents(json.agents);
   }
   
 };
@@ -150,6 +152,48 @@ GedcomX.prototype.addSourceDescription = function(sourceDescription){
 };
 
 /**
+ * Get the agents
+ * 
+ * @returns {Agent[]}
+ */
+GedcomX.prototype.getAgents = function(){
+  return this.agents || [];
+};
+
+/**
+ * Set the agents
+ * 
+ * @param {Agent[]|Object[]} agents
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.setAgents = function(agents){
+  if(Array.isArray(agents)){
+    var gedx = this;
+    gedx.agents = [];
+    agents.forEach(function(a){
+      gedx.addAgent(a);
+    });
+  }
+  return this;
+};
+
+/**
+ * Add an agent
+ * 
+ * @param {Agent|Object}
+ * @returns {GedcomX}
+ */
+GedcomX.prototype.addAgent = function(agent){
+  if(agent){
+    if(!Array.isArray(this.agents)){
+      this.agents = [];
+    }
+    this.agents.push(Agent(agent));
+  }
+  return this;
+};
+
+/**
  * Export the object as JSON
  * 
  * @return {Object} JSON object
@@ -175,11 +219,18 @@ GedcomX.prototype.toJSON = function(){
     });
   }
   
+  if(this.agents){
+    json.agents = this.agents.map(function(a){
+      return a.toJSON();
+    });
+  }
+  
   return json;
 };
 
 // Expose all classes
 GedcomX.Address = require('./Address');
+GedcomX.Agent = Agent;
 GedcomX.Attribution = require('./Attribution');
 GedcomX.Conclusion = require('./Conclusion');
 GedcomX.Coverage = require('./Coverage');
