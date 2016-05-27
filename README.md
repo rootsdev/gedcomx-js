@@ -9,6 +9,10 @@ A JavaScript library for the [GEDCOM X](http://www.gedcomx.org/) data model.
 This library does not yet support the [GEDCOM X RS](https://github.com/FamilySearch/gedcomx-rs)
 and [GEDCOM X Records](https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md) specifications.
 
+Read the [documentation](http://rootsdev.org/gedcomx-js/) for a list of all 
+classes and methods. [`GedcomX`](http://rootsdev.org/gedcomx-js/GedcomX.html) 
+is the root element that you'll usually start with.
+
 ## Usage
 
 Create a document from a JSON object.
@@ -81,9 +85,7 @@ new GedcomX.Person();
 GedcomX.Person();
 ```
 
-All objects have a `toJSON()`.
-
-## Status and Roadmap
+All objects have a `toJSON()` method for serialization.
 
 The library is currently just an [anemic domain model](https://en.wikipedia.org/wiki/Anemic_domain_model)
 for the [GEDCOM X JSON Serialization Format](https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md).

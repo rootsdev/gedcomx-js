@@ -5,7 +5,7 @@
   "main": "src/GedcomX.js",
   "scripts": {
     "test": "mocha -R dot",
-    "docs": "jsdoc src",
+    "docs": "jsdoc src -R ./README.md",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov"
   },
   "devDependencies": {
