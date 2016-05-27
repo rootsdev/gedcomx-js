@@ -1,5 +1,6 @@
 # GEDCOM X JS
 
+[![npm](https://img.shields.io/npm/v/gedcomx-js.svg?maxAge=2592000)](https://www.npmjs.com/package/gedcomx-js)
 [![Build Status](https://travis-ci.org/rootsdev/gedcomx-js.svg?branch=master)](https://travis-ci.org/rootsdev/gedcomx-js)
 [![codecov](https://codecov.io/gh/rootsdev/gedcomx-js/branch/master/graph/badge.svg)](https://codecov.io/gh/rootsdev/gedcomx-js)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rootsdev/gedcomx-js/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rootsdev/gedcomx-js/?branch=master)
