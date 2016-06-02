@@ -42,9 +42,11 @@ ResourceReference.prototype.setResource = function(uri){
  * @return {Object} JSON object
  */
 ResourceReference.prototype.toJSON = function(){
-  return {
-    resource: this.getResource()
-  };
+  var json = {};
+  if(this.resource){
+    json.resource = this.resource;
+  }
+  return json;
 };
 
 module.exports = ResourceReference;

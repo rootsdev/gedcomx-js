@@ -25,6 +25,9 @@ describe('ResourceReference', function(){
     var rr = GedcomX.ResourceReference({ resource: 'http://example.com' });
     rr.setResource('http://newuri.com');
     assert.deepEqual(rr.toJSON(), { resource: 'http://newuri.com' }, 'JSON export is incorrect');
+    
+    rr = GedcomX.ResourceReference();
+    assert.deepEqual(rr.toJSON(), {});
   });
   
 });
