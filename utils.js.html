@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: ExtensibleData.js</title>
+    <title>JSDoc: Source: utils.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: ExtensibleData.js</h1>
+    <h1 class="page-title">Source: utils.js</h1>
 
     
 
@@ -26,77 +26,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var utils = require('./utils');
-
-/**
- * A set of data that supports extension elements.
- * 
- * @constructor
- * @param {Object} [json]
- */
-var ExtensibleData = function(json){
+            <pre class="prettyprint source linenums"><code>module.exports = {
   
-  // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof ExtensibleData)){
-    return new ExtensibleData(json);
+  /**
+   * Check whether the given object is an instance of the specified class.
+   * The necessity for this is discussed in PR #13: https://github.com/rootsdev/gedcomx-js/pull/13
+   * 
+   * We put this functionality in a method to be DRY, even though it's short.
+   * This could easily change in the future for correction and performance.
+   * 
+   * It could be handy to expose this on GedcomX somewhere so that users of the
+   * library can use it too. But then we would need to add a way for them to
+   * easily get the _gedxClass property without being tied to that private
+   * property name. In other words, a static method such as Person.getClass()
+   * 
+   * @param {Object} obj
+   * @param {String} className
+   * @returns {Boolean}
+   */
+  isInstance: function(obj, className){
+    return obj &amp;&amp; Object.getPrototypeOf(obj) !== Object.prototype &amp;&amp; obj._gedxClass === className;
   }
   
-  // If the given object is already an instance then just return it. DON'T copy it.
-  if(ExtensibleData.isInstance(json)){
-    return json;
-  }
-  
-  if(json){
-    this.setId(json.id);
-  }
-};
-
-ExtensibleData._gedxClass = ExtensibleData.prototype._gedxClass = 'GedcomX.ExtensibleData';
-
-/**
- * Check whether the given object is an instance of this class.
- * 
- * @param {Object} obj
- * @returns {Boolean}
- */
-ExtensibleData.isInstance = function(obj){
-  return utils.isInstance(obj, this._gedxClass);
-};
-
-/**
- * Get the object's id.
- * 
- * @returns {String} Id 
- */
-ExtensibleData.prototype.getId = function(){
-  return this.id;
-};
-
-/**
- * Set the object's id.
- * 
- * @param {String} id
- * @return {ExtensibleData} This object, for chaining.
- */
-ExtensibleData.prototype.setId = function(id){
-  this.id = id;
-  return this;
-};
-
-/**
- * Export the object as JSON
- * 
- * @return {Object} JSON object
- */
-ExtensibleData.prototype.toJSON = function(){
-  var json = {};
-  if(this.id){
-    json.id = this.id;
-  }
-  return json;
-};
-
-module.exports = ExtensibleData;</code></pre>
+};</code></pre>
         </article>
     </section>
 
