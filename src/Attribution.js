@@ -1,5 +1,6 @@
 var ExtensibleData = require('./ExtensibleData'),
-    ResourceReference = require('./ResourceReference');
+    ResourceReference = require('./ResourceReference'),
+    utils = require('./utils');
 
 /**
  * Define who is contributing information, when they contributed it, 
@@ -15,6 +16,11 @@ var Attribution = function(json){
     return new Attribution(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Attribution.isInstance(json)){
+    return json;
+  }
+  
   ExtensibleData.call(this, json);
   
   if(json){
@@ -27,6 +33,18 @@ var Attribution = function(json){
 };
 
 Attribution.prototype = Object.create(ExtensibleData.prototype);
+
+Attribution._gedxClass = Attribution.prototype._gedxClass = 'GedcomX.Attribution';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Attribution.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the change message.

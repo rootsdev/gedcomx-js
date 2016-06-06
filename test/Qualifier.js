@@ -35,4 +35,10 @@ describe('Qualifier', function(){
     assert.deepEqual(ref.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Qualifier();
+    var obj2 = GedcomX.Qualifier(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

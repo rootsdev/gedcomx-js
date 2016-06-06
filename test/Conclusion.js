@@ -121,4 +121,10 @@ describe('Conclusion', function(){
     assert.deepEqual(conclusion.toJSON(), conclusionData);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Conclusion();
+    var obj2 = GedcomX.Conclusion(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

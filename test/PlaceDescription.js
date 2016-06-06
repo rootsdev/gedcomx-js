@@ -121,4 +121,10 @@ describe('PlaceDescription', function(){
     assert.deepEqual(place.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.PlaceDescription();
+    var obj2 = GedcomX.PlaceDescription(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

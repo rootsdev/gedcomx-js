@@ -40,4 +40,10 @@ describe('PlaceReference', function(){
     assert.deepEqual(ref.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.PlaceReference();
+    var obj2 = GedcomX.PlaceReference(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

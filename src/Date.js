@@ -1,4 +1,5 @@
-var ExtensibleData = require('./ExtensibleData');
+var ExtensibleData = require('./ExtensibleData'),
+    utils = require('./utils');
 
 /**
  * A date.
@@ -14,6 +15,11 @@ var GDate = function(json){
     return new GDate(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(GDate.isInstance(json)){
+    return json;
+  }
+  
   ExtensibleData.call(this, json);
   
   if(json){
@@ -23,6 +29,18 @@ var GDate = function(json){
 };
 
 GDate.prototype = Object.create(ExtensibleData.prototype);
+
+GDate._gedxClass = GDate.prototype._gedxClass = 'GedcomX.Date';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+GDate.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the original date value

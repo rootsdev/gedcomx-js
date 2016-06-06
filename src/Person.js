@@ -1,7 +1,8 @@
 var Subject = require('./Subject'),
     Gender = require('./Gender'),
     Name = require('./Name'),
-    Fact = require('./Fact');
+    Fact = require('./Fact'),
+    utils = require('./utils');
     
 /**
  * A person.
@@ -16,6 +17,11 @@ var Person = function(json){
     return new Person(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Person.isInstance(json)){
+    return json;
+  }
+  
   Subject.call(this, json);
   
   if(json){
@@ -27,6 +33,18 @@ var Person = function(json){
 };
 
 Person.prototype = Object.create(Subject.prototype);
+
+Person._gedxClass = Person.prototype._gedxClass = 'GedcomX.Person';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Person.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Check whether the person is marked as private

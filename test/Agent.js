@@ -209,4 +209,10 @@ describe('Agent', function(){
     assert.deepEqual(agent.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Agent();
+    var obj2 = GedcomX.Agent(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

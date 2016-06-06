@@ -33,4 +33,10 @@ describe('SourceCitation', function(){
     assert.deepEqual(citation.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.SourceCitation();
+    var obj2 = GedcomX.SourceCitation(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

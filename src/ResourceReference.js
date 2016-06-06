@@ -1,3 +1,5 @@
+var utils = require('./utils');
+
 /**
  * A generic reference to a resource.
  * 
@@ -11,9 +13,26 @@ var ResourceReference = function(json){
     return new ResourceReference(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(ResourceReference.isInstance(json)){
+    return json;
+  }
+  
   if(json){
     this.setResource(json.resource);
   }
+};
+
+ResourceReference._gedxClass = ResourceReference.prototype._gedxClass = 'GedcomX.ResourceReference';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+ResourceReference.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
 };
 
 /**

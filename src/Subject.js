@@ -1,7 +1,8 @@
 var Conclusion = require('./Conclusion'),
     Identifiers = require('./Identifiers'),
     EvidenceReference = require('./EvidenceReference'),
-    SourceReference = require('./SourceReference');
+    SourceReference = require('./SourceReference'),
+    utils = require('./utils');
 
 /**
  * An object identified in time and space by various conclusions.
@@ -16,6 +17,11 @@ var Subject = function(json){
     return new Subject(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Subject.isInstance(json)){
+    return json;
+  }
+  
   Conclusion.call(this, json);
   
   if(json){
@@ -27,6 +33,18 @@ var Subject = function(json){
 };
 
 Subject.prototype = Object.create(Conclusion.prototype);
+
+Subject._gedxClass = Subject.prototype._gedxClass = 'GedcomX.Subject';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Subject.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Is this an extracted conclusion?

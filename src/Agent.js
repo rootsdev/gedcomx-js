@@ -3,7 +3,8 @@ var ExtensibleData = require('./ExtensibleData'),
     OnlineAccount = require('./OnlineAccount'),
     Address = require('./Address'),
     Identifiers = require('./Identifiers'),
-    TextValue = require('./TextValue');
+    TextValue = require('./TextValue'),
+    utils = require('./utils');
 
 /**
  * Someone or something that curates genealogical data, such as a genealogical 
@@ -17,6 +18,11 @@ var Agent = function(json){
   // Protect against forgetting the new keyword when calling the constructor
   if(!(this instanceof Agent)){
     return new Agent(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Agent.isInstance(json)){
+    return json;
   }
   
   ExtensibleData.call(this, json);
@@ -35,6 +41,18 @@ var Agent = function(json){
 };
 
 Agent.prototype = Object.create(ExtensibleData.prototype);
+
+Agent._gedxClass = Agent.prototype._gedxClass = 'GedcomX.Agent';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Agent.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the identifiers

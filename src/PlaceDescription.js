@@ -1,7 +1,8 @@
 var Subject = require('./Subject'),
     ResourceReference = require('./ResourceReference'),
     TextValue = require('./TextValue'),
-    GDate = require('./Date');
+    GDate = require('./Date'),
+    utils = require('./utils');
 
 /**
  * A description of a place
@@ -14,6 +15,11 @@ var PlaceDescription = function(json){
   // Protect against forgetting the new keyword when calling the constructor
   if(!(this instanceof PlaceDescription)){
     return new PlaceDescription(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(PlaceDescription.isInstance(json)){
+    return json;
   }
   
   Subject.call(this, json);
@@ -31,6 +37,18 @@ var PlaceDescription = function(json){
 };
 
 PlaceDescription.prototype = Object.create(Subject.prototype);
+
+PlaceDescription._gedxClass = PlaceDescription.prototype._gedxClass = 'GedcomX.PlaceDescription';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+PlaceDescription.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the type

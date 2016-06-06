@@ -1,7 +1,8 @@
 var Conclusion = require('./Conclusion'),
     PlaceReference = require('./PlaceReference'),
     GDate = require('./Date'),
-    Qualifier = require('./Qualifier');
+    Qualifier = require('./Qualifier'),
+    utils = require('./utils');
 
 /**
  * A fact for a person or relationship.
@@ -16,6 +17,11 @@ var Fact = function(json){
     return new Fact(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Fact.isInstance(json)){
+    return json;
+  }
+  
   Conclusion.call(this, json);
   
   if(json){
@@ -28,6 +34,18 @@ var Fact = function(json){
 };
 
 Fact.prototype = Object.create(Conclusion.prototype);
+
+Fact._gedxClass = Fact.prototype._gedxClass = 'GedcomX.Fact';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Fact.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the fact type

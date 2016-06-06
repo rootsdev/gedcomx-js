@@ -51,4 +51,10 @@ describe('Gender', function(){
     assert.deepEqual(gender.toJSON(), genderData);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Gender();
+    var obj2 = GedcomX.Gender(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

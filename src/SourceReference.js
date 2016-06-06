@@ -1,5 +1,6 @@
 var ExtensibleData = require('./ExtensibleData'),
-    Attribution = require('./Attribution');
+    Attribution = require('./Attribution'),
+    utils = require('./utils');
 
 /**
  * A reference to a discription of a source.
@@ -14,6 +15,11 @@ var SourceReference = function(json){
     return new SourceReference(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(SourceReference.isInstance(json)){
+    return json;
+  }
+  
   ExtensibleData.call(this, json);
   
   if(json){
@@ -23,6 +29,18 @@ var SourceReference = function(json){
 };
 
 SourceReference.prototype = Object.create(ExtensibleData.prototype);
+
+SourceReference._gedxClass = SourceReference.prototype._gedxClass = 'GedcomX.SourceReference';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+SourceReference.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the description.

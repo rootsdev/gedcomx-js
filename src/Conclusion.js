@@ -2,7 +2,8 @@ var ExtensibleData = require('./ExtensibleData'),
     Attribution = require('./Attribution'),
     ResourceReference = require('./ResourceReference'),
     Note = require('./Note'),
-    SourceReference = require('./SourceReference');
+    SourceReference = require('./SourceReference'),
+    utils = require('./utils');
 
 /**
  * An abstract concept for a basic genealogical data item.
@@ -15,6 +16,11 @@ var Conclusion = function(json){
   // Protect against forgetting the new keyword when calling the constructor
   if(!(this instanceof Conclusion)){
     return new Conclusion(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Conclusion.isInstance(json)){
+    return json;
   }
   
   ExtensibleData.call(this, json);
@@ -30,6 +36,18 @@ var Conclusion = function(json){
 };
 
 Conclusion.prototype = Object.create(ExtensibleData.prototype);
+
+Conclusion._gedxClass = Conclusion.prototype._gedxClass = 'GedcomX.Conclusion';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Conclusion.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the attribution.

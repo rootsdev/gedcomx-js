@@ -48,4 +48,10 @@ describe('OnlineAccount', function(){
     assert.deepEqual(account.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.OnlineAccount();
+    var obj2 = GedcomX.OnlineAccount(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

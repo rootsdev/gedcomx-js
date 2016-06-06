@@ -78,4 +78,10 @@ describe('Note', function(){
     assert.deepEqual(note.toJSON(), noteData);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Note();
+    var obj2 = GedcomX.Note(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

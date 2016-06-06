@@ -1,6 +1,7 @@
 var ExtensibleData = require('./ExtensibleData'),
     GDate = require('./Date'),
-    PlaceReference = require('./PlaceReference');
+    PlaceReference = require('./PlaceReference'),
+    utils = require('./utils');
 
 /**
  * A description of the spatial and temporal coverage of a resource.
@@ -15,6 +16,11 @@ var Coverage = function(json){
     return new Coverage(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Coverage.isInstance(json)){
+    return json;
+  }
+  
   ExtensibleData.call(this, json);
   
   if(json){
@@ -24,6 +30,18 @@ var Coverage = function(json){
 };
 
 Coverage.prototype = Object.create(ExtensibleData.prototype);
+
+Coverage._gedxClass = Coverage.prototype._gedxClass = 'GedcomX.Coverage';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Coverage.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the spatial coverage

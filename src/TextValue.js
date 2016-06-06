@@ -1,3 +1,5 @@
+var utils = require('./utils');
+
 /**
  * A text value in a specific language.
  * 
@@ -11,10 +13,27 @@ var TextValue = function(json){
     return new TextValue(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(TextValue.isInstance(json)){
+    return json;
+  }
+  
   if(json){
     this.setLang(json.lang);
     this.setValue(json.value);
   }
+};
+
+TextValue._gedxClass = TextValue.prototype._gedxClass = 'GedcomX.TextValue';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+TextValue.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
 };
 
 /**

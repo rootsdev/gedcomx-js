@@ -1,4 +1,5 @@
-var Conclusion = require('./Conclusion');
+var Conclusion = require('./Conclusion'),
+    utils = require('./utils');
 
 /**
  * A gender conclusion.
@@ -13,6 +14,11 @@ var Gender = function(json){
     return new Gender(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Gender.isInstance(json)){
+    return json;
+  }
+  
   Conclusion.call(this, json);
   
   if(json){
@@ -21,6 +27,18 @@ var Gender = function(json){
 };
 
 Gender.prototype = Object.create(Conclusion.prototype);
+
+Gender._gedxClass = Gender.prototype._gedxClass = 'GedcomX.Gender';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Gender.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the gender type

@@ -1,5 +1,6 @@
 var ExtensibleData = require('./ExtensibleData'),
-    NamePart = require('./NamePart');
+    NamePart = require('./NamePart'),
+    utils = require('./utils');
 
 /**
  * A form of a name.
@@ -14,6 +15,11 @@ var NameForm = function(json){
     return new NameForm(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(NameForm.isInstance(json)){
+    return json;
+  }
+  
   ExtensibleData.call(this, json);
   
   if(json){
@@ -24,6 +30,18 @@ var NameForm = function(json){
 };
 
 NameForm.prototype = Object.create(ExtensibleData.prototype);
+
+NameForm._gedxClass = NameForm.prototype._gedxClass = 'GedcomX.NameForm';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+NameForm.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the lang tag

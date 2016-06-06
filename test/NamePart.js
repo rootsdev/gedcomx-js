@@ -73,4 +73,10 @@ describe('NamePart', function(){
     assert.deepEqual(part.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.NamePart();
+    var obj2 = GedcomX.NamePart(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

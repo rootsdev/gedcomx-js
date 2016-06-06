@@ -1,5 +1,6 @@
 var Conclusion = require('./Conclusion'),
-    ResourceReference = require('./ResourceReference');
+    ResourceReference = require('./ResourceReference'),
+    utils = require('./utils');
 
 /**
  * A role that a specific person plays in an event.
@@ -14,6 +15,11 @@ var EventRole = function(json){
     return new EventRole(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Conclusion.isInstance(json)){
+    return json;
+  }
+  
   Conclusion.call(this, json);
   
   if(json){
@@ -24,6 +30,18 @@ var EventRole = function(json){
 };
 
 EventRole.prototype = Object.create(Conclusion.prototype);
+
+Conclusion._gedxClass = Conclusion.prototype._gedxClass = 'GedcomX.Conclusion';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Conclusion.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the person

@@ -35,4 +35,10 @@ describe('TextValue', function(){
     assert.deepEqual(value.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.TextValue();
+    var obj2 = GedcomX.TextValue(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

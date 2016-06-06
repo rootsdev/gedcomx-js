@@ -58,4 +58,10 @@ describe('SourceReference', function(){
     assert.deepEqual(ref.toJSON(), refData);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.SourceReference();
+    var obj2 = GedcomX.SourceReference(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

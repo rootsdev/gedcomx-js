@@ -1,5 +1,6 @@
 var ResourceReference = require('./ResourceReference'),
-    Attribution = require('./Attribution');
+    Attribution = require('./Attribution'),
+    utils = require('./utils');
 
 /**
  * A generic reference to a resource.
@@ -14,6 +15,11 @@ var EvidenceReference = function(json){
     return new EvidenceReference(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(ResourceReference.isInstance(json)){
+    return json;
+  }
+  
   ResourceReference.call(this, json);
   
   if(json){
@@ -22,6 +28,18 @@ var EvidenceReference = function(json){
 };
 
 EvidenceReference.prototype = Object.create(ResourceReference.prototype);
+
+ResourceReference._gedxClass = ResourceReference.prototype._gedxClass = 'GedcomX.ResourceReference';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+ResourceReference.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the attribution.

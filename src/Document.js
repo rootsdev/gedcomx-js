@@ -1,5 +1,6 @@
 var Conclusion = require('./Conclusion'),
-    Attribution = require('./Attribution');
+    Attribution = require('./Attribution'),
+    utils = require('./utils');
 
 /**
  * A textual document
@@ -14,6 +15,11 @@ var Document = function(json){
     return new Document(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Document.isInstance(json)){
+    return json;
+  }
+  
   Conclusion.call(this, json);
   
   if(json){
@@ -26,6 +32,18 @@ var Document = function(json){
 };
 
 Document.prototype = Object.create(Conclusion.prototype);
+
+Document._gedxClass = Document.prototype._gedxClass = 'GedcomX.Document';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Document.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the type

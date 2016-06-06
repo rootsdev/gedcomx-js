@@ -1,4 +1,5 @@
-var ExtensibleData = require('./ExtensibleData');
+var ExtensibleData = require('./ExtensibleData'),
+    utils = require('./utils');
 
 /**
  * A source citation.
@@ -13,6 +14,11 @@ var SourceCitation = function(json){
     return new SourceCitation(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(SourceCitation.isInstance(json)){
+    return json;
+  }
+  
   ExtensibleData.call(this, json);
   
   if(json){
@@ -22,6 +28,18 @@ var SourceCitation = function(json){
 };
 
 SourceCitation.prototype = Object.create(ExtensibleData.prototype);
+
+SourceCitation._gedxClass = SourceCitation.prototype._gedxClass = 'GedcomX.SourceCitation';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+SourceCitation.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the lang

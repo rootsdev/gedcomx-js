@@ -1,3 +1,5 @@
+var utils = require('./utils');
+
 /**
  * A set of data that supports extension elements.
  * 
@@ -11,9 +13,26 @@ var ExtensibleData = function(json){
     return new ExtensibleData(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(ExtensibleData.isInstance(json)){
+    return json;
+  }
+  
   if(json){
     this.setId(json.id);
   }
+};
+
+ExtensibleData._gedxClass = ExtensibleData.prototype._gedxClass = 'GedcomX.ExtensibleData';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+ExtensibleData.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
 };
 
 /**

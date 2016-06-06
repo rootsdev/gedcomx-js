@@ -40,4 +40,10 @@ describe('Date', function(){
     assert.deepEqual(date.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Date();
+    var obj2 = GedcomX.Date(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

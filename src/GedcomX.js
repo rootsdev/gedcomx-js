@@ -6,7 +6,8 @@ var ExtensibleData = require('./ExtensibleData'),
     Event = require('./Event'),
     Document = require('./Document'),
     PlaceDescription = require('./PlaceDescription'),
-    Attribution = require('./Attribution');
+    Attribution = require('./Attribution'),
+    utils = require('./utils');
 
 /**
  * A GEDCOM X document.
@@ -19,6 +20,17 @@ var GedcomX = function(json){
   // Protect against forgetting the new keyword when calling the constructor
   if(!(this instanceof GedcomX)){
     return new GedcomX(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  /*
+  if(utils.instanceOf(json, this._gedxClass)){
+    return json;
+  }
+  */
+  
+  if(GedcomX.isInstance(json)){
+    return json;
   }
   
   ExtensibleData.call(this, json);
@@ -36,6 +48,18 @@ var GedcomX = function(json){
 };
 
 GedcomX.prototype = Object.create(ExtensibleData.prototype);
+
+GedcomX._gedxClass = GedcomX.prototype._gedxClass = 'GedcomX';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+GedcomX.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the persons

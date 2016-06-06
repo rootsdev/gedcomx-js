@@ -577,15 +577,10 @@ describe('GedcomX', function(){
     assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
   });
   
-  it('adding Person does not copy', function(){
-    var gedx = GedcomX();
-    var person = GedcomX.Person({
-      id: 'first'
-    });
-    gedx.addPerson(person);
-    person.setId('second');
-    assert.strictEqual(gedx.getPersons()[0], person, 'the added instance is not the same as the original instance');
-    assert.deepEqual(gedx.getPersons()[0].toJSON(), person.toJSON(), 'serialization of the added person does not match the original person');
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX();
+    var obj2 = GedcomX(obj1);
+    assert.strictEqual(obj1, obj2);
   });
   
 });

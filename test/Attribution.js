@@ -67,4 +67,10 @@ describe('Attribution', function(){
     assert.deepEqual(attr.toJSON(), attrData, 'toJSON export does not equal original data.');
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Attribution();
+    var obj2 = GedcomX.Attribution(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

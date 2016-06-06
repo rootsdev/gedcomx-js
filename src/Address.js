@@ -1,4 +1,5 @@
-var ExtensibleData = require('./ExtensibleData');
+var ExtensibleData = require('./ExtensibleData'),
+    utils = require('./utils');
 
 /**
  * An address.
@@ -11,6 +12,11 @@ var Address = function(json){
   // Protect against forgetting the new keyword when calling the constructor
   if(!(this instanceof Address)){
     return new Address(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Address.isInstance(json)){
+    return json;
   }
   
   ExtensibleData.call(this, json);
@@ -31,6 +37,18 @@ var Address = function(json){
 };
 
 Address.prototype = Object.create(ExtensibleData.prototype);
+
+Address._gedxClass = Address.prototype._gedxClass = 'GedcomX.Address';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Address.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the complete address value

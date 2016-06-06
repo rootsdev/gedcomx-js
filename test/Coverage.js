@@ -54,4 +54,10 @@ describe('Coverage', function(){
     assert.deepEqual(coverage.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Coverage();
+    var obj2 = GedcomX.Coverage(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

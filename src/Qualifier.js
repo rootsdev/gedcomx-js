@@ -1,3 +1,5 @@
+var utils = require('./utils');
+
 /**
  * Qualifiers are used to supply additional details about a piece of data.
  * 
@@ -11,10 +13,27 @@ var Qualifier = function(json){
     return new Qualifier(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Qualifier.isInstance(json)){
+    return json;
+  }
+  
   if(json){
     this.setName(json.name);
     this.setValue(json.value);
   }
+};
+
+Qualifier._gedxClass = Qualifier.prototype._gedxClass = 'GedcomX.Qualifier';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Qualifier.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
 };
 
 /**

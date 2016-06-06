@@ -1,3 +1,5 @@
+var utils = require('./utils');
+
 /**
  * Manage the set of identifers for an object.
  * 
@@ -11,6 +13,11 @@ var Identifiers = function(json){
     return new Identifiers(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Identifiers.isInstance(json)){
+    return json;
+  }
+  
   this.identifiers = {};
   
   if(json){
@@ -21,6 +28,19 @@ var Identifiers = function(json){
     }
   }
 };
+
+Identifiers._gedxClass = Identifiers.prototype._gedxClass = 'GedcomX.Identifiers';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Identifiers.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
+
 
 /**
  * Export the object as JSON

@@ -1,6 +1,7 @@
 var Conclusion = require('./Conclusion'),
     NameForm = require('./NameForm'),
-    GDate = require('./Date');
+    GDate = require('./Date'),
+    utils = require('./utils');
 
 /**
  * A name.
@@ -15,6 +16,11 @@ var Name = function(json){
     return new Name(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Name.isInstance(json)){
+    return json;
+  }
+  
   Conclusion.call(this, json);
   
   if(json){
@@ -25,6 +31,18 @@ var Name = function(json){
 };
 
 Name.prototype = Object.create(Conclusion.prototype);
+
+Name._gedxClass = Name.prototype._gedxClass = 'GedcomX.Name';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Name.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the name type

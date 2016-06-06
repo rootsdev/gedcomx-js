@@ -42,4 +42,10 @@ describe('EvidenceReference', function(){
     assert.deepEqual(er.toJSON(), erData);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.EvidenceReference();
+    var obj2 = GedcomX.EvidenceReference(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

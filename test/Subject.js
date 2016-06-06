@@ -129,4 +129,10 @@ describe('Subject', function(){
     assert.deepEqual(subjectData, subject.toJSON());
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Subject();
+    var obj2 = GedcomX.Subject(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

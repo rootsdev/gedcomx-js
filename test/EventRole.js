@@ -55,4 +55,10 @@ describe('EventRole', function(){
     assert.deepEqual(role.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.EventRole();
+    var obj2 = GedcomX.EventRole(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

@@ -1,5 +1,6 @@
 var ExtensibleData = require('./ExtensibleData'),
-    Attribution = require('./Attribution');
+    Attribution = require('./Attribution'),
+    utils = require('./utils');
 
 /**
  * A note about a resource.
@@ -14,6 +15,11 @@ var Note = function(json){
     return new Note(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Note.isInstance(json)){
+    return json;
+  }
+  
   ExtensibleData.call(this, json);
   
   if(json){
@@ -25,6 +31,18 @@ var Note = function(json){
 };
 
 Note.prototype = Object.create(ExtensibleData.prototype);
+
+Note._gedxClass = Note.prototype._gedxClass = 'GedcomX.Note';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Note.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the language identifier.

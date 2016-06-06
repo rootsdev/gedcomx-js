@@ -1,7 +1,8 @@
 var Subject = require('./Subject'),
     GDate = require('./Date'),
     PlaceReference = require('./PlaceReference'),
-    EventRole = require('./EventRole');
+    EventRole = require('./EventRole'),
+    utils = require('./utils');
 
 /**
  * An event.
@@ -16,6 +17,11 @@ var Event = function(json){
     return new Event(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Event.isInstance(json)){
+    return json;
+  }
+  
   Subject.call(this, json);
   
   if(json){
@@ -27,6 +33,18 @@ var Event = function(json){
 };
 
 Event.prototype = Object.create(Subject.prototype);
+
+Event._gedxClass = Event.prototype._gedxClass = 'GedcomX.Event';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Event.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the type

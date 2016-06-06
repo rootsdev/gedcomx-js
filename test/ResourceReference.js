@@ -30,4 +30,10 @@ describe('ResourceReference', function(){
     assert.deepEqual(rr.toJSON(), {});
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.ResourceReference();
+    var obj2 = GedcomX.ResourceReference(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

@@ -97,4 +97,10 @@ describe('Event', function(){
     assert.deepEqual(event.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Event();
+    var obj2 = GedcomX.Event(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

@@ -27,4 +27,10 @@ describe('ExtensibleData', function(){
     assert.deepEqual(ed.toJSON(), {id:'newId'}, 'JSON export is incorrect');
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.ExtensibleData();
+    var obj2 = GedcomX.ExtensibleData(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

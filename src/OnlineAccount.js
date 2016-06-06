@@ -1,5 +1,6 @@
 var ExtensibleData = require('./ExtensibleData'),
-    ResourceReference = require('./ResourceReference');
+    ResourceReference = require('./ResourceReference'),
+    utils = require('./utils');
 
 /**
  * An online account for a web application.
@@ -14,6 +15,11 @@ var OnlineAccount = function(json){
     return new OnlineAccount(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(OnlineAccount.isInstance(json)){
+    return json;
+  }
+  
   ExtensibleData.call(this, json);
   
   if(json){
@@ -23,6 +29,18 @@ var OnlineAccount = function(json){
 };
 
 OnlineAccount.prototype = Object.create(ExtensibleData.prototype);
+
+OnlineAccount._gedxClass = OnlineAccount.prototype._gedxClass = 'GedcomX.OnlineAccount';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+OnlineAccount.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the service home page

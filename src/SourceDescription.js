@@ -6,7 +6,8 @@ var ExtensibleData = require('./ExtensibleData'),
     Note = require('./Note'),
     Attribution = require('./Attribution'),
     Coverage = require('./Coverage'),
-    Identifiers = require('./Identifiers');
+    Identifiers = require('./Identifiers'),
+    utils = require('./utils');
 
 /**
  * A description of a source.
@@ -19,6 +20,11 @@ var SourceDescription = function(json){
   // Protect against forgetting the new keyword when calling the constructor
   if(!(this instanceof SourceDescription)){
     return new SourceDescription(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(SourceDescription.isInstance(json)){
+    return json;
   }
   
   ExtensibleData.call(this, json);
@@ -46,6 +52,18 @@ var SourceDescription = function(json){
 };
 
 SourceDescription.prototype = Object.create(ExtensibleData.prototype);
+
+SourceDescription._gedxClass = SourceDescription.prototype._gedxClass = 'GedcomX.SourceDescription';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+SourceDescription.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the resource type

@@ -85,4 +85,10 @@ describe('Relationship', function(){
     assert.deepEqual(relationship.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Relationship();
+    var obj2 = GedcomX.Relationship(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

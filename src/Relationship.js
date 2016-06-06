@@ -1,6 +1,7 @@
 var Subject = require('./Subject'),
     Fact = require('./Fact'),
-    ResourceReference = require('./ResourceReference');
+    ResourceReference = require('./ResourceReference'),
+    utils = require('./utils');
     
 /**
  * A relationship.
@@ -15,6 +16,11 @@ var Relationship = function(json){
     return new Relationship(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Relationship.isInstance(json)){
+    return json;
+  }
+  
   Subject.call(this, json);
   
   if(json){
@@ -26,6 +32,18 @@ var Relationship = function(json){
 };
 
 Relationship.prototype = Object.create(Subject.prototype);
+
+Relationship._gedxClass = Relationship.prototype._gedxClass = 'GedcomX.Relationship';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Relationship.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the relationship type

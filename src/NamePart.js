@@ -1,5 +1,6 @@
 var ExtensibleData = require('./ExtensibleData'),
-    Qualifier = require('./Qualifier');
+    Qualifier = require('./Qualifier'),
+    utils = require('./utils');
 
 /**
  * A part of a name.
@@ -14,6 +15,11 @@ var NamePart = function(json){
     return new NamePart(json);
   }
   
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(NamePart.isInstance(json)){
+    return json;
+  }
+  
   ExtensibleData.call(this, json);
   
   if(json){
@@ -24,6 +30,18 @@ var NamePart = function(json){
 };
 
 NamePart.prototype = Object.create(ExtensibleData.prototype);
+
+NamePart._gedxClass = NamePart.prototype._gedxClass = 'GedcomX.NamePart';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+NamePart.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
 
 /**
  * Get the type

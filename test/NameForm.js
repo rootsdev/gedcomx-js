@@ -98,4 +98,10 @@ describe('NameForm', function(){
     assert.deepEqual(nameForm.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.NameForm();
+    var obj2 = GedcomX.NameForm(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });

@@ -78,4 +78,10 @@ describe('Address', function(){
     assert.deepEqual(address.toJSON(), data);
   });
   
+  it('constructor does not copy instances', function(){
+    var obj1 = GedcomX.Address();
+    var obj2 = GedcomX.Address(obj1);
+    assert.strictEqual(obj1, obj2);
+  });
+  
 });
