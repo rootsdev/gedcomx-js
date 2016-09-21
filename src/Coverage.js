@@ -93,17 +93,10 @@ Coverage.prototype.setTemporal = function(temporal){
  * @return {Object} JSON object
  */
 Coverage.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.spatial){
-    json.spatial = this.spatial.toJSON();
-  }
-  
-  if(this.temporal){
-    json.temporal = this.temporal.toJSON();
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'spatial',
+    'temporal'
+  ]);
 };
 
 module.exports = Coverage;

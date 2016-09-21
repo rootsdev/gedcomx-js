@@ -99,13 +99,7 @@ NamePart.prototype.getQualifiers = function(){
  * @returns {NamePart} This instance
  */
 NamePart.prototype.setQualifiers = function(qualifiers){
-  if(Array.isArray(qualifiers)){
-    this.qualifiers = [];
-    var fact = this;
-    qualifiers.forEach(function(q){
-      fact.addQualifier(q);
-    });
-  }
+  return this._setArray(qualifiers, 'qualifiers', 'addQualifier');
 };
 
 /**
@@ -115,13 +109,7 @@ NamePart.prototype.setQualifiers = function(qualifiers){
  * @returns {NamePart} This instance
  */
 NamePart.prototype.addQualifier = function(qualifier){
-  if(qualifier){
-    if(!Array.isArray(this.qualifiers)){
-      this.qualifiers = [];
-    }
-    this.qualifiers.push(Qualifier(qualifier));
-  }
-  return this;
+  return this._arrayPush(qualifier, 'qualifiers', Qualifier);
 };
 
 /**
@@ -130,23 +118,11 @@ NamePart.prototype.addQualifier = function(qualifier){
  * @return {Object} JSON object
  */
 NamePart.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.type){
-    json.type = this.type;
-  }
-  
-  if(this.value){
-    json.value = this.value;
-  }
-  
-  if(this.qualifiers){
-    json.qualifiers = this.qualifiers.map(function(q){
-      return q.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'type',
+    'value',
+    'qualifiers'
+  ]);
 };
 
 module.exports = NamePart;

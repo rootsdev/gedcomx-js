@@ -111,21 +111,11 @@ EventRole.prototype.setDetails = function(details){
  * @return {Object} JSON object
  */
 EventRole.prototype.toJSON = function(){
-  var json = Conclusion.prototype.toJSON.call(this);
-  
-  if(this.person){
-    json.person = this.person.toJSON();
-  }
-  
-  if(this.type){
-    json.type = this.type;
-  }
-  
-  if(this.details){
-    json.details = this.details;
-  }
-  
-  return json;
+  return this._toJSON(Conclusion, [
+    'person',
+    'type',
+    'details'
+  ]);
 };
 
 module.exports = EventRole;

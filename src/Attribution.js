@@ -160,29 +160,13 @@ Attribution.prototype.setModified = function(date){
  * @return {Object} JSON object
  */
 Attribution.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.changeMessage){
-    json.changeMessage = this.changeMessage;
-  }
-  
-  if(this.contributor){
-    json.contributor = this.contributor.toJSON();
-  }
-  
-  if(this.created){
-    json.created = this.created.getTime();
-  }
-  
-  if(this.creator){
-    json.creator = this.creator.toJSON();
-  }
-  
-  if(this.modified){
-    json.modified = this.modified.getTime();
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'changeMessage',
+    'contributor',
+    'created',
+    'creator',
+    'modified'
+  ]);
 };
 
 module.exports = Attribution;

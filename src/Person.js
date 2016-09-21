@@ -104,13 +104,7 @@ Person.prototype.getNames = function(){
  * @returns {Person} This instance
  */
 Person.prototype.setNames = function(names){
-  if(Array.isArray(names)){
-    this.names = [];
-    var person = this;
-    names.forEach(function(n){
-      person.addName(n);
-    });
-  }
+  return this._setArray(names, 'names', 'addName');
 };
 
 /**
@@ -120,13 +114,7 @@ Person.prototype.setNames = function(names){
  * @returns {Person} This instance
  */
 Person.prototype.addName = function(name){
-  if(name){
-    if(!Array.isArray(this.names)){
-      this.names = [];
-    }
-    this.names.push(Name(name));
-  }
-  return this;
+  return this._arrayPush(name, 'names', Name);
 };
 
 /**
@@ -145,13 +133,7 @@ Person.prototype.getFacts = function(){
  * @returns {Person} This instance
  */
 Person.prototype.setFacts = function(facts){
-  if(Array.isArray(facts)){
-    this.facts = [];
-    var person = this;
-    facts.forEach(function(n){
-      person.addFact(n);
-    });
-  }
+  return this._setArray(facts, 'facts', 'addFact');
 };
 
 /**
@@ -161,13 +143,7 @@ Person.prototype.setFacts = function(facts){
  * @returns {Person} This instance
  */
 Person.prototype.addFact = function(fact){
-  if(fact){
-    if(!Array.isArray(this.facts)){
-      this.facts = [];
-    }
-    this.facts.push(Fact(fact));
-  }
-  return this;
+  return this._arrayPush(fact, 'facts', Fact);
 };
 
 /**
@@ -176,29 +152,12 @@ Person.prototype.addFact = function(fact){
  * @return {Object} JSON object
  */
 Person.prototype.toJSON = function(){
-  var json = Subject.prototype.toJSON.call(this);
-  
-  if(typeof this.private === 'boolean'){
-    json.private = this.private;
-  }
-  
-  if(this.gender){
-    json.gender = this.gender.toJSON();
-  }
-  
-  if(this.names){
-    json.names = this.names.map(function(n){
-      return n.toJSON();
-    });
-  }
-  
-  if(this.facts){
-    json.facts = this.facts.map(function(f){
-      return f.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(Subject, [
+    'private',
+    'gender',
+    'names',
+    'facts'
+  ]);
 };
 
 module.exports = Person;

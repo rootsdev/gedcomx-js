@@ -99,14 +99,7 @@ NameForm.prototype.getParts = function(){
  * @returns {NameForm} This instance
  */
 NameForm.prototype.setParts = function(parts){
-  if(Array.isArray(parts)){
-    var nameForm = this;
-    nameForm.parts = [];
-    parts.forEach(function(part){
-      nameForm.addPart(part);
-    });
-  }
-  return this;
+  return this._setArray(parts, 'parts', 'addPart');
 };
 
 /**
@@ -116,13 +109,7 @@ NameForm.prototype.setParts = function(parts){
  * @returns {NameForm}
  */
 NameForm.prototype.addPart = function(part){
-  if(part){
-    if(!Array.isArray(this.parts)){
-      this.parts = [];
-    }
-    this.parts.push(NamePart(part));
-  }
-  return this;
+  return this._arrayPush(part, 'parts', NamePart);
 };
 
 /**
@@ -131,23 +118,11 @@ NameForm.prototype.addPart = function(part){
  * @return {Object} JSON object
  */
 NameForm.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.lang){
-    json.lang = this.lang;
-  }
-  
-  if(this.fullText){
-    json.fullText = this.fullText;
-  }
-  
-  if(this.parts){
-    json.parts = this.parts.map(function(p){
-      return p.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'lang',
+    'fullText',
+    'parts'
+  ]);
 };
 
 module.exports = NameForm;

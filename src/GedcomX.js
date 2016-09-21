@@ -23,12 +23,6 @@ var GedcomX = function(json){
   }
   
   // If the given object is already an instance then just return it. DON'T copy it.
-  /*
-  if(utils.instanceOf(json, this._gedxClass)){
-    return json;
-  }
-  */
-  
   if(GedcomX.isInstance(json)){
     return json;
   }
@@ -77,14 +71,7 @@ GedcomX.prototype.getPersons = function(){
  * @returns {GedcomX} This instance
  */
 GedcomX.prototype.setPersons = function(persons){
-  if(Array.isArray(persons)){
-    var gedx = this;
-    gedx.persons = [];
-    persons.forEach(function(p){
-      gedx.addPerson(p);
-    });
-  }
-  return this;
+  return this._setArray(persons, 'persons', 'addPerson');
 };
 
 /**
@@ -94,13 +81,7 @@ GedcomX.prototype.setPersons = function(persons){
  * @returns {GedcomX} This instance
  */
 GedcomX.prototype.addPerson = function(person){
-  if(person){
-    if(!Array.isArray(this.persons)){
-      this.persons = [];
-    }
-    this.persons.push(Person(person));
-  }
-  return this;
+  return this._arrayPush(person, 'persons', Person);
 };
 
 /**
@@ -119,14 +100,7 @@ GedcomX.prototype.getRelationships = function(){
  * @returns {GedcomX}
  */
 GedcomX.prototype.setRelationships = function(relationships){
-  if(Array.isArray(relationships)){
-    var gedx = this;
-    gedx.relationships = [];
-    relationships.forEach(function(r){
-      gedx.addRelationship(r);
-    });
-  }
-  return this;
+  return this._setArray(relationships, 'relationships', 'addRelationship');
 };
 
 /**
@@ -136,13 +110,7 @@ GedcomX.prototype.setRelationships = function(relationships){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addRelationship = function(relationship){
-  if(relationship){
-    if(!Array.isArray(this.relationships)){
-      this.relationships = [];
-    }
-    this.relationships.push(Relationship(relationship));
-  }
-  return this;
+  return this._arrayPush(relationship, 'relationships', Relationship);
 };
 
 /**
@@ -161,14 +129,7 @@ GedcomX.prototype.getSourceDescriptions = function(){
  * @returns {GedcomX}
  */
 GedcomX.prototype.setSourceDescriptions = function(sourceDescriptions){
-  if(Array.isArray(sourceDescriptions)){
-    var gedx = this;
-    gedx.sourceDescriptions = [];
-    sourceDescriptions.forEach(function(s){
-      gedx.addSourceDescription(s);
-    });
-  }
-  return this;
+  return this._setArray(sourceDescriptions, 'sourceDescriptions', 'addSourceDescription');
 };
 
 /**
@@ -178,13 +139,7 @@ GedcomX.prototype.setSourceDescriptions = function(sourceDescriptions){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addSourceDescription = function(sourceDescription){
-  if(sourceDescription){
-    if(!Array.isArray(this.sourceDescriptions)){
-      this.sourceDescriptions = [];
-    }
-    this.sourceDescriptions.push(SourceDescription(sourceDescription));
-  }
-  return this;
+  return this._arrayPush(sourceDescription, 'sourceDescriptions', SourceDescription);
 };
 
 /**
@@ -203,14 +158,7 @@ GedcomX.prototype.getAgents = function(){
  * @returns {GedcomX}
  */
 GedcomX.prototype.setAgents = function(agents){
-  if(Array.isArray(agents)){
-    var gedx = this;
-    gedx.agents = [];
-    agents.forEach(function(a){
-      gedx.addAgent(a);
-    });
-  }
-  return this;
+  return this._setArray(agents, 'agents', 'addAgent');
 };
 
 /**
@@ -220,13 +168,7 @@ GedcomX.prototype.setAgents = function(agents){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addAgent = function(agent){
-  if(agent){
-    if(!Array.isArray(this.agents)){
-      this.agents = [];
-    }
-    this.agents.push(Agent(agent));
-  }
-  return this;
+  return this._arrayPush(agent, 'agents', Agent);
 };
 
 /**
@@ -245,14 +187,7 @@ GedcomX.prototype.getEvents = function(){
  * @returns {GedcomX}
  */
 GedcomX.prototype.setEvents = function(events){
-  if(Array.isArray(events)){
-    var gedx = this;
-    gedx.events = [];
-    events.forEach(function(event){
-      gedx.addEvent(event);
-    });
-  }
-  return this;
+  return this._setArray(events, 'events', 'addEvent');
 };
 
 /**
@@ -262,13 +197,7 @@ GedcomX.prototype.setEvents = function(events){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addEvent = function(event){
-  if(event){
-    if(!Array.isArray(this.events)){
-      this.events = [];
-    }
-    this.events.push(Event(event));
-  }
-  return this;
+  return this._arrayPush(event, 'events', Event);
 };
 
 /**
@@ -287,14 +216,7 @@ GedcomX.prototype.getDocuments = function(){
  * @returns {GedcomX}
  */
 GedcomX.prototype.setDocuments = function(documents){
-  if(Array.isArray(documents)){
-    var gedx = this;
-    gedx.documents = [];
-    documents.forEach(function(doc){
-      gedx.addDocument(doc);
-    });
-  }
-  return this;
+  return this._setArray(documents, 'documents', 'addDocument');
 };
 
 /**
@@ -304,13 +226,7 @@ GedcomX.prototype.setDocuments = function(documents){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addDocument = function(doc){
-  if(doc){
-    if(!Array.isArray(this.documents)){
-      this.documents = [];
-    }
-    this.documents.push(Document(doc));
-  }
-  return this;
+  return this._arrayPush(doc, 'documents', Document);
 };
 
 /**
@@ -329,14 +245,7 @@ GedcomX.prototype.getPlaces = function(){
  * @returns {GedcomX}
  */
 GedcomX.prototype.setPlaces = function(places){
-  if(Array.isArray(places)){
-    var gedx = this;
-    gedx.places = [];
-    places.forEach(function(place){
-      gedx.addPlace(place);
-    });
-  }
-  return this;
+  return this._setArray(places, 'places', 'addPlace');
 };
 
 /**
@@ -346,13 +255,7 @@ GedcomX.prototype.setPlaces = function(places){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addPlace = function(place){
-  if(place){
-    if(!Array.isArray(this.places)){
-      this.places = [];
-    }
-    this.places.push(PlaceDescription(place));
-  }
-  return this;
+  return this._arrayPush(place, 'places', PlaceDescription);
 };
 
 /**
@@ -383,55 +286,16 @@ GedcomX.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 GedcomX.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.persons){
-    json.persons = this.persons.map(function(p){
-      return p.toJSON();
-    });
-  }
-  
-  if(this.relationships){
-    json.relationships = this.relationships.map(function(r){
-      return r.toJSON();
-    });
-  }
-  
-  if(this.sourceDescriptions){
-    json.sourceDescriptions = this.sourceDescriptions.map(function(s){
-      return s.toJSON();
-    });
-  }
-  
-  if(this.agents){
-    json.agents = this.agents.map(function(a){
-      return a.toJSON();
-    });
-  }
-  
-  if(this.events){
-    json.events = this.events.map(function(e){
-      return e.toJSON();
-    });
-  }
-  
-  if(this.documents){
-    json.documents = this.documents.map(function(d){
-      return d.toJSON();
-    });
-  }
-  
-  if(this.places){
-    json.places = this.places.map(function(p){
-      return p.toJSON();
-    });
-  }
-  
-  if(this.attribution){
-    json.attribution = this.attribution.toJSON();
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'persons',
+    'relationships',
+    'sourceDescriptions',
+    'agents',
+    'events',
+    'documents',
+    'places',
+    'attribution'
+  ]);
 };
 
 // Expose all classes

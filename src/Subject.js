@@ -25,7 +25,11 @@ var Subject = function(json){
   Conclusion.call(this, json);
   
   if(json){
-    this.setExtracted(json.extracted);
+    // setExtracted defaults to false but when the property is undefined we
+    // want it to stay that way
+    if(typeof json.extracted !== 'undefined'){
+      this.setExtracted(json.extracted);
+    }
     this.setEvidence(json.evidence);
     this.setIdentifiers(json.identifiers);
     this.setMedia(json.media);
@@ -85,14 +89,7 @@ Subject.prototype.getEvidence = function(){
  * @returns {Subject} This instance.
  */
 Subject.prototype.setEvidence = function(evidence){
-  if(Array.isArray(evidence)){
-    this.evidence = [];
-    var subject = this;
-    evidence.forEach(function(e){
-      subject.addEvidence(e);
-    });
-  }
-  return this;
+  return this._setArray(evidence, 'evidence', 'addEvidence');
 };
 
 /**
@@ -102,13 +99,7 @@ Subject.prototype.setEvidence = function(evidence){
  * @returns {Subject} This instance.
  */
 Subject.prototype.addEvidence = function(evidence){
-  if(evidence){
-    if(!Array.isArray(this.evidence)){
-      this.evidence = [];
-    }
-    this.evidence.push(EvidenceReference(evidence));
-  }
-  return this;
+  return this._arrayPush(evidence, 'evidence', EvidenceReference);
 };
 
 /**
@@ -148,14 +139,7 @@ Subject.prototype.getMedia = function(){
  * @param {Object[]|SourceReference[]}
  */
 Subject.prototype.setMedia = function(media){
-  if(Array.isArray(media)){
-    this.media = [];
-    var subject = this;
-    media.forEach(function(e){
-      subject.addMedia(e);
-    });
-  }
-  return this;
+  return this._setArray(media, 'media', 'addMedia');
 };
 
 /**
@@ -165,13 +149,7 @@ Subject.prototype.setMedia = function(media){
  * @returns {Subject} This instance.
  */
 Subject.prototype.addMedia = function(media){
-  if(media){
-    if(!Array.isArray(this.media)){
-      this.media = [];
-    }
-    this.media.push(SourceReference(media));
-  }
-  return this;
+  return this._arrayPush(media, 'media', SourceReference);
 };
 
 /**
@@ -180,29 +158,12 @@ Subject.prototype.addMedia = function(media){
  * @return {Object} JSON object
  */
 Subject.prototype.toJSON = function(){
-  var json = Conclusion.prototype.toJSON.call(this);
-  
-  if(this.extracted){
-    json.extracted = this.extracted;
-  }
-  
-  if(this.evidence){
-    json.evidence = this.evidence.map(function(e){
-      return e.toJSON();
-    });
-  }
-  
-  if(this.identifiers){
-    json.identifiers = this.identifiers.toJSON();
-  }
-  
-  if(this.media){
-    json.media = this.media.map(function(m){
-      return m.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(Conclusion, [
+    'extracted',
+    'evidence',
+    'identifiers',
+    'media'
+  ]);
 };
 
 module.exports = Subject;

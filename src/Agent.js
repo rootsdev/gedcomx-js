@@ -92,14 +92,7 @@ Agent.prototype.getNames = function(){
  * @returns {Agent}
  */
 Agent.prototype.setNames = function(names){
-  if(Array.isArray(names)){
-    var agent = this;
-    this.names = [];
-    names.forEach(function(name){
-      agent.addName(name);
-    });
-  }
-  return this;
+  return this._setArray(names, 'names', 'addName');
 };
 
 /**
@@ -109,13 +102,7 @@ Agent.prototype.setNames = function(names){
  * @return {Agent}
  */
 Agent.prototype.addName = function(name){
-  if(name){
-    if(!Array.isArray(this.names)){
-      this.names = [];
-    }
-    this.names.push(TextValue(name));
-  }
-  return this;
+  return this._arrayPush(name, 'names', TextValue);
 };
 
 /**
@@ -178,14 +165,7 @@ Agent.prototype.getAccounts = function(){
  * @returns {Agent}
  */
 Agent.prototype.setAccounts = function(accounts){
-  if(Array.isArray(accounts)){
-    var agent = this;
-    agent.accounts = [];
-    accounts.forEach(function(account){
-      agent.addAccount(account);
-    });
-  }
-  return this;
+  return this._setArray(accounts, 'accounts', 'addAccount');
 };
 
 /**
@@ -195,13 +175,7 @@ Agent.prototype.setAccounts = function(accounts){
  * @returns {Agent}
  */
 Agent.prototype.addAccount = function(account){
-  if(account){
-    if(!Array.isArray(this.accounts)){
-      this.accounts = [];
-    }
-    this.accounts.push(OnlineAccount(account));
-  }
-  return this;
+  return this._arrayPush(account, 'accounts', OnlineAccount);
 };
 
 /**
@@ -220,14 +194,7 @@ Agent.prototype.getEmails= function(){
  * @returns {Agent}
  */
 Agent.prototype.setEmails = function(emails){
-  if(Array.isArray(emails)){
-    var agent = this;
-    agent.emails = [];
-    emails.forEach(function(email){
-      agent.addEmail(email);
-    });
-  }
-  return this;
+  return this._setArray(emails, 'emails', 'addEmail');
 };
 
 /**
@@ -237,13 +204,7 @@ Agent.prototype.setEmails = function(emails){
  * @returns {Agent}
  */
 Agent.prototype.addEmail = function(email){
-  if(email){
-    if(!Array.isArray(this.emails)){
-      this.emails = [];
-    }
-    this.emails.push(ResourceReference(email));
-  }
-  return this;
+  return this._arrayPush(email, 'emails', ResourceReference);
 };
 
 /**
@@ -262,14 +223,7 @@ Agent.prototype.getPhones = function(){
  * @returns {Agent}
  */
 Agent.prototype.setPhones = function(phones){
-  if(Array.isArray(phones)){
-    var agent = this;
-    agent.phones = [];
-    phones.forEach(function(phone){
-      agent.addPhone(phone);
-    });
-  }
-  return this;
+  return this._setArray(phones, 'phones', 'addPhone');
 };
 
 /**
@@ -279,13 +233,7 @@ Agent.prototype.setPhones = function(phones){
  * @returns {Agent}
  */
 Agent.prototype.addPhone = function(phone){
-  if(phone){
-    if(!Array.isArray(this.phones)){
-      this.phones = [];
-    }
-    this.phones.push(ResourceReference(phone));
-  }
-  return this;
+  return this._arrayPush(phone, 'phones', ResourceReference);
 };
 
 /**
@@ -304,14 +252,7 @@ Agent.prototype.getAddresses = function(){
  * @returns {Agent}
  */
 Agent.prototype.setAddresses = function(addresses){
-  if(Array.isArray(addresses)){
-    var agent = this;
-    agent.addresses = [];
-    addresses.forEach(function(address){
-      agent.addAddress(address);
-    });
-  }
-  return this;
+  return this._setArray(addresses, 'addresses', 'addAddress');
 };
 
 /**
@@ -321,13 +262,7 @@ Agent.prototype.setAddresses = function(addresses){
  * @returns {Agent}
  */
 Agent.prototype.addAddress = function(address){
-  if(address){
-    if(!Array.isArray(this.addresses)){
-      this.addresses = [];
-    }
-    this.addresses.push(Address(address));
-  }
-  return this;
+  return this._arrayPush(address, 'addresses', Address);
 };
 
 /**
@@ -358,55 +293,17 @@ Agent.prototype.setPerson = function(person){
  * @return {Object} JSON object
  */
 Agent.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.identifiers){
-    json.identifiers = this.identifiers.toJSON();
-  }
-  
-  if(this.names){
-    json.names = this.names.map(function(n){
-      return n.toJSON();
-    });
-  }
-  
-  if(this.homepage){
-    json.homepage = this.homepage.toJSON();
-  }
-  
-  if(this.openid){
-    json.openid = this.openid.toJSON();
-  }
-  
-  if(this.accounts){
-    json.accounts = this.accounts.map(function(a){
-      return a.toJSON();
-    });
-  }
-  
-  if(this.emails){
-    json.emails = this.emails.map(function(e){
-      return e.toJSON();
-    });
-  }
-  
-  if(this.phones){
-    json.phones = this.phones.map(function(p){
-      return p.toJSON();
-    });
-  }
-  
-  if(this.addresses){
-    json.addresses = this.addresses.map(function(a){
-      return a.toJSON();
-    });
-  }
-  
-  if(this.person){
-    json.person = this.person.toJSON();
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'identifiers',
+    'names',
+    'homepage',
+    'openid',
+    'accounts',
+    'emails',
+    'phones',
+    'addresses',
+    'person'
+  ]);
 };
 
 module.exports = Agent;

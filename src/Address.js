@@ -276,53 +276,19 @@ Address.prototype.setStreet6 = function(street6){
  * @return {Object} JSON object
  */
 Address.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.value){
-    json.value = this.value;
-  }
-  
-  if(this.city){
-    json.city = this.city;
-  }
-  
-  if(this.country){
-    json.country = this.country;
-  }
-  
-  if(this.postalCode){
-    json.postalCode = this.postalCode;
-  }
-  
-  if(this.stateOrProvince){
-    json.stateOrProvince = this.stateOrProvince;
-  }
-  
-  if(this.street){
-    json.street = this.street;
-  }
-  
-  if(this.street2){
-    json.street2 = this.street2;
-  }
-  
-  if(this.street3){
-    json.street3 = this.street3;
-  }
-  
-  if(this.street4){
-    json.street4 = this.street4;
-  }
-  
-  if(this.street5){
-    json.street5 = this.street5;
-  }
-  
-  if(this.street6){
-    json.street6 = this.street6;
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'value',
+    'city',
+    'country',
+    'postalCode',
+    'stateOrProvince',
+    'street',
+    'street2',
+    'street3',
+    'street4',
+    'street5',
+    'street6'
+  ]);
 };
 
 module.exports = Address;

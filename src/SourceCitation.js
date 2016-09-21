@@ -87,17 +87,10 @@ SourceCitation.prototype.setValue = function(value){
  * @return {Object} JSON object
  */
 SourceCitation.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.lang){
-    json.lang = this.lang;
-  }
-  
-  if(this.value){
-    json.value = this.value;
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'lang',
+    'value'
+  ]);
 };
 
 module.exports = SourceCitation;

@@ -69,13 +69,9 @@ EvidenceReference.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 EvidenceReference.prototype.toJSON = function(){
-  var json = ResourceReference.prototype.toJSON.call(this);
-  
-  if(this.attribution){
-    json.attribution = this.attribution.toJSON();
-  }
-  
-  return json;
+  return this._toJSON(ResourceReference, [
+    'attribution'
+  ]);
 };
 
 module.exports = EvidenceReference;

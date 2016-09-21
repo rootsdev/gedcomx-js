@@ -66,13 +66,7 @@ Gender.prototype.setType = function(gender){
  * @return {Object} JSON object
  */
 Gender.prototype.toJSON = function(){
-  var json = Conclusion.prototype.toJSON.call(this);
-  
-  if(this.type){
-    json.type = this.type;
-  }
-  
-  return json;
+  return this._toJSON(Conclusion, ['type']);
 };
 
 module.exports = Gender;

@@ -90,17 +90,10 @@ SourceReference.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 SourceReference.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.description){
-    json.description = this.description;
-  }
-  
-  if(this.attribution){
-    json.attribution = this.attribution.toJSON();
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'description',
+    'attribution'
+  ]);
 };
 
 module.exports = SourceReference;

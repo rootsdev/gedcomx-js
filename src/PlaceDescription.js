@@ -86,14 +86,7 @@ PlaceDescription.prototype.getNames = function(){
  * @returns {PlaceDescription}
  */
 PlaceDescription.prototype.setNames = function(names){
-  if(Array.isArray(names)){
-    var place = this;
-    place.names = [];
-    names.forEach(function(n){
-      place.addName(n);
-    });
-  }
-  return this;
+  return this._setArray(names, 'names', 'addName');
 };
 
 /**
@@ -103,13 +96,7 @@ PlaceDescription.prototype.setNames = function(names){
  * @returns {PlaceDescription}
  */
 PlaceDescription.prototype.addName = function(name){
-  if(name){
-    if(!Array.isArray(this.names)){
-      this.names = [];
-    }
-    this.names.push(TextValue(name));
-  }
-  return this;
+  return this._arrayPush(name, 'names', TextValue);
 };
 
 /**
@@ -246,43 +233,16 @@ PlaceDescription.prototype.setSpatialDescription = function(spatial){
  * @return {Object} JSON object
  */
 PlaceDescription.prototype.toJSON = function(){
-  var json = Subject.prototype.toJSON.call(this);
-  
-  if(this.type){
-    json.type = this.type;
-  }
-  
-  if(this.names){
-    json.names = this.names.map(function(n){
-      return n.toJSON();
-    });
-  }
-  
-  if(this.place){
-    json.place = this.place.toJSON();
-  }
-  
-  if(this.jurisdiction){
-    json.jurisdiction = this.jurisdiction.toJSON();
-  }
-  
-  if(this.latitude){
-    json.latitude = this.latitude;
-  }
-  
-  if(this.longitude){
-    json.longitude = this.longitude;
-  }
-  
-  if(this.temporalDescription){
-    json.temporalDescription = this.temporalDescription.toJSON();
-  }
-  
-  if(this.spatialDescription){
-    json.spatialDescription = this.spatialDescription.toJSON();
-  }
-  
-  return json;
+  return this._toJSON(Subject, [
+    'type',
+    'names',
+    'place',
+    'jurisdiction',
+    'latitude',
+    'longitude',
+    'temporalDescription',
+    'spatialDescription'
+  ]);
 };
 
 module.exports = PlaceDescription;

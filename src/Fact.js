@@ -147,13 +147,7 @@ Fact.prototype.getQualifiers = function(){
  * @returns {Fact} This instance
  */
 Fact.prototype.setQualifiers = function(qualifiers){
-  if(Array.isArray(qualifiers)){
-    this.qualifiers = [];
-    var fact = this;
-    qualifiers.forEach(function(q){
-      fact.addQualifier(q);
-    });
-  }
+  return this._setArray(qualifiers, 'qualifiers', 'addQualifier');
 };
 
 /**
@@ -163,13 +157,7 @@ Fact.prototype.setQualifiers = function(qualifiers){
  * @returns {Fact} This instance
  */
 Fact.prototype.addQualifier = function(qualifier){
-  if(qualifier){
-    if(!Array.isArray(this.qualifiers)){
-      this.qualifiers = [];
-    }
-    this.qualifiers.push(Qualifier(qualifier));
-  }
-  return this;
+  return this._arrayPush(qualifier, 'qualifiers', Qualifier);
 };
 
 /**
@@ -178,31 +166,13 @@ Fact.prototype.addQualifier = function(qualifier){
  * @return {Object} JSON object
  */
 Fact.prototype.toJSON = function(){
-  var json = Conclusion.prototype.toJSON.call(this);
-  
-  if(this.type){
-    json.type = this.type;
-  }
-  
-  if(this.date){
-    json.date = this.date.toJSON();
-  }
-  
-  if(this.place){
-    json.place = this.place.toJSON();
-  }
-  
-  if(this.value){
-    json.value = this.value;
-  }
-  
-  if(this.qualifiers){
-    json.qualifiers = this.qualifiers.map(function(q){
-      return q.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(Conclusion, [
+    'type',
+    'date',
+    'place',
+    'value',
+    'qualifiers'
+  ]);
 };
 
 module.exports = Fact;

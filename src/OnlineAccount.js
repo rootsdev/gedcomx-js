@@ -90,17 +90,10 @@ OnlineAccount.prototype.setAccountName = function(accountName){
  * @return {Object} JSON object
  */
 OnlineAccount.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.serviceHomepage){
-    json.serviceHomepage = this.serviceHomepage.toJSON();
-  }
-  
-  if(this.accountName){
-    json.accountName = this.accountName;
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'serviceHomepage',
+    'accountName'
+  ]);
 };
 
 module.exports = OnlineAccount;

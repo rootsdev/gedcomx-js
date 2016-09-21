@@ -149,14 +149,7 @@ Conclusion.prototype.getNotes = function(){
  * @returns {Conclusion} This instance
  */
 Conclusion.prototype.setNotes = function(notes){
-  if(notes){
-    var conclusion = this;
-    conclusion.notes = [];
-    notes.forEach(function(note){
-      conclusion.addNote(note);
-    });
-  }
-  return this;
+  return this._setArray(notes, 'notes', 'addNote');
 };
 
 /**
@@ -166,13 +159,7 @@ Conclusion.prototype.setNotes = function(notes){
  * @returns {Conclusion} This instance
  */
 Conclusion.prototype.addNote = function(note){
-  if(note){
-    if(!Array.isArray(this.notes)){
-      this.notes = [];
-    }
-    this.notes.push(new Note(note));
-  }
-  return this;
+  return this._arrayPush(note, 'notes', Note);
 };
 
 /**
@@ -191,14 +178,7 @@ Conclusion.prototype.getSources = function(){
  * @returns {Conclusion} This instance
  */
 Conclusion.prototype.setSources = function(sources){
-  if(sources){
-    var conclusion = this;
-    conclusion.sources = [];
-    sources.forEach(function(source){
-      conclusion.addSource(source);
-    });
-  }
-  return this;
+  return this._setArray(sources, 'sources', 'addSource');
 };
 
 /**
@@ -208,13 +188,7 @@ Conclusion.prototype.setSources = function(sources){
  * @returns {Conclusion} This instance
  */
 Conclusion.prototype.addSource = function(source){
-  if(source){
-    if(!Array.isArray(this.sources)){
-      this.sources = [];
-    }
-    this.sources.push(new SourceReference(source));
-  }
-  return this;
+  return this._arrayPush(source, 'sources', SourceReference);
 };
 
 /**
@@ -223,37 +197,14 @@ Conclusion.prototype.addSource = function(source){
  * @return {Object} JSON object
  */
 Conclusion.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.lang){
-    json.lang = this.lang;
-  }
-  
-  if(this.confidence){
-    json.confidence = this.confidence;
-  }
-  
-  if(this.analysis){
-    json.analysis = this.analysis.toJSON();
-  }
-  
-  if(this.attribution){
-    json.attribution = this.attribution.toJSON();
-  }
-  
-  if(this.sources){
-    json.sources = this.sources.map(function(source){
-      return source.toJSON();
-    });
-  }
-  
-  if(this.notes){
-    json.notes = this.notes.map(function(note){
-      return note.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'lang',
+    'confidence',
+    'analysis',
+    'attribution',
+    'sources',
+    'notes'
+  ]);
 };
 
 module.exports = Conclusion;

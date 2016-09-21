@@ -101,14 +101,7 @@ SourceDescription.prototype.getCitations = function(){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.setCitations = function(citations){
-  if(Array.isArray(citations)){
-    var description = this;
-    description.citations = [];
-    citations.forEach(function(citation){
-      description.addCitation(citation);
-    });
-  }
-  return this;
+  return this._setArray(citations, 'citations', 'addCitation');
 };
 
 /**
@@ -118,13 +111,7 @@ SourceDescription.prototype.setCitations = function(citations){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addCitation = function(citation){
-  if(citation){
-    if(!Array.isArray(this.citations)){
-      this.citations = [];
-    }
-    this.citations.push(SourceCitation(citation));
-  }
-  return this;
+  return this._arrayPush(citation, 'citations', SourceCitation);
 };
 
 /**
@@ -205,14 +192,7 @@ SourceDescription.prototype.getSources = function(){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.setSources = function(sources){
-  if(Array.isArray(sources)){
-    var description = this;
-    description.sources = [];
-    sources.forEach(function(source){
-      description.addSource(source);
-    });
-  }
-  return this;
+  return this._setArray(sources, 'sources', 'addSource');
 };
 
 /**
@@ -222,13 +202,7 @@ SourceDescription.prototype.setSources = function(sources){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addSource = function(source){
-  if(source){
-    if(!Array.isArray(this.sources)){
-      this.sources = [];
-    }
-    this.sources.push(SourceReference(source));
-  }
-  return this;
+  return this._arrayPush(source, 'sources', SourceReference);
 };
 
 /**
@@ -290,14 +264,7 @@ SourceDescription.prototype.getTitles = function(){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.setTitles = function(titles){
-  if(Array.isArray(titles)){
-    var description = this;
-    description.titles = [];
-    titles.forEach(function(title){
-      description.addTitle(title);
-    });
-  }
-  return this;
+  return this._setArray(titles, 'titles', 'addTitle');
 };
 
 /**
@@ -307,13 +274,7 @@ SourceDescription.prototype.setTitles = function(titles){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addTitle = function(title){
-  if(title){
-    if(!Array.isArray(this.titles)){
-      this.titles = [];
-    }
-    this.titles.push(TextValue(title));
-  }
-  return this;
+  return this._arrayPush(title, 'titles', TextValue);
 };
 
 /**
@@ -332,14 +293,7 @@ SourceDescription.prototype.getNotes = function(){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.setNotes = function(notes){
-  if(Array.isArray(notes)){
-    var description = this;
-    description.notes = [];
-    notes.forEach(function(note){
-      description.addNote(note);
-    });
-  }
-  return this;
+  return this._setArray(notes, 'notes', 'addNote');
 };
 
 /**
@@ -349,13 +303,7 @@ SourceDescription.prototype.setNotes = function(notes){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addNote = function(note){
-  if(note){
-    if(!Array.isArray(this.notes)){
-      this.notes = [];
-    }
-    this.notes.push(Note(note));
-  }
-  return this;
+  return this._arrayPush(note, 'notes', Note);
 };
 
 /**
@@ -396,14 +344,7 @@ SourceDescription.prototype.getRights = function(){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.setRights = function(rights){
-  if(Array.isArray(rights)){
-    var description = this;
-    description.rights = [];
-    rights.forEach(function(right){
-      description.addRight(right);
-    });
-  }
-  return this;
+  return this._setArray(rights, 'rights', 'addRight');
 };
 
 /**
@@ -413,13 +354,7 @@ SourceDescription.prototype.setRights = function(rights){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addRight = function(right){
-  if(right){
-    if(!Array.isArray(this.rights)){
-      this.rights = [];
-    }
-    this.rights.push(ResourceReference(right));
-  }
-  return this;
+  return this._arrayPush(right, 'rights', ResourceReference);
 };
 
 /**
@@ -460,14 +395,7 @@ SourceDescription.prototype.getDescriptions = function(){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.setDescriptions = function(descriptions){
-  if(Array.isArray(descriptions)){
-    var sourceDescr = this;
-    sourceDescr.descriptions = [];
-    descriptions.forEach(function(description){
-      sourceDescr.addDescription(description);
-    });
-  }
-  return this;
+  return this._setArray(descriptions, 'descriptions', 'addDescription');
 };
 
 /**
@@ -477,13 +405,7 @@ SourceDescription.prototype.setDescriptions = function(descriptions){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addDescription = function(description){
-  if(description){
-    if(!Array.isArray(this.descriptions)){
-      this.descriptions = [];
-    }
-    this.descriptions.push(TextValue(description));
-  }
-  return this;
+  return this._arrayPush(description, 'descriptions', TextValue);
 };
 
 /**
@@ -576,93 +498,26 @@ SourceDescription.prototype.setRepository = function(repository){
  * @return {Object} JSON object
  */
 SourceDescription.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.resourceType){
-    json.resourceType = this.resourceType;
-  }
-  
-  if(this.citations){
-    json.citations = this.citations.map(function(c){
-      return c.toJSON();
-    });
-  }
-  
-  if(this.mediaType){
-    json.mediaType = this.mediaType;
-  }
-  
-  if(this.about){
-    json.about = this.about;
-  }
-  
-  if(this.mediator){
-    json.mediator = this.mediator.toJSON();
-  }
-  
-  if(this.sources){
-    json.sources = this.sources.map(function(s){
-      return s.toJSON();
-    });
-  }
-  
-  if(this.analysis){
-    json.analysis = this.analysis.toJSON();
-  }
-  
-  if(this.componentOf){
-    json.componentOf = this.componentOf.toJSON();
-  }
-  
-  if(this.titles){
-    json.titles = this.titles.map(function(t){
-      return t.toJSON();
-    });
-  }
-  
-  if(this.notes){
-    json.notes = this.notes.map(function(n){
-      return n.toJSON();
-    });
-  }
-  
-  if(this.attribution){
-    json.attribution = this.attribution.toJSON();
-  }
-  
-  if(this.rights){
-    json.rights = this.rights.map(function(r){
-      return r.toJSON();
-    });
-  }
-  
-  if(this.coverage){
-    json.coverage = this.coverage.toJSON();
-  }
-  
-  if(this.descriptions){
-    json.descriptions = this.descriptions.map(function(d){
-      return d.toJSON();
-    });
-  }
-  
-  if(this.identifiers){
-    json.identifiers = this.identifiers.toJSON();
-  }
-  
-  if(this.created){
-    json.created = this.created;
-  }
-  
-  if(this.modified){
-    json.modified = this.modified;
-  }
-  
-  if(this.repository){
-    json.repository = this.repository.toJSON();
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'resourceType',
+    'citations',
+    'mediaType',
+    'about',
+    'mediator',
+    'sources',
+    'analysis',
+    'componentOf',
+    'titles',
+    'notes',
+    'attribution',
+    'rights',
+    'coverage',
+    'descriptions',
+    'identifiers',
+    'created',
+    'modified',
+    'repository'
+  ]);
 };
 
 module.exports = SourceDescription;

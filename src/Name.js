@@ -102,13 +102,7 @@ Name.prototype.getNameForms = function(){
  * @returns {Name} This instance
  */
 Name.prototype.setNameForms = function(nameForms){
-  if(Array.isArray(nameForms)){
-    this.nameForms = [];
-    var name = this;
-    nameForms.forEach(function(n){
-      name.addNameForm(n);
-    });
-  }
+  return this._setArray(nameForms, 'nameForms', 'addNameForm');
 };
 
 /**
@@ -118,13 +112,7 @@ Name.prototype.setNameForms = function(nameForms){
  * @returns {Name} This instance
  */
 Name.prototype.addNameForm = function(nameForm){
-  if(nameForm){
-    if(!Array.isArray(this.nameForms)){
-      this.nameForms = [];
-    }
-    this.nameForms.push(NameForm(nameForm));
-  }
-  return this;
+  return this._arrayPush(nameForm, 'nameForms', NameForm);
 };
 
 /**
@@ -133,23 +121,11 @@ Name.prototype.addNameForm = function(nameForm){
  * @return {Object} JSON object
  */
 Name.prototype.toJSON = function(){
-  var json = Conclusion.prototype.toJSON.call(this);
-  
-  if(this.type){
-    json.type = this.type;
-  }
-  
-  if(this.date){
-    json.date = this.date.toJSON();
-  }
-  
-  if(this.nameForms){
-    json.nameForms = this.nameForms.map(function(n){
-      return n.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(Conclusion, [
+    'type',
+    'date',
+    'nameForms'
+  ]);
 };
 
 module.exports = Name;

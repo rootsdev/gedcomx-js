@@ -125,13 +125,7 @@ Relationship.prototype.getFacts = function(){
  * @returns {Relationship} This instance
  */
 Relationship.prototype.setFacts = function(facts){
-  if(Array.isArray(facts)){
-    this.facts = [];
-    var person = this;
-    facts.forEach(function(n){
-      person.addFact(n);
-    });
-  }
+  return this._setArray(facts, 'facts', 'addFact');
 };
 
 /**
@@ -141,13 +135,7 @@ Relationship.prototype.setFacts = function(facts){
  * @returns {Relationship} This instance
  */
 Relationship.prototype.addFact = function(fact){
-  if(fact){
-    if(!Array.isArray(this.facts)){
-      this.facts = [];
-    }
-    this.facts.push(Fact(fact));
-  }
-  return this;
+  return this._arrayPush(fact, 'facts', Fact);
 };
 
 /**
@@ -156,27 +144,12 @@ Relationship.prototype.addFact = function(fact){
  * @return {Object} JSON object
  */
 Relationship.prototype.toJSON = function(){
-  var json = Subject.prototype.toJSON.call(this);
-  
-  if(this.type){
-    json.type = this.type;
-  }
-  
-  if(this.person1){
-    json.person1 = this.person1.toJSON();
-  }
-  
-  if(this.person2){
-    json.person2 = this.person2.toJSON();
-  }
-  
-  if(this.facts){
-    json.facts = this.facts.map(function(f){
-      return f.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(Subject, [
+    'type',
+    'person1',
+    'person2',
+    'facts'
+  ]);
 };
 
 module.exports = Relationship;

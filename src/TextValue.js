@@ -1,4 +1,5 @@
-var utils = require('./utils');
+var utils = require('./utils'),
+    Base = require('./Base');
 
 /**
  * A text value in a specific language.
@@ -18,11 +19,15 @@ var TextValue = function(json){
     return json;
   }
   
+  Base.call(this, json);
+  
   if(json){
     this.setLang(json.lang);
     this.setValue(json.value);
   }
 };
+
+TextValue.prototype = Object.create(Base.prototype);
 
 TextValue._gedxClass = TextValue.prototype._gedxClass = 'GedcomX.TextValue';
 
@@ -82,17 +87,10 @@ TextValue.prototype.setValue = function(value){
  * @return {Object} JSON object
  */
 TextValue.prototype.toJSON = function(){
-  var json = {};
-  
-  if(this.lang){
-    json.lang = this.lang;
-  }
-  
-  if(this.value){
-    json.value = this.value;
-  }
-  
-  return json;
+  return this._toJSON(Base, [
+    'lang',
+    'value'
+  ]);
 };
 
 module.exports = TextValue;

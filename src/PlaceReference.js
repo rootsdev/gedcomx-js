@@ -87,17 +87,10 @@ PlaceReference.prototype.setDescription = function(description){
  * @return {Object} JSON object
  */
 PlaceReference.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.original){
-    json.original = this.original;
-  }
-  
-  if(this.description){
-    json.description = this.description;
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'original',
+    'description'
+  ]);
 };
 
 module.exports = PlaceReference;

@@ -1,4 +1,5 @@
-var utils = require('./utils');
+var utils = require('./utils'),
+    Base = require('./Base');
 
 /**
  * A generic reference to a resource.
@@ -18,10 +19,14 @@ var ResourceReference = function(json){
     return json;
   }
   
+  Base.call(this, json);
+  
   if(json){
     this.setResource(json.resource);
   }
 };
+
+ResourceReference.prototype = Object.create(Base.prototype);
 
 ResourceReference._gedxClass = ResourceReference.prototype._gedxClass = 'GedcomX.ResourceReference';
 

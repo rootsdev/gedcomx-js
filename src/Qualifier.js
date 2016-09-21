@@ -1,4 +1,5 @@
-var utils = require('./utils');
+var utils = require('./utils'),
+    Base = require('./Base');
 
 /**
  * Qualifiers are used to supply additional details about a piece of data.
@@ -18,11 +19,15 @@ var Qualifier = function(json){
     return json;
   }
   
+  Base.call(this, json);
+  
   if(json){
     this.setName(json.name);
     this.setValue(json.value);
   }
 };
+
+Qualifier.prototype = Object.create(Base.prototype);
 
 Qualifier._gedxClass = Qualifier.prototype._gedxClass = 'GedcomX.Qualifier';
 
@@ -82,17 +87,10 @@ Qualifier.prototype.setValue = function(value){
  * @return {Object} JSON object
  */
 Qualifier.prototype.toJSON = function(){
-  var json = {};
-  
-  if(this.name){
-    json.name = this.name;
-  }
-  
-  if(this.value){
-    json.value = this.value;
-  }
-  
-  return json;
+  return this._toJSON(Base, [
+    'name',
+    'value'
+  ]);
 };
 
 module.exports = Qualifier;

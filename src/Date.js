@@ -88,17 +88,10 @@ GDate.prototype.setFormal = function(formal){
  * @return {Object} JSON object
  */
 GDate.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.original){
-    json.original = this.original;
-  }
-  
-  if(this.formal){
-    json.formal = this.formal;
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'original',
+    'formal'
+  ]);
 };
 
 module.exports = GDate;

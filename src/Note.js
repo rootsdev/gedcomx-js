@@ -130,25 +130,12 @@ Note.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 Note.prototype.toJSON = function(){
-  var json = ExtensibleData.prototype.toJSON.call(this);
-  
-  if(this.lang){
-    json.lang = this.lang;
-  }
-  
-  if(this.subject){
-    json.subject = this.subject;
-  }
-  
-  if(this.text){
-    json.text = this.text;
-  }
-  
-  if(this.attribution){
-    json.attribution = this.attribution.toJSON();
-  }
-  
-  return json;
+  return this._toJSON(ExtensibleData, [
+    'lang',
+    'subject',
+    'text',
+    'attribution'
+  ]);
 };
 
 module.exports = Note;

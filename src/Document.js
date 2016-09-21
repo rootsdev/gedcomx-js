@@ -155,29 +155,13 @@ Document.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 Document.prototype.toJSON = function(){
-  var json = Conclusion.prototype.toJSON.call(this);
-  
-  if(this.type){
-    json.type = this.type;
-  }
-  
-  if(typeof this.extracted === 'boolean'){
-    json.extracted = this.extracted;
-  }
-  
-  if(this.textType){
-    json.textType = this.textType;
-  }
-  
-  if(this.text){
-    json.text = this.text;
-  }
-  
-  if(this.attribution){
-    json.attribution = this.attribution.toJSON();
-  }
-  
-  return json;
+  return this._toJSON(Conclusion, [
+    'type',
+    'extracted',
+    'textType',
+    'text',
+    'attribution'
+  ]);
 };
 
 module.exports = Document;

@@ -1,4 +1,5 @@
-var utils = require('./utils');
+var utils = require('./utils'),
+    Base = require('./Base');
 
 /**
  * A set of data that supports extension elements.
@@ -18,10 +19,14 @@ var ExtensibleData = function(json){
     return json;
   }
   
+  Base.call(this, json);
+  
   if(json){
     this.setId(json.id);
   }
 };
+
+ExtensibleData.prototype = Object.create(Base.prototype);
 
 ExtensibleData._gedxClass = ExtensibleData.prototype._gedxClass = 'GedcomX.ExtensibleData';
 
@@ -61,11 +66,7 @@ ExtensibleData.prototype.setId = function(id){
  * @return {Object} JSON object
  */
 ExtensibleData.prototype.toJSON = function(){
-  var json = {};
-  if(this.id){
-    json.id = this.id;
-  }
-  return json;
+  return this._toJSON(Base, ['id']);
 };
 
 module.exports = ExtensibleData;

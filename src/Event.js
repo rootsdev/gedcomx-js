@@ -126,14 +126,7 @@ Event.prototype.getRoles = function(){
  * @returns {Event}
  */
 Event.prototype.setRoles = function(roles){
-  if(Array.isArray(roles)){
-    var event = this;
-    event.roles = [];
-    roles.forEach(function(r){
-      event.addRole(r);
-    });
-  }
-  return this;
+  return this._setArray(roles, 'roles', 'addRole');
 };
 
 /**
@@ -143,13 +136,7 @@ Event.prototype.setRoles = function(roles){
  * @returns {Event}
  */
 Event.prototype.addRole = function(role){
-  if(role){
-    if(!Array.isArray(this.roles)){
-      this.roles = [];
-    }
-    this.roles.push(EventRole(role));
-  }
-  return this;
+  return this._arrayPush(role, 'roles', EventRole);
 };
 
 /**
@@ -158,27 +145,12 @@ Event.prototype.addRole = function(role){
  * @return {Object} JSON object
  */
 Event.prototype.toJSON = function(){
-  var json = Subject.prototype.toJSON.call(this);
-  
-  if(this.type){
-    json.type = this.type;
-  }
-  
-  if(this.date){
-    json.date = this.date.toJSON();
-  }
-  
-  if(this.place){
-    json.place = this.place.toJSON();
-  }
-  
-  if(this.roles){
-    json.roles = this.roles.map(function(r){
-      return r.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(Subject, [
+    'type',
+    'date',
+    'place',
+    'roles'
+  ]);
 };
 
 module.exports = Event;
