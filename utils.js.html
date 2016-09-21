@@ -26,7 +26,7 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>module.exports = {
+            <pre class="prettyprint source linenums"><code>var utils = module.exports = {
   
   /**
    * Check whether the given object is an instance of the specified class.
@@ -46,6 +46,127 @@
    */
   isInstance: function(obj, className){
     return obj &amp;&amp; Object.getPrototypeOf(obj) !== Object.prototype &amp;&amp; obj._gedxClass === className;
+  },
+  
+  /**
+   * Returns a copy of the object with undefined attributes removed.
+   * 
+   * @param {Object} object
+   * @return {Object}
+   */
+  removeEmpty: function(object){
+    var dest = {};
+    for(var a in object){
+      if(object.hasOwnProperty(a) &amp;&amp; object[a] !== undefined){
+        dest[a] = object[a];
+      }
+    }
+    return dest;
+  },
+  
+  /**
+   * Returns an object containing the properties from the source object
+   * 
+   * @param {Object} obj
+   * @param {String[]} properties
+   * @return {Object}
+   */
+  pick: function(object, properties){
+    var dest = {},
+        attr;
+    for(var i = 0; i &lt; properties.length; i++){
+      attr = properties[i];
+      if(object.hasOwnProperty(attr)){
+        dest[attr] = object[attr];
+      }
+    }
+    return dest;
+  },
+  
+  /**
+   * Merge multiple objects
+   * 
+   * Inspired by http://stackoverflow.com/a/16178864
+   * 
+   * @param {Object} destination
+   * @param {Object} source
+   * @param {Object=} source
+   */
+  merge: function(){
+    var args = [].splice.call(arguments, 0),
+        dest = args.shift(),
+        src, attr;
+    while(args.length > 0){
+      src = args.shift();
+      if(typeof src === 'object'){
+        for(attr in src){
+          if(src.hasOwnProperty(attr)){
+            if(typeof src[attr] === 'object' &amp;&amp; !Array.isArray(src[attr])){
+              dest[attr] = utils.merge(dest[attr] || {}, src[attr]);
+            } else {
+              dest[attr] = src[attr];
+            }
+          }
+        }
+      }
+    }
+    return dest;
+  },
+  
+  /**
+   * Recursively calls .toJSON() on values in an object that have the .toJSON()
+   * method defined.
+   * 
+   * @param {Object} object
+   * @return {Object}
+   */
+  toJSON: function(object){
+    
+    // Arrays - recursively call utils.toJSON() on the array items
+    if(Array.isArray(object)){
+      return object.map(function(o){
+        return utils.toJSON(o);
+      });
+    }
+    
+    // All remaining non-objects - just return them
+    if(typeof object !== 'object'){
+      return object;
+    }
+    
+    // At this point we only have objects
+    var dest = {},
+        value;
+    for(var a in object){
+      if(object.hasOwnProperty(a)){
+        value = object[a];
+        
+        // Skip undefined values
+        if(typeof value === 'undefined'){
+          continue;
+        }
+        
+        // Dates - get their time. We have to deal with dates down here instead
+        // of above because Date has a navitve toJSON method, meaning it would
+        // be cause by the case below and have the method called but we don't
+        // want to call the native method because it returns an ISO string while
+        // GEDCOMX requires a timestamp.
+        else if(value instanceof Date){
+          dest[a] = value.getTime();
+        }
+        
+        // Call the object's .toJSON() method if it's available
+        else if (typeof value.toJSON === 'function'){
+          dest[a] = value.toJSON();
+        } 
+        
+        // Otherwise we recursively call utils.toJSON() on the value
+        else {
+          dest[a] = utils.toJSON(value);
+        }
+      }
+    }
+    return dest;
   }
   
 };</code></pre>
@@ -58,13 +179,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Jun 06 2016 18:03:40 GMT+0000 (UTC)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a> on Wed Sep 21 2016 21:54:24 GMT+0000 (UTC)
 </footer>
 
 <script> prettyPrint(); </script>

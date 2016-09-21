@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: NameForm.js</title>
+    <title>JSDoc: Source: Base.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: NameForm.js</h1>
+    <h1 class="page-title">Source: Base.js</h1>
 
     
 
@@ -26,40 +26,19 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>var ExtensibleData = require('./ExtensibleData'),
-    NamePart = require('./NamePart'),
-    utils = require('./utils');
+            <pre class="prettyprint source linenums"><code>var utils = require('./utils');
 
 /**
- * A form of a name.
+ * Base prototype that all other classes in this library extend
  * 
  * @constructor
- * @param {Object} [json]
  */
-var NameForm = function(json){
-  
-  // Protect against forgetting the new keyword when calling the constructor
-  if(!(this instanceof NameForm)){
-    return new NameForm(json);
-  }
-  
-  // If the given object is already an instance then just return it. DON'T copy it.
-  if(NameForm.isInstance(json)){
-    return json;
-  }
-  
-  ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setLang(json.lang);
-    this.setFullText(json.fullText);
-    this.setParts(json.parts);
-  }
+var Base = function(){
+  // Nothing to do here, yet. It is being called though by classes which extend
+  // it in case we think of something to do in the future.
 };
 
-NameForm.prototype = Object.create(ExtensibleData.prototype);
-
-NameForm._gedxClass = NameForm.prototype._gedxClass = 'GedcomX.NameForm';
+Base._gedxClass = Base.prototype._gedxClass = 'GedcomX.Base';
 
 /**
  * Check whether the given object is an instance of this class.
@@ -67,77 +46,77 @@ NameForm._gedxClass = NameForm.prototype._gedxClass = 'GedcomX.NameForm';
  * @param {Object} obj
  * @returns {Boolean}
  */
-NameForm.isInstance = function(obj){
+Base.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
 };
 
 /**
- * Get the lang tag
+ * Set the value of a property that is an array. The new array is copied
+ * by calling the associated addMethod on each value in the array.
  * 
- * @returns {String} lang
+ * @param {Array} array New array that will be saved (copied)
+ * @param {String} prop Property name where the array is found
+ * @param {String} addMethod Name of the add method for this data
+ * @return {Function} Generated function to be added to the prototype
  */
-NameForm.prototype.getLang = function(){
-  return this.lang;
-};
-
-/**
- * Set the lang tag
- * 
- * @param {String} lang
- * @returns {NameForm} This instance
- */
-NameForm.prototype.setLang = function(lang){
-  this.lang = lang;
+Base.prototype._setArray = function(array, prop, addMethod){
+  if(Array.isArray(array)){
+    this[prop] = [];
+    var self = this;
+    array.forEach(function(n){
+      self[addMethod](n);
+    });
+  }
   return this;
 };
 
 /**
- * Get the full text
+ * Add an object to an array at the given property. 
  * 
- * @returns {String} fullText
- */
-NameForm.prototype.getFullText = function(){
-  return this.fullText;
-};
-
-/**
- * Set the full text
+ * This method centralizes code for ensuring that the property is an array and
+ * that the given data exists (isn't null or undefined). 
+ * This method is designed to be used internally.
  * 
- * @param {String} fullText
- * @returns {NameForm} This instance
+ * @param {Object} data
+ * @param {String} arrayName
+ * @param {Fucntion} constructor
+ * @return {ExtensibleData} This object
  */
-NameForm.prototype.setFullText = function(fullText){
-  this.fullText = fullText;
+Base.prototype._arrayPush = function(data, prop, constructor){
+  if(data){
+    if(constructor){
+      data = constructor(data);
+    }
+    if(!Array.isArray(this[prop])){
+      this[prop] = [];
+    }
+    this[prop].push(data);
+  }
   return this;
 };
 
 /**
- * Get the name parts
+ * Internal helper method for constructing JSON when toJSON() is called.
  * 
- * @returns {NamePart[]}
- */
-NameForm.prototype.getParts = function(){
-  return this.parts || [];
-};
-
-/**
- * Set the name parts
+ * Recursively call toJSON on properties that will be serialized, call toJSON on
+ * the parent prototype, merge the two resulting objects together, and remove 
+ * any remaining undefined properties.
  * 
- * @param {NamePart[]|Object[]} parts
- * @returns {NameForm} This instance
+ * @param {Function} parent Parent prototype
+ * @param {String[]} properties List of properties that will be serialized
+ * @return {Object}
  */
-NameForm.prototype.setParts = function(parts){
-  return this._setArray(parts, 'parts', 'addPart');
-};
-
-/**
- * Add a name part
- * 
- * @param {NamePart|Object}
- * @returns {NameForm}
- */
-NameForm.prototype.addPart = function(part){
-  return this._arrayPush(part, 'parts', NamePart);
+Base.prototype._toJSON = function(parent, properties){
+  return utils.removeEmpty(
+    // toJSON MUST be called on all data before merging otherwise the merge method
+    // will reaching into the class instances and extract data you might not want
+    // to be serialized. The data will come out as a plain object and you will lose
+    // the ability to detect that it hasn't been properly serialized.
+    utils.merge(
+      parent.prototype.toJSON.call(this), 
+      utils.toJSON(utils.pick(this, properties))
+    )
+  );
 };
 
 /**
@@ -145,15 +124,11 @@ NameForm.prototype.addPart = function(part){
  * 
  * @return {Object} JSON object
  */
-NameForm.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
-    'lang',
-    'fullText',
-    'parts'
-  ]);
+Base.prototype.toJSON = function(){
+  return {};
 };
 
-module.exports = NameForm;</code></pre>
+module.exports = Base;</code></pre>
         </article>
     </section>
 

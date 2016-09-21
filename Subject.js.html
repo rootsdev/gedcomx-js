@@ -53,7 +53,11 @@ var Subject = function(json){
   Conclusion.call(this, json);
   
   if(json){
-    this.setExtracted(json.extracted);
+    // setExtracted defaults to false but when the property is undefined we
+    // want it to stay that way
+    if(typeof json.extracted !== 'undefined'){
+      this.setExtracted(json.extracted);
+    }
     this.setEvidence(json.evidence);
     this.setIdentifiers(json.identifiers);
     this.setMedia(json.media);
@@ -113,14 +117,7 @@ Subject.prototype.getEvidence = function(){
  * @returns {Subject} This instance.
  */
 Subject.prototype.setEvidence = function(evidence){
-  if(Array.isArray(evidence)){
-    this.evidence = [];
-    var subject = this;
-    evidence.forEach(function(e){
-      subject.addEvidence(e);
-    });
-  }
-  return this;
+  return this._setArray(evidence, 'evidence', 'addEvidence');
 };
 
 /**
@@ -130,13 +127,7 @@ Subject.prototype.setEvidence = function(evidence){
  * @returns {Subject} This instance.
  */
 Subject.prototype.addEvidence = function(evidence){
-  if(evidence){
-    if(!Array.isArray(this.evidence)){
-      this.evidence = [];
-    }
-    this.evidence.push(EvidenceReference(evidence));
-  }
-  return this;
+  return this._arrayPush(evidence, 'evidence', EvidenceReference);
 };
 
 /**
@@ -176,14 +167,7 @@ Subject.prototype.getMedia = function(){
  * @param {Object[]|SourceReference[]}
  */
 Subject.prototype.setMedia = function(media){
-  if(Array.isArray(media)){
-    this.media = [];
-    var subject = this;
-    media.forEach(function(e){
-      subject.addMedia(e);
-    });
-  }
-  return this;
+  return this._setArray(media, 'media', 'addMedia');
 };
 
 /**
@@ -193,13 +177,7 @@ Subject.prototype.setMedia = function(media){
  * @returns {Subject} This instance.
  */
 Subject.prototype.addMedia = function(media){
-  if(media){
-    if(!Array.isArray(this.media)){
-      this.media = [];
-    }
-    this.media.push(SourceReference(media));
-  }
-  return this;
+  return this._arrayPush(media, 'media', SourceReference);
 };
 
 /**
@@ -208,29 +186,12 @@ Subject.prototype.addMedia = function(media){
  * @return {Object} JSON object
  */
 Subject.prototype.toJSON = function(){
-  var json = Conclusion.prototype.toJSON.call(this);
-  
-  if(this.extracted){
-    json.extracted = this.extracted;
-  }
-  
-  if(this.evidence){
-    json.evidence = this.evidence.map(function(e){
-      return e.toJSON();
-    });
-  }
-  
-  if(this.identifiers){
-    json.identifiers = this.identifiers.toJSON();
-  }
-  
-  if(this.media){
-    json.media = this.media.map(function(m){
-      return m.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(Conclusion, [
+    'extracted',
+    'evidence',
+    'identifiers',
+    'media'
+  ]);
 };
 
 module.exports = Subject;</code></pre>
@@ -243,13 +204,13 @@ module.exports = Subject;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Jun 06 2016 18:03:40 GMT+0000 (UTC)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a> on Wed Sep 21 2016 21:54:24 GMT+0000 (UTC)
 </footer>
 
 <script> prettyPrint(); </script>

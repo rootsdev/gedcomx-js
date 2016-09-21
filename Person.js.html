@@ -132,13 +132,7 @@ Person.prototype.getNames = function(){
  * @returns {Person} This instance
  */
 Person.prototype.setNames = function(names){
-  if(Array.isArray(names)){
-    this.names = [];
-    var person = this;
-    names.forEach(function(n){
-      person.addName(n);
-    });
-  }
+  return this._setArray(names, 'names', 'addName');
 };
 
 /**
@@ -148,13 +142,7 @@ Person.prototype.setNames = function(names){
  * @returns {Person} This instance
  */
 Person.prototype.addName = function(name){
-  if(name){
-    if(!Array.isArray(this.names)){
-      this.names = [];
-    }
-    this.names.push(Name(name));
-  }
-  return this;
+  return this._arrayPush(name, 'names', Name);
 };
 
 /**
@@ -173,13 +161,7 @@ Person.prototype.getFacts = function(){
  * @returns {Person} This instance
  */
 Person.prototype.setFacts = function(facts){
-  if(Array.isArray(facts)){
-    this.facts = [];
-    var person = this;
-    facts.forEach(function(n){
-      person.addFact(n);
-    });
-  }
+  return this._setArray(facts, 'facts', 'addFact');
 };
 
 /**
@@ -189,13 +171,7 @@ Person.prototype.setFacts = function(facts){
  * @returns {Person} This instance
  */
 Person.prototype.addFact = function(fact){
-  if(fact){
-    if(!Array.isArray(this.facts)){
-      this.facts = [];
-    }
-    this.facts.push(Fact(fact));
-  }
-  return this;
+  return this._arrayPush(fact, 'facts', Fact);
 };
 
 /**
@@ -204,29 +180,12 @@ Person.prototype.addFact = function(fact){
  * @return {Object} JSON object
  */
 Person.prototype.toJSON = function(){
-  var json = Subject.prototype.toJSON.call(this);
-  
-  if(typeof this.private === 'boolean'){
-    json.private = this.private;
-  }
-  
-  if(this.gender){
-    json.gender = this.gender.toJSON();
-  }
-  
-  if(this.names){
-    json.names = this.names.map(function(n){
-      return n.toJSON();
-    });
-  }
-  
-  if(this.facts){
-    json.facts = this.facts.map(function(f){
-      return f.toJSON();
-    });
-  }
-  
-  return json;
+  return this._toJSON(Subject, [
+    'private',
+    'gender',
+    'names',
+    'facts'
+  ]);
 };
 
 module.exports = Person;</code></pre>
@@ -239,13 +198,13 @@ module.exports = Person;</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Jun 06 2016 18:03:40 GMT+0000 (UTC)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a> on Wed Sep 21 2016 21:54:24 GMT+0000 (UTC)
 </footer>
 
 <script> prettyPrint(); </script>
