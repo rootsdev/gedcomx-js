@@ -1,4 +1,5 @@
-var utils = require('./utils');
+var utils = require('./utils'),
+    Base = require('./Base');
 
 /**
  * Manage the set of identifers for an object.
@@ -18,16 +19,25 @@ var Identifiers = function(json){
     return json;
   }
   
+  Base.call(this, json);
+  
   this.identifiers = {};
   
   if(json){
-    if(json instanceof Identifiers){
-      this.identifiers = json.identifiers;
-    } else {
-      this.identifiers = json;
+    this.identifiers = json;
+    
+    // The spec allows for types with single values to "forgo the array and use
+    // a single string" but that's a pain to keep track of so we're going to
+    // convert all single strings into arrays
+    for(var a in this.identifiers){
+      if(this.identifiers.hasOwnProperty(a) && !Array.isArray(this.identifiers[a])){
+        this.identifiers[a] = [ this.identifiers[a] ];
+      }
     }
   }
 };
+
+Base.prototype = Object.create(Base.prototype);
 
 Identifiers._gedxClass = Identifiers.prototype._gedxClass = 'GedcomX.Identifiers';
 
@@ -41,6 +51,52 @@ Identifiers.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
 };
 
+/**
+ * Get the values for a given type
+ * 
+ * @param {String=} type If not specified then values with no associated type
+ * are returned.
+ * @return {String[]}
+ */
+Identifiers.prototype.getValues = function(type){
+  if(typeof type === 'undefined'){
+    type = '$';
+  }
+  return this.identifiers[type] || [];
+};
+
+/**
+ * Set the values for a given type
+ * 
+ * @param {String[]} values
+ * @param {String=} type
+ */
+Identifiers.prototype.setValues = function(values, type){
+  if(typeof type === 'undefined'){
+    type = '$';
+  }
+  if(Array.isArray(values)){
+    this.identifiers[type] = values;
+  }
+  return this;
+};
+
+/**
+ * Add a value for a given type
+ * 
+ * @param {String} value
+ * @param {String=} type
+ */
+Identifiers.prototype.addValue = function(value, type){
+  if(typeof type === 'undefined'){
+    type = '$';
+  }
+  if(!Array.isArray(this.identifiers[type])){
+    this.identifiers[type] = [];
+  }
+  this.identifiers[type].push(value);
+  return this;
+};
 
 /**
  * Export the object as JSON
