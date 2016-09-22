@@ -119,11 +119,11 @@ var utils = module.exports = {
         }
         
         // Dates - get their time. We have to deal with dates down here instead
-        // of above because Date has a navitve toJSON method, meaning it would
+        // of above because Date has a native toJSON method, meaning it would
         // be cause by the case below and have the method called but we don't
         // want to call the native method because it returns an ISO string while
         // GEDCOMX requires a timestamp.
-        else if(value instanceof Date){
+        else if(typeof value.getTime === 'function'){
           dest[a] = value.getTime();
         }
         
