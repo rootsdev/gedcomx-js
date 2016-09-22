@@ -4,7 +4,6 @@
 [![Build Status](https://travis-ci.org/rootsdev/gedcomx-js.svg?branch=master)](https://travis-ci.org/rootsdev/gedcomx-js)
 [![codecov](https://codecov.io/gh/rootsdev/gedcomx-js/branch/master/graph/badge.svg)](https://codecov.io/gh/rootsdev/gedcomx-js)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rootsdev/gedcomx-js/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rootsdev/gedcomx-js/?branch=master)
-[![Code Climate](https://codeclimate.com/github/rootsdev/gedcomx-js/badges/gpa.svg)](https://codeclimate.com/github/rootsdev/gedcomx-js)
 
 A JavaScript library for the [GEDCOM X](http://www.gedcomx.org/) data model.
 This library does not yet support the [GEDCOM X RS](https://github.com/FamilySearch/gedcomx-rs)
@@ -79,7 +78,7 @@ npm install gedcomx-js
 
 ## Notes
 
-The use of new is optional. The two following lines of code are equivalent:
+The use of `new` when constructing objects is optional. The two following lines of code are equivalent:
 
 ```js
 new GedcomX.Person();
