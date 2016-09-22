@@ -9,6 +9,8 @@ describe('GedcomX', function(){
   
   var fullJSON = {
     id: 'gedcomx',
+    lang: 'en',
+    description: '#sd1',
     attribution: { 
       changeMessage: 'It changed',
       contributor: { resource: 'https://myapp.com/contributor'},
@@ -63,6 +65,7 @@ describe('GedcomX', function(){
     ],
     sourceDescriptions: [
       {
+        id: 'sd1',
         resourceType: 'http://some/type',
         citations: [
           {
@@ -247,6 +250,8 @@ describe('GedcomX', function(){
   it('Create with mixed data', function(){
     var gedx = GedcomX({
       id: 'gedcomx',
+      lang: 'en',
+      description: '#sd1',
       attribution: GedcomX.Attribution({ 
         changeMessage: 'It changed',
         contributor: GedcomX.ResourceReference({ resource: 'https://myapp.com/contributor'}),
@@ -300,6 +305,7 @@ describe('GedcomX', function(){
       ],
       sourceDescriptions: [
         GedcomX.SourceDescription({
+          id: 'sd1',
           resourceType: 'http://some/type',
           citations: [
             GedcomX.SourceCitation({
@@ -473,6 +479,8 @@ describe('GedcomX', function(){
   it('Build', function(){
     var gedx = GedcomX()
       .setId('gedcomx')
+      .setLang('en')
+      .setDescription('#sd1')
       .setAttribution(GedcomX.Attribution()
         .setChangeMessage('It changed')
         .setContributor({ resource: 'https://myapp.com/contributor'})
@@ -496,6 +504,7 @@ describe('GedcomX', function(){
       )
       .addSourceDescription(
         GedcomX.SourceDescription()
+          .setId('sd1')
           .setResourceType('http://some/type')
           .addCitation(GedcomX.SourceCitation().setLang('en').setValue('Long source citation'))
           .setMediaType('book')
@@ -587,6 +596,8 @@ describe('GedcomX', function(){
 
 function tests(gedx){
   assert.equal(gedx.getId(), 'gedcomx');
+  assert.equal(gedx.getLang(), 'en');
+  assert.equal(gedx.getDescription(), '#sd1');
   
   var attribution = gedx.getAttribution();
   assert.equal(attribution.getChangeMessage(), 'It changed', 'Change message not saved properly when created with JSON');
@@ -611,6 +622,7 @@ function tests(gedx){
   
   assert.equal(gedx.getSourceDescriptions().length, 1);
   var description = gedx.getSourceDescriptions()[0];
+  assert.equal(description.getId(), 'sd1');
   assert.equal(description.getResourceType(), 'http://some/type');
   assert.equal(description.getCitations().length, 1);
   assert.equal(description.getCitations()[0].getLang(), 'en');

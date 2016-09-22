@@ -30,6 +30,7 @@ var GedcomX = function(json){
   ExtensibleData.call(this, json);
   
   if(json){
+    this.setLang(json.lang);
     this.setPersons(json.persons);
     this.setRelationships(json.relationships);
     this.setSourceDescriptions(json.sourceDescriptions);
@@ -38,6 +39,7 @@ var GedcomX = function(json){
     this.setDocuments(json.documents);
     this.setPlaces(json.places);
     this.setAttribution(json.attribution);
+    this.setDescription(json.description);
   }
 };
 
@@ -53,6 +55,50 @@ GedcomX._gedxClass = GedcomX.prototype._gedxClass = 'GedcomX';
  */
 GedcomX.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Get the lang
+ * 
+ * @return {String}
+ */
+GedcomX.prototype.getLang = function(){
+  return this.lang;
+};
+
+/**
+ * Set the lang
+ * 
+ * @param {String} lang
+ * @return {GedcomX} This instance
+ */
+GedcomX.prototype.setLang = function(lang){
+  if(lang){
+    this.lang = lang;
+  }
+  return this;
+};
+
+/**
+ * Get the description
+ * 
+ * @return {String}
+ */
+GedcomX.prototype.getDescription = function(){
+  return this.description;
+};
+
+/**
+ * Set the description
+ * 
+ * @param {String} description URI that must resolve to a SourceDescription
+ * @return {GedcomX} This instance
+ */
+GedcomX.prototype.setDescription = function(description){
+  if(description){
+    this.description = description;
+  }
+  return this;
 };
 
 /**
@@ -287,6 +333,8 @@ GedcomX.prototype.setAttribution = function(attribution){
  */
 GedcomX.prototype.toJSON = function(){
   return this._toJSON(ExtensibleData, [
+    'lang',
+    'description',
     'persons',
     'relationships',
     'sourceDescriptions',
