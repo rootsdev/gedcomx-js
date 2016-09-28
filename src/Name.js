@@ -1,6 +1,4 @@
-var Conclusion = require('./Conclusion'),
-    NameForm = require('./NameForm'),
-    GDate = require('./Date'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -21,7 +19,7 @@ var Name = function(json){
     return json;
   }
   
-  Conclusion.call(this, json);
+  GedcomX.Conclusion.call(this, json);
   
   if(json){
     this.setType(json.type);
@@ -30,7 +28,7 @@ var Name = function(json){
   }
 };
 
-Name.prototype = Object.create(Conclusion.prototype);
+Name.prototype = Object.create(GedcomX.Conclusion.prototype);
 
 Name._gedxClass = Name.prototype._gedxClass = 'GedcomX.Name';
 
@@ -81,7 +79,7 @@ Name.prototype.getDate = function(){
  */
 Name.prototype.setDate = function(date){
   if(date){
-    this.date = GDate(date);
+    this.date = GedcomX.Date(date);
   }
   return this;
 };
@@ -112,7 +110,7 @@ Name.prototype.setNameForms = function(nameForms){
  * @returns {Name} This instance
  */
 Name.prototype.addNameForm = function(nameForm){
-  return this._arrayPush(nameForm, 'nameForms', NameForm);
+  return this._arrayPush(nameForm, 'nameForms', GedcomX.NameForm);
 };
 
 /**
@@ -121,7 +119,7 @@ Name.prototype.addNameForm = function(nameForm){
  * @return {Object} JSON object
  */
 Name.prototype.toJSON = function(){
-  return this._toJSON(Conclusion, [
+  return this._toJSON(GedcomX.Conclusion, [
     'type',
     'date',
     'nameForms'

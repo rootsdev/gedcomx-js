@@ -1,5 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
-    ResourceReference = require('./ResourceReference'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -21,7 +20,7 @@ var Attribution = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setChangeMessage(json.changeMessage);
@@ -32,7 +31,7 @@ var Attribution = function(json){
   }
 };
 
-Attribution.prototype = Object.create(ExtensibleData.prototype);
+Attribution.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Attribution._gedxClass = Attribution.prototype._gedxClass = 'GedcomX.Attribution';
 
@@ -83,7 +82,7 @@ Attribution.prototype.getContributor = function(){
  */
 Attribution.prototype.setContributor = function(contributor){
   if(contributor){
-    this.contributor = ResourceReference(contributor);
+    this.contributor = GedcomX.ResourceReference(contributor);
   }
   return this;
 };
@@ -127,7 +126,7 @@ Attribution.prototype.getCreator = function(){
  */
 Attribution.prototype.setCreator = function(creator){
   if(creator){
-    this.creator = new ResourceReference(creator);
+    this.creator = new GedcomX.ResourceReference(creator);
   }
   return this;
 };
@@ -160,7 +159,7 @@ Attribution.prototype.setModified = function(date){
  * @return {Object} JSON object
  */
 Attribution.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'changeMessage',
     'contributor',
     'created',

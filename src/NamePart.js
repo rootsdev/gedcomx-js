@@ -1,5 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
-    Qualifier = require('./Qualifier'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -20,7 +19,7 @@ var NamePart = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setValue(json.value);
@@ -29,7 +28,7 @@ var NamePart = function(json){
   }
 };
 
-NamePart.prototype = Object.create(ExtensibleData.prototype);
+NamePart.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 NamePart._gedxClass = NamePart.prototype._gedxClass = 'GedcomX.NamePart';
 
@@ -109,7 +108,7 @@ NamePart.prototype.setQualifiers = function(qualifiers){
  * @returns {NamePart} This instance
  */
 NamePart.prototype.addQualifier = function(qualifier){
-  return this._arrayPush(qualifier, 'qualifiers', Qualifier);
+  return this._arrayPush(qualifier, 'qualifiers', GedcomX.Qualifier);
 };
 
 /**
@@ -118,7 +117,7 @@ NamePart.prototype.addQualifier = function(qualifier){
  * @return {Object} JSON object
  */
 NamePart.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'type',
     'value',
     'qualifiers'

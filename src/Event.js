@@ -1,7 +1,4 @@
-var Subject = require('./Subject'),
-    GDate = require('./Date'),
-    PlaceReference = require('./PlaceReference'),
-    EventRole = require('./EventRole'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -22,7 +19,7 @@ var Event = function(json){
     return json;
   }
   
-  Subject.call(this, json);
+  GedcomX.Subject.call(this, json);
   
   if(json){
     this.setType(json.type);
@@ -32,7 +29,7 @@ var Event = function(json){
   }
 };
 
-Event.prototype = Object.create(Subject.prototype);
+Event.prototype = Object.create(GedcomX.Subject.prototype);
 
 Event._gedxClass = Event.prototype._gedxClass = 'GedcomX.Event';
 
@@ -83,7 +80,7 @@ Event.prototype.getDate = function(){
  */
 Event.prototype.setDate = function(date){
   if(date){
-    this.date = GDate(date);
+    this.date = GedcomX.Date(date);
   }
   return this;
 };
@@ -105,7 +102,7 @@ Event.prototype.getPlace = function(){
  */
 Event.prototype.setPlace = function(place){
   if(place){
-    this.place = PlaceReference(place);
+    this.place = GedcomX.PlaceReference(place);
   }
   return this;
 };
@@ -136,7 +133,7 @@ Event.prototype.setRoles = function(roles){
  * @returns {Event}
  */
 Event.prototype.addRole = function(role){
-  return this._arrayPush(role, 'roles', EventRole);
+  return this._arrayPush(role, 'roles', GedcomX.EventRole);
 };
 
 /**
@@ -145,7 +142,7 @@ Event.prototype.addRole = function(role){
  * @return {Object} JSON object
  */
 Event.prototype.toJSON = function(){
-  return this._toJSON(Subject, [
+  return this._toJSON(GedcomX.Subject, [
     'type',
     'date',
     'place',

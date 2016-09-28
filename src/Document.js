@@ -1,5 +1,4 @@
-var Conclusion = require('./Conclusion'),
-    Attribution = require('./Attribution'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -20,7 +19,7 @@ var Document = function(json){
     return json;
   }
   
-  Conclusion.call(this, json);
+  GedcomX.Conclusion.call(this, json);
   
   if(json){
     this.setType(json.type);
@@ -31,7 +30,7 @@ var Document = function(json){
   }
 };
 
-Document.prototype = Object.create(Conclusion.prototype);
+Document.prototype = Object.create(GedcomX.Conclusion.prototype);
 
 Document._gedxClass = Document.prototype._gedxClass = 'GedcomX.Document';
 
@@ -144,7 +143,7 @@ Document.prototype.getAttribution = function(){
  */
 Document.prototype.setAttribution = function(attribution){
   if(attribution){
-    this.attribution = Attribution(attribution);
+    this.attribution = GedcomX.Attribution(attribution);
   }
   return this;
 };
@@ -155,7 +154,7 @@ Document.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 Document.prototype.toJSON = function(){
-  return this._toJSON(Conclusion, [
+  return this._toJSON(GedcomX.Conclusion, [
     'type',
     'extracted',
     'textType',

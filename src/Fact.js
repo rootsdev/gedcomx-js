@@ -1,7 +1,4 @@
-var Conclusion = require('./Conclusion'),
-    PlaceReference = require('./PlaceReference'),
-    GDate = require('./Date'),
-    Qualifier = require('./Qualifier'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -22,7 +19,7 @@ var Fact = function(json){
     return json;
   }
   
-  Conclusion.call(this, json);
+  GedcomX.Conclusion.call(this, json);
   
   if(json){
     this.setType(json.type);
@@ -33,7 +30,7 @@ var Fact = function(json){
   }
 };
 
-Fact.prototype = Object.create(Conclusion.prototype);
+Fact.prototype = Object.create(GedcomX.Conclusion.prototype);
 
 Fact._gedxClass = Fact.prototype._gedxClass = 'GedcomX.Fact';
 
@@ -84,7 +81,7 @@ Fact.prototype.getDate = function(){
  */
 Fact.prototype.setDate = function(date){
   if(date){
-    this.date = GDate(date);
+    this.date = GedcomX.Date(date);
   }
   return this;
 };
@@ -106,7 +103,7 @@ Fact.prototype.getPlace = function(){
  */
 Fact.prototype.setPlace = function(place){
   if(place){
-    this.place = PlaceReference(place);
+    this.place = GedcomX.PlaceReference(place);
   }
   return this;
 };
@@ -157,7 +154,7 @@ Fact.prototype.setQualifiers = function(qualifiers){
  * @returns {Fact} This instance
  */
 Fact.prototype.addQualifier = function(qualifier){
-  return this._arrayPush(qualifier, 'qualifiers', Qualifier);
+  return this._arrayPush(qualifier, 'qualifiers', GedcomX.Qualifier);
 };
 
 /**
@@ -166,7 +163,7 @@ Fact.prototype.addQualifier = function(qualifier){
  * @return {Object} JSON object
  */
 Fact.prototype.toJSON = function(){
-  return this._toJSON(Conclusion, [
+  return this._toJSON(GedcomX.Conclusion, [
     'type',
     'date',
     'place',

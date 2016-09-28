@@ -1,13 +1,5 @@
-var ExtensibleData = require('./ExtensibleData'),
-    Person = require('./Person'),
-    Relationship = require('./Relationship'),
-    SourceDescription = require('./SourceDescription'),
-    Agent = require('./Agent'),
-    Event = require('./Event'),
-    Document = require('./Document'),
-    PlaceDescription = require('./PlaceDescription'),
-    Attribution = require('./Attribution'),
-    utils = require('./utils');
+var utils = require('./utils'),
+    ExtensibleData = require('./ExtensibleData');
 
 /**
  * A GEDCOM X document.
@@ -27,7 +19,7 @@ var GedcomX = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setLang(json.lang);
@@ -46,6 +38,9 @@ var GedcomX = function(json){
 GedcomX.prototype = Object.create(ExtensibleData.prototype);
 
 GedcomX._gedxClass = GedcomX.prototype._gedxClass = 'GedcomX';
+
+// Export early so that cyclical dependencies work properly
+module.exports = GedcomX;
 
 /**
  * Check whether the given object is an instance of this class.
@@ -127,7 +122,7 @@ GedcomX.prototype.setPersons = function(persons){
  * @returns {GedcomX} This instance
  */
 GedcomX.prototype.addPerson = function(person){
-  return this._arrayPush(person, 'persons', Person);
+  return this._arrayPush(person, 'persons', GedcomX.Person);
 };
 
 /**
@@ -156,7 +151,7 @@ GedcomX.prototype.setRelationships = function(relationships){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addRelationship = function(relationship){
-  return this._arrayPush(relationship, 'relationships', Relationship);
+  return this._arrayPush(relationship, 'relationships', GedcomX.Relationship);
 };
 
 /**
@@ -185,7 +180,7 @@ GedcomX.prototype.setSourceDescriptions = function(sourceDescriptions){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addSourceDescription = function(sourceDescription){
-  return this._arrayPush(sourceDescription, 'sourceDescriptions', SourceDescription);
+  return this._arrayPush(sourceDescription, 'sourceDescriptions', GedcomX.SourceDescription);
 };
 
 /**
@@ -214,7 +209,7 @@ GedcomX.prototype.setAgents = function(agents){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addAgent = function(agent){
-  return this._arrayPush(agent, 'agents', Agent);
+  return this._arrayPush(agent, 'agents', GedcomX.Agent);
 };
 
 /**
@@ -243,7 +238,7 @@ GedcomX.prototype.setEvents = function(events){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addEvent = function(event){
-  return this._arrayPush(event, 'events', Event);
+  return this._arrayPush(event, 'events', GedcomX.Event);
 };
 
 /**
@@ -272,7 +267,7 @@ GedcomX.prototype.setDocuments = function(documents){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addDocument = function(doc){
-  return this._arrayPush(doc, 'documents', Document);
+  return this._arrayPush(doc, 'documents', GedcomX.Document);
 };
 
 /**
@@ -301,7 +296,7 @@ GedcomX.prototype.setPlaces = function(places){
  * @returns {GedcomX}
  */
 GedcomX.prototype.addPlace = function(place){
-  return this._arrayPush(place, 'places', PlaceDescription);
+  return this._arrayPush(place, 'places', GedcomX.PlaceDescription);
 };
 
 /**
@@ -321,7 +316,7 @@ GedcomX.prototype.getAttribution = function(){
  */
 GedcomX.prototype.setAttribution = function(attribution){
   if(attribution){
-    this.attribution = Attribution(attribution);
+    this.attribution = GedcomX.Attribution(attribution);
   }
   return this;
 };
@@ -346,18 +341,26 @@ GedcomX.prototype.toJSON = function(){
   ]);
 };
 
-// Expose all classes
-GedcomX.Address = require('./Address');
-GedcomX.Agent = Agent;
-GedcomX.Attribution = Attribution;
+// Expose all classes. ExtensibleData has to be first because many classes
+// extend it. Since dependencies are cyclical, they will require GedcomX
+// immediately so they can get ExtensibleData when setting up their prototype.
+// We also have to make sure any other inheritance heirarchy is assembled in order.
+GedcomX.ExtensibleData = ExtensibleData;
 GedcomX.Conclusion = require('./Conclusion');
+GedcomX.Subject = require('./Subject');
+GedcomX.ResourceReference = require('./ResourceReference');
+
+// The rest are listed alphabetically because they either extend Base or extend
+// one of the classes included above.
+GedcomX.Address = require('./Address');
+GedcomX.Agent = require('./Agent');
+GedcomX.Attribution = require('./Attribution');
 GedcomX.Coverage = require('./Coverage');
 GedcomX.Date = require('./Date');
-GedcomX.Document = Document;
-GedcomX.Event = Event;
+GedcomX.Document = require('./Document');
+GedcomX.Event = require('./Event');
 GedcomX.EventRole = require('./EventRole');
 GedcomX.EvidenceReference = require('./EvidenceReference');
-GedcomX.ExtensibleData = ExtensibleData;
 GedcomX.Fact = require('./Fact');
 GedcomX.Gender = require('./Gender');
 GedcomX.Identifiers = require('./Identifiers');
@@ -366,16 +369,12 @@ GedcomX.NameForm = require('./NameForm');
 GedcomX.NamePart = require('./NamePart');
 GedcomX.Note = require('./Note');
 GedcomX.OnlineAccount = require('./OnlineAccount');
-GedcomX.Person = Person;
-GedcomX.PlaceDescription = PlaceDescription;
+GedcomX.Person = require('./Person');
+GedcomX.PlaceDescription = require('./PlaceDescription');
 GedcomX.PlaceReference = require('./PlaceReference');
 GedcomX.Qualifier = require('./Qualifier');
-GedcomX.Relationship = Relationship;
-GedcomX.ResourceReference = require('./ResourceReference');
+GedcomX.Relationship = require('./Relationship');
 GedcomX.SourceCitation = require('./SourceCitation');
-GedcomX.SourceDescription = SourceDescription;
+GedcomX.SourceDescription = require('./SourceDescription');
 GedcomX.SourceReference = require('./SourceReference');
-GedcomX.Subject = require('./Subject');
 GedcomX.TextValue = require('./TextValue');
-
-module.exports = GedcomX;

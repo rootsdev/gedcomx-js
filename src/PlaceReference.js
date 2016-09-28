@@ -1,4 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -15,11 +15,11 @@ var PlaceReference = function(json){
   }
   
   // If the given object is already an instance then just return it. DON'T copy it.
-  if(ExtensibleData.isInstance(json)){
+  if(GedcomX.ExtensibleData.isInstance(json)){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setOriginal(json.original);
@@ -27,9 +27,9 @@ var PlaceReference = function(json){
   }
 };
 
-PlaceReference.prototype = Object.create(ExtensibleData.prototype);
+PlaceReference.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
-ExtensibleData._gedxClass = ExtensibleData.prototype._gedxClass = 'GedcomX.ExtensibleData';
+PlaceReference._gedxClass = PlaceReference.prototype._gedxClass = 'GedcomX.ExtensibleData';
 
 /**
  * Check whether the given object is an instance of this class.
@@ -37,7 +37,7 @@ ExtensibleData._gedxClass = ExtensibleData.prototype._gedxClass = 'GedcomX.Exten
  * @param {Object} obj
  * @returns {Boolean}
  */
-ExtensibleData.isInstance = function(obj){
+PlaceReference.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
 };
 
@@ -87,7 +87,7 @@ PlaceReference.prototype.setDescription = function(description){
  * @return {Object} JSON object
  */
 PlaceReference.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'original',
     'description'
   ]);

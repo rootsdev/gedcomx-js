@@ -1,6 +1,4 @@
-var Subject = require('./Subject'),
-    Fact = require('./Fact'),
-    ResourceReference = require('./ResourceReference'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
     
 /**
@@ -21,7 +19,7 @@ var Relationship = function(json){
     return json;
   }
   
-  Subject.call(this, json);
+  GedcomX.Subject.call(this, json);
   
   if(json){
     this.setType(json.type);
@@ -31,7 +29,7 @@ var Relationship = function(json){
   }
 };
 
-Relationship.prototype = Object.create(Subject.prototype);
+Relationship.prototype = Object.create(GedcomX.Subject.prototype);
 
 Relationship._gedxClass = Relationship.prototype._gedxClass = 'GedcomX.Relationship';
 
@@ -82,7 +80,7 @@ Relationship.prototype.getPerson1 = function(){
  */
 Relationship.prototype.setPerson1 = function(person1){
   if(person1){
-    this.person1 = ResourceReference(person1);
+    this.person1 = GedcomX.ResourceReference(person1);
   }
   return this;
 };
@@ -104,7 +102,7 @@ Relationship.prototype.getPerson2 = function(){
  */
 Relationship.prototype.setPerson2 = function(person2){
   if(person2){
-    this.person2 = ResourceReference(person2);
+    this.person2 = GedcomX.ResourceReference(person2);
   }
   return this;
 };
@@ -135,7 +133,7 @@ Relationship.prototype.setFacts = function(facts){
  * @returns {Relationship} This instance
  */
 Relationship.prototype.addFact = function(fact){
-  return this._arrayPush(fact, 'facts', Fact);
+  return this._arrayPush(fact, 'facts', GedcomX.Fact);
 };
 
 /**
@@ -144,7 +142,7 @@ Relationship.prototype.addFact = function(fact){
  * @return {Object} JSON object
  */
 Relationship.prototype.toJSON = function(){
-  return this._toJSON(Subject, [
+  return this._toJSON(GedcomX.Subject, [
     'type',
     'person1',
     'person2',

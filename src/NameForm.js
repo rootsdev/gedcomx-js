@@ -1,5 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
-    NamePart = require('./NamePart'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -20,7 +19,7 @@ var NameForm = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setLang(json.lang);
@@ -29,7 +28,7 @@ var NameForm = function(json){
   }
 };
 
-NameForm.prototype = Object.create(ExtensibleData.prototype);
+NameForm.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 NameForm._gedxClass = NameForm.prototype._gedxClass = 'GedcomX.NameForm';
 
@@ -109,7 +108,7 @@ NameForm.prototype.setParts = function(parts){
  * @returns {NameForm}
  */
 NameForm.prototype.addPart = function(part){
-  return this._arrayPush(part, 'parts', NamePart);
+  return this._arrayPush(part, 'parts', GedcomX.NamePart);
 };
 
 /**
@@ -118,7 +117,7 @@ NameForm.prototype.addPart = function(part){
  * @return {Object} JSON object
  */
 NameForm.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'lang',
     'fullText',
     'parts'

@@ -1,4 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -19,7 +19,7 @@ var Address = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setValue(json.value);
@@ -36,7 +36,7 @@ var Address = function(json){
   }
 };
 
-Address.prototype = Object.create(ExtensibleData.prototype);
+Address.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Address._gedxClass = Address.prototype._gedxClass = 'GedcomX.Address';
 
@@ -276,7 +276,7 @@ Address.prototype.setStreet6 = function(street6){
  * @return {Object} JSON object
  */
 Address.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'value',
     'city',
     'country',

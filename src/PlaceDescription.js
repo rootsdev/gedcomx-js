@@ -1,7 +1,4 @@
-var Subject = require('./Subject'),
-    ResourceReference = require('./ResourceReference'),
-    TextValue = require('./TextValue'),
-    GDate = require('./Date'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -22,7 +19,7 @@ var PlaceDescription = function(json){
     return json;
   }
   
-  Subject.call(this, json);
+  GedcomX.Subject.call(this, json);
   
   if(json){
     this.setType(json.type);
@@ -36,7 +33,7 @@ var PlaceDescription = function(json){
   }
 };
 
-PlaceDescription.prototype = Object.create(Subject.prototype);
+PlaceDescription.prototype = Object.create(GedcomX.Subject.prototype);
 
 PlaceDescription._gedxClass = PlaceDescription.prototype._gedxClass = 'GedcomX.PlaceDescription';
 
@@ -96,7 +93,7 @@ PlaceDescription.prototype.setNames = function(names){
  * @returns {PlaceDescription}
  */
 PlaceDescription.prototype.addName = function(name){
-  return this._arrayPush(name, 'names', TextValue);
+  return this._arrayPush(name, 'names', GedcomX.TextValue);
 };
 
 /**
@@ -116,7 +113,7 @@ PlaceDescription.prototype.getPlace = function(){
  */
 PlaceDescription.prototype.setPlace = function(place){
   if(place){
-    this.place = ResourceReference(place);
+    this.place = GedcomX.ResourceReference(place);
   }
   return this;
 };
@@ -138,7 +135,7 @@ PlaceDescription.prototype.getJurisdiction = function(){
  */
 PlaceDescription.prototype.setJurisdiction = function(jurisdiction){
   if(jurisdiction){
-    this.jurisdiction = ResourceReference(jurisdiction);
+    this.jurisdiction = GedcomX.ResourceReference(jurisdiction);
   }
   return this;
 };
@@ -200,7 +197,7 @@ PlaceDescription.prototype.getTemporalDescription = function(){
  */
 PlaceDescription.prototype.setTemporalDescription = function(date){
   if(date){
-    this.temporalDescription = GDate(date);
+    this.temporalDescription = GedcomX.Date(date);
   }
   return this;
 };
@@ -222,7 +219,7 @@ PlaceDescription.prototype.getSpatialDescription = function(){
  */
 PlaceDescription.prototype.setSpatialDescription = function(spatial){
   if(spatial){
-    this.spatialDescription = ResourceReference(spatial);
+    this.spatialDescription = GedcomX.ResourceReference(spatial);
   }
   return this;
 };
@@ -233,7 +230,7 @@ PlaceDescription.prototype.setSpatialDescription = function(spatial){
  * @return {Object} JSON object
  */
 PlaceDescription.prototype.toJSON = function(){
-  return this._toJSON(Subject, [
+  return this._toJSON(GedcomX.Subject, [
     'type',
     'names',
     'place',

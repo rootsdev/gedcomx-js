@@ -1,4 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -20,7 +20,7 @@ var GDate = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setOriginal(json.original);
@@ -28,7 +28,7 @@ var GDate = function(json){
   }
 };
 
-GDate.prototype = Object.create(ExtensibleData.prototype);
+GDate.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 GDate._gedxClass = GDate.prototype._gedxClass = 'GedcomX.Date';
 
@@ -88,7 +88,7 @@ GDate.prototype.setFormal = function(formal){
  * @return {Object} JSON object
  */
 GDate.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'original',
     'formal'
   ]);

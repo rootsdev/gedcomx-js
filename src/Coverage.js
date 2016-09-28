@@ -1,6 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
-    GDate = require('./Date'),
-    PlaceReference = require('./PlaceReference'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -21,7 +19,7 @@ var Coverage = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setSpatial(json.spatial);
@@ -29,7 +27,7 @@ var Coverage = function(json){
   }
 };
 
-Coverage.prototype = Object.create(ExtensibleData.prototype);
+Coverage.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Coverage._gedxClass = Coverage.prototype._gedxClass = 'GedcomX.Coverage';
 
@@ -60,7 +58,7 @@ Coverage.prototype.getSpatial = function(){
  */
 Coverage.prototype.setSpatial = function(spatial){
   if(spatial){
-    this.spatial = PlaceReference(spatial);
+    this.spatial = GedcomX.PlaceReference(spatial);
   }
   return this;
 };
@@ -82,7 +80,7 @@ Coverage.prototype.getTemporal = function(){
  */
 Coverage.prototype.setTemporal = function(temporal){
   if(temporal){
-    this.temporal = GDate(temporal);
+    this.temporal = GedcomX.Date(temporal);
   }
   return this;
 };
@@ -93,7 +91,7 @@ Coverage.prototype.setTemporal = function(temporal){
  * @return {Object} JSON object
  */
 Coverage.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'spatial',
     'temporal'
   ]);

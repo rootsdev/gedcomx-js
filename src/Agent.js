@@ -1,9 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
-    ResourceReference = require('./ResourceReference'),
-    OnlineAccount = require('./OnlineAccount'),
-    Address = require('./Address'),
-    Identifiers = require('./Identifiers'),
-    TextValue = require('./TextValue'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -25,7 +20,7 @@ var Agent = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setIdentifiers(json.identifiers);
@@ -40,7 +35,7 @@ var Agent = function(json){
   }
 };
 
-Agent.prototype = Object.create(ExtensibleData.prototype);
+Agent.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Agent._gedxClass = Agent.prototype._gedxClass = 'GedcomX.Agent';
 
@@ -71,7 +66,7 @@ Agent.prototype.getIdentifiers = function(){
  */
 Agent.prototype.setIdentifiers = function(identifiers){
   if(identifiers){
-    this.identifiers = Identifiers(identifiers);
+    this.identifiers = GedcomX.Identifiers(identifiers);
   }
   return this;
 };
@@ -102,7 +97,7 @@ Agent.prototype.setNames = function(names){
  * @return {Agent}
  */
 Agent.prototype.addName = function(name){
-  return this._arrayPush(name, 'names', TextValue);
+  return this._arrayPush(name, 'names', GedcomX.TextValue);
 };
 
 /**
@@ -122,7 +117,7 @@ Agent.prototype.getHomepage = function(){
  */
 Agent.prototype.setHomepage = function(homepage){
   if(homepage){
-    this.homepage = ResourceReference(homepage);
+    this.homepage = GedcomX.ResourceReference(homepage);
   }
   return this;
 };
@@ -144,7 +139,7 @@ Agent.prototype.getOpenid = function(){
  */
 Agent.prototype.setOpenid = function(openid){
   if(openid){
-    this.openid = ResourceReference(openid);
+    this.openid = GedcomX.ResourceReference(openid);
   }
   return this;
 };
@@ -175,7 +170,7 @@ Agent.prototype.setAccounts = function(accounts){
  * @returns {Agent}
  */
 Agent.prototype.addAccount = function(account){
-  return this._arrayPush(account, 'accounts', OnlineAccount);
+  return this._arrayPush(account, 'accounts', GedcomX.OnlineAccount);
 };
 
 /**
@@ -204,7 +199,7 @@ Agent.prototype.setEmails = function(emails){
  * @returns {Agent}
  */
 Agent.prototype.addEmail = function(email){
-  return this._arrayPush(email, 'emails', ResourceReference);
+  return this._arrayPush(email, 'emails', GedcomX.ResourceReference);
 };
 
 /**
@@ -233,7 +228,7 @@ Agent.prototype.setPhones = function(phones){
  * @returns {Agent}
  */
 Agent.prototype.addPhone = function(phone){
-  return this._arrayPush(phone, 'phones', ResourceReference);
+  return this._arrayPush(phone, 'phones', GedcomX.ResourceReference);
 };
 
 /**
@@ -262,7 +257,7 @@ Agent.prototype.setAddresses = function(addresses){
  * @returns {Agent}
  */
 Agent.prototype.addAddress = function(address){
-  return this._arrayPush(address, 'addresses', Address);
+  return this._arrayPush(address, 'addresses', GedcomX.Address);
 };
 
 /**
@@ -282,7 +277,7 @@ Agent.prototype.getPerson = function(){
  */
 Agent.prototype.setPerson = function(person){
   if(person){
-    this.person = ResourceReference(person);
+    this.person = GedcomX.ResourceReference(person);
   }
   return this;
 };
@@ -293,7 +288,7 @@ Agent.prototype.setPerson = function(person){
  * @return {Object} JSON object
  */
 Agent.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'identifiers',
     'names',
     'homepage',

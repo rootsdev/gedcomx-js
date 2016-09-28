@@ -1,5 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
-    ResourceReference = require('./ResourceReference'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -20,7 +19,7 @@ var OnlineAccount = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setAccountName(json.accountName);
@@ -28,7 +27,7 @@ var OnlineAccount = function(json){
   }
 };
 
-OnlineAccount.prototype = Object.create(ExtensibleData.prototype);
+OnlineAccount.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 OnlineAccount._gedxClass = OnlineAccount.prototype._gedxClass = 'GedcomX.OnlineAccount';
 
@@ -59,7 +58,7 @@ OnlineAccount.prototype.getServiceHomepage = function(){
  */
 OnlineAccount.prototype.setServiceHomepage = function(serviceHomepage){
   if(serviceHomepage){
-    this.serviceHomepage = ResourceReference(serviceHomepage);
+    this.serviceHomepage = GedcomX.ResourceReference(serviceHomepage);
   }
   return this;
 };
@@ -90,7 +89,7 @@ OnlineAccount.prototype.setAccountName = function(accountName){
  * @return {Object} JSON object
  */
 OnlineAccount.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'serviceHomepage',
     'accountName'
   ]);

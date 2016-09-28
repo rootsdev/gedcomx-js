@@ -1,12 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
-    SourceCitation = require('./SourceCitation'),
-    ResourceReference = require('./ResourceReference'),
-    SourceReference = require('./SourceReference'),
-    TextValue = require('./TextValue'),
-    Note = require('./Note'),
-    Attribution = require('./Attribution'),
-    Coverage = require('./Coverage'),
-    Identifiers = require('./Identifiers'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -27,7 +19,7 @@ var SourceDescription = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setResourceType(json.resourceType);
@@ -51,7 +43,7 @@ var SourceDescription = function(json){
   }
 };
 
-SourceDescription.prototype = Object.create(ExtensibleData.prototype);
+SourceDescription.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 SourceDescription._gedxClass = SourceDescription.prototype._gedxClass = 'GedcomX.SourceDescription';
 
@@ -111,7 +103,7 @@ SourceDescription.prototype.setCitations = function(citations){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addCitation = function(citation){
-  return this._arrayPush(citation, 'citations', SourceCitation);
+  return this._arrayPush(citation, 'citations', GedcomX.SourceCitation);
 };
 
 /**
@@ -171,7 +163,7 @@ SourceDescription.prototype.getMediator = function(){
  */
 SourceDescription.prototype.setMediator = function(mediator){
   if(mediator){
-    this.mediator = ResourceReference(mediator);
+    this.mediator = GedcomX.ResourceReference(mediator);
   }
   return this;
 };
@@ -202,7 +194,7 @@ SourceDescription.prototype.setSources = function(sources){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addSource = function(source){
-  return this._arrayPush(source, 'sources', SourceReference);
+  return this._arrayPush(source, 'sources', GedcomX.SourceReference);
 };
 
 /**
@@ -222,7 +214,7 @@ SourceDescription.prototype.getAnalysis = function(){
  */
 SourceDescription.prototype.setAnalysis = function(analysis){
   if(analysis){
-    this.analysis = ResourceReference(analysis);
+    this.analysis = GedcomX.ResourceReference(analysis);
   }
   return this;
 };
@@ -243,7 +235,7 @@ SourceDescription.prototype.getComponentOf = function(){
  */
 SourceDescription.prototype.setComponentOf = function(componentOf){
   if(componentOf){
-    this.componentOf = SourceReference(componentOf);
+    this.componentOf = GedcomX.SourceReference(componentOf);
   }
   return this;
 };
@@ -274,7 +266,7 @@ SourceDescription.prototype.setTitles = function(titles){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addTitle = function(title){
-  return this._arrayPush(title, 'titles', TextValue);
+  return this._arrayPush(title, 'titles', GedcomX.TextValue);
 };
 
 /**
@@ -303,7 +295,7 @@ SourceDescription.prototype.setNotes = function(notes){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addNote = function(note){
-  return this._arrayPush(note, 'notes', Note);
+  return this._arrayPush(note, 'notes', GedcomX.Note);
 };
 
 /**
@@ -323,7 +315,7 @@ SourceDescription.prototype.getAttribution = function(){
  */
 SourceDescription.prototype.setAttribution = function(attribution){
   if(attribution){
-    this.attribution = Attribution(attribution);
+    this.attribution = GedcomX.Attribution(attribution);
   }
   return this;
 };
@@ -354,7 +346,7 @@ SourceDescription.prototype.setRights = function(rights){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addRight = function(right){
-  return this._arrayPush(right, 'rights', ResourceReference);
+  return this._arrayPush(right, 'rights', GedcomX.ResourceReference);
 };
 
 /**
@@ -374,7 +366,7 @@ SourceDescription.prototype.getCoverage = function(){
  */
 SourceDescription.prototype.setCoverage = function(coverage){
   if(coverage){
-    this.coverage = Coverage(coverage);
+    this.coverage = GedcomX.Coverage(coverage);
   }
   return this;
 };
@@ -405,7 +397,7 @@ SourceDescription.prototype.setDescriptions = function(descriptions){
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.addDescription = function(description){
-  return this._arrayPush(description, 'descriptions', TextValue);
+  return this._arrayPush(description, 'descriptions', GedcomX.TextValue);
 };
 
 /**
@@ -425,7 +417,7 @@ SourceDescription.prototype.getIdentifiers = function(){
  */
 SourceDescription.prototype.setIdentifiers = function(identifiers){
   if(identifiers){
-    this.identifiers = Identifiers(identifiers);
+    this.identifiers = GedcomX.Identifiers(identifiers);
   }
   return this;
 };
@@ -487,7 +479,7 @@ SourceDescription.prototype.getRepository = function(){
  */
 SourceDescription.prototype.setRepository = function(repository){
   if(repository){
-    this.repository = ResourceReference(repository);
+    this.repository = GedcomX.ResourceReference(repository);
   }
   return this;
 };
@@ -498,7 +490,7 @@ SourceDescription.prototype.setRepository = function(repository){
  * @return {Object} JSON object
  */
 SourceDescription.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'resourceType',
     'citations',
     'mediaType',

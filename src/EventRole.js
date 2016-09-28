@@ -1,5 +1,4 @@
-var Conclusion = require('./Conclusion'),
-    ResourceReference = require('./ResourceReference'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -16,11 +15,11 @@ var EventRole = function(json){
   }
   
   // If the given object is already an instance then just return it. DON'T copy it.
-  if(Conclusion.isInstance(json)){
+  if(GedcomX.Conclusion.isInstance(json)){
     return json;
   }
   
-  Conclusion.call(this, json);
+  GedcomX.Conclusion.call(this, json);
   
   if(json){
     this.setPerson(json.person);
@@ -29,9 +28,9 @@ var EventRole = function(json){
   }
 };
 
-EventRole.prototype = Object.create(Conclusion.prototype);
+EventRole.prototype = Object.create(GedcomX.Conclusion.prototype);
 
-Conclusion._gedxClass = Conclusion.prototype._gedxClass = 'GedcomX.Conclusion';
+EventRole._gedxClass = EventRole.prototype._gedxClass = 'GedcomX.Conclusion';
 
 /**
  * Check whether the given object is an instance of this class.
@@ -39,7 +38,7 @@ Conclusion._gedxClass = Conclusion.prototype._gedxClass = 'GedcomX.Conclusion';
  * @param {Object} obj
  * @returns {Boolean}
  */
-Conclusion.isInstance = function(obj){
+EventRole.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
 };
 
@@ -60,7 +59,7 @@ EventRole.prototype.getPerson = function(){
  */
 EventRole.prototype.setPerson = function(person){
   if(person){
-    this.person = ResourceReference(person);
+    this.person = GedcomX.ResourceReference(person);
   }
   return this;
 };
@@ -111,7 +110,7 @@ EventRole.prototype.setDetails = function(details){
  * @return {Object} JSON object
  */
 EventRole.prototype.toJSON = function(){
-  return this._toJSON(Conclusion, [
+  return this._toJSON(GedcomX.Conclusion, [
     'person',
     'type',
     'details'

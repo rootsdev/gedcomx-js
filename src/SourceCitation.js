@@ -1,4 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -19,7 +19,7 @@ var SourceCitation = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setLang(json.lang);
@@ -27,7 +27,7 @@ var SourceCitation = function(json){
   }
 };
 
-SourceCitation.prototype = Object.create(ExtensibleData.prototype);
+SourceCitation.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 SourceCitation._gedxClass = SourceCitation.prototype._gedxClass = 'GedcomX.SourceCitation';
 
@@ -87,7 +87,7 @@ SourceCitation.prototype.setValue = function(value){
  * @return {Object} JSON object
  */
 SourceCitation.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'lang',
     'value'
   ]);

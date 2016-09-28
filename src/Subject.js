@@ -1,7 +1,4 @@
-var Conclusion = require('./Conclusion'),
-    Identifiers = require('./Identifiers'),
-    EvidenceReference = require('./EvidenceReference'),
-    SourceReference = require('./SourceReference'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -22,7 +19,7 @@ var Subject = function(json){
     return json;
   }
   
-  Conclusion.call(this, json);
+  GedcomX.Conclusion.call(this, json);
   
   if(json){
     // setExtracted defaults to false but when the property is undefined we
@@ -36,7 +33,7 @@ var Subject = function(json){
   }
 };
 
-Subject.prototype = Object.create(Conclusion.prototype);
+Subject.prototype = Object.create(GedcomX.Conclusion.prototype);
 
 Subject._gedxClass = Subject.prototype._gedxClass = 'GedcomX.Subject';
 
@@ -99,7 +96,7 @@ Subject.prototype.setEvidence = function(evidence){
  * @returns {Subject} This instance.
  */
 Subject.prototype.addEvidence = function(evidence){
-  return this._arrayPush(evidence, 'evidence', EvidenceReference);
+  return this._arrayPush(evidence, 'evidence', GedcomX.EvidenceReference);
 };
 
 /**
@@ -119,7 +116,7 @@ Subject.prototype.getIdentifiers = function(){
  */
 Subject.prototype.setIdentifiers = function(identifiers){
   if(identifiers){
-    this.identifiers = Identifiers(identifiers);
+    this.identifiers = GedcomX.Identifiers(identifiers);
   }
   return this;
 };
@@ -149,7 +146,7 @@ Subject.prototype.setMedia = function(media){
  * @returns {Subject} This instance.
  */
 Subject.prototype.addMedia = function(media){
-  return this._arrayPush(media, 'media', SourceReference);
+  return this._arrayPush(media, 'media', GedcomX.SourceReference);
 };
 
 /**
@@ -158,7 +155,7 @@ Subject.prototype.addMedia = function(media){
  * @return {Object} JSON object
  */
 Subject.prototype.toJSON = function(){
-  return this._toJSON(Conclusion, [
+  return this._toJSON(GedcomX.Conclusion, [
     'extracted',
     'evidence',
     'identifiers',

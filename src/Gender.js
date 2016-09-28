@@ -1,4 +1,4 @@
-var Conclusion = require('./Conclusion'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -19,14 +19,14 @@ var Gender = function(json){
     return json;
   }
   
-  Conclusion.call(this, json);
+  GedcomX.Conclusion.call(this, json);
   
   if(json){
     this.setType(json.type);
   }
 };
 
-Gender.prototype = Object.create(Conclusion.prototype);
+Gender.prototype = Object.create(GedcomX.Conclusion.prototype);
 
 Gender._gedxClass = Gender.prototype._gedxClass = 'GedcomX.Gender';
 
@@ -66,7 +66,7 @@ Gender.prototype.setType = function(gender){
  * @return {Object} JSON object
  */
 Gender.prototype.toJSON = function(){
-  return this._toJSON(Conclusion, ['type']);
+  return this._toJSON(GedcomX.Conclusion, ['type']);
 };
 
 module.exports = Gender;

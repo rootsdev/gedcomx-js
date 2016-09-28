@@ -1,7 +1,4 @@
-var Subject = require('./Subject'),
-    Gender = require('./Gender'),
-    Name = require('./Name'),
-    Fact = require('./Fact'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
     
 /**
@@ -22,7 +19,7 @@ var Person = function(json){
     return json;
   }
   
-  Subject.call(this, json);
+  GedcomX.Subject.call(this, json);
   
   if(json){
     this.setPrivate(json.private);
@@ -32,7 +29,7 @@ var Person = function(json){
   }
 };
 
-Person.prototype = Object.create(Subject.prototype);
+Person.prototype = Object.create(GedcomX.Subject.prototype);
 
 Person._gedxClass = Person.prototype._gedxClass = 'GedcomX.Person';
 
@@ -83,7 +80,7 @@ Person.prototype.getGender = function(){
  */
 Person.prototype.setGender = function(gender){
   if(gender){
-    this.gender = Gender(gender);
+    this.gender = GedcomX.Gender(gender);
   }
   return this;
 };
@@ -114,7 +111,7 @@ Person.prototype.setNames = function(names){
  * @returns {Person} This instance
  */
 Person.prototype.addName = function(name){
-  return this._arrayPush(name, 'names', Name);
+  return this._arrayPush(name, 'names', GedcomX.Name);
 };
 
 /**
@@ -143,7 +140,7 @@ Person.prototype.setFacts = function(facts){
  * @returns {Person} This instance
  */
 Person.prototype.addFact = function(fact){
-  return this._arrayPush(fact, 'facts', Fact);
+  return this._arrayPush(fact, 'facts', GedcomX.Fact);
 };
 
 /**
@@ -152,7 +149,7 @@ Person.prototype.addFact = function(fact){
  * @return {Object} JSON object
  */
 Person.prototype.toJSON = function(){
-  return this._toJSON(Subject, [
+  return this._toJSON(GedcomX.Subject, [
     'private',
     'gender',
     'names',

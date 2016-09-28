@@ -1,8 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
-    Attribution = require('./Attribution'),
-    ResourceReference = require('./ResourceReference'),
-    Note = require('./Note'),
-    SourceReference = require('./SourceReference'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -23,7 +19,7 @@ var Conclusion = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setAttribution(json.attribution);
@@ -35,7 +31,7 @@ var Conclusion = function(json){
   }
 };
 
-Conclusion.prototype = Object.create(ExtensibleData.prototype);
+Conclusion.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Conclusion._gedxClass = Conclusion.prototype._gedxClass = 'GedcomX.Conclusion';
 
@@ -66,7 +62,7 @@ Conclusion.prototype.getAttribution = function(){
  */
 Conclusion.prototype.setAttribution = function(attribution){
   if(attribution){
-    this.attribution = new Attribution(attribution);
+    this.attribution = new GedcomX.Attribution(attribution);
   }
   return this;
 };
@@ -88,7 +84,7 @@ Conclusion.prototype.getAnalysis = function(){
  */
 Conclusion.prototype.setAnalysis = function(analysis){
   if(analysis){
-    this.analysis = new ResourceReference(analysis);
+    this.analysis = new GedcomX.ResourceReference(analysis);
   }
   return this;
 };
@@ -159,7 +155,7 @@ Conclusion.prototype.setNotes = function(notes){
  * @returns {Conclusion} This instance
  */
 Conclusion.prototype.addNote = function(note){
-  return this._arrayPush(note, 'notes', Note);
+  return this._arrayPush(note, 'notes', GedcomX.Note);
 };
 
 /**
@@ -188,7 +184,7 @@ Conclusion.prototype.setSources = function(sources){
  * @returns {Conclusion} This instance
  */
 Conclusion.prototype.addSource = function(source){
-  return this._arrayPush(source, 'sources', SourceReference);
+  return this._arrayPush(source, 'sources', GedcomX.SourceReference);
 };
 
 /**
@@ -197,7 +193,7 @@ Conclusion.prototype.addSource = function(source){
  * @return {Object} JSON object
  */
 Conclusion.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'lang',
     'confidence',
     'analysis',

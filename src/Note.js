@@ -1,5 +1,4 @@
-var ExtensibleData = require('./ExtensibleData'),
-    Attribution = require('./Attribution'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -20,7 +19,7 @@ var Note = function(json){
     return json;
   }
   
-  ExtensibleData.call(this, json);
+  GedcomX.ExtensibleData.call(this, json);
   
   if(json){
     this.setLang(json.lang);
@@ -30,7 +29,7 @@ var Note = function(json){
   }
 };
 
-Note.prototype = Object.create(ExtensibleData.prototype);
+Note.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Note._gedxClass = Note.prototype._gedxClass = 'GedcomX.Note';
 
@@ -119,7 +118,7 @@ Note.prototype.getAttribution = function(){
  */
 Note.prototype.setAttribution = function(attribution){
   if(attribution){
-    this.attribution = new Attribution(attribution);
+    this.attribution = new GedcomX.Attribution(attribution);
   }
   return this;
 };
@@ -130,7 +129,7 @@ Note.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 Note.prototype.toJSON = function(){
-  return this._toJSON(ExtensibleData, [
+  return this._toJSON(GedcomX.ExtensibleData, [
     'lang',
     'subject',
     'text',

@@ -1,5 +1,4 @@
-var ResourceReference = require('./ResourceReference'),
-    Attribution = require('./Attribution'),
+var GedcomX = require('./GedcomX'),
     utils = require('./utils');
 
 /**
@@ -16,20 +15,20 @@ var EvidenceReference = function(json){
   }
   
   // If the given object is already an instance then just return it. DON'T copy it.
-  if(ResourceReference.isInstance(json)){
+  if(GedcomX.ResourceReference.isInstance(json)){
     return json;
   }
   
-  ResourceReference.call(this, json);
+  GedcomX.ResourceReference.call(this, json);
   
   if(json){
     this.setAttribution(json.attribution);
   }
 };
 
-EvidenceReference.prototype = Object.create(ResourceReference.prototype);
+EvidenceReference.prototype = Object.create(GedcomX.ResourceReference.prototype);
 
-ResourceReference._gedxClass = ResourceReference.prototype._gedxClass = 'GedcomX.ResourceReference';
+EvidenceReference._gedxClass = EvidenceReference.prototype._gedxClass = 'GedcomX.ResourceReference';
 
 /**
  * Check whether the given object is an instance of this class.
@@ -37,7 +36,7 @@ ResourceReference._gedxClass = ResourceReference.prototype._gedxClass = 'GedcomX
  * @param {Object} obj
  * @returns {Boolean}
  */
-ResourceReference.isInstance = function(obj){
+EvidenceReference.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
 };
 
@@ -58,7 +57,7 @@ EvidenceReference.prototype.getAttribution = function(){
  */
 EvidenceReference.prototype.setAttribution = function(attribution){
   if(attribution){
-    this.attribution = new Attribution(attribution);
+    this.attribution = new GedcomX.Attribution(attribution);
   }
   return this;
 };
@@ -69,7 +68,7 @@ EvidenceReference.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 EvidenceReference.prototype.toJSON = function(){
-  return this._toJSON(ResourceReference, [
+  return this._toJSON(GedcomX.ResourceReference, [
     'attribution'
   ]);
 };
