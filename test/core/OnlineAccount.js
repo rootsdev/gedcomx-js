@@ -1,5 +1,5 @@
 var assert = require('chai').assert,
-    GedcomX = require('../');
+    GedcomX = require('../../');
 
 describe('OnlineAccount', function(){
   

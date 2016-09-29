@@ -3,9 +3,9 @@ chai.use(require('chai-json-schema'));
 
 var assert = chai.assert,
     GedcomXSchema = require('gedcomx-json-schema'),
-    GedcomX = require('../');
+    GedcomX = require('../../');
 
-describe('GedcomX', function(){
+describe('Root', function(){
   
   var fullJSON = {
     id: 'gedcomx',
