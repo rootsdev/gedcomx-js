@@ -49,3 +49,9 @@ GedcomX.SourceCitation = require('./core/SourceCitation');
 GedcomX.SourceDescription = require('./core/SourceDescription');
 GedcomX.SourceReference = require('./core/SourceReference');
 GedcomX.TextValue = require('./core/TextValue');
+
+// Extensions
+GedcomX.enableRsExtensions = function(){
+  // TODO: prevent from being enabled multiple times
+  require('./rs')(GedcomX);
+};

@@ -4,7 +4,9 @@
   "description": "JavaScript object model for GEDCOM X",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha --recursive -R dot",
+    "test": "mocha && npm run test:core && npm run test:rs",
+    "test:core": "mocha test/core/*.js",
+    "test:rs": "mocha test/rs/*.js",
     "docs": "jsdoc src -R ./README.md",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov"
   },
