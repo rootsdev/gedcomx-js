@@ -1,4 +1,4 @@
-var utils = require('../utils');
+var utils = require('./utils');
 
 /**
  * Base prototype that all other classes in this library extend

@@ -1,5 +1,5 @@
 var utils = require('../utils'),
-    Base = require('./Base');
+    Base = require('../Base');
 
 /**
  * Manage the set of identifers for an object.

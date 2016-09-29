@@ -1,5 +1,5 @@
 var utils = require('../utils'),
-    Base = require('./Base');
+    Base = require('../Base');
 
 /**
  * A generic reference to a resource.

@@ -1,5 +1,5 @@
 var utils = require('../utils'),
-    Base = require('./Base');
+    Base = require('../Base');
 
 /**
  * A set of data that supports extension elements.

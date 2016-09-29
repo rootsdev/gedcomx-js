@@ -1,5 +1,5 @@
 var utils = require('../utils'),
-    Base = require('./Base');
+    Base = require('../Base');
 
 /**
  * Qualifiers are used to supply additional details about a piece of data.
