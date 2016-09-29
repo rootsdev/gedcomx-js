@@ -3,4 +3,5 @@
  */
 module.exports = function(GedcomX){
   require('./Link')(GedcomX);
+  require('./Links')(GedcomX);
 };
