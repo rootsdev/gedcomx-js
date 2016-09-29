@@ -236,8 +236,8 @@ describe('GedcomX', function(){
   it('Create plain', function(){
     var newGedx = new GedcomX(),
         gedx = GedcomX();
-    assert.instanceOf(newGedx, GedcomX, 'An instance of GedcomX is not returned when calling the constructor with new.');
-    assert.instanceOf(gedx, GedcomX, 'An instance of GedcomX is not returned when calling the constructor without new.');
+    assert.instanceOf(newGedx, GedcomX.Root, 'An instance of GedcomX is not returned when calling the constructor with new.');
+    assert.instanceOf(gedx, GedcomX.Root, 'An instance of GedcomX is not returned when calling the constructor without new.');
     assert.jsonSchema(newGedx.toJSON(), GedcomXSchema);
     assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
   });
