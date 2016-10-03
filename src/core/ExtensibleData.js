@@ -21,14 +21,14 @@ var ExtensibleData = function(json){
   
   Base.call(this, json);
   
-  if(json){
-    this.setId(json.id);
-  }
+  this.init(json);
 };
 
 ExtensibleData.prototype = Object.create(Base.prototype);
 
 ExtensibleData._gedxClass = ExtensibleData.prototype._gedxClass = 'GedcomX.ExtensibleData';
+
+ExtensibleData.jsonProps = ['id'];
 
 /**
  * Check whether the given object is an instance of this class.
@@ -38,6 +38,18 @@ ExtensibleData._gedxClass = ExtensibleData.prototype._gedxClass = 'GedcomX.Exten
  */
 ExtensibleData.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {ExtensibleData} this
+ */
+ExtensibleData.prototype.init = function(json){
+  if(json){
+    this.setId(json.id);
+  }
 };
 
 /**
@@ -66,7 +78,7 @@ ExtensibleData.prototype.setId = function(id){
  * @return {Object} JSON object
  */
 ExtensibleData.prototype.toJSON = function(){
-  return this._toJSON(Base, ['id']);
+  return this._toJSON(Base, ExtensibleData.jsonProps);
 };
 
 module.exports = ExtensibleData;
