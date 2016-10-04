@@ -19,13 +19,7 @@ var EventRole = function(json){
     return json;
   }
   
-  GedcomX.Conclusion.call(this, json);
-  
-  if(json){
-    this.setPerson(json.person);
-    this.setType(json.type);
-    this.setDetails(json.details);
-  }
+  this.init(json);
 };
 
 EventRole.prototype = Object.create(GedcomX.Conclusion.prototype);
@@ -40,6 +34,24 @@ EventRole._gedxClass = EventRole.prototype._gedxClass = 'GedcomX.Conclusion';
  */
 EventRole.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Conclusion} this
+ */
+EventRole.prototype.init = function(json){
+  
+  GedcomX.Conclusion.prototype.init.call(this, json);
+  
+  if(json){
+    this.setPerson(json.person);
+    this.setType(json.type);
+    this.setDetails(json.details);
+  }
+  return this;
 };
 
 /**

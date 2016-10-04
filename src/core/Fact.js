@@ -19,15 +19,7 @@ var Fact = function(json){
     return json;
   }
   
-  GedcomX.Conclusion.call(this, json);
-  
-  if(json){
-    this.setType(json.type);
-    this.setDate(json.date);
-    this.setPlace(json.place);
-    this.setValue(json.value);
-    this.setQualifiers(json.qualifiers);
-  }
+  this.init(json);
 };
 
 Fact.prototype = Object.create(GedcomX.Conclusion.prototype);
@@ -42,6 +34,26 @@ Fact._gedxClass = Fact.prototype._gedxClass = 'GedcomX.Fact';
  */
 Fact.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Fact} this
+ */
+Fact.prototype.init = function(json){
+  
+  GedcomX.Conclusion.prototype.init.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+    this.setDate(json.date);
+    this.setPlace(json.place);
+    this.setValue(json.value);
+    this.setQualifiers(json.qualifiers);
+  }
+  return this;
 };
 
 /**

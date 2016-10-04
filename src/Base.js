@@ -6,8 +6,7 @@ var utils = require('./utils');
  * @constructor
  */
 var Base = function(){
-  // Nothing to do here, yet. It is being called though by classes which extend
-  // it in case we think of something to do in the future.
+  // Nothing to do here
 };
 
 Base._gedxClass = Base.prototype._gedxClass = 'GedcomX.Base';
@@ -20,6 +19,18 @@ Base._gedxClass = Base.prototype._gedxClass = 'GedcomX.Base';
  */
 Base.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Base} this
+ */
+Base.prototype.init = function(json){
+  // Nothing to do here, yet. It is being called though by classes which extend
+  // it in case we think of something to do in the future.
+  return this;
 };
 
 /**

@@ -19,15 +19,7 @@ var Document = function(json){
     return json;
   }
   
-  GedcomX.Conclusion.call(this, json);
-  
-  if(json){
-    this.setType(json.type);
-    this.setExtracted(json.extracted);
-    this.setTextType(json.textType);
-    this.setText(json.text);
-    this.setAttribution(json.attribution);
-  }
+  this.init(json);
 };
 
 Document.prototype = Object.create(GedcomX.Conclusion.prototype);
@@ -42,6 +34,26 @@ Document._gedxClass = Document.prototype._gedxClass = 'GedcomX.Document';
  */
 Document.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Document} this
+ */
+Document.prototype.init = function(json){
+  
+  GedcomX.Conclusion.prototype.init.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+    this.setExtracted(json.extracted);
+    this.setTextType(json.textType);
+    this.setText(json.text);
+    this.setAttribution(json.attribution);
+  }
+  return this;
 };
 
 /**

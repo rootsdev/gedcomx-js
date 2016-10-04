@@ -19,12 +19,7 @@ var TextValue = function(json){
     return json;
   }
   
-  Base.call(this, json);
-  
-  if(json){
-    this.setLang(json.lang);
-    this.setValue(json.value);
-  }
+  this.init(json);
 };
 
 TextValue.prototype = Object.create(Base.prototype);
@@ -39,6 +34,23 @@ TextValue._gedxClass = TextValue.prototype._gedxClass = 'GedcomX.TextValue';
  */
 TextValue.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Conclusion} this
+ */
+TextValue.prototype.init = function(json){
+  
+  Base.prototype.init.call(this, json);
+  
+  if(json){
+    this.setLang(json.lang);
+    this.setValue(json.value);
+  }
+  return this;
 };
 
 /**

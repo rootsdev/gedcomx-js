@@ -19,11 +19,7 @@ var Gender = function(json){
     return json;
   }
   
-  GedcomX.Conclusion.call(this, json);
-  
-  if(json){
-    this.setType(json.type);
-  }
+  this.init(json);
 };
 
 Gender.prototype = Object.create(GedcomX.Conclusion.prototype);
@@ -38,6 +34,22 @@ Gender._gedxClass = Gender.prototype._gedxClass = 'GedcomX.Gender';
  */
 Gender.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Gender} this
+ */
+Gender.prototype.init = function(json){
+  
+  GedcomX.Conclusion.prototype.init.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+  }
+  return this;
 };
 
 /**

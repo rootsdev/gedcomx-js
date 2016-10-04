@@ -19,12 +19,7 @@ var Qualifier = function(json){
     return json;
   }
   
-  Base.call(this, json);
-  
-  if(json){
-    this.setName(json.name);
-    this.setValue(json.value);
-  }
+  this.init(json);
 };
 
 Qualifier.prototype = Object.create(Base.prototype);
@@ -39,6 +34,23 @@ Qualifier._gedxClass = Qualifier.prototype._gedxClass = 'GedcomX.Qualifier';
  */
 Qualifier.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Qualifier} this
+ */
+Qualifier.prototype.init = function(json){
+  
+  Base.prototype.init.call(this, json);
+  
+  if(json){
+    this.setName(json.name);
+    this.setValue(json.value);
+  }
+  return this;
 };
 
 /**

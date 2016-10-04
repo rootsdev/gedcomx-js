@@ -20,12 +20,7 @@ var GDate = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setOriginal(json.original);
-    this.setFormal(json.formal);
-  }
+  this.init(json);
 };
 
 GDate.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -40,6 +35,23 @@ GDate._gedxClass = GDate.prototype._gedxClass = 'GedcomX.Date';
  */
 GDate.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Date} this
+ */
+GDate.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setOriginal(json.original);
+    this.setFormal(json.formal);
+  }
+  return this;
 };
 
 /**

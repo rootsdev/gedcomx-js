@@ -20,19 +20,7 @@ var Agent = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setIdentifiers(json.identifiers);
-    this.setNames(json.names);
-    this.setHomepage(json.homepage);
-    this.setOpenid(json.openid);
-    this.setAccounts(json.accounts);
-    this.setEmails(json.emails);
-    this.setPhones(json.phones);
-    this.setAddresses(json.addresses);
-    this.setPerson(json.person);
-  }
+  this.init(json);
 };
 
 Agent.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -47,6 +35,30 @@ Agent._gedxClass = Agent.prototype._gedxClass = 'GedcomX.Agent';
  */
 Agent.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Agent} this
+ */
+Agent.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setIdentifiers(json.identifiers);
+    this.setNames(json.names);
+    this.setHomepage(json.homepage);
+    this.setOpenid(json.openid);
+    this.setAccounts(json.accounts);
+    this.setEmails(json.emails);
+    this.setPhones(json.phones);
+    this.setAddresses(json.addresses);
+    this.setPerson(json.person);
+  }
+  return this;
 };
 
 /**

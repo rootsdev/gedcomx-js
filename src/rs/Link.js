@@ -21,9 +21,45 @@ module.exports = function(GedcomX){
       return json;
     }
     
-    Base.call(this, json);
-    
     // TODO: Enforce spec constraint that requires either an href or a template?
+    
+    this.init(json);
+  };
+  
+  Link.prototype = Object.create(Base.prototype);
+  
+  Link._gedxClass = Link.prototype._gedxClass = 'GedcomX.Link';
+  
+  Link.jsonProps = [
+    'rel',
+    'href',
+    'template',
+    'type',
+    'accept',
+    'allow',
+    'hreflang',
+    'title'
+  ];
+  
+  /**
+   * Check whether the given object is an instance of this class.
+   * 
+   * @param {Object} obj
+   * @returns {Boolean}
+   */
+  Link.isInstance = function(obj){
+    return utils.isInstance(obj, this._gedxClass);
+  };
+
+  /**
+   * Initialize from JSON
+   * 
+   * @param {Object}
+   * @return {Link} this
+   */
+  Link.prototype.init = function(json){
+    
+    Base.prototype.init.call(this, json);
     
     if(json){
       this.setRel(json.rel);
@@ -35,20 +71,7 @@ module.exports = function(GedcomX){
       this.setHrefLang(json.hreflang);
       this.setTitle(json.title);
     }
-  };
-  
-  Link.prototype = Object.create(Base.prototype);
-  
-  Link._gedxClass = Link.prototype._gedxClass = 'GedcomX.Link';
-  
-  /**
-   * Check whether the given object is an instance of this class.
-   * 
-   * @param {Object} obj
-   * @returns {Boolean}
-   */
-  Link.isInstance = function(obj){
-    return utils.isInstance(obj, this._gedxClass);
+    return this;
   };
   
   /**
@@ -233,16 +256,7 @@ module.exports = function(GedcomX){
    * @return {Object} JSON object
    */
   Link.prototype.toJSON = function(){
-    return this._toJSON(Base, [
-      'rel',
-      'href',
-      'template',
-      'type',
-      'accept',
-      'allow',
-      'hreflang',
-      'title'
-    ]);
+    return this._toJSON(Base, Link.jsonProps);
   };
   
   GedcomX.Link = Link;

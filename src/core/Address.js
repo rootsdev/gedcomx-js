@@ -19,21 +19,7 @@ var Address = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setValue(json.value);
-    this.setCity(json.city);
-    this.setCountry(json.country);
-    this.setPostalCode(json.postalCode);
-    this.setStateOrProvince(json.stateOrProvince);
-    this.setStreet(json.street);
-    this.setStreet2(json.street2);
-    this.setStreet3(json.street3);
-    this.setStreet4(json.street4);
-    this.setStreet5(json.street5);
-    this.setStreet6(json.street6);
-  }
+  this.init(json);
 };
 
 Address.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -48,6 +34,32 @@ Address._gedxClass = Address.prototype._gedxClass = 'GedcomX.Address';
  */
 Address.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Address} this
+ */
+Address.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setValue(json.value);
+    this.setCity(json.city);
+    this.setCountry(json.country);
+    this.setPostalCode(json.postalCode);
+    this.setStateOrProvince(json.stateOrProvince);
+    this.setStreet(json.street);
+    this.setStreet2(json.street2);
+    this.setStreet3(json.street3);
+    this.setStreet4(json.street4);
+    this.setStreet5(json.street5);
+    this.setStreet6(json.street6);
+  }
+  return this;
 };
 
 /**

@@ -20,15 +20,7 @@ var Attribution = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setChangeMessage(json.changeMessage);
-    this.setContributor(json.contributor);
-    this.setCreated(json.created);
-    this.setCreator(json.creator);
-    this.setModified(json.modified);
-  }
+  this.init(json);
 };
 
 Attribution.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -43,6 +35,26 @@ Attribution._gedxClass = Attribution.prototype._gedxClass = 'GedcomX.Attribution
  */
 Attribution.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Attribution} this
+ */
+Attribution.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setChangeMessage(json.changeMessage);
+    this.setContributor(json.contributor);
+    this.setCreated(json.created);
+    this.setCreator(json.creator);
+    this.setModified(json.modified);
+  }
+  return this;
 };
 
 /**

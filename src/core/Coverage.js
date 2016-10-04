@@ -19,12 +19,7 @@ var Coverage = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setSpatial(json.spatial);
-    this.setTemporal(json.temporal);
-  }
+  this.init(json);
 };
 
 Coverage.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -39,6 +34,23 @@ Coverage._gedxClass = Coverage.prototype._gedxClass = 'GedcomX.Coverage';
  */
 Coverage.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Coverage} this
+ */
+Coverage.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setSpatial(json.spatial);
+    this.setTemporal(json.temporal);
+  }
+  return this;
 };
 
 /**

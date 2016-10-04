@@ -19,8 +19,6 @@ var ExtensibleData = function(json){
     return json;
   }
   
-  Base.call(this, json);
-  
   this.init(json);
 };
 
@@ -47,9 +45,13 @@ ExtensibleData.isInstance = function(obj){
  * @return {ExtensibleData} this
  */
 ExtensibleData.prototype.init = function(json){
+  
+  Base.prototype.init.call(this, json);
+  
   if(json){
     this.setId(json.id);
   }
+  return this;
 };
 
 /**

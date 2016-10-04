@@ -19,7 +19,32 @@ var Identifiers = function(json){
     return json;
   }
   
-  Base.call(this, json);
+  this.init(json);
+};
+
+Base.prototype = Object.create(Base.prototype);
+
+Identifiers._gedxClass = Identifiers.prototype._gedxClass = 'GedcomX.Identifiers';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Identifiers.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Identifiers} this
+ */
+Identifiers.prototype.init = function(json){
+  
+  Base.prototype.init.call(this, json);
   
   this.identifiers = {};
   
@@ -35,20 +60,7 @@ var Identifiers = function(json){
       }
     }
   }
-};
-
-Base.prototype = Object.create(Base.prototype);
-
-Identifiers._gedxClass = Identifiers.prototype._gedxClass = 'GedcomX.Identifiers';
-
-/**
- * Check whether the given object is an instance of this class.
- * 
- * @param {Object} obj
- * @returns {Boolean}
- */
-Identifiers.isInstance = function(obj){
-  return utils.isInstance(obj, this._gedxClass);
+  return this;
 };
 
 /**

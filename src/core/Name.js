@@ -19,13 +19,7 @@ var Name = function(json){
     return json;
   }
   
-  GedcomX.Conclusion.call(this, json);
-  
-  if(json){
-    this.setType(json.type);
-    this.setDate(json.date);
-    this.setNameForms(json.nameForms);
-  }
+  this.init(json);
 };
 
 Name.prototype = Object.create(GedcomX.Conclusion.prototype);
@@ -40,6 +34,24 @@ Name._gedxClass = Name.prototype._gedxClass = 'GedcomX.Name';
  */
 Name.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Name} this
+ */
+Name.prototype.init = function(json){
+  
+  GedcomX.Conclusion.prototype.init.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+    this.setDate(json.date);
+    this.setNameForms(json.nameForms);
+  }
+  return this;
 };
 
 /**

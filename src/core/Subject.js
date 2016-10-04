@@ -19,18 +19,7 @@ var Subject = function(json){
     return json;
   }
   
-  GedcomX.Conclusion.call(this, json);
-  
-  if(json){
-    // setExtracted defaults to false but when the property is undefined we
-    // want it to stay that way
-    if(typeof json.extracted !== 'undefined'){
-      this.setExtracted(json.extracted);
-    }
-    this.setEvidence(json.evidence);
-    this.setIdentifiers(json.identifiers);
-    this.setMedia(json.media);
-  }
+  this.init(json);
 };
 
 Subject.prototype = Object.create(GedcomX.Conclusion.prototype);
@@ -45,6 +34,29 @@ Subject._gedxClass = Subject.prototype._gedxClass = 'GedcomX.Subject';
  */
 Subject.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Subject} this
+ */
+Subject.prototype.init = function(json){
+  
+  GedcomX.Conclusion.prototype.init.call(this, json);
+  
+  if(json){
+    // setExtracted defaults to false but when the property is undefined we
+    // want it to stay that way
+    if(typeof json.extracted !== 'undefined'){
+      this.setExtracted(json.extracted);
+    }
+    this.setEvidence(json.evidence);
+    this.setIdentifiers(json.identifiers);
+    this.setMedia(json.media);
+  }
+  return this;
 };
 
 /**

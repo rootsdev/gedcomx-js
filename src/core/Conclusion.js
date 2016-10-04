@@ -19,16 +19,7 @@ var Conclusion = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setAttribution(json.attribution);
-    this.setAnalysis(json.analysis);
-    this.setConfidence(json.confidence);
-    this.setLang(json.lang);
-    this.setNotes(json.notes);
-    this.setSources(json.sources);
-  }
+  this.init(json);
 };
 
 Conclusion.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -43,6 +34,27 @@ Conclusion._gedxClass = Conclusion.prototype._gedxClass = 'GedcomX.Conclusion';
  */
 Conclusion.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Conclusion} this
+ */
+Conclusion.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setAttribution(json.attribution);
+    this.setAnalysis(json.analysis);
+    this.setConfidence(json.confidence);
+    this.setLang(json.lang);
+    this.setNotes(json.notes);
+    this.setSources(json.sources);
+  }
+  return this;
 };
 
 /**

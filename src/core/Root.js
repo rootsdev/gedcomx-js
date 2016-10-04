@@ -19,20 +19,7 @@ var Root = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setLang(json.lang);
-    this.setPersons(json.persons);
-    this.setRelationships(json.relationships);
-    this.setSourceDescriptions(json.sourceDescriptions);
-    this.setAgents(json.agents);
-    this.setEvents(json.events);
-    this.setDocuments(json.documents);
-    this.setPlaces(json.places);
-    this.setAttribution(json.attribution);
-    this.setDescription(json.description);
-  }
+  this.init(json);
 };
 
 Root.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -47,6 +34,31 @@ Root._gedxClass = Root.prototype._gedxClass = 'Root';
  */
 Root.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Root} this
+ */
+Root.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setLang(json.lang);
+    this.setPersons(json.persons);
+    this.setRelationships(json.relationships);
+    this.setSourceDescriptions(json.sourceDescriptions);
+    this.setAgents(json.agents);
+    this.setEvents(json.events);
+    this.setDocuments(json.documents);
+    this.setPlaces(json.places);
+    this.setAttribution(json.attribution);
+    this.setDescription(json.description);
+  }
+  return this;
 };
 
 /**

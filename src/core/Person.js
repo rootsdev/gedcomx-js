@@ -19,14 +19,7 @@ var Person = function(json){
     return json;
   }
   
-  GedcomX.Subject.call(this, json);
-  
-  if(json){
-    this.setPrivate(json.private);
-    this.setGender(json.gender);
-    this.setNames(json.names);
-    this.setFacts(json.facts);
-  }
+  this.init(json);
 };
 
 Person.prototype = Object.create(GedcomX.Subject.prototype);
@@ -41,6 +34,25 @@ Person._gedxClass = Person.prototype._gedxClass = 'GedcomX.Person';
  */
 Person.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Person} this
+ */
+Person.prototype.init = function(json){
+  
+  GedcomX.Subject.prototype.init.call(this, json);
+  
+  if(json){
+    this.setPrivate(json.private);
+    this.setGender(json.gender);
+    this.setNames(json.names);
+    this.setFacts(json.facts);
+  }
+  return this;
 };
 
 /**

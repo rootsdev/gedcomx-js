@@ -19,11 +19,7 @@ var EvidenceReference = function(json){
     return json;
   }
   
-  GedcomX.ResourceReference.call(this, json);
-  
-  if(json){
-    this.setAttribution(json.attribution);
-  }
+  this.init(json);
 };
 
 EvidenceReference.prototype = Object.create(GedcomX.ResourceReference.prototype);
@@ -38,6 +34,22 @@ EvidenceReference._gedxClass = EvidenceReference.prototype._gedxClass = 'GedcomX
  */
 EvidenceReference.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {EvidenceReference} this
+ */
+EvidenceReference.prototype.init = function(json){
+  
+  GedcomX.ResourceReference.prototype.init.call(this, json);
+  
+  if(json){
+    this.setAttribution(json.attribution);
+  }
+  return this;
 };
 
 /**

@@ -19,12 +19,7 @@ var PlaceReference = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setOriginal(json.original);
-    this.setDescription(json.description);
-  }
+  this.init(json);
 };
 
 PlaceReference.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -39,6 +34,23 @@ PlaceReference._gedxClass = PlaceReference.prototype._gedxClass = 'GedcomX.Exten
  */
 PlaceReference.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {PlaceReference} this
+ */
+PlaceReference.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setOriginal(json.original);
+    this.setDescription(json.description);
+  }
+  return this;
 };
 
 /**

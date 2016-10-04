@@ -19,13 +19,7 @@ var NameForm = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setLang(json.lang);
-    this.setFullText(json.fullText);
-    this.setParts(json.parts);
-  }
+  this.init(json);
 };
 
 NameForm.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -40,6 +34,25 @@ NameForm._gedxClass = NameForm.prototype._gedxClass = 'GedcomX.NameForm';
  */
 NameForm.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {NameForm} this
+ */
+NameForm.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setLang(json.lang);
+    this.setFullText(json.fullText);
+    this.setParts(json.parts);
+  }
+  
+  return this;
 };
 
 /**

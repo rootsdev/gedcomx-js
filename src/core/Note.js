@@ -19,14 +19,7 @@ var Note = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setLang(json.lang);
-    this.setSubject(json.subject);
-    this.setText(json.text);
-    this.setAttribution(json.attribution);
-  }
+  this.init(json);
 };
 
 Note.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -41,6 +34,25 @@ Note._gedxClass = Note.prototype._gedxClass = 'GedcomX.Note';
  */
 Note.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Note} this
+ */
+Note.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setLang(json.lang);
+    this.setSubject(json.subject);
+    this.setText(json.text);
+    this.setAttribution(json.attribution);
+  }
+  return this;
 };
 
 /**

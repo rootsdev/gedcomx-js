@@ -19,12 +19,7 @@ var OnlineAccount = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setAccountName(json.accountName);
-    this.setServiceHomepage(json.serviceHomepage);
-  }
+  this.init(json);
 };
 
 OnlineAccount.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -39,6 +34,23 @@ OnlineAccount._gedxClass = OnlineAccount.prototype._gedxClass = 'GedcomX.OnlineA
  */
 OnlineAccount.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {OnlineAccount} this
+ */
+OnlineAccount.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setAccountName(json.accountName);
+    this.setServiceHomepage(json.serviceHomepage);
+  }
+  return this;
 };
 
 /**

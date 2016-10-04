@@ -19,12 +19,7 @@ var SourceCitation = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setLang(json.lang);
-    this.setValue(json.value);
-  }
+  this.init(json);
 };
 
 SourceCitation.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -39,6 +34,23 @@ SourceCitation._gedxClass = SourceCitation.prototype._gedxClass = 'GedcomX.Sourc
  */
 SourceCitation.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {SourceCitation} this
+ */
+SourceCitation.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setLang(json.lang);
+    this.setValue(json.value);
+  }
+  return this;
 };
 
 /**

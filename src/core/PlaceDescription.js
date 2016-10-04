@@ -19,18 +19,7 @@ var PlaceDescription = function(json){
     return json;
   }
   
-  GedcomX.Subject.call(this, json);
-  
-  if(json){
-    this.setType(json.type);
-    this.setNames(json.names);
-    this.setPlace(json.place);
-    this.setJurisdiction(json.jurisdiction);
-    this.setTemporalDescription(json.temporalDescription);
-    this.setSpatialDescription(json.spatialDescription);
-    this.setLatitude(json.latitude);
-    this.setLongitude(json.longitude);
-  }
+  this.init(json);
 };
 
 PlaceDescription.prototype = Object.create(GedcomX.Subject.prototype);
@@ -45,6 +34,29 @@ PlaceDescription._gedxClass = PlaceDescription.prototype._gedxClass = 'GedcomX.P
  */
 PlaceDescription.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {PlaceDescription} this
+ */
+PlaceDescription.prototype.init = function(json){
+  
+  GedcomX.Subject.prototype.init.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+    this.setNames(json.names);
+    this.setPlace(json.place);
+    this.setJurisdiction(json.jurisdiction);
+    this.setTemporalDescription(json.temporalDescription);
+    this.setSpatialDescription(json.spatialDescription);
+    this.setLatitude(json.latitude);
+    this.setLongitude(json.longitude);
+  }
+  return this;
 };
 
 /**

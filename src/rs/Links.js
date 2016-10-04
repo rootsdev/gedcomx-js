@@ -21,9 +21,7 @@ module.exports = function(GedcomX){
       return json;
     }
     
-    Base.call(this, json);
-    
-    this.setLinks(json);
+    this.init(json);
   };
   
   // There's no value in us extending Base at the moment
@@ -39,6 +37,22 @@ module.exports = function(GedcomX){
    */
   Links.isInstance = function(obj){
     return utils.isInstance(obj, this._gedxClass);
+  };
+
+  /**
+   * Initialize from JSON
+   * 
+   * @param {Object}
+   * @return {Link} this
+   */
+  Links.prototype.init = function(json){
+    
+    Base.prototype.init.call(this, json);
+    
+    if(json){
+      this.setLinks(json);
+    }
+    return this;
   };
   
   /**

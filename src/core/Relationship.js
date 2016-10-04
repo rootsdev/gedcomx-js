@@ -19,14 +19,7 @@ var Relationship = function(json){
     return json;
   }
   
-  GedcomX.Subject.call(this, json);
-  
-  if(json){
-    this.setType(json.type);
-    this.setPerson1(json.person1);
-    this.setPerson2(json.person2);
-    this.setFacts(json.facts);
-  }
+  this.init(json);
 };
 
 Relationship.prototype = Object.create(GedcomX.Subject.prototype);
@@ -41,6 +34,25 @@ Relationship._gedxClass = Relationship.prototype._gedxClass = 'GedcomX.Relations
  */
 Relationship.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Relationship} this
+ */
+Relationship.prototype.init = function(json){
+  
+  GedcomX.Subject.prototype.init.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+    this.setPerson1(json.person1);
+    this.setPerson2(json.person2);
+    this.setFacts(json.facts);
+  }
+  return this;
 };
 
 /**

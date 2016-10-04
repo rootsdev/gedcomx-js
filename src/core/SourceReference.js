@@ -19,12 +19,7 @@ var SourceReference = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setDescription(json.description);
-    this.setAttribution(json.attribution);
-  }
+  this.init(json);
 };
 
 SourceReference.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -39,6 +34,23 @@ SourceReference._gedxClass = SourceReference.prototype._gedxClass = 'GedcomX.Sou
  */
 SourceReference.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {SourceReference} this
+ */
+SourceReference.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setDescription(json.description);
+    this.setAttribution(json.attribution);
+  }
+  return this;
 };
 
 /**

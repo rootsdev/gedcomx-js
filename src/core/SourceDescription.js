@@ -19,7 +19,32 @@ var SourceDescription = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
+  this.init(json);
+};
+
+SourceDescription.prototype = Object.create(GedcomX.ExtensibleData.prototype);
+
+SourceDescription._gedxClass = SourceDescription.prototype._gedxClass = 'GedcomX.SourceDescription';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+SourceDescription.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {SourceDescription} this
+ */
+SourceDescription.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
   
   if(json){
     this.setResourceType(json.resourceType);
@@ -41,20 +66,7 @@ var SourceDescription = function(json){
     this.setModified(json.modified);
     this.setRepository(json.repository);
   }
-};
-
-SourceDescription.prototype = Object.create(GedcomX.ExtensibleData.prototype);
-
-SourceDescription._gedxClass = SourceDescription.prototype._gedxClass = 'GedcomX.SourceDescription';
-
-/**
- * Check whether the given object is an instance of this class.
- * 
- * @param {Object} obj
- * @returns {Boolean}
- */
-SourceDescription.isInstance = function(obj){
-  return utils.isInstance(obj, this._gedxClass);
+  return this;
 };
 
 /**

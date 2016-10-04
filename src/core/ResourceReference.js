@@ -19,11 +19,7 @@ var ResourceReference = function(json){
     return json;
   }
   
-  Base.call(this, json);
-  
-  if(json){
-    this.setResource(json.resource);
-  }
+  this.init(json);
 };
 
 ResourceReference.prototype = Object.create(Base.prototype);
@@ -38,6 +34,22 @@ ResourceReference._gedxClass = ResourceReference.prototype._gedxClass = 'GedcomX
  */
 ResourceReference.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {ResourceReference} this
+ */
+ResourceReference.prototype.init = function(json){
+  
+  Base.prototype.init.call(this, json);
+  
+  if(json){
+    this.setResource(json.resource);
+  }
+  return this;
 };
 
 /**

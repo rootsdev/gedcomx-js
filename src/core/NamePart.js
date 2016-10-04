@@ -19,13 +19,7 @@ var NamePart = function(json){
     return json;
   }
   
-  GedcomX.ExtensibleData.call(this, json);
-  
-  if(json){
-    this.setValue(json.value);
-    this.setType(json.type);
-    this.setQualifiers(json.qualifiers);
-  }
+  this.init(json);
 };
 
 NamePart.prototype = Object.create(GedcomX.ExtensibleData.prototype);
@@ -40,6 +34,24 @@ NamePart._gedxClass = NamePart.prototype._gedxClass = 'GedcomX.NamePart';
  */
 NamePart.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {NamePart} this
+ */
+NamePart.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setValue(json.value);
+    this.setType(json.type);
+    this.setQualifiers(json.qualifiers);
+  }
+  return this;
 };
 
 /**

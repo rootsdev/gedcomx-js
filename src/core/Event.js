@@ -19,14 +19,7 @@ var Event = function(json){
     return json;
   }
   
-  GedcomX.Subject.call(this, json);
-  
-  if(json){
-    this.setType(json.type);
-    this.setDate(json.date);
-    this.setPlace(json.place);
-    this.setRoles(json.roles);
-  }
+  this.init(json);
 };
 
 Event.prototype = Object.create(GedcomX.Subject.prototype);
@@ -41,6 +34,25 @@ Event._gedxClass = Event.prototype._gedxClass = 'GedcomX.Event';
  */
 Event.isInstance = function(obj){
   return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Event} this
+ */
+Event.prototype.init = function(json){
+  
+  GedcomX.Subject.prototype.init.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+    this.setDate(json.date);
+    this.setPlace(json.place);
+    this.setRoles(json.roles);
+  }
+  return this;
 };
 
 /**
