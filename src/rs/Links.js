@@ -7,7 +7,7 @@ module.exports = function(GedcomX){
    * A list of Links
    * 
    * @constructor
-   * @ param {Object} [json]
+   * @param {Object} [json]
    */
   var Links = function(json){
     

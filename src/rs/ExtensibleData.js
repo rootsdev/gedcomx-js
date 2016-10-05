@@ -3,6 +3,9 @@
  */
 module.exports = function(GedcomX){
   
+  // Extend serialization properties
+  GedcomX.ExtensibleData.jsonProps.push('links');
+  
   // Override init()
   var oldExtensibleDataInit = GedcomX.ExtensibleData.prototype.init;
   GedcomX.ExtensibleData.prototype.init = function(json){
@@ -11,9 +14,6 @@ module.exports = function(GedcomX){
       this.setLinks(json.links);
     }
   };
-  
-  // Extend serialization properties
-  GedcomX.ExtensibleData.jsonProps.push('links');
   
   /**
    * Set the links

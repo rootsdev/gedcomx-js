@@ -11,4 +11,5 @@ module.exports = function(GedcomX){
   
   // Extend existing classes
   require('./ExtensibleData')(GedcomX);
+  require('./Date')(GedcomX);
 };
