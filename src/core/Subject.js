@@ -26,6 +26,13 @@ Subject.prototype = Object.create(GedcomX.Conclusion.prototype);
 
 Subject._gedxClass = Subject.prototype._gedxClass = 'GedcomX.Subject';
 
+Subject.jsonProps = [
+  'extracted',
+  'evidence',
+  'identifiers',
+  'media'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -167,12 +174,7 @@ Subject.prototype.addMedia = function(media){
  * @return {Object} JSON object
  */
 Subject.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.Conclusion, [
-    'extracted',
-    'evidence',
-    'identifiers',
-    'media'
-  ]);
+  return this._toJSON(GedcomX.Conclusion, Subject.jsonProps);
 };
 
 module.exports = Subject;

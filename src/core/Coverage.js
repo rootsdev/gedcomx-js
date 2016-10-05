@@ -26,6 +26,11 @@ Coverage.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Coverage._gedxClass = Coverage.prototype._gedxClass = 'GedcomX.Coverage';
 
+Coverage.jsonProps = [
+  'spatial',
+  'temporal'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -103,10 +108,7 @@ Coverage.prototype.setTemporal = function(temporal){
  * @return {Object} JSON object
  */
 Coverage.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'spatial',
-    'temporal'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, Coverage.jsonProps);
 };
 
 module.exports = Coverage;

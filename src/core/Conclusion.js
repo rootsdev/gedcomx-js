@@ -26,6 +26,15 @@ Conclusion.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Conclusion._gedxClass = Conclusion.prototype._gedxClass = 'GedcomX.Conclusion';
 
+Conclusion.jsonProps = [
+  'lang',
+  'confidence',
+  'analysis',
+  'attribution',
+  'sources',
+  'notes'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -205,14 +214,7 @@ Conclusion.prototype.addSource = function(source){
  * @return {Object} JSON object
  */
 Conclusion.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'lang',
-    'confidence',
-    'analysis',
-    'attribution',
-    'sources',
-    'notes'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, Conclusion.jsonProps);
 };
 
 module.exports = Conclusion;

@@ -26,6 +26,17 @@ PlaceDescription.prototype = Object.create(GedcomX.Subject.prototype);
 
 PlaceDescription._gedxClass = PlaceDescription.prototype._gedxClass = 'GedcomX.PlaceDescription';
 
+PlaceDescription.jsonProps = [
+  'type',
+  'names',
+  'place',
+  'jurisdiction',
+  'latitude',
+  'longitude',
+  'temporalDescription',
+  'spatialDescription'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -242,16 +253,7 @@ PlaceDescription.prototype.setSpatialDescription = function(spatial){
  * @return {Object} JSON object
  */
 PlaceDescription.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.Subject, [
-    'type',
-    'names',
-    'place',
-    'jurisdiction',
-    'latitude',
-    'longitude',
-    'temporalDescription',
-    'spatialDescription'
-  ]);
+  return this._toJSON(GedcomX.Subject, PlaceDescription.jsonProps);
 };
 
 module.exports = PlaceDescription;

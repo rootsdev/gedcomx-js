@@ -26,6 +26,8 @@ ResourceReference.prototype = Object.create(Base.prototype);
 
 ResourceReference._gedxClass = ResourceReference.prototype._gedxClass = 'GedcomX.ResourceReference';
 
+ResourceReference.jsonProps = ['resource'];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -78,11 +80,7 @@ ResourceReference.prototype.setResource = function(uri){
  * @return {Object} JSON object
  */
 ResourceReference.prototype.toJSON = function(){
-  var json = {};
-  if(this.resource){
-    json.resource = this.resource;
-  }
-  return json;
+  return this._toJSON(Base, ResourceReference.jsonProps);
 };
 
 module.exports = ResourceReference;

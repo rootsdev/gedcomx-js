@@ -26,6 +26,14 @@ Document.prototype = Object.create(GedcomX.Conclusion.prototype);
 
 Document._gedxClass = Document.prototype._gedxClass = 'GedcomX.Document';
 
+Document.jsonProps = [
+  'type',
+  'extracted',
+  'textType',
+  'text',
+  'attribution'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -166,13 +174,7 @@ Document.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 Document.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.Conclusion, [
-    'type',
-    'extracted',
-    'textType',
-    'text',
-    'attribution'
-  ]);
+  return this._toJSON(GedcomX.Conclusion, Document.jsonProps);
 };
 
 module.exports = Document;

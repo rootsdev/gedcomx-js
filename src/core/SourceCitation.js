@@ -26,6 +26,11 @@ SourceCitation.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 SourceCitation._gedxClass = SourceCitation.prototype._gedxClass = 'GedcomX.SourceCitation';
 
+SourceCitation.jsonProps = [
+  'lang',
+  'value'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -99,10 +104,7 @@ SourceCitation.prototype.setValue = function(value){
  * @return {Object} JSON object
  */
 SourceCitation.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'lang',
-    'value'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, SourceCitation.jsonProps);
 };
 
 module.exports = SourceCitation;

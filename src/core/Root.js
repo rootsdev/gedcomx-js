@@ -26,6 +26,19 @@ Root.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Root._gedxClass = Root.prototype._gedxClass = 'Root';
 
+Root.jsonProps = [
+  'lang',
+  'description',
+  'persons',
+  'relationships',
+  'sourceDescriptions',
+  'agents',
+  'events',
+  'documents',
+  'places',
+  'attribution'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -336,18 +349,7 @@ Root.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 Root.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'lang',
-    'description',
-    'persons',
-    'relationships',
-    'sourceDescriptions',
-    'agents',
-    'events',
-    'documents',
-    'places',
-    'attribution'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, Root.jsonProps);
 };
 
 module.exports = Root;

@@ -26,6 +26,11 @@ TextValue.prototype = Object.create(Base.prototype);
 
 TextValue._gedxClass = TextValue.prototype._gedxClass = 'GedcomX.TextValue';
 
+TextValue.jsonProps = [
+  'lang',
+  'value'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -99,10 +104,7 @@ TextValue.prototype.setValue = function(value){
  * @return {Object} JSON object
  */
 TextValue.prototype.toJSON = function(){
-  return this._toJSON(Base, [
-    'lang',
-    'value'
-  ]);
+  return this._toJSON(Base, TextValue.jsonProps);
 };
 
 module.exports = TextValue;

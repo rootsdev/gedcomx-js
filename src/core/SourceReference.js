@@ -26,6 +26,11 @@ SourceReference.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 SourceReference._gedxClass = SourceReference.prototype._gedxClass = 'GedcomX.SourceReference';
 
+SourceReference.jsonProps = [
+  'description',
+  'attribution'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -101,10 +106,7 @@ SourceReference.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 SourceReference.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'description',
-    'attribution'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, SourceReference.jsonProps);
 };
 
 module.exports = SourceReference;

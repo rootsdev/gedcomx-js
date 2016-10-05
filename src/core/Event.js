@@ -26,6 +26,13 @@ Event.prototype = Object.create(GedcomX.Subject.prototype);
 
 Event._gedxClass = Event.prototype._gedxClass = 'GedcomX.Event';
 
+Event.jsonProps = [
+  'type',
+  'date',
+  'place',
+  'roles'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -154,12 +161,7 @@ Event.prototype.addRole = function(role){
  * @return {Object} JSON object
  */
 Event.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.Subject, [
-    'type',
-    'date',
-    'place',
-    'roles'
-  ]);
+  return this._toJSON(GedcomX.Subject, Event.jsonProps);
 };
 
 module.exports = Event;

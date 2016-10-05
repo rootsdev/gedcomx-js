@@ -26,6 +26,27 @@ SourceDescription.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 SourceDescription._gedxClass = SourceDescription.prototype._gedxClass = 'GedcomX.SourceDescription';
 
+SourceDescription.jsonProps = [
+  'resourceType',
+  'citations',
+  'mediaType',
+  'about',
+  'mediator',
+  'sources',
+  'analysis',
+  'componentOf',
+  'titles',
+  'notes',
+  'attribution',
+  'rights',
+  'coverage',
+  'descriptions',
+  'identifiers',
+  'created',
+  'modified',
+  'repository'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -502,26 +523,7 @@ SourceDescription.prototype.setRepository = function(repository){
  * @return {Object} JSON object
  */
 SourceDescription.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'resourceType',
-    'citations',
-    'mediaType',
-    'about',
-    'mediator',
-    'sources',
-    'analysis',
-    'componentOf',
-    'titles',
-    'notes',
-    'attribution',
-    'rights',
-    'coverage',
-    'descriptions',
-    'identifiers',
-    'created',
-    'modified',
-    'repository'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, SourceDescription.jsonProps);
 };
 
 module.exports = SourceDescription;

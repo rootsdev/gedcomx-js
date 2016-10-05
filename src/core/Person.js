@@ -26,6 +26,13 @@ Person.prototype = Object.create(GedcomX.Subject.prototype);
 
 Person._gedxClass = Person.prototype._gedxClass = 'GedcomX.Person';
 
+Person.jsonProps = [
+  'private',
+  'gender',
+  'names',
+  'facts'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -161,12 +168,7 @@ Person.prototype.addFact = function(fact){
  * @return {Object} JSON object
  */
 Person.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.Subject, [
-    'private',
-    'gender',
-    'names',
-    'facts'
-  ]);
+  return this._toJSON(GedcomX.Subject, Person.jsonProps);
 };
 
 module.exports = Person;

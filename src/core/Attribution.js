@@ -27,6 +27,14 @@ Attribution.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Attribution._gedxClass = Attribution.prototype._gedxClass = 'GedcomX.Attribution';
 
+Attribution.jsonProps = [
+  'changeMessage',
+  'contributor',
+  'created',
+  'creator',
+  'modified'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -171,13 +179,7 @@ Attribution.prototype.setModified = function(date){
  * @return {Object} JSON object
  */
 Attribution.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'changeMessage',
-    'contributor',
-    'created',
-    'creator',
-    'modified'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, Attribution.jsonProps);
 };
 
 module.exports = Attribution;

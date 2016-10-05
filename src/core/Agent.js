@@ -27,6 +27,18 @@ Agent.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Agent._gedxClass = Agent.prototype._gedxClass = 'GedcomX.Agent';
 
+Agent.jsonProps = [
+  'identifiers',
+  'names',
+  'homepage',
+  'openid',
+  'accounts',
+  'emails',
+  'phones',
+  'addresses',
+  'person'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -300,17 +312,7 @@ Agent.prototype.setPerson = function(person){
  * @return {Object} JSON object
  */
 Agent.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'identifiers',
-    'names',
-    'homepage',
-    'openid',
-    'accounts',
-    'emails',
-    'phones',
-    'addresses',
-    'person'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, Agent.jsonProps);
 };
 
 module.exports = Agent;

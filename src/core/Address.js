@@ -26,6 +26,20 @@ Address.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Address._gedxClass = Address.prototype._gedxClass = 'GedcomX.Address';
 
+Address.jsonProps = [
+  'value',
+  'city',
+  'country',
+  'postalCode',
+  'stateOrProvince',
+  'street',
+  'street2',
+  'street3',
+  'street4',
+  'street5',
+  'street6'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -288,19 +302,7 @@ Address.prototype.setStreet6 = function(street6){
  * @return {Object} JSON object
  */
 Address.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'value',
-    'city',
-    'country',
-    'postalCode',
-    'stateOrProvince',
-    'street',
-    'street2',
-    'street3',
-    'street4',
-    'street5',
-    'street6'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, Address.jsonProps);
 };
 
 module.exports = Address;

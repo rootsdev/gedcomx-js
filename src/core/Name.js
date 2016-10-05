@@ -26,6 +26,12 @@ Name.prototype = Object.create(GedcomX.Conclusion.prototype);
 
 Name._gedxClass = Name.prototype._gedxClass = 'GedcomX.Name';
 
+Name.jsonProps = [
+  'type',
+  'date',
+  'nameForms'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -131,11 +137,7 @@ Name.prototype.addNameForm = function(nameForm){
  * @return {Object} JSON object
  */
 Name.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.Conclusion, [
-    'type',
-    'date',
-    'nameForms'
-  ]);
+  return this._toJSON(GedcomX.Conclusion, Name.jsonProps);
 };
 
 module.exports = Name;

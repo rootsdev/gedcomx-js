@@ -26,6 +26,12 @@ NamePart.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 NamePart._gedxClass = NamePart.prototype._gedxClass = 'GedcomX.NamePart';
 
+NamePart.jsonProps = [
+  'type',
+  'value',
+  'qualifiers'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -129,11 +135,7 @@ NamePart.prototype.addQualifier = function(qualifier){
  * @return {Object} JSON object
  */
 NamePart.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'type',
-    'value',
-    'qualifiers'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, NamePart.jsonProps);
 };
 
 module.exports = NamePart;

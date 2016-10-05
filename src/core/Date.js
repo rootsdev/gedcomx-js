@@ -27,6 +27,11 @@ GDate.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 GDate._gedxClass = GDate.prototype._gedxClass = 'GedcomX.Date';
 
+GDate.jsonProps = [
+  'original',
+  'formal'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -100,10 +105,7 @@ GDate.prototype.setFormal = function(formal){
  * @return {Object} JSON object
  */
 GDate.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'original',
-    'formal'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, GDate.jsonProps);
 };
 
 module.exports = GDate;

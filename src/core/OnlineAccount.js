@@ -26,6 +26,11 @@ OnlineAccount.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 OnlineAccount._gedxClass = OnlineAccount.prototype._gedxClass = 'GedcomX.OnlineAccount';
 
+OnlineAccount.jsonProps = [
+  'serviceHomepage',
+  'accountName'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -101,10 +106,7 @@ OnlineAccount.prototype.setAccountName = function(accountName){
  * @return {Object} JSON object
  */
 OnlineAccount.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'serviceHomepage',
-    'accountName'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, OnlineAccount.jsonProps);
 };
 
 module.exports = OnlineAccount;

@@ -26,6 +26,10 @@ EvidenceReference.prototype = Object.create(GedcomX.ResourceReference.prototype)
 
 EvidenceReference._gedxClass = EvidenceReference.prototype._gedxClass = 'GedcomX.ResourceReference';
 
+EvidenceReference.jsonProps = [
+  'attribution'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -80,9 +84,7 @@ EvidenceReference.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 EvidenceReference.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ResourceReference, [
-    'attribution'
-  ]);
+  return this._toJSON(GedcomX.ResourceReference, EvidenceReference.jsonProps);
 };
 
 module.exports = EvidenceReference;

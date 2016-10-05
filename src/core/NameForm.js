@@ -26,6 +26,12 @@ NameForm.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 NameForm._gedxClass = NameForm.prototype._gedxClass = 'GedcomX.NameForm';
 
+NameForm.jsonProps = [
+  'lang',
+  'fullText',
+  'parts'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -130,11 +136,7 @@ NameForm.prototype.addPart = function(part){
  * @return {Object} JSON object
  */
 NameForm.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'lang',
-    'fullText',
-    'parts'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, NameForm.jsonProps);
 };
 
 module.exports = NameForm;

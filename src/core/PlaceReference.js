@@ -26,6 +26,11 @@ PlaceReference.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 PlaceReference._gedxClass = PlaceReference.prototype._gedxClass = 'GedcomX.ExtensibleData';
 
+PlaceReference.jsonProps = [
+  'original',
+  'description'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -99,10 +104,7 @@ PlaceReference.prototype.setDescription = function(description){
  * @return {Object} JSON object
  */
 PlaceReference.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'original',
-    'description'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, PlaceReference.jsonProps);
 };
 
 module.exports = PlaceReference;

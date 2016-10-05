@@ -26,6 +26,13 @@ Note.prototype = Object.create(GedcomX.ExtensibleData.prototype);
 
 Note._gedxClass = Note.prototype._gedxClass = 'GedcomX.Note';
 
+Note.jsonProps = [
+  'lang',
+  'subject',
+  'text',
+  'attribution'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -141,12 +148,7 @@ Note.prototype.setAttribution = function(attribution){
  * @return {Object} JSON object
  */
 Note.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.ExtensibleData, [
-    'lang',
-    'subject',
-    'text',
-    'attribution'
-  ]);
+  return this._toJSON(GedcomX.ExtensibleData, Note.jsonProps);
 };
 
 module.exports = Note;

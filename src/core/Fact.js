@@ -26,6 +26,14 @@ Fact.prototype = Object.create(GedcomX.Conclusion.prototype);
 
 Fact._gedxClass = Fact.prototype._gedxClass = 'GedcomX.Fact';
 
+Fact.jsonProps = [
+  'type',
+  'date',
+  'place',
+  'value',
+  'qualifiers'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -175,13 +183,7 @@ Fact.prototype.addQualifier = function(qualifier){
  * @return {Object} JSON object
  */
 Fact.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.Conclusion, [
-    'type',
-    'date',
-    'place',
-    'value',
-    'qualifiers'
-  ]);
+  return this._toJSON(GedcomX.Conclusion, Fact.jsonProps);
 };
 
 module.exports = Fact;

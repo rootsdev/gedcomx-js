@@ -26,6 +26,8 @@ Gender.prototype = Object.create(GedcomX.Conclusion.prototype);
 
 Gender._gedxClass = Gender.prototype._gedxClass = 'GedcomX.Gender';
 
+Gender.jsonProps = ['type'];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -78,7 +80,7 @@ Gender.prototype.setType = function(gender){
  * @return {Object} JSON object
  */
 Gender.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.Conclusion, ['type']);
+  return this._toJSON(GedcomX.Conclusion, Gender.jsonProps);
 };
 
 module.exports = Gender;

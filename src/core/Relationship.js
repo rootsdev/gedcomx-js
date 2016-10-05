@@ -26,6 +26,13 @@ Relationship.prototype = Object.create(GedcomX.Subject.prototype);
 
 Relationship._gedxClass = Relationship.prototype._gedxClass = 'GedcomX.Relationship';
 
+Relationship.jsonProps = [
+  'type',
+  'person1',
+  'person2',
+  'facts'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -154,12 +161,7 @@ Relationship.prototype.addFact = function(fact){
  * @return {Object} JSON object
  */
 Relationship.prototype.toJSON = function(){
-  return this._toJSON(GedcomX.Subject, [
-    'type',
-    'person1',
-    'person2',
-    'facts'
-  ]);
+  return this._toJSON(GedcomX.Subject, Relationship.jsonProps);
 };
 
 module.exports = Relationship;

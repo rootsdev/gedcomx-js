@@ -26,6 +26,11 @@ Qualifier.prototype = Object.create(Base.prototype);
 
 Qualifier._gedxClass = Qualifier.prototype._gedxClass = 'GedcomX.Qualifier';
 
+Qualifier.jsonProps = [
+  'name',
+  'value'
+];
+
 /**
  * Check whether the given object is an instance of this class.
  * 
@@ -99,10 +104,7 @@ Qualifier.prototype.setValue = function(value){
  * @return {Object} JSON object
  */
 Qualifier.prototype.toJSON = function(){
-  return this._toJSON(Base, [
-    'name',
-    'value'
-  ]);
+  return this._toJSON(Base, Qualifier.jsonProps);
 };
 
 module.exports = Qualifier;
