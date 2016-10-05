@@ -22,7 +22,7 @@ module.exports = function(GedcomX){
    * @return {Name} this
    */
   GedcomX.Name.prototype.setPreferred = function(preferred){
-    this.preferred = !!preferred; // Double ! forces a boolean
+    this.preferred = preferred;
     return this;
   };
   

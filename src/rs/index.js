@@ -14,4 +14,5 @@ module.exports = function(GedcomX){
   require('./Date')(GedcomX);
   require('./PlaceReference')(GedcomX);
   require('./Name')(GedcomX);
+  require('./Person')(GedcomX);
 };
