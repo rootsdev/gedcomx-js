@@ -13,4 +13,5 @@ module.exports = function(GedcomX){
   require('./ExtensibleData')(GedcomX);
   require('./Date')(GedcomX);
   require('./PlaceReference')(GedcomX);
+  require('./Name')(GedcomX);
 };
