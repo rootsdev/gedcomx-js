@@ -11,7 +11,7 @@ module.exports = function(GedcomX){
    * for display purposes.
    * 
    * @constructor
-   * @ param {Object} [json]
+   * @param {Object} [json]
    */
   var FamilyView = function(json){
     

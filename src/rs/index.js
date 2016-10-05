@@ -7,6 +7,7 @@ module.exports = function(GedcomX){
   require('./Link')(GedcomX);
   require('./Links')(GedcomX);
   require('./FamilyView')(GedcomX);
+  require('./DisplayProperties')(GedcomX);
   
   // Extend existing classes
   require('./ExtensibleData')(GedcomX);
