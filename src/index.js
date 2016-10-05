@@ -52,6 +52,5 @@ GedcomX.TextValue = require('./core/TextValue');
 
 // Extensions
 GedcomX.enableRsExtensions = function(){
-  // TODO: prevent from being enabled multiple times
   require('./rs')(GedcomX);
 };
