@@ -9,6 +9,7 @@ module.exports = function(GedcomX){
   require('./RecordDescriptor')(GedcomX);
   require('./FieldValue')(GedcomX);
   require('./Field')(GedcomX);
+  require('./CollectionContent')(GedcomX);
   
   // Extend existing classes
   require('./Root')(GedcomX);
