@@ -1,5 +1,5 @@
 /**
- * Rrecord extensions to ExtensibleData
+ * Record extensions to ExtensibleData
  */
 module.exports = function(GedcomX){
   

@@ -15,4 +15,5 @@ module.exports = function(GedcomX){
   // Extend existing classes
   require('./Root')(GedcomX);
   require('./ExtensibleData')(GedcomX);
+  require('./Fact')(GedcomX);
 };
