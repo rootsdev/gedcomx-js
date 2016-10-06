@@ -231,249 +231,31 @@ describe('Root', function(){
           resource : 'http://uri/for/KML/document'
         }
       }
+    ],
+    recordDescriptors: [
+      {
+        id: 'rd',
+        lang: 'en-US',
+        fields: [{
+          originalLabel: 'Name',
+          descriptions: [
+            { lang: 'en-US', value: 'Full Name' }
+          ],
+          values: [{
+            optional: true,
+            type: 'http://gedcomx.org/Original',
+            labelId: 'name',
+            displayLabels: [
+              { lang: 'en-US', value: 'Name' }
+            ]
+          }]
+        }]
+      }
     ]
   };
   
-  it('Create plain', function(){
-    var newGedx = new GedcomX(),
-        gedx = GedcomX();
-    assert.instanceOf(newGedx, GedcomX.Root, 'An instance of GedcomX is not returned when calling the constructor with new.');
-    assert.instanceOf(gedx, GedcomX.Root, 'An instance of GedcomX is not returned when calling the constructor without new.');
-    assert.jsonSchema(newGedx.toJSON(), GedcomXSchema);
-    assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
-  });
-  
   it('Create with JSON', function(){
     var gedx = GedcomX(fullJSON);
-    tests(gedx);
-  });
-  
-  it('Create with mixed data', function(){
-    var gedx = GedcomX({
-      id: 'gedcomx',
-      lang: 'en',
-      description: '#sd1',
-      attribution: GedcomX.Attribution({ 
-        changeMessage: 'It changed',
-        contributor: GedcomX.ResourceReference({ resource: 'https://myapp.com/contributor'}),
-        created: new Date(1111338494969),
-        creator: GedcomX.ResourceReference({ resource: 'https://myapp.com/creator'}),
-        modified: new Date(1111338494969)
-      }),
-      persons: [
-        GedcomX.Person({
-          gender: {
-            type: 'http://gedcomx.org/Female'
-          },
-          names: [
-            {
-              type: 'http://gedcomx.org/BirthName',
-              nameForms: [
-                {
-                  fullText: 'Joanna Hopkins'
-                }
-              ]
-            }  
-          ],
-          facts: [
-            {
-              type: 'http://gedcomx.org/Birth',
-              date: {
-                formal: '+2001-04-09'
-              },
-              place: {
-                original: 'Farm house'
-              }
-            }  
-          ]
-        })
-      ],
-      relationships: [
-        GedcomX.Relationship({
-          type: 'http://gedcomx.org/Couple',
-          person1: {
-            resource: 'http://identifier/for/person/1'
-          },
-          person2: {
-            resource: 'http://identifier/for/person/2'
-          },
-          facts: [
-            GedcomX.Fact({
-              type: 'http://gedcomx.org/Marriage'
-            })
-          ]
-        })  
-      ],
-      sourceDescriptions: [
-        GedcomX.SourceDescription({
-          id: 'sd1',
-          resourceType: 'http://some/type',
-          citations: [
-            GedcomX.SourceCitation({
-              lang: 'en',
-              value: 'Long source citation'
-            })
-          ],
-          mediaType: 'book',
-          about: 'http://a/resource',
-          mediator: {
-            resource: 'http://mediator'
-          },
-          sources: [
-            GedcomX.SourceReference({
-              description: 'http://source/reference'
-            })
-          ],
-          analysis: {
-            resource: 'http://analysis'
-          },
-          componentOf: {
-            description: 'http://container'
-          },
-          titles: [
-            GedcomX.TextValue({
-              lang: 'en',
-              value: 'Title'
-            }),
-            {
-              lang: 'es',
-              value: 'Titulo'
-            }
-          ],
-          notes: [
-            GedcomX.Note({
-              subject: 'Note',
-              text: 'Some note text'
-            })
-          ],
-          attribution: {
-            created: 1234578129
-          },
-          rights: [
-            GedcomX.ResourceReference({
-              resource: 'https://some/right'
-            })
-          ],
-          coverage: GedcomX.Coverage({
-            temporal: {
-              formal: '+2015'
-            },
-            spatial: {
-              original: 'A place'
-            }
-          }),
-          descriptions: [
-            {
-              value: 'A description'
-            }
-          ],
-          identifiers: {
-            $: 'identifier'
-          },
-          created: 1000000,
-          modified: 11111111,
-          repository: GedcomX.ResourceReference({
-            resource: 'http://repository'
-          })
-        })  
-      ],
-      agents: [
-        GedcomX.Agent({
-          id: 'agent',
-          identifiers: GedcomX.Identifiers({
-            $: 'ident'
-          }),
-          names: [
-            GedcomX.TextValue({
-              lang: 'en',
-              value: 'Name'
-            })
-          ],
-          homepage: GedcomX.ResourceReference({
-            resource: 'http://homepage'
-          }),
-          openid: GedcomX.ResourceReference({
-            resource: 'http://openid'
-          }),
-          accounts: [
-            GedcomX.OnlineAccount({
-              accountName: 'jimbo'
-            })
-          ],
-          emails: [
-            GedcomX.ResourceReference({
-              resource: 'http://email'
-            })
-          ],
-          phones: [
-            GedcomX.ResourceReference({
-              resource: 'http://phone'
-            })
-          ],
-          addresses: [
-            GedcomX.Address({
-              value: 'big long address',
-              postalCode: '123456'
-            })
-          ],
-          person: GedcomX.ResourceReference({
-            resource: 'http://person'
-          })
-        })  
-      ],
-      events: [
-        GedcomX.Event({
-          type: 'http://gedcomx.org/Marriage',
-          date: GedcomX.Date({
-            formal: '+2002-06-06'
-          }),
-          place: GedcomX.PlaceReference({
-            original: 'Her town, MN'
-          }),
-          roles: [
-            GedcomX.EventRole({
-              person: {
-                resource: 'http://groom'
-              },
-              type: 'http://gedcomx.org/Participant'
-            })
-          ]
-        })  
-      ],
-      documents: [
-        GedcomX.Document({
-          type: 'http://gedcomx.org/Abstract',
-          extracted: false,
-          textType: 'plain',
-          text: 'Lots of text',
-          attribution: GedcomX.Attribution({
-            created: 123456789
-          })
-        })
-      ],
-      places: [
-        GedcomX.PlaceDescription({
-          names : [ 
-            GedcomX.TextValue({
-              lang : 'en',
-              value : 'Pope\'s Creek, Westmoreland, Virginia, United States'
-            })
-          ],
-          type : 'http://identifier/for/the/place/type',
-          place : GedcomX.ResourceReference({ resource : 'http://place' }),
-          jurisdiction : GedcomX.ResourceReference({ resource : 'http://jurisdiction' }),
-          latitude : 27.9883575,
-          longitude : 86.9252014,
-          temporalDescription : GedcomX.Date({ 
-            formal: '+1899-01-04'
-          }),
-          spatialDescription : GedcomX.ResourceReference({
-            resource : 'http://uri/for/KML/document'
-          })
-        })  
-      ]
-    });
-    
     tests(gedx);
   });
   
@@ -576,6 +358,23 @@ describe('Root', function(){
           .setSpatialDescription(GedcomX.ResourceReference({
             resource : 'http://uri/for/KML/document'
           }))
+      )
+      .addRecordDescriptor(
+        GedcomX.RecordDescriptor()
+          .setId('rd')
+          .setLang('en-US')
+          .addField(
+            GedcomX.FieldDescriptor()
+              .setOriginalLabel('Name')
+              .addDescription({ lang: 'en-US', value: 'Full Name' })
+              .addValue(
+                GedcomX.FieldValueDescriptor()
+                  .setOptional(true)
+                  .setType('http://gedcomx.org/Original')
+                  .setLabelId('name')
+                  .addDisplayLabel({ lang: 'en-US', value: 'Name' })
+              )
+          )
       );
     
     tests(gedx);
@@ -585,12 +384,6 @@ describe('Root', function(){
     var gedx = GedcomX(fullJSON);
     assert.deepEqual(gedx.toJSON(), fullJSON);
     assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
-  });
-  
-  it('constructor does not copy instances', function(){
-    var obj1 = GedcomX();
-    var obj2 = GedcomX(obj1);
-    assert.strictEqual(obj1, obj2);
   });
   
 });
@@ -704,6 +497,14 @@ function tests(gedx){
   assert.equal(place.getLongitude(), 86.9252014);
   assert.equal(place.getTemporalDescription().getFormal(), '+1899-01-04');
   assert.equal(place.getSpatialDescription().getResource(), 'http://uri/for/KML/document');
+  
+  assert.equal(gedx.getRecordDescriptors().length, 1);
+  var rd = gedx.getRecordDescriptors()[0];
+  assert.equal(rd.getId(), 'rd');
+  assert.equal(rd.getLang(), 'en-US');
+  assert.equal(rd.getFields().length, 1);
+  assert.equal(rd.getFields()[0].getOriginalLabel(), 'Name');
+  assert.equal(rd.getFields()[0].getValues().length, 1);
   
   assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
 }

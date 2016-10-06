@@ -10,4 +10,5 @@ module.exports = function(GedcomX){
   require('./FieldValue')(GedcomX);
   
   // Extend existing classes
+  require('./Root')(GedcomX);
 };
