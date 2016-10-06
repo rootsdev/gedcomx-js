@@ -39,7 +39,7 @@ describe('Person', function(){
     });
     assert.equal(person.getLiving(), true);
     assert.equal(person.getId(), 'testPerson');
-    assert.equal(person.isPrivate(), true);
+    assert.equal(person.getPrivate(), true);
     assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');
     assert.equal(person.getNames()[0].getNameForms()[0].getFullText(), 'Joanna Hopkins');
     assert.equal(person.getFacts()[0].getDate().getFormal(), '+2001-04-09');
@@ -58,7 +58,7 @@ describe('Person', function(){
       .setDisplay(GedcomX.DisplayProperties().setName("Joanna Hopkins").setGender("Female"));
     assert.equal(person.getLiving(), true);
     assert.equal(person.getId(), 'testPerson');
-    assert.equal(person.isPrivate(), true);
+    assert.equal(person.getPrivate(), true);
     assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');
     assert.equal(person.getNames()[0].getNameForms()[0].getFullText(), 'Joanna Hopkins');
     assert.equal(person.getFacts()[0].getDate().getFormal(), '+2001-04-09');

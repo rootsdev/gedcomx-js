@@ -63,12 +63,12 @@ Person.prototype.init = function(json){
 };
 
 /**
- * Check whether the person is marked as private
+ * Get the private flag
  * 
  * @returns {Boolean} private
  */
-Person.prototype.isPrivate = function(){
-  return !!this.private;
+Person.prototype.getPrivate = function(){
+  return this.private;
 };
 
 /**
