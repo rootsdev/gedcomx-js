@@ -18,4 +18,5 @@ module.exports = function(GedcomX){
   require('./Fact')(GedcomX);
   require('./Person')(GedcomX);
   require('./SourceDescription')(GedcomX);
+  require('./SourceReference')(GedcomX);
 };
