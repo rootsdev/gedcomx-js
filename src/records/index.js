@@ -16,4 +16,5 @@ module.exports = function(GedcomX){
   require('./Root')(GedcomX);
   require('./ExtensibleData')(GedcomX);
   require('./Fact')(GedcomX);
+  require('./Person')(GedcomX);
 };
