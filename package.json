@@ -9,7 +9,7 @@
     "test:rs": "mocha test/rs/*.js",
     "test:records": "mocha test/records/*.js",
     "docs": "jsdoc src -R ./README.md",
-    "coverage": "istanbul cover --report lcovonly node_modules/mocha/bin/_mocha test/*.js node_modules/mocha/bin/_mocha test/core/*.js node_modules/mocha/bin/_mocha test/rs/*.js node_modules/mocha/bin/_mocha test/records/*.js && codecov"
+    "coverage": "istanbul cover --report lcovonly _mocha -- --recursive && codecov"
   },
   "devDependencies": {
     "chai": "^3.5.0",
