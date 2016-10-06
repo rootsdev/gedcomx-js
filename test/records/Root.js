@@ -251,6 +251,25 @@ describe('Root', function(){
           }]
         }]
       }
+    ],
+    collections: [
+      {
+        id: 'collection',
+        lang: 'en-US',
+        content: [{
+          resourceType: 'http://gedcomx.org/Record',
+          count: 183429102,
+          completeness: .8237
+        }],
+        title: 'Collection Title',
+        size: 183429102,
+        attribution: { 
+          contributor: { resource: 'https://myapp.com/contributor'},
+          created: 1111338494969,
+          creator: { resource: 'https://myapp.com/creator'},
+          modified: 1111338494969
+        }
+      }  
     ]
   };
   
@@ -375,6 +394,26 @@ describe('Root', function(){
                   .addDisplayLabel({ lang: 'en-US', value: 'Name' })
               )
           )
+      )
+      .addCollection(
+        GedcomX.Collection()
+          .setId('collection')
+          .setLang('en-US')
+          .addContent(
+            GedcomX.CollectionContent()
+              .setResourceType('http://gedcomx.org/Record')
+              .setCount(183429102)
+              .setCompleteness(.8237)  
+          )
+          .setTitle('Collection Title')
+          .setSize(183429102)
+          .setAttribution(
+            GedcomX.Attribution()
+              .setContributor({ resource: 'https://myapp.com/contributor'})
+              .setCreated(1111338494969)
+              .setCreator({ resource: 'https://myapp.com/creator'})
+              .setModified(1111338494969)  
+          )  
       );
     
     tests(gedx);
@@ -505,6 +544,15 @@ function tests(gedx){
   assert.equal(rd.getFields().length, 1);
   assert.equal(rd.getFields()[0].getOriginalLabel(), 'Name');
   assert.equal(rd.getFields()[0].getValues().length, 1);
+  
+  assert.equal(gedx.getCollections().length, 1);
+  var collection = gedx.getCollections()[0];
+  assert.equal(collection.getId(), 'collection');
+  assert.equal(collection.getLang(), 'en-US');
+  assert.equal(collection.getContent()[0].getResourceType(), 'http://gedcomx.org/Record');
+  assert.equal(collection.getTitle(), 'Collection Title');
+  assert.equal(collection.getSize(), 183429102);
+  assert(GedcomX.Attribution.isInstance(collection.getAttribution()));
   
   assert.jsonSchema(gedx.toJSON(), GedcomXSchema);
 }

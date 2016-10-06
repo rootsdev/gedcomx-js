@@ -10,6 +10,7 @@ module.exports = function(GedcomX){
   require('./FieldValue')(GedcomX);
   require('./Field')(GedcomX);
   require('./CollectionContent')(GedcomX);
+  require('./Collection')(GedcomX);
   
   // Extend existing classes
   require('./Root')(GedcomX);
