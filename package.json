@@ -4,9 +4,10 @@
   "description": "JavaScript object model for GEDCOM X",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha && npm run test:core && npm run test:rs",
+    "test": "mocha && npm run test:core && npm run test:rs && npm run test:records",
     "test:core": "mocha test/core/*.js",
     "test:rs": "mocha test/rs/*.js",
+    "test:records": "mocha test/records/*.js",
     "docs": "jsdoc src -R ./README.md",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov"
   },
@@ -14,7 +15,7 @@
     "chai": "^3.5.0",
     "chai-json-schema": "chaijs/chai-json-schema#85ebeb3a98",
     "codecov": "^1.0.1",
-    "gedcomx-json-schema": "^1.0.2",
+    "gedcomx-json-schema": "^1.1.2",
     "istanbul": "^0.4.3",
     "jsdoc": "^3.4.0",
     "mocha": "^2.4.5"

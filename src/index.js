@@ -51,6 +51,11 @@ GedcomX.SourceReference = require('./core/SourceReference');
 GedcomX.TextValue = require('./core/TextValue');
 
 // Extensions
+
 GedcomX.enableRsExtensions = function(){
   require('./rs')(GedcomX);
+};
+
+GedcomX.enableRecordsExtensions = function(){
+  require('./records')(GedcomX);
 };
