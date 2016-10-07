@@ -114,14 +114,14 @@ describe('Root', function(){
             resource: 'https://some/right'
           }
         ],
-        coverage: {
+        coverage: [{
           temporal: {
             formal: '+2015'
           },
           spatial: {
             original: 'A place'
           }
-        },
+        }],
         descriptions: [
           {
             value: 'A description'
@@ -354,14 +354,14 @@ describe('Root', function(){
               resource: 'https://some/right'
             })
           ],
-          coverage: GedcomX.Coverage({
+          coverage: [GedcomX.Coverage({
             temporal: {
               formal: '+2015'
             },
             spatial: {
               original: 'A place'
             }
-          }),
+          })],
           descriptions: [
             {
               value: 'A description'
@@ -519,7 +519,7 @@ describe('Root', function(){
           .addNote(GedcomX.Note().setSubject('Note').setText('Some note text'))
           .setAttribution(GedcomX.Attribution().setCreated(1234578129))
           .addRight(GedcomX.ResourceReference().setResource('https://some/right'))
-          .setCoverage(
+          .addCoverage(
             GedcomX.Coverage()
               .setTemporal(GedcomX.Date().setFormal('+2015'))
               .setSpatial(GedcomX.PlaceReference().setOriginal('A place'))
@@ -646,8 +646,9 @@ function tests(gedx){
   assert.equal(description.getAttribution().getCreated().getTime(), 1234578129);
   assert.equal(description.getRights().length, 1);
   assert.equal(description.getRights()[0].getResource(), 'https://some/right');
-  assert.equal(description.getCoverage().getTemporal().getFormal(), '+2015');
-  assert.equal(description.getCoverage().getSpatial().getOriginal(), 'A place');
+  assert.equal(description.getCoverage().length, 1);
+  assert.equal(description.getCoverage()[0].getTemporal().getFormal(), '+2015');
+  assert.equal(description.getCoverage()[0].getSpatial().getOriginal(), 'A place');
   assert.equal(description.getDescriptions().length, 1);
   assert.equal(description.getDescriptions()[0].getValue(), 'A description');
   assert.equal(description.getIdentifiers().identifiers.$, 'identifier');

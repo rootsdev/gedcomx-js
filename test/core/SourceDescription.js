@@ -51,14 +51,14 @@ describe('SourceDescription', function(){
         resource: 'https://some/right'
       }
     ],
-    coverage: {
+    coverage: [{
       temporal: {
         formal: '+2015'
       },
       spatial: {
         original: 'A place'
       }
-    },
+    }],
     descriptions: [
       {
         value: 'A description'
@@ -81,36 +81,7 @@ describe('SourceDescription', function(){
   
   it('Create with JSON', function(){
     var description = GedcomX.SourceDescription(fullJSON);
-    assert.equal(description.getResourceType(), 'http://some/type');
-    assert.equal(description.getCitations().length, 1);
-    assert.equal(description.getCitations()[0].getLang(), 'en');
-    assert.equal(description.getCitations()[0].getValue(), 'Long source citation');
-    assert.equal(description.getMediaType(), 'book');
-    assert.equal(description.getAbout(), 'http://a/resource');
-    assert.equal(description.getMediator().getResource(), 'http://mediator');
-    assert.equal(description.getSources().length, 1);
-    assert.equal(description.getSources()[0].getDescription(), 'http://source/reference');
-    assert.equal(description.getAnalysis().getResource(), 'http://analysis');
-    assert.equal(description.getComponentOf().getDescription(), 'http://container');
-    assert.equal(description.getTitles().length, 2);
-    assert.equal(description.getTitles()[0].getLang(), 'en');
-    assert.equal(description.getTitles()[0].getValue(), 'Title');
-    assert.equal(description.getTitles()[1].getLang(), 'es');
-    assert.equal(description.getTitles()[1].getValue(), 'Titulo');
-    assert.equal(description.getNotes().length, 1);
-    assert.equal(description.getNotes()[0].getSubject(), 'Note');
-    assert.equal(description.getNotes()[0].getText(), 'Some note text');
-    assert.equal(description.getAttribution().getCreated().getTime(), 1234578129);
-    assert.equal(description.getRights().length, 1);
-    assert.equal(description.getRights()[0].getResource(), 'https://some/right');
-    assert.equal(description.getCoverage().getTemporal().getFormal(), '+2015');
-    assert.equal(description.getCoverage().getSpatial().getOriginal(), 'A place');
-    assert.equal(description.getDescriptions().length, 1);
-    assert.equal(description.getDescriptions()[0].getValue(), 'A description');
-    assert.equal(description.getIdentifiers().identifiers.$, 'identifier');
-    assert.equal(description.getCreated(), 1000000);
-    assert.equal(description.getModified(), 11111111);
-    assert.equal(description.getRepository().getResource(), 'http://repository');
+    tests(description);
   });
   
   it('Create with mixed', function(){
@@ -162,14 +133,14 @@ describe('SourceDescription', function(){
           resource: 'https://some/right'
         })
       ],
-      coverage: GedcomX.Coverage({
+      coverage: [GedcomX.Coverage({
         temporal: {
           formal: '+2015'
         },
         spatial: {
           original: 'A place'
         }
-      }),
+      })],
       descriptions: [
         {
           value: 'A description'
@@ -184,36 +155,7 @@ describe('SourceDescription', function(){
         resource: 'http://repository'
       })
     });
-    assert.equal(description.getResourceType(), 'http://some/type');
-    assert.equal(description.getCitations().length, 1);
-    assert.equal(description.getCitations()[0].getLang(), 'en');
-    assert.equal(description.getCitations()[0].getValue(), 'Long source citation');
-    assert.equal(description.getMediaType(), 'book');
-    assert.equal(description.getAbout(), 'http://a/resource');
-    assert.equal(description.getMediator().getResource(), 'http://mediator');
-    assert.equal(description.getSources().length, 1);
-    assert.equal(description.getSources()[0].getDescription(), 'http://source/reference');
-    assert.equal(description.getAnalysis().getResource(), 'http://analysis');
-    assert.equal(description.getComponentOf().getDescription(), 'http://container');
-    assert.equal(description.getTitles().length, 2);
-    assert.equal(description.getTitles()[0].getLang(), 'en');
-    assert.equal(description.getTitles()[0].getValue(), 'Title');
-    assert.equal(description.getTitles()[1].getLang(), 'es');
-    assert.equal(description.getTitles()[1].getValue(), 'Titulo');
-    assert.equal(description.getNotes().length, 1);
-    assert.equal(description.getNotes()[0].getSubject(), 'Note');
-    assert.equal(description.getNotes()[0].getText(), 'Some note text');
-    assert.equal(description.getAttribution().getCreated().getTime(), 1234578129);
-    assert.equal(description.getRights().length, 1);
-    assert.equal(description.getRights()[0].getResource(), 'https://some/right');
-    assert.equal(description.getCoverage().getTemporal().getFormal(), '+2015');
-    assert.equal(description.getCoverage().getSpatial().getOriginal(), 'A place');
-    assert.equal(description.getDescriptions().length, 1);
-    assert.equal(description.getDescriptions()[0].getValue(), 'A description');
-    assert.equal(description.getIdentifiers().identifiers.$, 'identifier');
-    assert.equal(description.getCreated(), 1000000);
-    assert.equal(description.getModified(), 11111111);
-    assert.equal(description.getRepository().getResource(), 'http://repository');
+    tests(description);
   });
   
   it('Build', function(){
@@ -231,7 +173,7 @@ describe('SourceDescription', function(){
       .addNote(GedcomX.Note().setSubject('Note').setText('Some note text'))
       .setAttribution(GedcomX.Attribution().setCreated(1234578129))
       .addRight(GedcomX.ResourceReference().setResource('https://some/right'))
-      .setCoverage(
+      .addCoverage(
         GedcomX.Coverage()
           .setTemporal(GedcomX.Date().setFormal('+2015'))
           .setSpatial(GedcomX.PlaceReference().setOriginal('A place'))
@@ -243,36 +185,7 @@ describe('SourceDescription', function(){
       .setCreated(1000000)
       .setModified(11111111)
       .setRepository(GedcomX.ResourceReference().setResource('http://repository'));
-    assert.equal(description.getResourceType(), 'http://some/type');
-    assert.equal(description.getCitations().length, 1);
-    assert.equal(description.getCitations()[0].getLang(), 'en');
-    assert.equal(description.getCitations()[0].getValue(), 'Long source citation');
-    assert.equal(description.getMediaType(), 'book');
-    assert.equal(description.getAbout(), 'http://a/resource');
-    assert.equal(description.getMediator().getResource(), 'http://mediator');
-    assert.equal(description.getSources().length, 1);
-    assert.equal(description.getSources()[0].getDescription(), 'http://source/reference');
-    assert.equal(description.getAnalysis().getResource(), 'http://analysis');
-    assert.equal(description.getComponentOf().getDescription(), 'http://container');
-    assert.equal(description.getTitles().length, 2);
-    assert.equal(description.getTitles()[0].getLang(), 'en');
-    assert.equal(description.getTitles()[0].getValue(), 'Title');
-    assert.equal(description.getTitles()[1].getLang(), 'es');
-    assert.equal(description.getTitles()[1].getValue(), 'Titulo');
-    assert.equal(description.getNotes().length, 1);
-    assert.equal(description.getNotes()[0].getSubject(), 'Note');
-    assert.equal(description.getNotes()[0].getText(), 'Some note text');
-    assert.equal(description.getAttribution().getCreated().getTime(), 1234578129);
-    assert.equal(description.getRights().length, 1);
-    assert.equal(description.getRights()[0].getResource(), 'https://some/right');
-    assert.equal(description.getCoverage().getTemporal().getFormal(), '+2015');
-    assert.equal(description.getCoverage().getSpatial().getOriginal(), 'A place');
-    assert.equal(description.getDescriptions().length, 1);
-    assert.equal(description.getDescriptions()[0].getValue(), 'A description');
-    assert.equal(description.getIdentifiers().identifiers.$, 'identifier');
-    assert.equal(description.getCreated(), 1000000);
-    assert.equal(description.getModified(), 11111111);
-    assert.equal(description.getRepository().getResource(), 'http://repository');
+    tests(description);
   });
   
   it('toJSON', function(){
@@ -287,3 +200,37 @@ describe('SourceDescription', function(){
   });
   
 });
+
+function tests(description){
+  assert.equal(description.getResourceType(), 'http://some/type');
+  assert.equal(description.getCitations().length, 1);
+  assert.equal(description.getCitations()[0].getLang(), 'en');
+  assert.equal(description.getCitations()[0].getValue(), 'Long source citation');
+  assert.equal(description.getMediaType(), 'book');
+  assert.equal(description.getAbout(), 'http://a/resource');
+  assert.equal(description.getMediator().getResource(), 'http://mediator');
+  assert.equal(description.getSources().length, 1);
+  assert.equal(description.getSources()[0].getDescription(), 'http://source/reference');
+  assert.equal(description.getAnalysis().getResource(), 'http://analysis');
+  assert.equal(description.getComponentOf().getDescription(), 'http://container');
+  assert.equal(description.getTitles().length, 2);
+  assert.equal(description.getTitles()[0].getLang(), 'en');
+  assert.equal(description.getTitles()[0].getValue(), 'Title');
+  assert.equal(description.getTitles()[1].getLang(), 'es');
+  assert.equal(description.getTitles()[1].getValue(), 'Titulo');
+  assert.equal(description.getNotes().length, 1);
+  assert.equal(description.getNotes()[0].getSubject(), 'Note');
+  assert.equal(description.getNotes()[0].getText(), 'Some note text');
+  assert.equal(description.getAttribution().getCreated().getTime(), 1234578129);
+  assert.equal(description.getRights().length, 1);
+  assert.equal(description.getRights()[0].getResource(), 'https://some/right');
+  assert.equal(description.getCoverage().length, 1);
+  assert.equal(description.getCoverage()[0].getTemporal().getFormal(), '+2015');
+  assert.equal(description.getCoverage()[0].getSpatial().getOriginal(), 'A place');
+  assert.equal(description.getDescriptions().length, 1);
+  assert.equal(description.getDescriptions()[0].getValue(), 'A description');
+  assert.equal(description.getIdentifiers().identifiers.$, 'identifier');
+  assert.equal(description.getCreated(), 1000000);
+  assert.equal(description.getModified(), 11111111);
+  assert.equal(description.getRepository().getResource(), 'http://repository');
+}

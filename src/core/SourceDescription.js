@@ -388,20 +388,27 @@ SourceDescription.prototype.addRight = function(right){
  * @returns {Coverage}
  */
 SourceDescription.prototype.getCoverage = function(){
-  return this.coverage;
+  return this.coverage || [];
 };
 
 /**
  * Set the coverage
  * 
- * @param {Coverage|Object} coverage
+ * @param {Coverage[]|Object[]} coverage
  * @returns {SourceDescription}
  */
 SourceDescription.prototype.setCoverage = function(coverage){
-  if(coverage){
-    this.coverage = GedcomX.Coverage(coverage);
-  }
-  return this;
+  return this._setArray(coverage, 'coverage', 'addCoverage');
+};
+
+/**
+ * Add coverage
+ * 
+ * @param {Coverage}
+ * @returns {SourceDescription}
+ */
+SourceDescription.prototype.addCoverage = function(coverage){
+  return this._arrayPush(coverage, 'coverage', GedcomX.Coverage);
 };
 
 /**
