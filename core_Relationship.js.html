@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: core/Relationship.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: core/Relationship.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var GedcomX = require('../'),
+    utils = require('../utils');
+    
+/**
+ * A relationship.
+ * 
+ * @constructor
+ * @param {Object} [json]
+ */
+var Relationship = function(json){
+  
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof Relationship)){
+    return new Relationship(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Relationship.isInstance(json)){
+    return json;
+  }
+  
+  this.init(json);
+};
+
+Relationship.prototype = Object.create(GedcomX.Subject.prototype);
+
+Relationship._gedxClass = Relationship.prototype._gedxClass = 'GedcomX.Relationship';
+
+Relationship.jsonProps = [
+  'type',
+  'person1',
+  'person2',
+  'facts'
+];
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Relationship.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Relationship} this
+ */
+Relationship.prototype.init = function(json){
+  
+  GedcomX.Subject.prototype.init.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+    this.setPerson1(json.person1);
+    this.setPerson2(json.person2);
+    this.setFacts(json.facts);
+  }
+  return this;
+};
+
+/**
+ * Get the relationship type
+ * 
+ * @returns {String} type
+ */
+Relationship.prototype.getType = function(){
+  return this.type;
+};
+
+/**
+ * Set the relationship type
+ * 
+ * @param {String} type
+ * @returns {Relationship} This instance
+ */
+Relationship.prototype.setType = function(type){
+  this.type = type;
+  return this;
+};
+
+/**
+ * Get person1 reference
+ * 
+ * @returns {ResourceReference}
+ */
+Relationship.prototype.getPerson1 = function(){
+  return this.person1;
+};
+
+/**
+ * Set the person1 reference
+ * 
+ * @param {ResourceReference} person1
+ * @returns {Relationship} This instance
+ */
+Relationship.prototype.setPerson1 = function(person1){
+  if(person1){
+    this.person1 = GedcomX.ResourceReference(person1);
+  }
+  return this;
+};
+
+/**
+ * Get person2 reference
+ * 
+ * @returns {ResourceReference}
+ */
+Relationship.prototype.getPerson2 = function(){
+  return this.person2;
+};
+
+/**
+ * Set the person1 reference
+ * 
+ * @param {ResourceReference} person2
+ * @returns {Relationship} This instance
+ */
+Relationship.prototype.setPerson2 = function(person2){
+  if(person2){
+    this.person2 = GedcomX.ResourceReference(person2);
+  }
+  return this;
+};
+
+/**
+ * Get the facts
+ * 
+ * @return {Fact[]}
+ */
+Relationship.prototype.getFacts = function(){
+  return this.facts || [];
+};
+
+/**
+ * Set the facts
+ * 
+ * @param {Fact[]|Object[]} facts
+ * @returns {Relationship} This instance
+ */
+Relationship.prototype.setFacts = function(facts){
+  return this._setArray(facts, 'facts', 'addFact');
+};
+
+/**
+ * Add a fact
+ * 
+ * @param {Fact|Object} fact
+ * @returns {Relationship} This instance
+ */
+Relationship.prototype.addFact = function(fact){
+  return this._arrayPush(fact, 'facts', GedcomX.Fact);
+};
+
+/**
+ * Export the object as JSON
+ * 
+ * @return {Object} JSON object
+ */
+Relationship.prototype.toJSON = function(){
+  return this._toJSON(GedcomX.Subject, Relationship.jsonProps);
+};
+
+module.exports = Relationship;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Fri Oct 07 2016 21:49:40 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

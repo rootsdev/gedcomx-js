@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: records/FieldValueDescriptor.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: records/FieldValueDescriptor.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>module.exports = function(GedcomX){
+  
+  var utils = require('../utils');
+  
+  /**
+   * Metadata about the structure and layout of a field, as well as the expected
+   * data to be extracted from a field.
+   * 
+   * @constructor
+   * @param {Object} [json]
+   */
+  var FieldValueDescriptor = function(json){
+    
+    // Protect against forgetting the new keyword when calling the constructor
+    if(!(this instanceof FieldValueDescriptor)){
+      return new FieldValueDescriptor(json);
+    }
+    
+    // If the given object is already an instance then just return it. DON'T copy it.
+    if(FieldValueDescriptor.isInstance(json)){
+      return json;
+    }
+    
+    this.init(json);
+  };
+  
+  FieldValueDescriptor.prototype = Object.create(GedcomX.ExtensibleData.prototype);
+  
+  FieldValueDescriptor._gedxClass = FieldValueDescriptor.prototype._gedxClass = 'GedcomX.FieldValueDescriptor';
+  
+  FieldValueDescriptor.jsonProps = [
+    'type',
+    'labelId',
+    'optional',
+    'displayLabels'
+  ];
+  
+  /**
+   * Check whether the given object is an instance of this class.
+   * 
+   * @param {Object} obj
+   * @returns {Boolean}
+   */
+  FieldValueDescriptor.isInstance = function(obj){
+    return utils.isInstance(obj, this._gedxClass);
+  };
+
+  /**
+   * Initialize from JSON
+   * 
+   * @param {Object}
+   * @return {FieldValueDescriptor} this
+   */
+  FieldValueDescriptor.prototype.init = function(json){
+    
+    GedcomX.ExtensibleData.prototype.init.call(this, json);
+    
+    if(json){
+      this.setOptional(json.optional);
+      this.setType(json.type);
+      this.setLabelId(json.labelId);
+      this.setDisplayLabels(json.displayLabels);
+    }
+    return this;
+  };
+  
+  /**
+   * Set the optional flag
+   * 
+   * @param {Boolean} optional
+   * @return {FieldValueDescriptor} this
+   */
+  FieldValueDescriptor.prototype.setOptional = function(optional){
+    this.optional = optional;
+    return this;
+  };
+  
+  /**
+   * Get the optional flag
+   * 
+   * @return {Boolean}
+   */
+  FieldValueDescriptor.prototype.getOptional = function(){
+    return this.optional;
+  };
+  
+  /**
+   * Set the type
+   * 
+   * @param {String} type
+   * @return {FieldValueDescriptor} this
+   */
+  FieldValueDescriptor.prototype.setType = function(type){
+    this.type = type;
+    return this;
+  };
+  
+  /**
+   * Get the type
+   * 
+   * @return {String} type
+   */
+  FieldValueDescriptor.prototype.getType = function(){
+    return this.type;
+  };
+  
+  /**
+   * Set the label ID
+   * 
+   * @param {String} labelId
+   * @return {FieldValueDescriptor} this
+   */
+  FieldValueDescriptor.prototype.setLabelId = function(labelId){
+    this.labelId = labelId;
+    return this;
+  };
+  
+  /**
+   * Get the label ID
+   * 
+   * @return {String} label ID
+   */
+  FieldValueDescriptor.prototype.getLabelId = function(){
+    return this.labelId;
+  };
+  
+  /**
+   * Set the display labels
+   * 
+   * @param {TextValue[]} labels
+   * @return {FieldValueDescriptor} this
+   */
+  FieldValueDescriptor.prototype.setDisplayLabels = function(labels){
+    return this._setArray(labels, 'displayLabels', 'addDisplayLabel');
+  };
+  
+  /**
+   * Add a display label
+   * 
+   * @param {TextValue} label
+   * @return {FieldValueDescriptor} this
+   */
+  FieldValueDescriptor.prototype.addDisplayLabel = function(label){
+    return this._arrayPush(label, 'displayLabels', GedcomX.TextValue);
+  };
+  
+  /**
+   * Get the display labels
+   * 
+   * @return {TextValue[]} labels
+   */
+  FieldValueDescriptor.prototype.getDisplayLabels = function(){
+    return this.displayLabels || [];
+  };
+   
+  /**
+   * Export the object as JSON
+   * 
+   * @return {Object} JSON object
+   */
+  FieldValueDescriptor.prototype.toJSON = function(){
+    return this._toJSON(GedcomX.ExtensibleData, FieldValueDescriptor.jsonProps);
+  };
+  
+  GedcomX.FieldValueDescriptor = FieldValueDescriptor;
+  
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Fri Oct 07 2016 21:49:40 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

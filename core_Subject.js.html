@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: core/Subject.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: core/Subject.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var GedcomX = require('../'),
+    utils = require('../utils');
+
+/**
+ * An object identified in time and space by various conclusions.
+ * 
+ * @constructor
+ * @param {Object} [json]
+ */
+var Subject = function(json){
+  
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof Subject)){
+    return new Subject(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Subject.isInstance(json)){
+    return json;
+  }
+  
+  this.init(json);
+};
+
+Subject.prototype = Object.create(GedcomX.Conclusion.prototype);
+
+Subject._gedxClass = Subject.prototype._gedxClass = 'GedcomX.Subject';
+
+Subject.jsonProps = [
+  'extracted',
+  'evidence',
+  'identifiers',
+  'media'
+];
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Subject.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Subject} this
+ */
+Subject.prototype.init = function(json){
+  
+  GedcomX.Conclusion.prototype.init.call(this, json);
+  
+  if(json){
+    // setExtracted defaults to false but when the property is undefined we
+    // want it to stay that way
+    if(typeof json.extracted !== 'undefined'){
+      this.setExtracted(json.extracted);
+    }
+    this.setEvidence(json.evidence);
+    this.setIdentifiers(json.identifiers);
+    this.setMedia(json.media);
+  }
+  return this;
+};
+
+/**
+ * Is this an extracted conclusion?
+ * 
+ * @returns {Boolean} extracted
+ */
+Subject.prototype.isExtracted = function(){
+  // Double exclamations force a boolean no matter what type the property
+  // currently is. The main reason for this is to force undefiend into false.
+  return !!this.isExtracted;
+};
+
+/**
+ * Set the extracted property
+ * 
+ * @param {Boolean} extracted
+ * @returns {Subject} This instance.
+ */
+Subject.prototype.setExtracted = function(extracted){
+  // Double exclamations force a boolean
+  this.extracted = !!extracted;
+  return this;
+};
+
+/**
+ * Get the evidence.
+ * 
+ * @returns {EvidenceReference[]}
+ */
+Subject.prototype.getEvidence = function(){
+  return this.evidence || [];
+};
+
+/**
+ * Set the evidence. This method will replace existing evidence entries with new entries.
+ * 
+ * @param {Object[]|EvidenceReference[]}
+ * @returns {Subject} This instance.
+ */
+Subject.prototype.setEvidence = function(evidence){
+  return this._setArray(evidence, 'evidence', 'addEvidence');
+};
+
+/**
+ * Add evidence
+ * 
+ * @param {Object|EvidenceReference}
+ * @returns {Subject} This instance.
+ */
+Subject.prototype.addEvidence = function(evidence){
+  return this._arrayPush(evidence, 'evidence', GedcomX.EvidenceReference);
+};
+
+/**
+ * Get the identifiers
+ * 
+ * @return {Identifiers}
+ */
+Subject.prototype.getIdentifiers = function(){
+  return this.identifiers;
+};
+
+/**
+ * Set the identifiers
+ * 
+ * @param {Object|Identifiers}
+ * @returns {Subject} This instance
+ */
+Subject.prototype.setIdentifiers = function(identifiers){
+  if(identifiers){
+    this.identifiers = GedcomX.Identifiers(identifiers);
+  }
+  return this;
+};
+
+/**
+ * Get the media references
+ * 
+ * @returns {SourceReference[]}
+ */
+Subject.prototype.getMedia = function(){
+  return this.media || [];
+};
+
+/**
+ * Set the media references
+ * 
+ * @param {Object[]|SourceReference[]}
+ */
+Subject.prototype.setMedia = function(media){
+  return this._setArray(media, 'media', 'addMedia');
+};
+
+/**
+ * Add media
+ * 
+ * @param {Object|SourceReference}
+ * @returns {Subject} This instance.
+ */
+Subject.prototype.addMedia = function(media){
+  return this._arrayPush(media, 'media', GedcomX.SourceReference);
+};
+
+/**
+ * Export the object as JSON
+ * 
+ * @return {Object} JSON object
+ */
+Subject.prototype.toJSON = function(){
+  return this._toJSON(GedcomX.Conclusion, Subject.jsonProps);
+};
+
+module.exports = Subject;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Fri Oct 07 2016 21:49:40 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

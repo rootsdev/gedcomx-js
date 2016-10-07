@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: rs/Links.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: rs/Links.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>module.exports = function(GedcomX){
+
+  var utils = require('../utils'),
+      Base = require('../Base');
+  
+  /**
+   * A list of Links
+   * 
+   * @constructor
+   * @param {Object} [json]
+   */
+  var Links = function(json){
+    
+    // Protect against forgetting the new keyword when calling the constructor
+    if(!(this instanceof Links)){
+      return new Links(json);
+    }
+    
+    // If the given object is already an instance then just return it. DON'T copy it.
+    if(Links.isInstance(json)){
+      return json;
+    }
+    
+    this.init(json);
+  };
+  
+  // There's no value in us extending Base at the moment
+  Links.prototype = Object.create(Base.prototype);
+  
+  Links._gedxClass = Links.prototype._gedxClass = 'GedcomX.Links';
+  
+  /**
+   * Check whether the given object is an instance of this class.
+   * 
+   * @param {Object} obj
+   * @returns {Boolean}
+   */
+  Links.isInstance = function(obj){
+    return utils.isInstance(obj, this._gedxClass);
+  };
+
+  /**
+   * Initialize from JSON
+   * 
+   * @param {Object}
+   * @return {Link} this
+   */
+  Links.prototype.init = function(json){
+    
+    Base.prototype.init.call(this, json);
+    
+    if(json){
+      this.setLinks(json);
+    }
+    return this;
+  };
+  
+  /**
+   * Get the list of links
+   * 
+   * @return {Link[]} links
+   */
+  Links.prototype.getLinks = function(){
+    return this.links;
+  };
+  
+  /**
+   * Get a link matching a rel
+   * 
+   * @param {String} rel
+   * @return {Link} link
+   */
+  Links.prototype.getLink = function(rel){
+    return this.links.find(function(link){
+      return link.getRel() === rel;
+    });
+  };
+  
+  /**
+   * Add a link
+   * 
+   * @param {Link} link
+   * @return {Links} this
+   */
+  Links.prototype.addLink = function(link){
+    // TODO: check for duplicates
+    this.links.push(GedcomX.Link(link));
+    return this;
+  };
+  
+  /**
+   * Set the links. May either provide the JSON object structure or an array
+   * of Link instances
+   * 
+   * @param {Object|Link[]} links
+   * @return {Links} this
+   */
+  Links.prototype.setLinks = function(links){
+    this.links = [];
+    if(links){
+      
+      // List of link
+      if(Array.isArray(links)){
+        for(var i = 0; i &lt; links.length; i++){
+          this.addLink(links[i]);
+        }
+      }
+      
+      // JSON object
+      else {
+        for(var rel in links){
+          this.addLink(new GedcomX.Link(links[rel]).setRel(rel));
+        }
+      }
+    }
+    return this;
+  };
+  
+  /**
+   * Export the object as JSON
+   * 
+   * @return {Object} JSON object
+   */
+  Links.prototype.toJSON = function(){
+    var links = this.getLinks(),
+        json = {},
+        linkJson, rel;
+    for(var i = 0; i &lt; links.length; i++){
+      linkJson = utils.toJSON(links[i]);
+      rel = linkJson.rel;
+      if(rel){
+        delete linkJson.rel;
+        json[rel] = linkJson;
+      }
+    }
+    return json;
+  };
+  
+  GedcomX.Links = Links;
+
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Fri Oct 07 2016 21:49:40 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

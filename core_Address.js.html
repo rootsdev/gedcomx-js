@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: core/Address.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: core/Address.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var GedcomX = require('../'),
+    utils = require('../utils');
+
+/**
+ * An address.
+ * 
+ * @constructor
+ * @param {Object} [json]
+ */
+var Address = function(json){
+  
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof Address)){
+    return new Address(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Address.isInstance(json)){
+    return json;
+  }
+  
+  this.init(json);
+};
+
+Address.prototype = Object.create(GedcomX.ExtensibleData.prototype);
+
+Address._gedxClass = Address.prototype._gedxClass = 'GedcomX.Address';
+
+Address.jsonProps = [
+  'value',
+  'city',
+  'country',
+  'postalCode',
+  'stateOrProvince',
+  'street',
+  'street2',
+  'street3',
+  'street4',
+  'street5',
+  'street6'
+];
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Address.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Address} this
+ */
+Address.prototype.init = function(json){
+  
+  GedcomX.ExtensibleData.prototype.init.call(this, json);
+  
+  if(json){
+    this.setValue(json.value);
+    this.setCity(json.city);
+    this.setCountry(json.country);
+    this.setPostalCode(json.postalCode);
+    this.setStateOrProvince(json.stateOrProvince);
+    this.setStreet(json.street);
+    this.setStreet2(json.street2);
+    this.setStreet3(json.street3);
+    this.setStreet4(json.street4);
+    this.setStreet5(json.street5);
+    this.setStreet6(json.street6);
+  }
+  return this;
+};
+
+/**
+ * Get the complete address value
+ * 
+ * @returns {String}
+ */
+Address.prototype.getValue = function(){
+  return this.value;
+};
+
+/**
+ * Set the complete address value
+ * 
+ * @param {String} value
+ * @return {Address}
+ */
+Address.prototype.setValue = function(value){
+  this.value = value;
+  return this;
+};
+
+/**
+ * Get the city
+ * 
+ * @returns {String}
+ */
+Address.prototype.getCity = function(){
+  return this.city;
+};
+
+/**
+ * Set the city
+ * 
+ * @param {String} city
+ * @returns {Address}
+ */
+Address.prototype.setCity = function(city){
+  this.city = city;
+  return this;
+};
+
+/**
+ * Get the country
+ * 
+ * @returns {String}
+ */
+Address.prototype.getCountry = function(){
+  return this.country;
+};
+
+/**
+ * Set the country
+ * 
+ * @param {String} country
+ * @returns {Address}
+ */
+Address.prototype.setCountry = function(country){
+  this.country = country;
+  return this;
+};
+
+/**
+ * Get the postal code
+ * 
+ * @returns {String}
+ */
+Address.prototype.getPostalCode = function(){
+  return this.postalCode;
+};
+
+/**
+ * Set the postal code
+ * 
+ * @param {String} postalCode
+ * @returns {Address}
+ */
+Address.prototype.setPostalCode = function(postalCode){
+  this.postalCode = postalCode;
+  return this;
+};
+
+/**
+ * Get the state or province
+ * 
+ * @returns {String}
+ */
+Address.prototype.getStateOrProvince = function(){
+  return this.stateOrProvince;
+};
+
+/**
+ * Set the state or province
+ * 
+ * @param {String} stateOrProvince
+ * @returns {Address}
+ */
+Address.prototype.setStateOrProvince = function(stateOrProvince){
+  this.stateOrProvince = stateOrProvince;
+  return this;
+};
+
+/**
+ * Get the street
+ * 
+ * @returns {String}
+ */
+Address.prototype.getStreet = function(){
+  return this.street;
+};
+
+/**
+ * Set the street
+ * 
+ * @param {String} street
+ * @returns {Address}
+ */
+Address.prototype.setStreet = function(street){
+  this.street = street;
+  return this;
+};
+
+/**
+ * Get the street2
+ * 
+ * @returns {String}
+ */
+Address.prototype.getStreet2 = function(){
+  return this.street2;
+};
+
+/**
+ * Set the street2
+ * 
+ * @param {String} street2
+ * @returns {Address}
+ */
+Address.prototype.setStreet2 = function(street2){
+  this.street2 = street2;
+  return this;
+};
+
+/**
+ * Get the street3
+ * 
+ * @returns {String}
+ */
+Address.prototype.getStreet3 = function(){
+  return this.street3;
+};
+
+/**
+ * Set the street3
+ * 
+ * @param {String} street3
+ * @returns {Address}
+ */
+Address.prototype.setStreet3 = function(street3){
+  this.street3 = street3;
+  return this;
+};
+
+/**
+ * Get the street4
+ * 
+ * @returns {String}
+ */
+Address.prototype.getStreet4 = function(){
+  return this.street4;
+};
+
+/**
+ * Set the street4
+ * 
+ * @param {String} street4
+ * @returns {Address}
+ */
+Address.prototype.setStreet4 = function(street4){
+  this.street4 = street4;
+  return this;
+};
+
+/**
+ * Get the street5
+ * 
+ * @returns {String}
+ */
+Address.prototype.getStreet5 = function(){
+  return this.street5;
+};
+
+/**
+ * Set the street5
+ * 
+ * @param {String} street5
+ * @returns {Address}
+ */
+Address.prototype.setStreet5 = function(street5){
+  this.street5 = street5;
+  return this;
+};
+
+/**
+ * Get the street6
+ * 
+ * @returns {String}
+ */
+Address.prototype.getStreet6 = function(){
+  return this.street6;
+};
+
+/**
+ * Set the street6
+ * 
+ * @param {String} street6
+ * @returns {Address}
+ */
+Address.prototype.setStreet6 = function(street6){
+  this.street6 = street6;
+  return this;
+};
+
+/**
+ * Export the object as JSON
+ * 
+ * @return {Object} JSON object
+ */
+Address.prototype.toJSON = function(){
+  return this._toJSON(GedcomX.ExtensibleData, Address.jsonProps);
+};
+
+module.exports = Address;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Fri Oct 07 2016 21:49:40 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

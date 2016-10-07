@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: core/Identifiers.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: core/Identifiers.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var utils = require('../utils'),
+    Base = require('../Base');
+
+/**
+ * Manage the set of identifers for an object.
+ * 
+ * @constructor
+ * @param {Object} [json]
+ */
+var Identifiers = function(json){
+  
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof Identifiers)){
+    return new Identifiers(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Identifiers.isInstance(json)){
+    return json;
+  }
+  
+  this.init(json);
+};
+
+Base.prototype = Object.create(Base.prototype);
+
+Identifiers._gedxClass = Identifiers.prototype._gedxClass = 'GedcomX.Identifiers';
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Identifiers.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Identifiers} this
+ */
+Identifiers.prototype.init = function(json){
+  
+  Base.prototype.init.call(this, json);
+  
+  this.identifiers = {};
+  
+  if(json){
+    this.identifiers = json;
+    
+    // The spec allows for types with single values to "forgo the array and use
+    // a single string" but that's a pain to keep track of so we're going to
+    // convert all single strings into arrays
+    for(var a in this.identifiers){
+      if(this.identifiers.hasOwnProperty(a) &amp;&amp; !Array.isArray(this.identifiers[a])){
+        this.identifiers[a] = [ this.identifiers[a] ];
+      }
+    }
+  }
+  return this;
+};
+
+/**
+ * Get the values for a given type
+ * 
+ * @param {String=} type If not specified then values with no associated type
+ * are returned.
+ * @return {String[]}
+ */
+Identifiers.prototype.getValues = function(type){
+  if(typeof type === 'undefined'){
+    type = '$';
+  }
+  return this.identifiers[type] || [];
+};
+
+/**
+ * Set the values for a given type
+ * 
+ * @param {String[]} values
+ * @param {String=} type
+ */
+Identifiers.prototype.setValues = function(values, type){
+  if(typeof type === 'undefined'){
+    type = '$';
+  }
+  if(Array.isArray(values)){
+    this.identifiers[type] = values;
+  }
+  return this;
+};
+
+/**
+ * Add a value for a given type
+ * 
+ * @param {String} value
+ * @param {String=} type
+ */
+Identifiers.prototype.addValue = function(value, type){
+  if(typeof type === 'undefined'){
+    type = '$';
+  }
+  if(!Array.isArray(this.identifiers[type])){
+    this.identifiers[type] = [];
+  }
+  this.identifiers[type].push(value);
+  return this;
+};
+
+/**
+ * Export the object as JSON
+ * 
+ * @return {Object} JSON object
+ */
+Identifiers.prototype.toJSON = function(){
+  return this.identifiers;
+};
+
+module.exports = Identifiers;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Fri Oct 07 2016 21:49:40 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

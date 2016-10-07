@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: core/Document.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: core/Document.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>var GedcomX = require('../'),
+    utils = require('../utils');
+
+/**
+ * A textual document
+ * 
+ * @constructor
+ * @param {Object} [json]
+ */
+var Document = function(json){
+  
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof Document)){
+    return new Document(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Document.isInstance(json)){
+    return json;
+  }
+  
+  this.init(json);
+};
+
+Document.prototype = Object.create(GedcomX.Conclusion.prototype);
+
+Document._gedxClass = Document.prototype._gedxClass = 'GedcomX.Document';
+
+Document.jsonProps = [
+  'type',
+  'extracted',
+  'textType',
+  'text',
+  'attribution'
+];
+
+/**
+ * Check whether the given object is an instance of this class.
+ * 
+ * @param {Object} obj
+ * @returns {Boolean}
+ */
+Document.isInstance = function(obj){
+  return utils.isInstance(obj, this._gedxClass);
+};
+
+/**
+ * Initialize from JSON
+ * 
+ * @param {Object}
+ * @return {Document} this
+ */
+Document.prototype.init = function(json){
+  
+  GedcomX.Conclusion.prototype.init.call(this, json);
+  
+  if(json){
+    this.setType(json.type);
+    this.setExtracted(json.extracted);
+    this.setTextType(json.textType);
+    this.setText(json.text);
+    this.setAttribution(json.attribution);
+  }
+  return this;
+};
+
+/**
+ * Get the type
+ * 
+ * @returns {String}
+ */
+Document.prototype.getType = function(){
+  return this.type;
+};
+
+/**
+ * Set the type
+ * 
+ * @param {String} type
+ * @returns {Document}
+ */
+Document.prototype.setType = function(type){
+  this.type = type;
+  return this;
+};
+
+/**
+ * Get the extracted flag
+ * 
+ * @returns {Boolean} extracted
+ */
+Document.prototype.getExtracted = function(){
+  
+  // Spec says it defaults to false so we force undefined to become false
+  return !!this.extracted;
+};
+
+/**
+ * Set the extracted flag
+ * 
+ * @param {Boolean} extracted
+ * @returns {Document}
+ */
+Document.prototype.setExtracted = function(extracted){
+  this.extracted = !!extracted;
+  return this;
+};
+
+/**
+ * Get the text type
+ * 
+ * @returns {String}
+ */
+Document.prototype.getTextType = function(){
+  return this.textType;
+};
+
+/**
+ * Set the text type
+ * 
+ * @param {String} textType
+ * @returns {Document}
+ */
+Document.prototype.setTextType = function(textType){
+  this.textType = textType;
+  return this;
+};
+
+/**
+ * Get the text
+ * 
+ * @returns {String}
+ */
+Document.prototype.getText = function(){
+  return this.text;
+};
+
+/**
+ * Set the text
+ * 
+ * @param {String} text
+ * @returns {Document}
+ */
+Document.prototype.setText = function(text){
+  this.text = text;
+  return this;
+};
+
+/**
+ * Get the attribution
+ * 
+ * @returns {Attribution}
+ */
+Document.prototype.getAttribution = function(){
+  return this.attribution;
+};
+
+/**
+ * Set the attribution
+ * 
+ * @param {Attribution} attribution
+ * @returns {Document}
+ */
+Document.prototype.setAttribution = function(attribution){
+  if(attribution){
+    this.attribution = GedcomX.Attribution(attribution);
+  }
+  return this;
+};
+
+/**
+ * Export the object as JSON
+ * 
+ * @return {Object} JSON object
+ */
+Document.prototype.toJSON = function(){
+  return this._toJSON(GedcomX.Conclusion, Document.jsonProps);
+};
+
+module.exports = Document;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Fri Oct 07 2016 21:49:40 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

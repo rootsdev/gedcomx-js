@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: rs/Link.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: rs/Link.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>module.exports = function(GedcomX){
+
+  var utils = require('../utils'),
+      Base = require('../Base');
+  
+  /**
+   * A representation of an available transition from one application state to another.
+   * 
+   * @constructor
+   * @param {Object} [json]
+   */
+  var Link = function(json){
+    
+    // Protect against forgetting the new keyword when calling the constructor
+    if(!(this instanceof Link)){
+      return new Link(json);
+    }
+    
+    // If the given object is already an instance then just return it. DON'T copy it.
+    if(Link.isInstance(json)){
+      return json;
+    }
+    
+    // TODO: Enforce spec constraint that requires either an href or a template?
+    
+    this.init(json);
+  };
+  
+  Link.prototype = Object.create(Base.prototype);
+  
+  Link._gedxClass = Link.prototype._gedxClass = 'GedcomX.Link';
+  
+  Link.jsonProps = [
+    'rel',
+    'href',
+    'template',
+    'type',
+    'accept',
+    'allow',
+    'hreflang',
+    'title'
+  ];
+  
+  /**
+   * Check whether the given object is an instance of this class.
+   * 
+   * @param {Object} obj
+   * @returns {Boolean}
+   */
+  Link.isInstance = function(obj){
+    return utils.isInstance(obj, this._gedxClass);
+  };
+
+  /**
+   * Initialize from JSON
+   * 
+   * @param {Object}
+   * @return {Link} this
+   */
+  Link.prototype.init = function(json){
+    
+    Base.prototype.init.call(this, json);
+    
+    if(json){
+      this.setRel(json.rel);
+      this.setHref(json.href);
+      this.setTemplate(json.template);
+      this.setType(json.type);
+      this.setAccept(json.accept);
+      this.setAllow(json.allow);
+      this.setHrefLang(json.hreflang);
+      this.setTitle(json.title);
+    }
+    return this;
+  };
+  
+  /**
+   * Get the Link's rel
+   * 
+   * @returns {String} rel
+   */
+  Link.prototype.getRel = function(){
+    return this.rel;
+  };
+  
+  /**
+   * Set the Link's rel
+   * 
+   * @param {String} rel
+   * @returns {Object} this
+   */
+  Link.prototype.setRel = function(rel){
+    if(rel){
+      this.rel = rel;
+    }
+    return this;
+  };
+  
+  /**
+   * Get the Link's href
+   * 
+   * @returns {String} href
+   */
+  Link.prototype.getHref = function(){
+    return this.href;
+  };
+  
+  /**
+   * Set the Link's href
+   * 
+   * @param {String} href
+   * @returns {Object} this
+   */
+  Link.prototype.setHref = function(href){
+    if(href){
+      this.href = href;
+    }
+    return this;
+  };
+  
+  /**
+   * Get the Link's template
+   * 
+   * @returns {String} template
+   */
+  Link.prototype.getTemplate = function(){
+    return this.template;
+  };
+  
+  /**
+   * Set the Link's template
+   * 
+   * @param {String} template
+   * @returns {Object} this
+   */
+  Link.prototype.setTemplate = function(template){
+    if(template){
+      this.template = template;
+    }
+    return this;
+  };
+  
+  /**
+   * Get the Link's type
+   * 
+   * @returns {String} type
+   */
+  Link.prototype.getType = function(){
+    return this.type;
+  };
+  
+  /**
+   * Set the Link's type
+   * 
+   * @param {String} type
+   * @returns {Object} this
+   */
+  Link.prototype.setType = function(type){
+    if(type){
+      this.type = type;
+    }
+    return this;
+  };
+  
+  /**
+   * Get the Link's accept
+   * 
+   * @returns {String} accept
+   */
+  Link.prototype.getAccept = function(){
+    return this.accept;
+  };
+  
+  /**
+   * Set the Link's accept
+   * 
+   * @param {String} accept
+   * @returns {Object} this
+   */
+  Link.prototype.setAccept = function(accept){
+    if(accept){
+      this.accept = accept;
+    }
+    return this;
+  };
+  
+  /**
+   * Get the Link's allow
+   * 
+   * @returns {String} allow
+   */
+  Link.prototype.getAllow = function(){
+    return this.allow;
+  };
+  
+  /**
+   * Set the Link's allow
+   * 
+   * @param {String} allow
+   * @returns {Object} this
+   */
+  Link.prototype.setAllow = function(allow){
+    if(allow){
+      this.allow = allow;
+    }
+    return this;
+  };
+  
+  /**
+   * Get the Link's hreflang
+   * 
+   * @returns {String} hreflang
+   */
+  Link.prototype.getHrefLang = function(){
+    return this.hreflang;
+  };
+  
+  /**
+   * Set the Link's hreflang
+   * 
+   * @param {String} hreflang
+   * @returns {Object} this
+   */
+  Link.prototype.setHrefLang = function(hreflang){
+    if(hreflang){
+      this.hreflang = hreflang;
+    }
+    return this;
+  };
+  
+  /**
+   * Get the Link's title
+   * 
+   * @returns {String} title
+   */
+  Link.prototype.getTitle = function(){
+    return this.title;
+  };
+  
+  /**
+   * Set the Link's title
+   * 
+   * @param {String} title
+   * @returns {Object} this
+   */
+  Link.prototype.setTitle = function(title){
+    if(title){
+      this.title = title;
+    }
+    return this;
+  };
+  
+  /**
+   * Export the object as JSON
+   * 
+   * @return {Object} JSON object
+   */
+  Link.prototype.toJSON = function(){
+    return this._toJSON(Base, Link.jsonProps);
+  };
+  
+  GedcomX.Link = Link;
+
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Fri Oct 07 2016 21:49:40 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
