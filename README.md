@@ -6,8 +6,10 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rootsdev/gedcomx-js/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rootsdev/gedcomx-js/?branch=master)
 
 A JavaScript library for the [GEDCOM X](http://www.gedcomx.org/) data model.
-This library does not yet support the [GEDCOM X RS](https://github.com/FamilySearch/gedcomx-rs)
+including the [GEDCOM X RS](https://github.com/FamilySearch/gedcomx-rs)
 and [GEDCOM X Records](https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md) specifications.
+The [GEDCOM X Atom Extensions](https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/atom-model-specification.md)
+specification is not yet supported.
 
 Read the [documentation](http://rootsdev.org/gedcomx-js/) for a list of all 
 classes and methods. [`GedcomX`](http://rootsdev.org/gedcomx-js/GedcomX.html) 

@@ -9,7 +9,10 @@
     "test:rs": "mocha test/rs/*.js",
     "test:records": "mocha test/records/*.js",
     "docs": "jsdoc src -R ./README.md",
-    "coverage": "istanbul cover --report lcovonly _mocha -- --recursive && codecov"
+    "coverage": "istanbul cover --report lcovonly _mocha -- --recursive && codecov",
+    "build": "mkdir -p dist && npm run build:full && npm run build:min",
+    "build:full": "webpack --output-filename gedcomx.$npm_package_version.js",
+    "build:min": "webpack --output-filename gedcomx.$npm_package_version.min.js --optimize-minimize"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -18,7 +21,8 @@
     "gedcomx-json-schema": "^1.1.8",
     "istanbul": "^0.4.3",
     "jsdoc": "^3.4.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "webpack": "^1.13.2"
   },
   "repository": {
     "type": "git",
