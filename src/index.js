@@ -59,3 +59,7 @@ GedcomX.enableRsExtensions = function(){
 GedcomX.enableRecordsExtensions = function(){
   require('./records')(GedcomX);
 };
+
+GedcomX.enableAtomExtensions = function(){
+  require('./atom')(GedcomX);
+};
