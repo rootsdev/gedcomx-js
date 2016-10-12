@@ -4,7 +4,7 @@ module.exports = function(GedcomX){
       AtomCommon = require('./AtomCommon');
   
   /**
-   * Information about a category associated with an atom entry or feed.
+   * The content of an entry.
    * 
    * @constructor
    * @param {Object} [json]

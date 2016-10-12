@@ -7,5 +7,6 @@ module.exports = function(GedcomX){
   require('./AtomCategory')(GedcomX);
   require('./AtomContent')(GedcomX);
   require('./AtomGenerator')(GedcomX);
+  require('./AtomPerson')(GedcomX);
   
 };
