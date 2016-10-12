@@ -50,16 +50,25 @@ GedcomX.SourceDescription = require('./core/SourceDescription');
 GedcomX.SourceReference = require('./core/SourceReference');
 GedcomX.TextValue = require('./core/TextValue');
 
-// Extensions
-
+/**
+ * Enable the GedcomX RS Extensions
+ */
 GedcomX.enableRsExtensions = function(){
   require('./rs')(GedcomX);
 };
 
+/**
+ * Enable the GedcomX Records Extensions
+ */
 GedcomX.enableRecordsExtensions = function(){
   require('./records')(GedcomX);
 };
 
+/**
+ * Enable the GedcomX Atom Extensions. This depends on the RS extensions
+ * so those will be enabled too.
+ */
 GedcomX.enableAtomExtensions = function(){
+  this.enableRsExtensions(); // depends on RS extensions
   require('./atom')(GedcomX);
 };

@@ -41,12 +41,13 @@ module.exports = function(GedcomX){
       }
       this.links.addLink(link);
     }
+    return this;
   };
   
   /**
    * Get the links
    * 
-   * @return {Links}
+   * @return {Link[]}
    */
   GedcomX.ExtensibleData.prototype.getLinks = function(){
     return this.links ? this.links.getLinks() : [];

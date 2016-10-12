@@ -49,6 +49,8 @@ module.exports = function(GedcomX){
     
     Base.prototype.init.call(this, json);
     
+    this.links = [];
+    
     if(json){
       this.setLinks(json);
     }
