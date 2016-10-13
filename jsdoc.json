@@ -6,11 +6,12 @@
   },
   "opts": {
     "recurse": true,
-    "readme": "README.md"
+    "readme": "README.md",
+    "template": "node_modules/ink-docstrap/template"
   },
   "templates": {
-    "default": {
-      "includeDate": false
-    }
+    "includeDate": false,
+    "systemName": "GedcomX JS",
+    "theme": "yeti"
   }
 }
