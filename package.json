@@ -9,7 +9,7 @@
     "test:rs": "mocha test/rs/*.js",
     "test:records": "mocha test/records/*.js",
     "test:atom": "mocha test/atom/*.js",
-    "docs": "jsdoc src -r -R ./README.md",
+    "docs": "jsdoc -c jsdoc.json",
     "coverage": "istanbul cover --report lcovonly _mocha -- --recursive && codecov",
     "build": "mkdir -p dist && npm run build:full && npm run build:min",
     "build:full": "webpack --output-filename gedcomx.$npm_package_version.js",
