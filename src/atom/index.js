@@ -9,5 +9,6 @@ module.exports = function(GedcomX){
   require('./AtomGenerator')(GedcomX);
   require('./AtomPerson')(GedcomX);
   require('./AtomSource')(GedcomX);
+  require('./AtomEntry')(GedcomX);
   
 };

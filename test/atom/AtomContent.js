@@ -10,26 +10,21 @@ describe('AtomContent', function(){
   
   it('Create with JSON', function(){
     var content = GedcomX.AtomContent({
-      type: 'type',
       gedcomx: {
         description: '#root'
       }
     });
-    assert.equal(content.getType(), 'type');
     assert.equal(content.getGedcomX().getDescription(), '#root');
   });
   
   it('Build', function(){
     var content = GedcomX.AtomContent()
-      .setType('type')
       .setGedcomX(GedcomX().setDescription('#root'));
-    assert.equal(content.getType(), 'type');
     assert.equal(content.getGedcomX().getDescription(), '#root');
   });
   
   it('toJSON', function(){
     var data = {
-      type: 'type',
       gedcomx: {
         description: '#root'
       }

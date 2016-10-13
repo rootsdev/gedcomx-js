@@ -29,7 +29,6 @@ module.exports = function(GedcomX){
   AtomContent._gedxClass = AtomContent.prototype._gedxClass = 'GedcomX.AtomContent';
   
   AtomContent.jsonProps = [
-    'type',
     'gedcomx'
   ];
   
@@ -54,30 +53,9 @@ module.exports = function(GedcomX){
     AtomCommon.prototype.init.call(this, json);
     
     if(json){
-      this.setType(json.type);
       this.setGedcomX(json.gedcomx);
     }
     return this;
-  };
-  
-  /**
-   * Set the type
-   * 
-   * @param {String} type
-   * @return {AtomContent} this
-   */
-  AtomContent.prototype.setType = function(type){
-    this.type = type;
-    return this;
-  };
-  
-  /**
-   * Get the type
-   * 
-   * @return {String} type
-   */
-  AtomContent.prototype.getType = function(){
-    return this.type;
   };
   
   /**
