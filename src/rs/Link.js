@@ -6,7 +6,8 @@ module.exports = function(GedcomX){
   /**
    * A representation of an available transition from one application state to another.
    * 
-   * @constructor
+   * @class
+   * @extends Base
    * @param {Object} [json]
    */
   var Link = function(json){

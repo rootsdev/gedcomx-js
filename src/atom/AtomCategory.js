@@ -6,7 +6,8 @@ module.exports = function(GedcomX){
   /**
    * Information about a category associated with an atom entry or feed.
    * 
-   * @constructor
+   * @class
+   * @extends AtomCommon
    * @param {Object} [json]
    */
   var AtomCategory = function(json){

@@ -6,7 +6,8 @@ module.exports = function(GedcomX){
   /**
    * A set of properties for convenience in displaying a summary of a person to a user. 
    * 
-   * @constructor
+   * @class
+   * @extends Base
    * @param {Object} [json]
    */
   var DisplayProperties = function(json){

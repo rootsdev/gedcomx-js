@@ -5,7 +5,8 @@ module.exports = function(GedcomX){
   /**
    * Information about the value of a field.
    * 
-   * @constructor
+   * @class
+   * @extends Conclusion
    * @param {Object} [json]
    */
   var FieldValue = function(json){

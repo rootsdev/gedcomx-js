@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A fact for a person or relationship.
  * 
- * @constructor
+ * @class
+ * @extends Conclusion
  * @param {Object} [json]
  */
 var Fact = function(json){

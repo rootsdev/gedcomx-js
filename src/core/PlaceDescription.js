@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A description of a place
  * 
- * @constructor
+ * @class
+ * @extends Subject
  * @param {Object} [json]
  */
 var PlaceDescription = function(json){

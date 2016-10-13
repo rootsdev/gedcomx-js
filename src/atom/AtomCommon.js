@@ -4,7 +4,8 @@ var utils = require('../utils'),
 /**
  * Common attributes for all Atom entities
  * 
- * @constructor
+ * @class
+ * @extends Base
  * @param {Object} [json]
  */
 var AtomCommon = function(json){

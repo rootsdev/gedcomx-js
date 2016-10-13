@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A description of a source.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @apram {Object} [json]
  */
 var SourceDescription = function(json){

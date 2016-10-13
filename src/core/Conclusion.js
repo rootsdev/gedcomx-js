@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * An abstract concept for a basic genealogical data item.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @param {Object} [json]
  */
 var Conclusion = function(json){

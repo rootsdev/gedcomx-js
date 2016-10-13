@@ -6,7 +6,8 @@ module.exports = function(GedcomX){
   /**
    * Common schema for atom authors and contributors.
    * 
-   * @constructor
+   * @class
+   * @extends AtomCommon
    * @param {Object} [json]
    */
   var AtomPerson = function(json){

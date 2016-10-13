@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A note about a resource.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @param {Object} [json]
  */
 var Note = function(json){

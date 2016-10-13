@@ -5,7 +5,8 @@ module.exports = function(GedcomX){
   /**
    * Information about the contents of a collection.
    * 
-   * @constructor
+   * @class
+   * @extends ExtensibleData
    * @param {Object} [json]
    */
   var CollectionContent = function(json){

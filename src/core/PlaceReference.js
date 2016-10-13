@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A reference to a {@link PlaceDescription}.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @param {Object} [json]
  */
 var PlaceReference = function(json){

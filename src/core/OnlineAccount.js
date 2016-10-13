@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * An online account for a web application.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @param {Object} [json]
  */
 var OnlineAccount = function(json){

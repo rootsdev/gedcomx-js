@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A date.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @param {Object} [json]
  * @alias Date
  */

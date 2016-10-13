@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * An event.
  * 
- * @constructor
+ * @class
+ * @extends Subject
  * @param {Object} [json]
  */
 var Event = function(json){

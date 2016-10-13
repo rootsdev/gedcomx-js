@@ -4,7 +4,8 @@ var utils = require('../utils'),
 /**
  * Manage the set of identifers for an object.
  * 
- * @constructor
+ * @class
+ * @extends Base
  * @param {Object} [json]
  */
 var Identifiers = function(json){

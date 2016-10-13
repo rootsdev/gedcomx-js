@@ -6,7 +6,8 @@ module.exports = function(GedcomX){
    * Metadata about the structure and layout of a field, as well as the expected
    * data to be extracted from a field.
    * 
-   * @constructor
+   * @class
+   * @extends ExtensibleData
    * @param {Object} [json]
    */
   var FieldDescriptor = function(json){

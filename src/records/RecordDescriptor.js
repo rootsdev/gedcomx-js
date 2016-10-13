@@ -6,7 +6,8 @@ module.exports = function(GedcomX){
    * Metadata about the structure and layout of a record, as well as the expected
    * data to be extracted from a record.
    * 
-   * @constructor
+   * @class
+   * @extends ExtensibleData
    * @param {Object} [json]
    */
   var RecordDescriptor = function(json){

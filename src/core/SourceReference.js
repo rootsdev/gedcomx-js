@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A reference to a discription of a source.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @param {Object} [json]
  */
 var SourceReference = function(json){

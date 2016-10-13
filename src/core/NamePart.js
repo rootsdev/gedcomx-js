@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A part of a name.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @param {Object} [json]
  */
 var NamePart = function(json){

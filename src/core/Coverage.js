@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A description of the spatial and temporal coverage of a resource.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @apram {Object} [json]
  */
 var Coverage = function(json){

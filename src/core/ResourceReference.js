@@ -4,7 +4,8 @@ var utils = require('../utils'),
 /**
  * A generic reference to a resource.
  * 
- * @constructor
+ * @class
+ * @extends Base
  * @param {Object} [json]
  */
 var ResourceReference = function(json){

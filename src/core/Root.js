@@ -4,7 +4,8 @@ var utils = require('../utils'),
 /**
  * A GEDCOM X document.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @param {Object} [json]
  */
 var Root = function(json){

@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A relationship.
  * 
- * @constructor
+ * @class
+ * @extends Subject
  * @param {Object} [json]
  */
 var Relationship = function(json){

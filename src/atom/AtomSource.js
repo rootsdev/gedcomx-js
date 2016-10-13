@@ -7,7 +7,8 @@ module.exports = function(GedcomX){
    * Information about the originating feed if an entry is copied or aggregated
    * from another feed.
    * 
-   * @constructor
+   * @class
+   * @extends AtomCommon
    * @param {Object} [json]
    */
   var AtomSource = function(json){

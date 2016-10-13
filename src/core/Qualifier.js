@@ -4,7 +4,8 @@ var utils = require('../utils'),
 /**
  * Qualifiers are used to supply additional details about a piece of data.
  * 
- * @constructor
+ * @class
+ * @extends Base
  * @param {Object} [json]
  */
 var Qualifier = function(json){

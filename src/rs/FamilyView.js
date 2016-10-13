@@ -10,7 +10,8 @@ module.exports = function(GedcomX){
    * between the each pair of persons, the FamilyView is designed as a convenience
    * for display purposes.
    * 
-   * @constructor
+   * @class
+   * @extends Base
    * @param {Object} [json]
    */
   var FamilyView = function(json){

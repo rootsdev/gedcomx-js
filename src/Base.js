@@ -3,7 +3,7 @@ var utils = require('./utils');
 /**
  * Base prototype that all other classes in this library extend
  * 
- * @constructor
+ * @class
  */
 var Base = function(){
   // Nothing to do here
@@ -37,6 +37,7 @@ Base.prototype.init = function(json){
  * Set the value of a property that is an array. The new array is copied
  * by calling the associated addMethod on each value in the array.
  * 
+ * @private
  * @param {Array} array New array that will be saved (copied)
  * @param {String} prop Property name where the array is found
  * @param {String} addMethod Name of the add method for this data
@@ -60,6 +61,7 @@ Base.prototype._setArray = function(array, prop, addMethod){
  * that the given data exists (isn't null or undefined). 
  * This method is designed to be used internally.
  * 
+ * @private
  * @param {Object} data
  * @param {String} arrayName
  * @param {Fucntion} constructor
@@ -85,6 +87,7 @@ Base.prototype._arrayPush = function(data, prop, constructor){
  * the parent prototype, merge the two resulting objects together, and remove 
  * any remaining undefined properties.
  * 
+ * @private
  * @param {Function} parent Parent prototype
  * @param {String[]} properties List of properties that will be serialized
  * @return {Object}

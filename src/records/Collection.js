@@ -5,7 +5,8 @@ module.exports = function(GedcomX){
   /**
    * A collection of genealogical data.
    * 
-   * @constructor
+   * @class
+   * @extends ExtensibleData
    * @param {Object} [json]
    */
   var Collection = function(json){

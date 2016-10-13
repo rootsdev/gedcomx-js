@@ -5,7 +5,8 @@ var GedcomX = require('../'),
  * Define who is contributing information, when they contributed it, 
  * and why they are making the contribution.
  * 
- * @constructor
+ * @class
+ * @extends ExtensibleData
  * @param {Object} [json]
  */
 var Attribution = function(json){

@@ -6,7 +6,8 @@ module.exports = function(GedcomX){
   /**
    * The content of an entry.
    * 
-   * @constructor
+   * @class
+   * @extends AtomCommon
    * @param {Object} [json]
    */
   var AtomContent = function(json){

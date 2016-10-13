@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A name.
  * 
- * @constructor
+ * @class
+ * @extends Conclusion
  * @param {Object} [json]
  */
 var Name = function(json){

@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A role that a specific person plays in an event.
  * 
- * @constructor
+ * @class
+ * @extends Conclusion
  * @param {Object} [json]
  */
 var EventRole = function(json){

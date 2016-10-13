@@ -6,7 +6,8 @@ module.exports = function(GedcomX){
   /**
    * The agent used to generate a feed
    * 
-   * @constructor
+   * @class
+   * @extends AtomCommon
    * @param {Object} [json]
    */
   var AtomGenerator = function(json){

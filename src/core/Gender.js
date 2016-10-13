@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A gender conclusion.
  * 
- * @constructor
+ * @class
+ * @extends Conclusion
  * @param {Object} [json]
  */
 var Gender = function(json){

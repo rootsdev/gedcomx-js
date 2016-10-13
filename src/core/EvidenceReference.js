@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * A generic reference to a resource.
  * 
- * @constructor
+ * @class
+ * @extends ResourceReference
  * @param {Object} [json]
  */
 var EvidenceReference = function(json){

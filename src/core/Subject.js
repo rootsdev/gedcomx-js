@@ -4,7 +4,8 @@ var GedcomX = require('../'),
 /**
  * An object identified in time and space by various conclusions.
  * 
- * @constructor
+ * @class
+ * @extends Conclusion
  * @param {Object} [json]
  */
 var Subject = function(json){

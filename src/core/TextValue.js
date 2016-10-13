@@ -4,7 +4,8 @@ var utils = require('../utils'),
 /**
  * A text value in a specific language.
  * 
- * @constructor
+ * @class
+ * @extends Base
  * @apram {Object} [json]
  */
 var TextValue = function(json){

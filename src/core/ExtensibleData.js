@@ -4,7 +4,8 @@ var utils = require('../utils'),
 /**
  * A set of data that supports extension elements.
  * 
- * @constructor
+ * @class
+ * @extends Base
  * @param {Object} [json]
  */
 var ExtensibleData = function(json){
