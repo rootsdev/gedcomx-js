@@ -4,6 +4,8 @@ var GedcomX = require('../'),
 /**
  * A description of a place
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#place-description|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends Subject
  * @param {Object} [json]

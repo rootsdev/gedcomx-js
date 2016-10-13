@@ -4,6 +4,8 @@ var utils = require('../utils'),
 /**
  * Qualifiers are used to supply additional details about a piece of data.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#qualifier|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends Base
  * @param {Object} [json]

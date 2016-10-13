@@ -4,6 +4,8 @@ var GedcomX = require('../'),
 /**
  * An object identified in time and space by various conclusions.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#subject|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends Conclusion
  * @param {Object} [json]

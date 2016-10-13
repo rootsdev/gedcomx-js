@@ -6,6 +6,8 @@ module.exports = function(GedcomX){
   /**
    * A set of properties for convenience in displaying a summary of a person to a user. 
    * 
+   * @see {@link https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/rs-specification.md#display-properties-data-type|GEDCOM X RS Spec}
+   * 
    * @class
    * @extends Base
    * @param {Object} [json]

@@ -4,6 +4,8 @@ var GedcomX = require('../'),
 /**
  * A role that a specific person plays in an event.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#conclusion-event-role|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends Conclusion
  * @param {Object} [json]

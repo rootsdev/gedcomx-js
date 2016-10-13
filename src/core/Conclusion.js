@@ -4,6 +4,8 @@ var GedcomX = require('../'),
 /**
  * An abstract concept for a basic genealogical data item.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#conclusion|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends ExtensibleData
  * @param {Object} [json]

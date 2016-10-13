@@ -6,6 +6,8 @@ module.exports = function(GedcomX){
    * Metadata about the structure and layout of a field, as well as the expected
    * data to be extracted from a field.
    * 
+   * @see {@link https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md#field-descriptor|GEDCOM X Records Spec}
+   * 
    * @class
    * @extends ExtensibleData
    * @param {Object} [json]

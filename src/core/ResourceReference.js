@@ -4,6 +4,8 @@ var utils = require('../utils'),
 /**
  * A generic reference to a resource.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#resource-reference|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends Base
  * @param {Object} [json]

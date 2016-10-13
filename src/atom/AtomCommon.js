@@ -4,6 +4,8 @@ var utils = require('../utils'),
 /**
  * Common attributes for all Atom entities
  * 
+ * @see {@link https://tools.ietf.org/html/rfc4287#page-7|RFC 4287}
+ * 
  * @class
  * @extends Base
  * @param {Object} [json]

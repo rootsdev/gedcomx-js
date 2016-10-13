@@ -10,6 +10,8 @@ module.exports = function(GedcomX){
    * between the each pair of persons, the FamilyView is designed as a convenience
    * for display purposes.
    * 
+   * {@link https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/rs-specification.md#family-view|GEDCOM X RS Spec}
+   * 
    * @class
    * @extends Base
    * @param {Object} [json]

@@ -4,6 +4,8 @@ var GedcomX = require('../'),
 /**
  * An online account for a web application.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#online-account|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends ExtensibleData
  * @param {Object} [json]

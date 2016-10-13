@@ -6,6 +6,9 @@ module.exports = function(GedcomX){
   /**
    * Information about a category associated with an atom entry or feed.
    * 
+   * @see {@link https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/atom-model-specification.md#atom-json-media-type|GEDCOM X Atom JSON Spec}
+   * @see {@link https://tools.ietf.org/html/rfc4287#section-4.2.2|RFC 4287}
+   * 
    * @class
    * @extends AtomCommon
    * @param {Object} [json]

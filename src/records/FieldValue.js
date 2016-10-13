@@ -5,6 +5,8 @@ module.exports = function(GedcomX){
   /**
    * Information about the value of a field.
    * 
+   * @see {@link https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md#field-value-data-type|GEDCOM X Records Spec}
+   * 
    * @class
    * @extends Conclusion
    * @param {Object} [json]

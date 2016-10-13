@@ -5,6 +5,8 @@ var GedcomX = require('../'),
  * Someone or something that curates genealogical data, such as a genealogical 
  * researcher, user of software, or organization.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#agent|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends ExtensibleData
  * @param {Object} [json]

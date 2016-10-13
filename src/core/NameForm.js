@@ -4,6 +4,8 @@ var GedcomX = require('../'),
 /**
  * A form of a name.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#name-form|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends ExtensibleData
  * @param {Object} [json]

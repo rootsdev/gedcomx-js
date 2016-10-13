@@ -4,6 +4,8 @@ var utils = require('../utils'),
 /**
  * A text value in a specific language.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#text-value|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends Base
  * @apram {Object} [json]

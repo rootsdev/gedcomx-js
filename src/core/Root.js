@@ -4,6 +4,8 @@ var utils = require('../utils'),
 /**
  * A GEDCOM X document.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#gedcomx-type|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends ExtensibleData
  * @param {Object} [json]

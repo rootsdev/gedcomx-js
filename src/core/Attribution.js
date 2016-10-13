@@ -5,6 +5,8 @@ var GedcomX = require('../'),
  * Define who is contributing information, when they contributed it, 
  * and why they are making the contribution.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#attribution|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends ExtensibleData
  * @param {Object} [json]

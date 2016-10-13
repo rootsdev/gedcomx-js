@@ -6,6 +6,9 @@ module.exports = function(GedcomX){
   /**
    * Common schema for atom authors and contributors.
    * 
+   * @see {@link https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/atom-model-specification.md#atom-json-media-type|GEDCOM X Atom JSON Spec}
+   * @see {@link https://tools.ietf.org/html/rfc4287#appendix-B|RFC 4287}
+   * 
    * @class
    * @extends AtomCommon
    * @param {Object} [json]

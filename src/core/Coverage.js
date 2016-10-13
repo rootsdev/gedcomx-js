@@ -4,6 +4,8 @@ var GedcomX = require('../'),
 /**
  * A description of the spatial and temporal coverage of a resource.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#coverage|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends ExtensibleData
  * @apram {Object} [json]

@@ -4,6 +4,8 @@ var GedcomX = require('../'),
 /**
  * A relationship.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#relationship|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends Subject
  * @param {Object} [json]

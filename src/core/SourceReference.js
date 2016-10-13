@@ -4,6 +4,8 @@ var GedcomX = require('../'),
 /**
  * A reference to a discription of a source.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#source-reference|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends ExtensibleData
  * @param {Object} [json]

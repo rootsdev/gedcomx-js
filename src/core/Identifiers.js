@@ -4,6 +4,8 @@ var utils = require('../utils'),
 /**
  * Manage the set of identifers for an object.
  * 
+ * @see {@link https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#identifier-type|GEDCOM X JSON Spec}
+ * 
  * @class
  * @extends Base
  * @param {Object} [json]

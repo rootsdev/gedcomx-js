@@ -5,6 +5,8 @@ module.exports = function(GedcomX){
   /**
    * A collection of genealogical data.
    * 
+   * @see {@link https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md#collection|GEDCOM X Records Spec}
+   * 
    * @class
    * @extends ExtensibleData
    * @param {Object} [json]
