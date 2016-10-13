@@ -1,68 +1,113 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>JSDoc: Class: DisplayProperties</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>GedcomX JS Class: DisplayProperties</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.yeti.css">
+
 </head>
 
 <body>
 
-<div id="main">
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">GedcomX JS</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="AtomCommon.html">AtomCommon</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-AtomCategory.html">module.exports~AtomCategory</a></li><li><a href="module.exports-AtomContent.html">module.exports~AtomContent</a></li><li><a href="module.exports-AtomEntry.html">module.exports~AtomEntry</a></li><li><a href="module.exports-AtomGenerator.html">module.exports~AtomGenerator</a></li><li><a href="module.exports-AtomPerson.html">module.exports~AtomPerson</a></li><li><a href="module.exports-AtomSource.html">module.exports~AtomSource</a></li><li><a href="module.exports-Collection.html">module.exports~Collection</a></li><li><a href="module.exports-CollectionContent.html">module.exports~CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">module.exports~DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">module.exports~FamilyView</a></li><li><a href="module.exports-Field.html">module.exports~Field</a></li><li><a href="module.exports-FieldDescriptor.html">module.exports~FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">module.exports~FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">module.exports~FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">module.exports~Link</a></li><li><a href="module.exports-Links.html">module.exports~Links</a></li><li><a href="module.exports-RecordDescriptor.html">module.exports~RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
 
-    <h1 class="page-title">Class: DisplayProperties</h1>
-
-    
-
+</div>
+</div>
 
 
+<div class="container" id="toc-content">
+<div class="row">
 
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: DisplayProperties</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module.html#.exports">.exports</a>~</span>DisplayProperties</h2>
+            <span class="ancestors"><a href="module.html#.exports">.exports</a>~</span>
+        
+        DisplayProperties
+        </h2>
         
     
 </header>
+
 
 <article>
     <div class="container-overview">
     
         
+<hr>
+<dt>
+    <h4 class="name" id="DisplayProperties"><span class="type-signature"></span>new DisplayProperties( [json])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        A set of properties for convenience in displaying a summary of a person to a user.
+    </div>
+    
 
     
 
-    <h4 class="name" id="DisplayProperties"><span class="type-signature"></span>new DisplayProperties<span class="signature">(json<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-
     
 
-
-
-<div class="description">
-    A set of properties for convenience in displaying a summary of a person to a user.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -72,7 +117,7 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
+        <th>Argument</th>
         
 
         
@@ -93,6 +138,7 @@
             
                 
 <span class="param-type">Object</span>
+
 
 
             
@@ -119,12 +165,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -134,57 +185,49 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line15">line 15</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/rs-specification.md#display-properties-data-type">GEDCOM X RS Spec</a></li>
+			</ul>
+	</dd>
+	
 
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/rs-specification.md#display-properties-data-type">GEDCOM X RS Spec</a></li>
-        </ul>
-    </dd>
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-
+    
+</dd>
 
     
     </div>
@@ -206,7 +249,7 @@
 
     
 
-     
+    
 
     
 
@@ -215,33 +258,32 @@
     
         <h3 class="subsection-title">Methods</h3>
 
-        
+        <dl>
             
+<hr>
+<dt>
+    <h4 class="name" id=".isInstance"><span class="type-signature">&lt;static> </span>isInstance(obj)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Check whether the given object is an instance of this class.
+    </div>
+    
 
     
 
-    <h4 class="name" id=".isInstance"><span class="type-signature">(static) </span>isInstance<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-
     
 
-
-
-<div class="description">
-    Check whether the given object is an instance of this class.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -272,6 +314,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -286,12 +329,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -301,51 +349,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line56">line 56</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -357,40 +396,42 @@
 <span class="param-type">Boolean</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addFamilyAsChild"><span class="type-signature"></span>addFamilyAsChild(family)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a family as child
+    </div>
+    
 
     
 
-    <h4 class="name" id="addFamilyAsChild"><span class="type-signature"></span>addFamilyAsChild<span class="signature">(family)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a family as child
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -421,6 +462,7 @@
 <span class="param-type">FamilyView</span>
 
 
+
             
             </td>
 
@@ -435,12 +477,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -450,51 +497,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line353">line 353</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -510,40 +548,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addFamilyAsParent"><span class="type-signature"></span>addFamilyAsParent(family)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a family as parent
+    </div>
+    
 
     
 
-    <h4 class="name" id="addFamilyAsParent"><span class="type-signature"></span>addFamilyAsParent<span class="signature">(family)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a family as parent
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -574,6 +614,7 @@
 <span class="param-type">FamilyView</span>
 
 
+
             
             </td>
 
@@ -588,12 +629,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -603,51 +649,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line324">line 324</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -663,41 +700,48 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getAscendancyNumber"><span class="type-signature"></span>getAscendancyNumber()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the ascendancy number
+    </div>
+    
 
     
 
-    <h4 class="name" id="getAscendancyNumber"><span class="type-signature"></span>getAscendancyNumber<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the ascendancy number
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -707,51 +751,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line284">line 284</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     ascendancyNumber
 </div>
@@ -767,41 +802,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getBirthDate"><span class="type-signature"></span>getBirthDate()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the birth date
+    </div>
+    
 
     
 
-    <h4 class="name" id="getBirthDate"><span class="type-signature"></span>getBirthDate<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the birth date
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -811,51 +853,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line164">line 164</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     birthDate
 </div>
@@ -871,41 +904,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getBirthPlace"><span class="type-signature"></span>getBirthPlace()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the birth place
+    </div>
+    
 
     
 
-    <h4 class="name" id="getBirthPlace"><span class="type-signature"></span>getBirthPlace<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the birth place
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -915,51 +955,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line184">line 184</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     birthPlace
 </div>
@@ -975,41 +1006,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getDeathDate"><span class="type-signature"></span>getDeathDate()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the death date
+    </div>
+    
 
     
 
-    <h4 class="name" id="getDeathDate"><span class="type-signature"></span>getDeathDate<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the death date
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1019,51 +1057,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line204">line 204</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     deathDate
 </div>
@@ -1079,41 +1108,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getDeathPlace"><span class="type-signature"></span>getDeathPlace()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the death place
+    </div>
+    
 
     
 
-    <h4 class="name" id="getDeathPlace"><span class="type-signature"></span>getDeathPlace<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the death place
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1123,51 +1159,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line224">line 224</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     deathPlace
 </div>
@@ -1183,41 +1210,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getDescendancyNumber"><span class="type-signature"></span>getDescendancyNumber()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the descendancy number
+    </div>
+    
 
     
 
-    <h4 class="name" id="getDescendancyNumber"><span class="type-signature"></span>getDescendancyNumber<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the descendancy number
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1227,51 +1261,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line304">line 304</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     descendancyNumber
 </div>
@@ -1287,41 +1312,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getFamiliesAsChild"><span class="type-signature"></span>getFamiliesAsChild()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get families as child
+    </div>
+    
 
     
 
-    <h4 class="name" id="getFamiliesAsChild"><span class="type-signature"></span>getFamiliesAsChild<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;FamilyView>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get families as child
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1331,51 +1363,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line362">line 362</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     families
 </div>
@@ -1391,41 +1414,48 @@
 <span class="param-type">Array.&lt;FamilyView></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getFamiliesAsParent"><span class="type-signature"></span>getFamiliesAsParent()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get families as parent
+    </div>
+    
 
     
 
-    <h4 class="name" id="getFamiliesAsParent"><span class="type-signature"></span>getFamiliesAsParent<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;FamilyView>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get families as parent
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1435,51 +1465,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line333">line 333</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     families
 </div>
@@ -1495,41 +1516,48 @@
 <span class="param-type">Array.&lt;FamilyView></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getGender"><span class="type-signature"></span>getGender()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the gender
+    </div>
+    
 
     
 
-    <h4 class="name" id="getGender"><span class="type-signature"></span>getGender<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the gender
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1539,51 +1567,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line124">line 124</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     gender
 </div>
@@ -1599,41 +1618,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getLifespan"><span class="type-signature"></span>getLifespan()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the lifespan
+    </div>
+    
 
     
 
-    <h4 class="name" id="getLifespan"><span class="type-signature"></span>getLifespan<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the lifespan
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1643,51 +1669,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line144">line 144</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     lifespan
 </div>
@@ -1703,41 +1720,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getMarriageDate"><span class="type-signature"></span>getMarriageDate()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the marriage date
+    </div>
+    
 
     
 
-    <h4 class="name" id="getMarriageDate"><span class="type-signature"></span>getMarriageDate<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the marriage date
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1747,51 +1771,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line244">line 244</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     marriageDate
 </div>
@@ -1807,41 +1822,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getMarriagePlace"><span class="type-signature"></span>getMarriagePlace()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the marriage place
+    </div>
+    
 
     
 
-    <h4 class="name" id="getMarriagePlace"><span class="type-signature"></span>getMarriagePlace<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the marriage place
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1851,51 +1873,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line264">line 264</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     marriagePlace
 </div>
@@ -1911,41 +1924,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getName"><span class="type-signature"></span>getName()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the name
+    </div>
+    
 
     
 
-    <h4 class="name" id="getName"><span class="type-signature"></span>getName<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the name
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1955,51 +1975,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line104">line 104</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     name
 </div>
@@ -2015,40 +2026,42 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="init"><span class="type-signature"></span>init(json)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Initialize from JSON
+    </div>
+    
 
     
 
-    <h4 class="name" id="init"><span class="type-signature"></span>init<span class="signature">(json)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Initialize from JSON
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2079,6 +2092,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -2093,18 +2107,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
+	
+
+	
 
     
     <dt class="tag-overrides">Overrides:</dt>
@@ -2119,45 +2132,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line66">line 66</a>
-    </li></ul></dd>
-    
 
-    
 
-    
+	
 
-    
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this
 </div>
@@ -2173,40 +2183,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setAscendancyNumber"><span class="type-signature"></span>setAscendancyNumber(ascendancyNumber)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the ascendancy number
+    </div>
+    
 
     
 
-    <h4 class="name" id="setAscendancyNumber"><span class="type-signature"></span>setAscendancyNumber<span class="signature">(ascendancyNumber)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the ascendancy number
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2237,6 +2249,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -2251,12 +2264,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2266,51 +2284,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line274">line 274</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -2326,40 +2335,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setBirthDate"><span class="type-signature"></span>setBirthDate(birthDate)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the birth date
+    </div>
+    
 
     
 
-    <h4 class="name" id="setBirthDate"><span class="type-signature"></span>setBirthDate<span class="signature">(birthDate)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the birth date
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2390,6 +2401,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -2404,12 +2416,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2419,51 +2436,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line154">line 154</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -2479,40 +2487,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setBirthPlace"><span class="type-signature"></span>setBirthPlace(birthPlace)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the birth place
+    </div>
+    
 
     
 
-    <h4 class="name" id="setBirthPlace"><span class="type-signature"></span>setBirthPlace<span class="signature">(birthPlace)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the birth place
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2543,6 +2553,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -2557,12 +2568,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2572,51 +2588,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line174">line 174</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -2632,40 +2639,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setDeathDate"><span class="type-signature"></span>setDeathDate(deathDate)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the death date
+    </div>
+    
 
     
 
-    <h4 class="name" id="setDeathDate"><span class="type-signature"></span>setDeathDate<span class="signature">(deathDate)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the death date
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2696,6 +2705,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -2710,12 +2720,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2725,51 +2740,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line194">line 194</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -2785,40 +2791,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setDeathPlace"><span class="type-signature"></span>setDeathPlace(deathPlace)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the death place
+    </div>
+    
 
     
 
-    <h4 class="name" id="setDeathPlace"><span class="type-signature"></span>setDeathPlace<span class="signature">(deathPlace)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the death place
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2849,6 +2857,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -2863,12 +2872,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2878,51 +2892,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line214">line 214</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -2938,40 +2943,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setDescendancyNumber"><span class="type-signature"></span>setDescendancyNumber(descendancyNumber)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the descendancy number
+    </div>
+    
 
     
 
-    <h4 class="name" id="setDescendancyNumber"><span class="type-signature"></span>setDescendancyNumber<span class="signature">(descendancyNumber)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the descendancy number
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3002,6 +3009,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -3016,12 +3024,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3031,51 +3044,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line294">line 294</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -3091,40 +3095,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setFamiliesAsChild"><span class="type-signature"></span>setFamiliesAsChild(families)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set families as child
+    </div>
+    
 
     
 
-    <h4 class="name" id="setFamiliesAsChild"><span class="type-signature"></span>setFamiliesAsChild<span class="signature">(families)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set families as child
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3155,6 +3161,7 @@
 <span class="param-type">Array.&lt;FamilyView></span>
 
 
+
             
             </td>
 
@@ -3169,12 +3176,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3184,51 +3196,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line343">line 343</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -3244,40 +3247,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setFamiliesAsParent"><span class="type-signature"></span>setFamiliesAsParent(families)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set families as parent
+    </div>
+    
 
     
 
-    <h4 class="name" id="setFamiliesAsParent"><span class="type-signature"></span>setFamiliesAsParent<span class="signature">(families)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set families as parent
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3308,6 +3313,7 @@
 <span class="param-type">Array.&lt;FamilyView></span>
 
 
+
             
             </td>
 
@@ -3322,12 +3328,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3337,51 +3348,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line314">line 314</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -3397,40 +3399,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setGender"><span class="type-signature"></span>setGender(gender)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the gender
+    </div>
+    
 
     
 
-    <h4 class="name" id="setGender"><span class="type-signature"></span>setGender<span class="signature">(gender)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the gender
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3461,6 +3465,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -3475,12 +3480,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3490,51 +3500,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line114">line 114</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -3550,40 +3551,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setLifespan"><span class="type-signature"></span>setLifespan(lifespan)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the lifespan
+    </div>
+    
 
     
 
-    <h4 class="name" id="setLifespan"><span class="type-signature"></span>setLifespan<span class="signature">(lifespan)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the lifespan
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3614,6 +3617,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -3628,12 +3632,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3643,51 +3652,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line134">line 134</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -3703,40 +3703,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setMarriageDate"><span class="type-signature"></span>setMarriageDate(marriageDate)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the marriage date
+    </div>
+    
 
     
 
-    <h4 class="name" id="setMarriageDate"><span class="type-signature"></span>setMarriageDate<span class="signature">(marriageDate)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the marriage date
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3767,6 +3769,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -3781,12 +3784,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3796,51 +3804,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line234">line 234</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -3856,40 +3855,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setMarriagePlace"><span class="type-signature"></span>setMarriagePlace(marriagePlace)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the marriage place
+    </div>
+    
 
     
 
-    <h4 class="name" id="setMarriagePlace"><span class="type-signature"></span>setMarriagePlace<span class="signature">(marriagePlace)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the marriage place
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3920,6 +3921,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -3934,12 +3936,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3949,51 +3956,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line254">line 254</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -4009,40 +4007,42 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setName"><span class="type-signature"></span>setName(name)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the name
+    </div>
+    
 
     
 
-    <h4 class="name" id="setName"><span class="type-signature"></span>setName<span class="signature">(name)</span><span class="type-signature"> &rarr; {DisplayProperties}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the name
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4073,6 +4073,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -4087,12 +4088,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4102,51 +4108,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line94">line 94</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this instance
 </div>
@@ -4162,47 +4159,48 @@
 <span class="param-type">DisplayProperties</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="toJSON"><span class="type-signature"></span>toJSON()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Export the object as JSON
+    </div>
+    
 
     
 
-    <h4 class="name" id="toJSON"><span class="type-signature"></span>toJSON<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Export the object as JSON
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
+	
+
+	
 
     
     <dt class="tag-overrides">Overrides:</dt>
@@ -4217,45 +4215,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="rs_DisplayProperties.js.html">rs/DisplayProperties.js</a>, <a href="rs_DisplayProperties.js.html#line371">line 371</a>
-    </li></ul></dd>
-    
 
-    
 
-    
+	
 
-    
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     JSON object
 </div>
@@ -4271,14 +4266,17 @@
 <span class="param-type">Object</span>
 
 
+
     </dd>
 </dl>
 
-    
-
-
 
         
+
+    
+</dd>
+
+        </dl>
     
 
     
@@ -4291,19 +4289,130 @@
 
 
 
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="AtomCommon.html">AtomCommon</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-AtomCategory.html">AtomCategory</a></li><li><a href="module.exports-AtomContent.html">AtomContent</a></li><li><a href="module.exports-AtomEntry.html">AtomEntry</a></li><li><a href="module.exports-AtomGenerator.html">AtomGenerator</a></li><li><a href="module.exports-AtomPerson.html">AtomPerson</a></li><li><a href="module.exports-AtomSource.html">AtomSource</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
-</nav>
 
-<br class="clear">
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
 </body>
 </html>

@@ -1,68 +1,117 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>JSDoc: Class: SourceDescription</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>GedcomX JS Class: SourceDescription</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.yeti.css">
+
 </head>
 
 <body>
 
-<div id="main">
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">GedcomX JS</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="AtomCommon.html">AtomCommon</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-AtomCategory.html">module.exports~AtomCategory</a></li><li><a href="module.exports-AtomContent.html">module.exports~AtomContent</a></li><li><a href="module.exports-AtomEntry.html">module.exports~AtomEntry</a></li><li><a href="module.exports-AtomGenerator.html">module.exports~AtomGenerator</a></li><li><a href="module.exports-AtomPerson.html">module.exports~AtomPerson</a></li><li><a href="module.exports-AtomSource.html">module.exports~AtomSource</a></li><li><a href="module.exports-Collection.html">module.exports~Collection</a></li><li><a href="module.exports-CollectionContent.html">module.exports~CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">module.exports~DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">module.exports~FamilyView</a></li><li><a href="module.exports-Field.html">module.exports~Field</a></li><li><a href="module.exports-FieldDescriptor.html">module.exports~FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">module.exports~FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">module.exports~FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">module.exports~Link</a></li><li><a href="module.exports-Links.html">module.exports~Links</a></li><li><a href="module.exports-RecordDescriptor.html">module.exports~RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
 
-    <h1 class="page-title">Class: SourceDescription</h1>
-
-    
-
+</div>
+</div>
 
 
+<div class="container" id="toc-content">
+<div class="row">
 
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: SourceDescription</h1>
 <section>
 
 <header>
     
-        <h2>SourceDescription</h2>
+        <h2>
+        SourceDescription
+        </h2>
         
     
 </header>
+
 
 <article>
     <div class="container-overview">
     
         
+<hr>
+<dt>
+    <h4 class="name" id="SourceDescription"><span class="type-signature"></span>new SourceDescription()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        A description of a source.
+    </div>
+    
 
     
 
-    <h4 class="name" id="SourceDescription"><span class="type-signature"></span>new SourceDescription<span class="signature">()</span><span class="type-signature"></span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    A description of a source.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -72,57 +121,49 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line13">line 13</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#source-description">GEDCOM X JSON Spec</a></li>
+			</ul>
+	</dd>
+	
 
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#source-description">GEDCOM X JSON Spec</a></li>
-        </ul>
-    </dd>
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-
+    
+</dd>
 
     
     </div>
@@ -144,7 +185,7 @@
 
     
 
-     
+    
 
     
 
@@ -153,33 +194,32 @@
     
         <h3 class="subsection-title">Methods</h3>
 
-        
+        <dl>
             
+<hr>
+<dt>
+    <h4 class="name" id=".isInstance"><span class="type-signature">&lt;static> </span>isInstance(obj)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Check whether the given object is an instance of this class.
+    </div>
+    
 
     
 
-    <h4 class="name" id=".isInstance"><span class="type-signature">(static) </span>isInstance<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-
     
 
-
-
-<div class="description">
-    Check whether the given object is an instance of this class.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -210,6 +250,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -224,12 +265,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -239,51 +285,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line59">line 59</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -295,40 +332,42 @@
 <span class="param-type">Boolean</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addCitation"><span class="type-signature"></span>addCitation(citation)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a citation
+    </div>
+    
 
     
 
-    <h4 class="name" id="addCitation"><span class="type-signature"></span>addCitation<span class="signature">(citation)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a citation
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -362,6 +401,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -376,12 +416,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -391,51 +436,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line141">line 141</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -447,40 +483,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addCoverage"><span class="type-signature"></span>addCoverage(coverage)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add coverage
+    </div>
+    
 
     
 
-    <h4 class="name" id="addCoverage"><span class="type-signature"></span>addCoverage<span class="signature">(coverage)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add coverage
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -511,6 +549,7 @@
 <span class="param-type"><a href="Coverage.html">Coverage</a></span>
 
 
+
             
             </td>
 
@@ -525,12 +564,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -540,51 +584,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line413">line 413</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -596,40 +631,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addDescription"><span class="type-signature"></span>addDescription(description)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a description
+    </div>
+    
 
     
 
-    <h4 class="name" id="addDescription"><span class="type-signature"></span>addDescription<span class="signature">(description)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a description
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -663,6 +700,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -677,12 +715,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -692,51 +735,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line442">line 442</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -748,40 +782,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addNote"><span class="type-signature"></span>addNote(note)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a source
+    </div>
+    
 
     
 
-    <h4 class="name" id="addNote"><span class="type-signature"></span>addNote<span class="signature">(note)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a source
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -815,6 +851,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -829,12 +866,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -844,51 +886,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line333">line 333</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -900,40 +933,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addRight"><span class="type-signature"></span>addRight(right)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a source
+    </div>
+    
 
     
 
-    <h4 class="name" id="addRight"><span class="type-signature"></span>addRight<span class="signature">(right)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a source
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -967,6 +1002,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -981,12 +1017,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -996,51 +1037,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line384">line 384</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1052,40 +1084,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addSource"><span class="type-signature"></span>addSource(source)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a source
+    </div>
+    
 
     
 
-    <h4 class="name" id="addSource"><span class="type-signature"></span>addSource<span class="signature">(source)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a source
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1119,6 +1153,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -1133,12 +1168,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1148,51 +1188,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line232">line 232</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1204,40 +1235,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addTitle"><span class="type-signature"></span>addTitle(title)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a title
+    </div>
+    
 
     
 
-    <h4 class="name" id="addTitle"><span class="type-signature"></span>addTitle<span class="signature">(title)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a title
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1271,6 +1304,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -1285,12 +1319,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1300,51 +1339,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line304">line 304</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1356,41 +1386,48 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getAbout"><span class="type-signature"></span>getAbout()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the about property
+    </div>
+    
 
     
 
-    <h4 class="name" id="getAbout"><span class="type-signature"></span>getAbout<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the about property
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1400,51 +1437,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line170">line 170</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1456,41 +1484,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getAnalysis"><span class="type-signature"></span>getAnalysis()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the analysis
+    </div>
+    
 
     
 
-    <h4 class="name" id="getAnalysis"><span class="type-signature"></span>getAnalysis<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ResourceReference.html">ResourceReference</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the analysis
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1500,51 +1535,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line241">line 241</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1556,41 +1582,48 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getAttribution"><span class="type-signature"></span>getAttribution()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the attribution
+    </div>
+    
 
     
 
-    <h4 class="name" id="getAttribution"><span class="type-signature"></span>getAttribution<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Attribution.html">Attribution</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the attribution
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1600,51 +1633,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line342">line 342</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1656,41 +1680,48 @@
 <span class="param-type"><a href="Attribution.html">Attribution</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getCitations"><span class="type-signature"></span>getCitations()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the citations
+    </div>
+    
 
     
 
-    <h4 class="name" id="getCitations"><span class="type-signature"></span>getCitations<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="SourceCitation.html">SourceCitation</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the citations
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1700,51 +1731,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line121">line 121</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1756,41 +1778,48 @@
 <span class="param-type">Array.&lt;<a href="SourceCitation.html">SourceCitation</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getComponentOf"><span class="type-signature"></span>getComponentOf()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the componentOf property
+    </div>
+    
 
     
 
-    <h4 class="name" id="getComponentOf"><span class="type-signature"></span>getComponentOf<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="SourceReference.html">SourceReference</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the componentOf property
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1800,51 +1829,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line263">line 263</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1856,41 +1876,48 @@
 <span class="param-type"><a href="SourceReference.html">SourceReference</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getCoverage"><span class="type-signature"></span>getCoverage()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the coverage
+    </div>
+    
 
     
 
-    <h4 class="name" id="getCoverage"><span class="type-signature"></span>getCoverage<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Coverage.html">Coverage</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the coverage
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1900,51 +1927,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line393">line 393</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1956,41 +1974,48 @@
 <span class="param-type"><a href="Coverage.html">Coverage</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getCreated"><span class="type-signature"></span>getCreated()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the created timestamp
+    </div>
+    
 
     
 
-    <h4 class="name" id="getCreated"><span class="type-signature"></span>getCreated<span class="signature">()</span><span class="type-signature"> &rarr; {Integer}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the created timestamp
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2000,51 +2025,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line473">line 473</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2056,41 +2072,48 @@
 <span class="param-type">Integer</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getDescriptions"><span class="type-signature"></span>getDescriptions()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the descriptions
+    </div>
+    
 
     
 
-    <h4 class="name" id="getDescriptions"><span class="type-signature"></span>getDescriptions<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="TextValue.html">TextValue</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the descriptions
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2100,51 +2123,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line422">line 422</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2156,60 +2170,57 @@
 <span class="param-type">Array.&lt;<a href="TextValue.html">TextValue</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getId"><span class="type-signature"></span>getId()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the object's id.
+    </div>
+    
 
     
 
-    <h4 class="name" id="getId"><span class="type-signature"></span>getId<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the object's id.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ExtensibleData.html#getId">ExtensibleData#getId</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ExtensibleData.html#getId">ExtensibleData#getId</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -2219,37 +2230,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_ExtensibleData.js.html">core/ExtensibleData.js</a>, <a href="core_ExtensibleData.js.html#line63">line 63</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     Id
 </div>
@@ -2265,41 +2281,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getIdentifiers"><span class="type-signature"></span>getIdentifiers()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the identifiers
+    </div>
+    
 
     
 
-    <h4 class="name" id="getIdentifiers"><span class="type-signature"></span>getIdentifiers<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Identifiers.html">Identifiers</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the identifiers
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2309,51 +2332,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line451">line 451</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2365,41 +2379,48 @@
 <span class="param-type"><a href="Identifiers.html">Identifiers</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getMediator"><span class="type-signature"></span>getMediator()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the mediator
+    </div>
+    
 
     
 
-    <h4 class="name" id="getMediator"><span class="type-signature"></span>getMediator<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ResourceReference.html">ResourceReference</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the mediator
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2409,51 +2430,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line190">line 190</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2465,41 +2477,48 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getMediaType"><span class="type-signature"></span>getMediaType()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the media type
+    </div>
+    
 
     
 
-    <h4 class="name" id="getMediaType"><span class="type-signature"></span>getMediaType<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the media type
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2509,51 +2528,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line150">line 150</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2565,41 +2575,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getModified"><span class="type-signature"></span>getModified()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the modified timestamp
+    </div>
+    
 
     
 
-    <h4 class="name" id="getModified"><span class="type-signature"></span>getModified<span class="signature">()</span><span class="type-signature"> &rarr; {Integer}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the modified timestamp
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2609,51 +2626,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line493">line 493</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2665,41 +2673,48 @@
 <span class="param-type">Integer</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getNotes"><span class="type-signature"></span>getNotes()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get notes
+    </div>
+    
 
     
 
-    <h4 class="name" id="getNotes"><span class="type-signature"></span>getNotes<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="Note.html">Note</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get notes
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2709,51 +2724,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line313">line 313</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2765,41 +2771,48 @@
 <span class="param-type">Array.&lt;<a href="Note.html">Note</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getRepository"><span class="type-signature"></span>getRepository()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the repository
+    </div>
+    
 
     
 
-    <h4 class="name" id="getRepository"><span class="type-signature"></span>getRepository<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ResourceReference.html">ResourceReference</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the repository
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2809,51 +2822,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line513">line 513</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2865,41 +2869,48 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getResourceType"><span class="type-signature"></span>getResourceType()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the resource type
+    </div>
+    
 
     
 
-    <h4 class="name" id="getResourceType"><span class="type-signature"></span>getResourceType<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the resource type
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2909,51 +2920,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line101">line 101</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2965,41 +2967,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getRights"><span class="type-signature"></span>getRights()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the rights
+    </div>
+    
 
     
 
-    <h4 class="name" id="getRights"><span class="type-signature"></span>getRights<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="ResourceReference.html">ResourceReference</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the rights
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3009,51 +3018,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line364">line 364</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -3065,41 +3065,48 @@
 <span class="param-type">Array.&lt;<a href="ResourceReference.html">ResourceReference</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getSources"><span class="type-signature"></span>getSources()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get sources
+    </div>
+    
 
     
 
-    <h4 class="name" id="getSources"><span class="type-signature"></span>getSources<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="SourceReference.html">SourceReference</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get sources
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3109,51 +3116,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line212">line 212</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -3165,41 +3163,48 @@
 <span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getTitles"><span class="type-signature"></span>getTitles()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get titles
+    </div>
+    
 
     
 
-    <h4 class="name" id="getTitles"><span class="type-signature"></span>getTitles<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="TextValue.html">TextValue</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get titles
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3209,51 +3214,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line284">line 284</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -3265,40 +3261,42 @@
 <span class="param-type">Array.&lt;<a href="TextValue.html">TextValue</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="init"><span class="type-signature"></span>init(json)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Initialize from JSON
+    </div>
+    
 
     
 
-    <h4 class="name" id="init"><span class="type-signature"></span>init<span class="signature">(json)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Initialize from JSON
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3329,6 +3327,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -3343,18 +3342,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
+	
+
+	
 
     
     <dt class="tag-overrides">Overrides:</dt>
@@ -3369,45 +3367,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line69">line 69</a>
-    </li></ul></dd>
-    
 
-    
 
-    
+	
 
-    
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this
 </div>
@@ -3423,40 +3418,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setAbout"><span class="type-signature"></span>setAbout(about)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the about property
+    </div>
+    
 
     
 
-    <h4 class="name" id="setAbout"><span class="type-signature"></span>setAbout<span class="signature">(about)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the about property
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3487,6 +3484,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -3501,12 +3499,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3516,51 +3519,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line180">line 180</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -3572,40 +3566,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setAnalysis"><span class="type-signature"></span>setAnalysis(analysis)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the analysis
+    </div>
+    
 
     
 
-    <h4 class="name" id="setAnalysis"><span class="type-signature"></span>setAnalysis<span class="signature">(analysis)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the analysis
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3639,6 +3635,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -3653,12 +3650,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3668,51 +3670,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line251">line 251</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -3724,40 +3717,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setAttribution"><span class="type-signature"></span>setAttribution(attribution)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the attribution
+    </div>
+    
 
     
 
-    <h4 class="name" id="setAttribution"><span class="type-signature"></span>setAttribution<span class="signature">(attribution)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the attribution
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3791,6 +3786,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -3805,12 +3801,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3820,51 +3821,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line352">line 352</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -3876,40 +3868,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setCitations"><span class="type-signature"></span>setCitations(citations)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the citations
+    </div>
+    
 
     
 
-    <h4 class="name" id="setCitations"><span class="type-signature"></span>setCitations<span class="signature">(citations)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the citations
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3943,6 +3937,7 @@
 <span class="param-type">Array.&lt;Object></span>
 
 
+
             
             </td>
 
@@ -3957,12 +3952,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3972,51 +3972,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line131">line 131</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -4028,40 +4019,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setComponentOf"><span class="type-signature"></span>setComponentOf(componentOf)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the componentOf property
+    </div>
+    
 
     
 
-    <h4 class="name" id="setComponentOf"><span class="type-signature"></span>setComponentOf<span class="signature">(componentOf)</span><span class="type-signature"></span></h4>
-
     
 
-
-
-<div class="description">
-    Set the componentOf property
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4092,6 +4085,7 @@
 <span class="param-type"><a href="SourceReference.html">SourceReference</a></span>
 
 
+
             
             </td>
 
@@ -4106,12 +4100,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4121,78 +4120,69 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line272">line 272</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setCoverage"><span class="type-signature"></span>setCoverage(coverage)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the coverage
+    </div>
+    
 
     
 
-    <h4 class="name" id="setCoverage"><span class="type-signature"></span>setCoverage<span class="signature">(coverage)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the coverage
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4226,6 +4216,7 @@
 <span class="param-type">Array.&lt;Object></span>
 
 
+
             
             </td>
 
@@ -4240,12 +4231,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4255,51 +4251,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line403">line 403</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -4311,40 +4298,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setCreated"><span class="type-signature"></span>setCreated(created)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the created timestamp
+    </div>
+    
 
     
 
-    <h4 class="name" id="setCreated"><span class="type-signature"></span>setCreated<span class="signature">(created)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the created timestamp
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4375,6 +4364,7 @@
 <span class="param-type">Integer</span>
 
 
+
             
             </td>
 
@@ -4389,12 +4379,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4404,51 +4399,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line483">line 483</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -4460,40 +4446,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setDescriptions"><span class="type-signature"></span>setDescriptions(descriptions)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the descriptions
+    </div>
+    
 
     
 
-    <h4 class="name" id="setDescriptions"><span class="type-signature"></span>setDescriptions<span class="signature">(descriptions)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the descriptions
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4527,6 +4515,7 @@
 <span class="param-type">Array.&lt;Object></span>
 
 
+
             
             </td>
 
@@ -4541,12 +4530,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4556,51 +4550,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line432">line 432</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -4612,40 +4597,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setId"><span class="type-signature"></span>setId(id)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the object's id.
+    </div>
+    
 
     
 
-    <h4 class="name" id="setId"><span class="type-signature"></span>setId<span class="signature">(id)</span><span class="type-signature"> &rarr; {<a href="ExtensibleData.html">ExtensibleData</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the object's id.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4676,6 +4663,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -4690,31 +4678,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ExtensibleData.html#setId">ExtensibleData#setId</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ExtensibleData.html#setId">ExtensibleData#setId</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -4724,37 +4707,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_ExtensibleData.js.html">core/ExtensibleData.js</a>, <a href="core_ExtensibleData.js.html#line73">line 73</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This object, for chaining.
 </div>
@@ -4770,40 +4758,42 @@
 <span class="param-type"><a href="ExtensibleData.html">ExtensibleData</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setIdentifiers"><span class="type-signature"></span>setIdentifiers(identifiers)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the identifiers
+    </div>
+    
 
     
 
-    <h4 class="name" id="setIdentifiers"><span class="type-signature"></span>setIdentifiers<span class="signature">(identifiers)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the identifiers
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4834,6 +4824,7 @@
 <span class="param-type"><a href="Identifiers.html">Identifiers</a></span>
 
 
+
             
             </td>
 
@@ -4848,12 +4839,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4863,51 +4859,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line461">line 461</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -4919,40 +4906,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setMediator"><span class="type-signature"></span>setMediator(mediator)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the mediator
+    </div>
+    
 
     
 
-    <h4 class="name" id="setMediator"><span class="type-signature"></span>setMediator<span class="signature">(mediator)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the mediator
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4983,6 +4972,7 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
             
             </td>
 
@@ -4997,12 +4987,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5012,51 +5007,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line200">line 200</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5068,40 +5054,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setMediaType"><span class="type-signature"></span>setMediaType(mediaType)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the media type
+    </div>
+    
 
     
 
-    <h4 class="name" id="setMediaType"><span class="type-signature"></span>setMediaType<span class="signature">(mediaType)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the media type
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5132,6 +5120,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -5146,12 +5135,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5161,51 +5155,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line160">line 160</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5217,40 +5202,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setModified"><span class="type-signature"></span>setModified(modified)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the modified timestamp
+    </div>
+    
 
     
 
-    <h4 class="name" id="setModified"><span class="type-signature"></span>setModified<span class="signature">(modified)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the modified timestamp
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5281,6 +5268,7 @@
 <span class="param-type">Integer</span>
 
 
+
             
             </td>
 
@@ -5295,12 +5283,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5310,51 +5303,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line503">line 503</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5366,40 +5350,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setNotes"><span class="type-signature"></span>setNotes(notes)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the notes
+    </div>
+    
 
     
 
-    <h4 class="name" id="setNotes"><span class="type-signature"></span>setNotes<span class="signature">(notes)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the notes
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5433,6 +5419,7 @@
 <span class="param-type">Array.&lt;Object></span>
 
 
+
             
             </td>
 
@@ -5447,12 +5434,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5462,51 +5454,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line323">line 323</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5518,40 +5501,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setRepository"><span class="type-signature"></span>setRepository(repository)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the repository
+    </div>
+    
 
     
 
-    <h4 class="name" id="setRepository"><span class="type-signature"></span>setRepository<span class="signature">(repository)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the repository
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5582,6 +5567,7 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
             
             </td>
 
@@ -5596,12 +5582,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5611,51 +5602,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line523">line 523</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5667,40 +5649,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setResourceType"><span class="type-signature"></span>setResourceType(resourceType)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the resource type
+    </div>
+    
 
     
 
-    <h4 class="name" id="setResourceType"><span class="type-signature"></span>setResourceType<span class="signature">(resourceType)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the resource type
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5731,6 +5715,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -5745,12 +5730,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5760,51 +5750,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line111">line 111</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5816,40 +5797,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setRights"><span class="type-signature"></span>setRights(rights)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the rights
+    </div>
+    
 
     
 
-    <h4 class="name" id="setRights"><span class="type-signature"></span>setRights<span class="signature">(rights)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the rights
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5883,6 +5866,7 @@
 <span class="param-type">Array.&lt;Object></span>
 
 
+
             
             </td>
 
@@ -5897,12 +5881,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5912,51 +5901,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line374">line 374</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5968,40 +5948,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setSources"><span class="type-signature"></span>setSources(sources)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the sources
+    </div>
+    
 
     
 
-    <h4 class="name" id="setSources"><span class="type-signature"></span>setSources<span class="signature">(sources)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the sources
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -6035,6 +6017,7 @@
 <span class="param-type">Array.&lt;Object></span>
 
 
+
             
             </td>
 
@@ -6049,12 +6032,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6064,51 +6052,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line222">line 222</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -6120,40 +6099,42 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setTitles"><span class="type-signature"></span>setTitles(titles)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the titles
+    </div>
+    
 
     
 
-    <h4 class="name" id="setTitles"><span class="type-signature"></span>setTitles<span class="signature">(titles)</span><span class="type-signature"> &rarr; {<a href="SourceDescription.html">SourceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the titles
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -6187,6 +6168,7 @@
 <span class="param-type">Array.&lt;Object></span>
 
 
+
             
             </td>
 
@@ -6201,12 +6183,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6216,51 +6203,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line294">line 294</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -6272,47 +6250,48 @@
 <span class="param-type"><a href="SourceDescription.html">SourceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="toJSON"><span class="type-signature"></span>toJSON()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Export the object as JSON
+    </div>
+    
 
     
 
-    <h4 class="name" id="toJSON"><span class="type-signature"></span>toJSON<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Export the object as JSON
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
+	
+
+	
 
     
     <dt class="tag-overrides">Overrides:</dt>
@@ -6327,45 +6306,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_SourceDescription.js.html">core/SourceDescription.js</a>, <a href="core_SourceDescription.js.html#line535">line 535</a>
-    </li></ul></dd>
-    
 
-    
 
-    
+	
 
-    
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     JSON object
 </div>
@@ -6381,14 +6357,17 @@
 <span class="param-type">Object</span>
 
 
+
     </dd>
 </dl>
 
-    
-
-
 
         
+
+    
+</dd>
+
+        </dl>
     
 
     
@@ -6401,19 +6380,130 @@
 
 
 
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="AtomCommon.html">AtomCommon</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-AtomCategory.html">AtomCategory</a></li><li><a href="module.exports-AtomContent.html">AtomContent</a></li><li><a href="module.exports-AtomEntry.html">AtomEntry</a></li><li><a href="module.exports-AtomGenerator.html">AtomGenerator</a></li><li><a href="module.exports-AtomPerson.html">AtomPerson</a></li><li><a href="module.exports-AtomSource.html">AtomSource</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
-</nav>
 
-<br class="clear">
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
 </body>
 </html>

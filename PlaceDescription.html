@@ -1,67 +1,111 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>JSDoc: Class: PlaceDescription</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>GedcomX JS Class: PlaceDescription</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.yeti.css">
+
 </head>
 
 <body>
 
-<div id="main">
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">GedcomX JS</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="AtomCommon.html">AtomCommon</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-AtomCategory.html">module.exports~AtomCategory</a></li><li><a href="module.exports-AtomContent.html">module.exports~AtomContent</a></li><li><a href="module.exports-AtomEntry.html">module.exports~AtomEntry</a></li><li><a href="module.exports-AtomGenerator.html">module.exports~AtomGenerator</a></li><li><a href="module.exports-AtomPerson.html">module.exports~AtomPerson</a></li><li><a href="module.exports-AtomSource.html">module.exports~AtomSource</a></li><li><a href="module.exports-Collection.html">module.exports~Collection</a></li><li><a href="module.exports-CollectionContent.html">module.exports~CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">module.exports~DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">module.exports~FamilyView</a></li><li><a href="module.exports-Field.html">module.exports~Field</a></li><li><a href="module.exports-FieldDescriptor.html">module.exports~FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">module.exports~FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">module.exports~FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">module.exports~Link</a></li><li><a href="module.exports-Links.html">module.exports~Links</a></li><li><a href="module.exports-RecordDescriptor.html">module.exports~RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
 
-    <h1 class="page-title">Class: PlaceDescription</h1>
-
-    
-
+</div>
+</div>
 
 
+<div class="container" id="toc-content">
+<div class="row">
 
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: PlaceDescription</h1>
 <section>
 
 <header>
     
-        <h2>PlaceDescription</h2>
+        <h2>
+        PlaceDescription
+        </h2>
         
     
 </header>
+
 
 <article>
     <div class="container-overview">
     
         
+<hr>
+<dt>
+    <h4 class="name" id="PlaceDescription"><span class="type-signature"></span>new PlaceDescription( [json])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        A description of a place
+    </div>
+    
 
     
 
-    <h4 class="name" id="PlaceDescription"><span class="type-signature"></span>new PlaceDescription<span class="signature">(json<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-
     
 
-
-
-<div class="description">
-    A description of a place
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -71,7 +115,7 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
+        <th>Argument</th>
         
 
         
@@ -92,6 +136,7 @@
             
                 
 <span class="param-type">Object</span>
+
 
 
             
@@ -118,12 +163,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -133,57 +183,49 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line13">line 13</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#place-description">GEDCOM X JSON Spec</a></li>
+			</ul>
+	</dd>
+	
 
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#place-description">GEDCOM X JSON Spec</a></li>
-        </ul>
-    </dd>
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-
+    
+</dd>
 
     
     </div>
@@ -205,7 +247,7 @@
 
     
 
-     
+    
 
     
 
@@ -214,33 +256,32 @@
     
         <h3 class="subsection-title">Methods</h3>
 
-        
+        <dl>
             
+<hr>
+<dt>
+    <h4 class="name" id=".isInstance"><span class="type-signature">&lt;static> </span>isInstance(obj)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Check whether the given object is an instance of this class.
+    </div>
+    
 
     
 
-    <h4 class="name" id=".isInstance"><span class="type-signature">(static) </span>isInstance<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-
     
 
-
-
-<div class="description">
-    Check whether the given object is an instance of this class.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -271,6 +312,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -285,12 +327,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -300,51 +347,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line49">line 49</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -356,40 +394,42 @@
 <span class="param-type">Boolean</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addEvidence"><span class="type-signature"></span>addEvidence(evidence)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add evidence
+    </div>
+    
 
     
 
-    <h4 class="name" id="addEvidence"><span class="type-signature"></span>addEvidence<span class="signature">(evidence)</span><span class="type-signature"> &rarr; {<a href="Subject.html">Subject</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add evidence
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -423,6 +463,7 @@
 <span class="param-type"><a href="EvidenceReference.html">EvidenceReference</a></span>
 
 
+
             
             </td>
 
@@ -437,31 +478,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Subject.html#addEvidence">Subject#addEvidence</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Subject.html#addEvidence">Subject#addEvidence</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -471,37 +507,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Subject.js.html">core/Subject.js</a>, <a href="core_Subject.js.html#line120">line 120</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance.
 </div>
@@ -517,40 +558,42 @@
 <span class="param-type"><a href="Subject.html">Subject</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addMedia"><span class="type-signature"></span>addMedia(media)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add media
+    </div>
+    
 
     
 
-    <h4 class="name" id="addMedia"><span class="type-signature"></span>addMedia<span class="signature">(media)</span><span class="type-signature"> &rarr; {<a href="Subject.html">Subject</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add media
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -584,6 +627,7 @@
 <span class="param-type"><a href="SourceReference.html">SourceReference</a></span>
 
 
+
             
             </td>
 
@@ -598,31 +642,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Subject.html#addMedia">Subject#addMedia</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Subject.html#addMedia">Subject#addMedia</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -632,37 +671,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Subject.js.html">core/Subject.js</a>, <a href="core_Subject.js.html#line170">line 170</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance.
 </div>
@@ -678,40 +722,42 @@
 <span class="param-type"><a href="Subject.html">Subject</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addName"><span class="type-signature"></span>addName(name)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add the name
+    </div>
+    
 
     
 
-    <h4 class="name" id="addName"><span class="type-signature"></span>addName<span class="signature">(name)</span><span class="type-signature"> &rarr; {<a href="PlaceDescription.html">PlaceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add the name
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -745,6 +791,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -759,12 +806,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -774,51 +826,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line121">line 121</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -830,40 +873,42 @@
 <span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addNote"><span class="type-signature"></span>addNote(note)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a note
+    </div>
+    
 
     
 
-    <h4 class="name" id="addNote"><span class="type-signature"></span>addNote<span class="signature">(note)</span><span class="type-signature"> &rarr; {<a href="Conclusion.html">Conclusion</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a note
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -897,6 +942,7 @@
 <span class="param-type"><a href="Note.html">Note</a></span>
 
 
+
             
             </td>
 
@@ -911,31 +957,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#addNote">Conclusion#addNote</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#addNote">Conclusion#addNote</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -945,37 +986,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line181">line 181</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance
 </div>
@@ -991,40 +1037,42 @@
 <span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addSource"><span class="type-signature"></span>addSource(source)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a source
+    </div>
+    
 
     
 
-    <h4 class="name" id="addSource"><span class="type-signature"></span>addSource<span class="signature">(source)</span><span class="type-signature"> &rarr; {<a href="Conclusion.html">Conclusion</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a source
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1055,6 +1103,7 @@
 <span class="param-type"><a href="SourceReference.html">SourceReference</a></span>
 
 
+
             
             </td>
 
@@ -1069,31 +1118,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#addSource">Conclusion#addSource</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#addSource">Conclusion#addSource</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1103,37 +1147,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line210">line 210</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance
 </div>
@@ -1149,60 +1198,57 @@
 <span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getAnalysis"><span class="type-signature"></span>getAnalysis()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get analysis.
+    </div>
+    
 
     
 
-    <h4 class="name" id="getAnalysis"><span class="type-signature"></span>getAnalysis<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ResourceReference.html">ResourceReference</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get analysis.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#getAnalysis">Conclusion#getAnalysis</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getAnalysis">Conclusion#getAnalysis</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1212,37 +1258,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line99">line 99</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     analysis
 </div>
@@ -1258,60 +1309,57 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getAttribution"><span class="type-signature"></span>getAttribution()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the attribution.
+    </div>
+    
 
     
 
-    <h4 class="name" id="getAttribution"><span class="type-signature"></span>getAttribution<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Attribution.html">Attribution</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the attribution.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#getAttribution">Conclusion#getAttribution</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getAttribution">Conclusion#getAttribution</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1321,37 +1369,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line77">line 77</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1363,60 +1416,57 @@
 <span class="param-type"><a href="Attribution.html">Attribution</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getConfidence"><span class="type-signature"></span>getConfidence()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the confidence.
+    </div>
+    
 
     
 
-    <h4 class="name" id="getConfidence"><span class="type-signature"></span>getConfidence<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the confidence.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#getConfidence">Conclusion#getConfidence</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getConfidence">Conclusion#getConfidence</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1426,37 +1476,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line121">line 121</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     confidence
 </div>
@@ -1472,60 +1527,57 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getEvidence"><span class="type-signature"></span>getEvidence()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the evidence.
+    </div>
+    
 
     
 
-    <h4 class="name" id="getEvidence"><span class="type-signature"></span>getEvidence<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="EvidenceReference.html">EvidenceReference</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the evidence.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Subject.html#getEvidence">Subject#getEvidence</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Subject.html#getEvidence">Subject#getEvidence</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1535,37 +1587,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Subject.js.html">core/Subject.js</a>, <a href="core_Subject.js.html#line100">line 100</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1577,60 +1634,57 @@
 <span class="param-type">Array.&lt;<a href="EvidenceReference.html">EvidenceReference</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getId"><span class="type-signature"></span>getId()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the object's id.
+    </div>
+    
 
     
 
-    <h4 class="name" id="getId"><span class="type-signature"></span>getId<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the object's id.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ExtensibleData.html#getId">ExtensibleData#getId</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ExtensibleData.html#getId">ExtensibleData#getId</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1640,37 +1694,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_ExtensibleData.js.html">core/ExtensibleData.js</a>, <a href="core_ExtensibleData.js.html#line63">line 63</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     Id
 </div>
@@ -1686,60 +1745,57 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getIdentifiers"><span class="type-signature"></span>getIdentifiers()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the identifiers
+    </div>
+    
 
     
 
-    <h4 class="name" id="getIdentifiers"><span class="type-signature"></span>getIdentifiers<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Identifiers.html">Identifiers</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the identifiers
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Subject.html#getIdentifiers">Subject#getIdentifiers</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Subject.html#getIdentifiers">Subject#getIdentifiers</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1749,37 +1805,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Subject.js.html">core/Subject.js</a>, <a href="core_Subject.js.html#line129">line 129</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1791,41 +1852,48 @@
 <span class="param-type"><a href="Identifiers.html">Identifiers</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getJurisdiction"><span class="type-signature"></span>getJurisdiction()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the jurisdiction
+    </div>
+    
 
     
 
-    <h4 class="name" id="getJurisdiction"><span class="type-signature"></span>getJurisdiction<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ResourceReference.html">ResourceReference</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the jurisdiction
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1835,51 +1903,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line152">line 152</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1891,60 +1950,57 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getLang"><span class="type-signature"></span>getLang()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the language identifier.
+    </div>
+    
 
     
 
-    <h4 class="name" id="getLang"><span class="type-signature"></span>getLang<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the language identifier.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#getLang">Conclusion#getLang</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getLang">Conclusion#getLang</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1954,37 +2010,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line141">line 141</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     lang
 </div>
@@ -2000,41 +2061,48 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getLatitude"><span class="type-signature"></span>getLatitude()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the latitude
+    </div>
+    
 
     
 
-    <h4 class="name" id="getLatitude"><span class="type-signature"></span>getLatitude<span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the latitude
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2044,51 +2112,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line174">line 174</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2100,41 +2159,48 @@
 <span class="param-type">Number</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getLongitude"><span class="type-signature"></span>getLongitude()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the longitude
+    </div>
+    
 
     
 
-    <h4 class="name" id="getLongitude"><span class="type-signature"></span>getLongitude<span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the longitude
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2144,51 +2210,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line194">line 194</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2200,60 +2257,57 @@
 <span class="param-type">Number</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getMedia"><span class="type-signature"></span>getMedia()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the media references
+    </div>
+    
 
     
 
-    <h4 class="name" id="getMedia"><span class="type-signature"></span>getMedia<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="SourceReference.html">SourceReference</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the media references
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Subject.html#getMedia">Subject#getMedia</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Subject.html#getMedia">Subject#getMedia</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -2263,37 +2317,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Subject.js.html">core/Subject.js</a>, <a href="core_Subject.js.html#line151">line 151</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2305,41 +2364,48 @@
 <span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getNames"><span class="type-signature"></span>getNames()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the names
+    </div>
+    
 
     
 
-    <h4 class="name" id="getNames"><span class="type-signature"></span>getNames<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="TextValue.html">TextValue</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the names
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2349,51 +2415,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line101">line 101</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2405,60 +2462,57 @@
 <span class="param-type">Array.&lt;<a href="TextValue.html">TextValue</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getNotes"><span class="type-signature"></span>getNotes()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the notes
+    </div>
+    
 
     
 
-    <h4 class="name" id="getNotes"><span class="type-signature"></span>getNotes<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="Note.html">Note</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the notes
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#getNotes">Conclusion#getNotes</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getNotes">Conclusion#getNotes</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -2468,37 +2522,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line161">line 161</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     notes
 </div>
@@ -2514,41 +2573,48 @@
 <span class="param-type">Array.&lt;<a href="Note.html">Note</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getPlace"><span class="type-signature"></span>getPlace()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the place
+    </div>
+    
 
     
 
-    <h4 class="name" id="getPlace"><span class="type-signature"></span>getPlace<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ResourceReference.html">ResourceReference</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the place
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2558,51 +2624,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line130">line 130</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2614,60 +2671,57 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getSources"><span class="type-signature"></span>getSources()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the sources
+    </div>
+    
 
     
 
-    <h4 class="name" id="getSources"><span class="type-signature"></span>getSources<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="SourceReference.html">SourceReference</a>>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the sources
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#getSources">Conclusion#getSources</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getSources">Conclusion#getSources</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -2677,37 +2731,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line190">line 190</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2719,41 +2778,48 @@
 <span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getSpatialDescription"><span class="type-signature"></span>getSpatialDescription()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the spatial description
+    </div>
+    
 
     
 
-    <h4 class="name" id="getSpatialDescription"><span class="type-signature"></span>getSpatialDescription<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ResourceReference.html">ResourceReference</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the spatial description
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2763,51 +2829,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line236">line 236</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2819,41 +2876,48 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getTemporalDescription"><span class="type-signature"></span>getTemporalDescription()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the temporal description
+    </div>
+    
 
     
 
-    <h4 class="name" id="getTemporalDescription"><span class="type-signature"></span>getTemporalDescription<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Date.html">Date</a>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the temporal description
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2863,51 +2927,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line214">line 214</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2919,41 +2974,48 @@
 <span class="param-type"><a href="Date.html">Date</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getType"><span class="type-signature"></span>getType()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the type
+    </div>
+    
 
     
 
-    <h4 class="name" id="getType"><span class="type-signature"></span>getType<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the type
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2963,51 +3025,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line81">line 81</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -3019,40 +3072,42 @@
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="init"><span class="type-signature"></span>init(json)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Initialize from JSON
+    </div>
+    
 
     
 
-    <h4 class="name" id="init"><span class="type-signature"></span>init<span class="signature">(json)</span><span class="type-signature"> &rarr; {<a href="PlaceDescription.html">PlaceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Initialize from JSON
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3083,6 +3138,7 @@
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -3097,18 +3153,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
+	
+
+	
 
     
     <dt class="tag-overrides">Overrides:</dt>
@@ -3123,45 +3178,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line59">line 59</a>
-    </li></ul></dd>
-    
 
-    
 
-    
+	
 
-    
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this
 </div>
@@ -3177,60 +3229,57 @@
 <span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="isExtracted"><span class="type-signature"></span>isExtracted()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Is this an extracted conclusion?
+    </div>
+    
 
     
 
-    <h4 class="name" id="isExtracted"><span class="type-signature"></span>isExtracted<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Is this an extracted conclusion?
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Subject.html#isExtracted">Subject#isExtracted</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Subject.html#isExtracted">Subject#isExtracted</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -3240,37 +3289,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Subject.js.html">core/Subject.js</a>, <a href="core_Subject.js.html#line77">line 77</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     extracted
 </div>
@@ -3286,40 +3340,42 @@
 <span class="param-type">Boolean</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setAnalysis"><span class="type-signature"></span>setAnalysis(analysis)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the analysis
+    </div>
+    
 
     
 
-    <h4 class="name" id="setAnalysis"><span class="type-signature"></span>setAnalysis<span class="signature">(analysis)</span><span class="type-signature"> &rarr; {<a href="Conclusion.html">Conclusion</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the analysis
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3353,6 +3409,7 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
             
             </td>
 
@@ -3367,31 +3424,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#setAnalysis">Conclusion#setAnalysis</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setAnalysis">Conclusion#setAnalysis</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -3401,37 +3453,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line109">line 109</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance
 </div>
@@ -3447,40 +3504,42 @@
 <span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setAttribution"><span class="type-signature"></span>setAttribution(attribution)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the attribution
+    </div>
+    
 
     
 
-    <h4 class="name" id="setAttribution"><span class="type-signature"></span>setAttribution<span class="signature">(attribution)</span><span class="type-signature"> &rarr; {<a href="Conclusion.html">Conclusion</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the attribution
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3514,6 +3573,7 @@
 <span class="param-type"><a href="Attribution.html">Attribution</a></span>
 
 
+
             
             </td>
 
@@ -3528,31 +3588,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#setAttribution">Conclusion#setAttribution</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setAttribution">Conclusion#setAttribution</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -3562,37 +3617,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line87">line 87</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance
 </div>
@@ -3608,40 +3668,42 @@
 <span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setConfidence"><span class="type-signature"></span>setConfidence(confidence)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the confidence.
+    </div>
+    
 
     
 
-    <h4 class="name" id="setConfidence"><span class="type-signature"></span>setConfidence<span class="signature">(confidence)</span><span class="type-signature"> &rarr; {<a href="Conclusion.html">Conclusion</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the confidence.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3672,6 +3734,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -3686,31 +3749,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#setConfidence">Conclusion#setConfidence</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setConfidence">Conclusion#setConfidence</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -3720,37 +3778,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line131">line 131</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance
 </div>
@@ -3766,40 +3829,42 @@
 <span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setEvidence"><span class="type-signature"></span>setEvidence(evidence)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the evidence. This method will replace existing evidence entries with new entries.
+    </div>
+    
 
     
 
-    <h4 class="name" id="setEvidence"><span class="type-signature"></span>setEvidence<span class="signature">(evidence)</span><span class="type-signature"> &rarr; {<a href="Subject.html">Subject</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the evidence. This method will replace existing evidence entries with new entries.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3833,6 +3898,7 @@
 <span class="param-type">Array.&lt;<a href="EvidenceReference.html">EvidenceReference</a>></span>
 
 
+
             
             </td>
 
@@ -3847,31 +3913,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Subject.html#setEvidence">Subject#setEvidence</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Subject.html#setEvidence">Subject#setEvidence</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -3881,37 +3942,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Subject.js.html">core/Subject.js</a>, <a href="core_Subject.js.html#line110">line 110</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance.
 </div>
@@ -3927,40 +3993,42 @@
 <span class="param-type"><a href="Subject.html">Subject</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setExtracted"><span class="type-signature"></span>setExtracted(extracted)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the extracted property
+    </div>
+    
 
     
 
-    <h4 class="name" id="setExtracted"><span class="type-signature"></span>setExtracted<span class="signature">(extracted)</span><span class="type-signature"> &rarr; {<a href="Subject.html">Subject</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the extracted property
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3991,6 +4059,7 @@
 <span class="param-type">Boolean</span>
 
 
+
             
             </td>
 
@@ -4005,31 +4074,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Subject.html#setExtracted">Subject#setExtracted</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Subject.html#setExtracted">Subject#setExtracted</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -4039,37 +4103,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Subject.js.html">core/Subject.js</a>, <a href="core_Subject.js.html#line89">line 89</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance.
 </div>
@@ -4085,40 +4154,42 @@
 <span class="param-type"><a href="Subject.html">Subject</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setId"><span class="type-signature"></span>setId(id)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the object's id.
+    </div>
+    
 
     
 
-    <h4 class="name" id="setId"><span class="type-signature"></span>setId<span class="signature">(id)</span><span class="type-signature"> &rarr; {<a href="ExtensibleData.html">ExtensibleData</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the object's id.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4149,6 +4220,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -4163,31 +4235,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ExtensibleData.html#setId">ExtensibleData#setId</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ExtensibleData.html#setId">ExtensibleData#setId</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -4197,37 +4264,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_ExtensibleData.js.html">core/ExtensibleData.js</a>, <a href="core_ExtensibleData.js.html#line73">line 73</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This object, for chaining.
 </div>
@@ -4243,40 +4315,42 @@
 <span class="param-type"><a href="ExtensibleData.html">ExtensibleData</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setIdentifiers"><span class="type-signature"></span>setIdentifiers(identifiers)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the identifiers
+    </div>
+    
 
     
 
-    <h4 class="name" id="setIdentifiers"><span class="type-signature"></span>setIdentifiers<span class="signature">(identifiers)</span><span class="type-signature"> &rarr; {<a href="Subject.html">Subject</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the identifiers
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4310,6 +4384,7 @@
 <span class="param-type"><a href="Identifiers.html">Identifiers</a></span>
 
 
+
             
             </td>
 
@@ -4324,31 +4399,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Subject.html#setIdentifiers">Subject#setIdentifiers</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Subject.html#setIdentifiers">Subject#setIdentifiers</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -4358,37 +4428,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Subject.js.html">core/Subject.js</a>, <a href="core_Subject.js.html#line139">line 139</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance
 </div>
@@ -4404,40 +4479,42 @@
 <span class="param-type"><a href="Subject.html">Subject</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setJurisdiction"><span class="type-signature"></span>setJurisdiction(jurisdiction)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the jurisdiction
+    </div>
+    
 
     
 
-    <h4 class="name" id="setJurisdiction"><span class="type-signature"></span>setJurisdiction<span class="signature">(jurisdiction)</span><span class="type-signature"> &rarr; {<a href="PlaceDescription.html">PlaceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the jurisdiction
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4468,6 +4545,7 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
             
             </td>
 
@@ -4482,12 +4560,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4497,51 +4580,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line162">line 162</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -4553,40 +4627,42 @@
 <span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setLang"><span class="type-signature"></span>setLang(lang)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the language identifier.
+    </div>
+    
 
     
 
-    <h4 class="name" id="setLang"><span class="type-signature"></span>setLang<span class="signature">(lang)</span><span class="type-signature"> &rarr; {<a href="Conclusion.html">Conclusion</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the language identifier.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4617,6 +4693,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -4631,31 +4708,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#setLang">Conclusion#setLang</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setLang">Conclusion#setLang</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -4665,37 +4737,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line151">line 151</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance.
 </div>
@@ -4711,40 +4788,42 @@
 <span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setLatitude"><span class="type-signature"></span>setLatitude(latitude)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the latutide
+    </div>
+    
 
     
 
-    <h4 class="name" id="setLatitude"><span class="type-signature"></span>setLatitude<span class="signature">(latitude)</span><span class="type-signature"> &rarr; {<a href="PlaceDescription.html">PlaceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the latutide
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4775,6 +4854,7 @@
 <span class="param-type">Number</span>
 
 
+
             
             </td>
 
@@ -4789,12 +4869,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4804,51 +4889,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line184">line 184</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -4860,40 +4936,42 @@
 <span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setLongitude"><span class="type-signature"></span>setLongitude(longitude)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the latutide
+    </div>
+    
 
     
 
-    <h4 class="name" id="setLongitude"><span class="type-signature"></span>setLongitude<span class="signature">(longitude)</span><span class="type-signature"> &rarr; {<a href="PlaceDescription.html">PlaceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the latutide
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4924,6 +5002,7 @@
 <span class="param-type">Number</span>
 
 
+
             
             </td>
 
@@ -4938,12 +5017,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4953,51 +5037,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line204">line 204</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5009,40 +5084,42 @@
 <span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setMedia"><span class="type-signature"></span>setMedia(media)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the media references
+    </div>
+    
 
     
 
-    <h4 class="name" id="setMedia"><span class="type-signature"></span>setMedia<span class="signature">(media)</span><span class="type-signature"></span></h4>
-
     
 
-
-
-<div class="description">
-    Set the media references
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5076,6 +5153,7 @@
 <span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
 
 
+
             
             </td>
 
@@ -5090,31 +5168,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Subject.html#setMedia">Subject#setMedia</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Subject.html#setMedia">Subject#setMedia</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -5124,64 +5197,69 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Subject.js.html">core/Subject.js</a>, <a href="core_Subject.js.html#line160">line 160</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setNames"><span class="type-signature"></span>setNames(names)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the names
+    </div>
+    
 
     
 
-    <h4 class="name" id="setNames"><span class="type-signature"></span>setNames<span class="signature">(names)</span><span class="type-signature"> &rarr; {<a href="PlaceDescription.html">PlaceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the names
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5215,6 +5293,7 @@
 <span class="param-type">Array.&lt;Object></span>
 
 
+
             
             </td>
 
@@ -5229,12 +5308,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5244,51 +5328,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line111">line 111</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5300,40 +5375,42 @@
 <span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setNotes"><span class="type-signature"></span>setNotes(notes)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the notes
+    </div>
+    
 
     
 
-    <h4 class="name" id="setNotes"><span class="type-signature"></span>setNotes<span class="signature">(notes)</span><span class="type-signature"> &rarr; {<a href="Conclusion.html">Conclusion</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the notes
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5367,6 +5444,7 @@
 <span class="param-type">Array.&lt;<a href="Note.html">Note</a>></span>
 
 
+
             
             </td>
 
@@ -5381,31 +5459,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#setNotes">Conclusion#setNotes</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setNotes">Conclusion#setNotes</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -5415,37 +5488,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line171">line 171</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance
 </div>
@@ -5461,40 +5539,42 @@
 <span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setPlace"><span class="type-signature"></span>setPlace(place)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the place
+    </div>
+    
 
     
 
-    <h4 class="name" id="setPlace"><span class="type-signature"></span>setPlace<span class="signature">(place)</span><span class="type-signature"> &rarr; {<a href="PlaceDescription.html">PlaceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the place
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5525,6 +5605,7 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
             
             </td>
 
@@ -5539,12 +5620,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5554,51 +5640,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line140">line 140</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5610,40 +5687,42 @@
 <span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setSources"><span class="type-signature"></span>setSources(sources)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the sources
+    </div>
+    
 
     
 
-    <h4 class="name" id="setSources"><span class="type-signature"></span>setSources<span class="signature">(sources)</span><span class="type-signature"> &rarr; {<a href="Conclusion.html">Conclusion</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the sources
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5677,6 +5756,7 @@
 <span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
 
 
+
             
             </td>
 
@@ -5691,31 +5771,26 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Conclusion.html#setSources">Conclusion#setSources</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setSources">Conclusion#setSources</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -5725,37 +5800,42 @@
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_Conclusion.js.html">core/Conclusion.js</a>, <a href="core_Conclusion.js.html#line200">line 200</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This instance
 </div>
@@ -5771,40 +5851,42 @@
 <span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setSpatialDescription"><span class="type-signature"></span>setSpatialDescription(spatial)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the spatial description
+    </div>
+    
 
     
 
-    <h4 class="name" id="setSpatialDescription"><span class="type-signature"></span>setSpatialDescription<span class="signature">(spatial)</span><span class="type-signature"> &rarr; {<a href="PlaceDescription.html">PlaceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the spatial description
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5835,6 +5917,7 @@
 <span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
+
             
             </td>
 
@@ -5849,12 +5932,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5864,51 +5952,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line246">line 246</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -5920,40 +5999,42 @@
 <span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setTemporalDescription"><span class="type-signature"></span>setTemporalDescription(date)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the temporal description
+    </div>
+    
 
     
 
-    <h4 class="name" id="setTemporalDescription"><span class="type-signature"></span>setTemporalDescription<span class="signature">(date)</span><span class="type-signature"> &rarr; {<a href="PlaceDescription.html">PlaceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the temporal description
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5984,6 +6065,7 @@
 <span class="param-type"><a href="Date.html">Date</a></span>
 
 
+
             
             </td>
 
@@ -5998,12 +6080,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6013,51 +6100,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line224">line 224</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -6069,40 +6147,42 @@
 <span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setType"><span class="type-signature"></span>setType(type)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the type
+    </div>
+    
 
     
 
-    <h4 class="name" id="setType"><span class="type-signature"></span>setType<span class="signature">(type)</span><span class="type-signature"> &rarr; {<a href="PlaceDescription.html">PlaceDescription</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the type
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -6133,6 +6213,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -6147,12 +6228,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6162,51 +6248,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line91">line 91</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -6218,47 +6295,48 @@
 <span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="toJSON"><span class="type-signature"></span>toJSON()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Export the object as JSON
+    </div>
+    
 
     
 
-    <h4 class="name" id="toJSON"><span class="type-signature"></span>toJSON<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Export the object as JSON
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
+	
+
+	
 
     
     <dt class="tag-overrides">Overrides:</dt>
@@ -6273,45 +6351,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_PlaceDescription.js.html">core/PlaceDescription.js</a>, <a href="core_PlaceDescription.js.html#line258">line 258</a>
-    </li></ul></dd>
-    
 
-    
 
-    
+	
 
-    
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     JSON object
 </div>
@@ -6327,14 +6402,17 @@
 <span class="param-type">Object</span>
 
 
+
     </dd>
 </dl>
 
-    
-
-
 
         
+
+    
+</dd>
+
+        </dl>
     
 
     
@@ -6347,19 +6425,130 @@
 
 
 
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="AtomCommon.html">AtomCommon</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-AtomCategory.html">AtomCategory</a></li><li><a href="module.exports-AtomContent.html">AtomContent</a></li><li><a href="module.exports-AtomEntry.html">AtomEntry</a></li><li><a href="module.exports-AtomGenerator.html">AtomGenerator</a></li><li><a href="module.exports-AtomPerson.html">AtomPerson</a></li><li><a href="module.exports-AtomSource.html">AtomSource</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
-</nav>
 
-<br class="clear">
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
 </body>
 </html>

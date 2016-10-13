@@ -1,69 +1,114 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>JSDoc: Class: RecordDescriptor</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>GedcomX JS Class: RecordDescriptor</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.yeti.css">
+
 </head>
 
 <body>
 
-<div id="main">
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">GedcomX JS</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="AtomCommon.html">AtomCommon</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-AtomCategory.html">module.exports~AtomCategory</a></li><li><a href="module.exports-AtomContent.html">module.exports~AtomContent</a></li><li><a href="module.exports-AtomEntry.html">module.exports~AtomEntry</a></li><li><a href="module.exports-AtomGenerator.html">module.exports~AtomGenerator</a></li><li><a href="module.exports-AtomPerson.html">module.exports~AtomPerson</a></li><li><a href="module.exports-AtomSource.html">module.exports~AtomSource</a></li><li><a href="module.exports-Collection.html">module.exports~Collection</a></li><li><a href="module.exports-CollectionContent.html">module.exports~CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">module.exports~DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">module.exports~FamilyView</a></li><li><a href="module.exports-Field.html">module.exports~Field</a></li><li><a href="module.exports-FieldDescriptor.html">module.exports~FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">module.exports~FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">module.exports~FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">module.exports~Link</a></li><li><a href="module.exports-Links.html">module.exports~Links</a></li><li><a href="module.exports-RecordDescriptor.html">module.exports~RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
 
-    <h1 class="page-title">Class: RecordDescriptor</h1>
-
-    
-
+</div>
+</div>
 
 
+<div class="container" id="toc-content">
+<div class="row">
 
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: RecordDescriptor</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module.html#.exports">.exports</a>~</span>RecordDescriptor</h2>
+            <span class="ancestors"><a href="module.html#.exports">.exports</a>~</span>
+        
+        RecordDescriptor
+        </h2>
         
     
 </header>
+
 
 <article>
     <div class="container-overview">
     
         
+<hr>
+<dt>
+    <h4 class="name" id="RecordDescriptor"><span class="type-signature"></span>new RecordDescriptor( [json])</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="RecordDescriptor"><span class="type-signature"></span>new RecordDescriptor<span class="signature">(json<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    Metadata about the structure and layout of a record, as well as the expected
+    <div class="description">
+        Metadata about the structure and layout of a record, as well as the expected
 data to be extracted from a record.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -73,7 +118,7 @@ data to be extracted from a record.
         <th>Type</th>
 
         
-        <th>Attributes</th>
+        <th>Argument</th>
         
 
         
@@ -94,6 +139,7 @@ data to be extracted from a record.
             
                 
 <span class="param-type">Object</span>
+
 
 
             
@@ -120,12 +166,17 @@ data to be extracted from a record.
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -135,57 +186,49 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="records_RecordDescriptor.js.html">records/RecordDescriptor.js</a>, <a href="records_RecordDescriptor.js.html#line15">line 15</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md#record-descriptor">GEDCOM X Records Spec</a></li>
+			</ul>
+	</dd>
+	
 
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md#record-descriptor">GEDCOM X Records Spec</a></li>
-        </ul>
-    </dd>
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-
+    
+</dd>
 
     
     </div>
@@ -207,7 +250,7 @@ data to be extracted from a record.
 
     
 
-     
+    
 
     
 
@@ -216,33 +259,32 @@ data to be extracted from a record.
     
         <h3 class="subsection-title">Methods</h3>
 
-        
+        <dl>
             
+<hr>
+<dt>
+    <h4 class="name" id=".isInstance"><span class="type-signature">&lt;static> </span>isInstance(obj)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Check whether the given object is an instance of this class.
+    </div>
+    
 
     
 
-    <h4 class="name" id=".isInstance"><span class="type-signature">(static) </span>isInstance<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-
     
 
-
-
-<div class="description">
-    Check whether the given object is an instance of this class.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -273,6 +315,7 @@ data to be extracted from a record.
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -287,12 +330,17 @@ data to be extracted from a record.
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -302,51 +350,42 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="records_RecordDescriptor.js.html">records/RecordDescriptor.js</a>, <a href="records_RecordDescriptor.js.html#line45">line 45</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -358,40 +397,42 @@ data to be extracted from a record.
 <span class="param-type">Boolean</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="addField"><span class="type-signature"></span>addField(field)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a field
+    </div>
+    
 
     
 
-    <h4 class="name" id="addField"><span class="type-signature"></span>addField<span class="signature">(field)</span><span class="type-signature"> &rarr; {RecordDescriptor}</span></h4>
-
     
 
-
-
-<div class="description">
-    Add a field
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -422,6 +463,7 @@ data to be extracted from a record.
 <span class="param-type">FieldDescriptor</span>
 
 
+
             
             </td>
 
@@ -436,12 +478,17 @@ data to be extracted from a record.
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -451,51 +498,42 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="records_RecordDescriptor.js.html">records/RecordDescriptor.js</a>, <a href="records_RecordDescriptor.js.html#line102">line 102</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this
 </div>
@@ -511,41 +549,48 @@ data to be extracted from a record.
 <span class="param-type">RecordDescriptor</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getFields"><span class="type-signature"></span>getFields()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the fields
+    </div>
+    
 
     
 
-    <h4 class="name" id="getFields"><span class="type-signature"></span>getFields<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;FieldDescriptor>}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the fields
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -555,51 +600,42 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="records_RecordDescriptor.js.html">records/RecordDescriptor.js</a>, <a href="records_RecordDescriptor.js.html#line111">line 111</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -611,60 +647,57 @@ data to be extracted from a record.
 <span class="param-type">Array.&lt;FieldDescriptor></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getId"><span class="type-signature"></span>getId()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the object's id.
+    </div>
+    
 
     
 
-    <h4 class="name" id="getId"><span class="type-signature"></span>getId<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the object's id.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ExtensibleData.html#getId">ExtensibleData#getId</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ExtensibleData.html#getId">ExtensibleData#getId</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -674,37 +707,42 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_ExtensibleData.js.html">core/ExtensibleData.js</a>, <a href="core_ExtensibleData.js.html#line63">line 63</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     Id
 </div>
@@ -720,41 +758,48 @@ data to be extracted from a record.
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getLang"><span class="type-signature"></span>getLang()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the lang
+    </div>
+    
 
     
 
-    <h4 class="name" id="getLang"><span class="type-signature"></span>getLang<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Get the lang
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -764,51 +809,42 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="records_RecordDescriptor.js.html">records/RecordDescriptor.js</a>, <a href="records_RecordDescriptor.js.html#line82">line 82</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     lang
 </div>
@@ -824,40 +860,42 @@ data to be extracted from a record.
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="init"><span class="type-signature"></span>init(json)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Initialize from JSON
+    </div>
+    
 
     
 
-    <h4 class="name" id="init"><span class="type-signature"></span>init<span class="signature">(json)</span><span class="type-signature"> &rarr; {RecordDescriptor}</span></h4>
-
     
 
-
-
-<div class="description">
-    Initialize from JSON
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -888,6 +926,7 @@ data to be extracted from a record.
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -902,18 +941,17 @@ data to be extracted from a record.
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
+	
+
+	
 
     
     <dt class="tag-overrides">Overrides:</dt>
@@ -928,45 +966,42 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="records_RecordDescriptor.js.html">records/RecordDescriptor.js</a>, <a href="records_RecordDescriptor.js.html#line55">line 55</a>
-    </li></ul></dd>
-    
 
-    
 
-    
+	
 
-    
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this
 </div>
@@ -982,40 +1017,42 @@ data to be extracted from a record.
 <span class="param-type">RecordDescriptor</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setFields"><span class="type-signature"></span>setFields(fields)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the fields
+    </div>
+    
 
     
 
-    <h4 class="name" id="setFields"><span class="type-signature"></span>setFields<span class="signature">(fields)</span><span class="type-signature"> &rarr; {RecordDescriptor}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the fields
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1046,6 +1083,7 @@ data to be extracted from a record.
 <span class="param-type">Array.&lt;FieldDescriptor></span>
 
 
+
             
             </td>
 
@@ -1060,12 +1098,17 @@ data to be extracted from a record.
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1075,51 +1118,42 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="records_RecordDescriptor.js.html">records/RecordDescriptor.js</a>, <a href="records_RecordDescriptor.js.html#line92">line 92</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this
 </div>
@@ -1135,40 +1169,42 @@ data to be extracted from a record.
 <span class="param-type">RecordDescriptor</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setId"><span class="type-signature"></span>setId(id)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the object's id.
+    </div>
+    
 
     
 
-    <h4 class="name" id="setId"><span class="type-signature"></span>setId<span class="signature">(id)</span><span class="type-signature"> &rarr; {<a href="ExtensibleData.html">ExtensibleData</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the object's id.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1199,6 +1235,7 @@ data to be extracted from a record.
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -1213,31 +1250,26 @@ data to be extracted from a record.
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ExtensibleData.html#setId">ExtensibleData#setId</a>
-    </li></ul></dd>
-    
+	
 
-    
-
-    
-
-    
-
-    
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ExtensibleData.html#setId">ExtensibleData#setId</a>
+			</li>
+		</ul>
+	</dd>
+	
 
     
 
@@ -1247,37 +1279,42 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="core_ExtensibleData.js.html">core/ExtensibleData.js</a>, <a href="core_ExtensibleData.js.html#line73">line 73</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     This object, for chaining.
 </div>
@@ -1293,40 +1330,42 @@ data to be extracted from a record.
 <span class="param-type"><a href="ExtensibleData.html">ExtensibleData</a></span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setLang"><span class="type-signature"></span>setLang(lang)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the lang
+    </div>
+    
 
     
 
-    <h4 class="name" id="setLang"><span class="type-signature"></span>setLang<span class="signature">(lang)</span><span class="type-signature"> &rarr; {RecordDescriptor}</span></h4>
-
     
 
-
-
-<div class="description">
-    Set the lang
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1357,6 +1396,7 @@ data to be extracted from a record.
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -1371,12 +1411,17 @@ data to be extracted from a record.
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1386,51 +1431,42 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="records_RecordDescriptor.js.html">records/RecordDescriptor.js</a>, <a href="records_RecordDescriptor.js.html#line72">line 72</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     this
 </div>
@@ -1446,47 +1482,48 @@ data to be extracted from a record.
 <span class="param-type">RecordDescriptor</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="toJSON"><span class="type-signature"></span>toJSON()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Export the object as JSON
+    </div>
+    
 
     
 
-    <h4 class="name" id="toJSON"><span class="type-signature"></span>toJSON<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    Export the object as JSON
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
-
     
 
-    
+	
 
-    
+	
+
+	
 
     
     <dt class="tag-overrides">Overrides:</dt>
@@ -1501,45 +1538,42 @@ data to be extracted from a record.
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="records_RecordDescriptor.js.html">records/RecordDescriptor.js</a>, <a href="records_RecordDescriptor.js.html#line120">line 120</a>
-    </li></ul></dd>
-    
 
-    
 
-    
+	
 
-    
+	
+
+	
+
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     JSON object
 </div>
@@ -1555,14 +1589,17 @@ data to be extracted from a record.
 <span class="param-type">Object</span>
 
 
+
     </dd>
 </dl>
 
-    
-
-
 
         
+
+    
+</dd>
+
+        </dl>
     
 
     
@@ -1575,19 +1612,130 @@ data to be extracted from a record.
 
 
 
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Address.html">Address</a></li><li><a href="Agent.html">Agent</a></li><li><a href="AtomCommon.html">AtomCommon</a></li><li><a href="Attribution.html">Attribution</a></li><li><a href="Base.html">Base</a></li><li><a href="Conclusion.html">Conclusion</a></li><li><a href="Coverage.html">Coverage</a></li><li><a href="Date.html">Date</a></li><li><a href="Document.html">Document</a></li><li><a href="Event.html">Event</a></li><li><a href="EventRole.html">EventRole</a></li><li><a href="EvidenceReference.html">EvidenceReference</a></li><li><a href="ExtensibleData.html">ExtensibleData</a></li><li><a href="Fact.html">Fact</a></li><li><a href="GedcomX.html">GedcomX</a></li><li><a href="Gender.html">Gender</a></li><li><a href="Identifiers.html">Identifiers</a></li><li><a href="module.exports-AtomCategory.html">AtomCategory</a></li><li><a href="module.exports-AtomContent.html">AtomContent</a></li><li><a href="module.exports-AtomEntry.html">AtomEntry</a></li><li><a href="module.exports-AtomGenerator.html">AtomGenerator</a></li><li><a href="module.exports-AtomPerson.html">AtomPerson</a></li><li><a href="module.exports-AtomSource.html">AtomSource</a></li><li><a href="module.exports-Collection.html">Collection</a></li><li><a href="module.exports-CollectionContent.html">CollectionContent</a></li><li><a href="module.exports-DisplayProperties.html">DisplayProperties</a></li><li><a href="module.exports-FamilyView.html">FamilyView</a></li><li><a href="module.exports-Field.html">Field</a></li><li><a href="module.exports-FieldDescriptor.html">FieldDescriptor</a></li><li><a href="module.exports-FieldValue.html">FieldValue</a></li><li><a href="module.exports-FieldValueDescriptor.html">FieldValueDescriptor</a></li><li><a href="module.exports-Link.html">Link</a></li><li><a href="module.exports-Links.html">Links</a></li><li><a href="module.exports-RecordDescriptor.html">RecordDescriptor</a></li><li><a href="Name.html">Name</a></li><li><a href="NameForm.html">NameForm</a></li><li><a href="NamePart.html">NamePart</a></li><li><a href="Note.html">Note</a></li><li><a href="OnlineAccount.html">OnlineAccount</a></li><li><a href="Person.html">Person</a></li><li><a href="PlaceDescription.html">PlaceDescription</a></li><li><a href="PlaceReference.html">PlaceReference</a></li><li><a href="Qualifier.html">Qualifier</a></li><li><a href="Relationship.html">Relationship</a></li><li><a href="ResourceReference.html">ResourceReference</a></li><li><a href="Root.html">Root</a></li><li><a href="SourceCitation.html">SourceCitation</a></li><li><a href="SourceDescription.html">SourceDescription</a></li><li><a href="SourceReference.html">SourceReference</a></li><li><a href="Subject.html">Subject</a></li><li><a href="TextValue.html">TextValue</a></li></ul>
-</nav>
 
-<br class="clear">
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
 </body>
 </html>
