@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>GedcomX JS Class: Attribution</title>
+	<title>GedcomX JS Class: FieldValue</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -54,13 +54,13 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Attribution</h1>
+	<h1 class="page-title">Class: FieldValue</h1>
 <section>
 
 <header>
     
         <h2>
-        Attribution
+        FieldValue
         </h2>
         
     
@@ -73,7 +73,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Attribution"><span class="type-signature"></span>new Attribution( [json])</h4>
+    <h4 class="name" id="FieldValue"><span class="type-signature"></span>new FieldValue( [json])</h4>
     
     
 </dt>
@@ -81,8 +81,7 @@
 
     
     <div class="description">
-        Define who is contributing information, when they contributed it, 
-and why they are making the contribution.
+        Information about the value of a field.
     </div>
     
 
@@ -193,7 +192,7 @@ and why they are making the contribution.
 	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
 	<dd class="tag-see">
 		<ul>
-			<li><a href="https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#attribution">GEDCOM X JSON Spec</a></li>
+			<li><a href="https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md#field-value-data-type">GEDCOM X Records Spec</a></li>
 			</ul>
 	</dd>
 	
@@ -227,7 +226,7 @@ and why they are making the contribution.
 
 
     <ul>
-        <li><a href="ExtensibleData.html">ExtensibleData</a></li>
+        <li><a href="Conclusion.html">Conclusion</a></li>
     </ul>
 
 
@@ -250,7 +249,7 @@ and why they are making the contribution.
             
 <hr>
 <dt>
-    <h4 class="name" id="getChangeMessage"><span class="type-signature"></span>getChangeMessage()</h4>
+    <h4 class="name" id="addNote"><span class="type-signature"></span>addNote(note)</h4>
     
     
 </dt>
@@ -258,7 +257,7 @@ and why they are making the contribution.
 
     
     <div class="description">
-        Get the change message.
+        Add a note
     </div>
     
 
@@ -267,6 +266,59 @@ and why they are making the contribution.
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>note</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type"><a href="Note.html">Note</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -277,6 +329,15 @@ and why they are making the contribution.
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#addNote">Conclusion#addNote</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -324,7 +385,497 @@ and why they are making the contribution.
     
             
 <div class="param-desc">
-    Change message
+    This instance
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="addSource"><span class="type-signature"></span>addSource(source)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a source
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>source</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="SourceReference.html">SourceReference</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#addSource">Conclusion#addSource</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    This instance
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getAnalysis"><span class="type-signature"></span>getAnalysis()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get analysis.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getAnalysis">Conclusion#getAnalysis</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    analysis
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getAttribution"><span class="type-signature"></span>getAttribution()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the attribution.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getAttribution">Conclusion#getAttribution</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Attribution.html">Attribution</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getConfidence"><span class="type-signature"></span>getConfidence()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the confidence.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getConfidence">Conclusion#getConfidence</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    confidence
 </div>
 
 
@@ -336,312 +887,6 @@ and why they are making the contribution.
     <dd>
         
 <span class="param-type">String</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getContributor"><span class="type-signature"></span>getContributor()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get the contributor.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    contributor
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getCreated"><span class="type-signature"></span>getCreated()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get the created timestamp
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    created
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Date.html">Date</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getCreator"><span class="type-signature"></span>getCreator()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get the creator
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    Creator
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
 
@@ -769,7 +1014,7 @@ and why they are making the contribution.
             
 <hr>
 <dt>
-    <h4 class="name" id="getModified"><span class="type-signature"></span>getModified()</h4>
+    <h4 class="name" id="getLang"><span class="type-signature"></span>getLang()</h4>
     
     
 </dt>
@@ -777,7 +1022,7 @@ and why they are making the contribution.
 
     
     <div class="description">
-        Get the modified timestamp
+        Get the language identifier.
     </div>
     
 
@@ -796,6 +1041,15 @@ and why they are making the contribution.
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getLang">Conclusion#getLang</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -843,7 +1097,7 @@ and why they are making the contribution.
     
             
 <div class="param-desc">
-    modified
+    lang
 </div>
 
 
@@ -854,7 +1108,225 @@ and why they are making the contribution.
     </dt>
     <dd>
         
-<span class="param-type"><a href="Date.html">Date</a></span>
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getNotes"><span class="type-signature"></span>getNotes()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the notes
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getNotes">Conclusion#getNotes</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    notes
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="Note.html">Note</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getSources"><span class="type-signature"></span>getSources()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the sources
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#getSources">Conclusion#getSources</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
 
 
 
@@ -949,12 +1421,16 @@ and why they are making the contribution.
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#init">Conclusion#init</a>
+			</li>
+		</ul>
+	</dd>
+	
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="ExtensibleData.html#init">ExtensibleData#init</a>
-    </li></ul></dd>
     
 
     
@@ -1011,7 +1487,7 @@ and why they are making the contribution.
     </dt>
     <dd>
         
-<span class="param-type"><a href="Attribution.html">Attribution</a></span>
+<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
 
@@ -1028,7 +1504,7 @@ and why they are making the contribution.
             
 <hr>
 <dt>
-    <h4 class="name" id=".isInstance"><span class="type-signature">&lt;static> </span>isInstance(obj)</h4>
+    <h4 class="name" id="setAnalysis"><span class="type-signature"></span>setAnalysis(analysis)</h4>
     
     
 </dt>
@@ -1036,7 +1512,7 @@ and why they are making the contribution.
 
     
     <div class="description">
-        Check whether the given object is an instance of this class.
+        Set the analysis
     </div>
     
 
@@ -1071,13 +1547,16 @@ and why they are making the contribution.
 
         <tr>
             
-                <td class="name"><code>obj</code></td>
+                <td class="name"><code>analysis</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">Object</span>
+|
+
+<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
 
 
 
@@ -1105,6 +1584,15 @@ and why they are making the contribution.
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setAnalysis">Conclusion#setAnalysis</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -1151,6 +1639,10 @@ and why they are making the contribution.
     <h5>Returns:</h5>
     
             
+<div class="param-desc">
+    This instance
+</div>
+
 
 
 <dl>
@@ -1159,7 +1651,7 @@ and why they are making the contribution.
     </dt>
     <dd>
         
-<span class="param-type">Boolean</span>
+<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
 
@@ -1176,7 +1668,7 @@ and why they are making the contribution.
             
 <hr>
 <dt>
-    <h4 class="name" id="setChangeMessage"><span class="type-signature"></span>setChangeMessage(changeMessage)</h4>
+    <h4 class="name" id="setAttribution"><span class="type-signature"></span>setAttribution(attribution)</h4>
     
     
 </dt>
@@ -1184,7 +1676,7 @@ and why they are making the contribution.
 
     
     <div class="description">
-        Set the change message.
+        Set the attribution
     </div>
     
 
@@ -1219,7 +1711,171 @@ and why they are making the contribution.
 
         <tr>
             
-                <td class="name"><code>changeMessage</code></td>
+                <td class="name"><code>attribution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type"><a href="Attribution.html">Attribution</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setAttribution">Conclusion#setAttribution</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    This instance
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setConfidence"><span class="type-signature"></span>setConfidence(confidence)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the confidence.
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>confidence</code></td>
             
 
             <td class="type">
@@ -1254,160 +1910,14 @@ and why they are making the contribution.
 	
 
 	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    This object
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Attribution.html">Attribution</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setContributor"><span class="type-signature"></span>setContributor(contributor)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the contributor
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>contributor</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-|
-
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">ResourceReference representing the contributor.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setConfidence">Conclusion#setConfidence</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -1466,317 +1976,7 @@ and why they are making the contribution.
     </dt>
     <dd>
         
-<span class="param-type"><a href="Attribution.html">Attribution</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setCreated"><span class="type-signature"></span>setCreated(date)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the created timestamp
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>date</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Date.html">Date</a></span>
-|
-
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Integer timestamp (milliseconds since epoch) or JavaScript Date instance</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    This instance
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Attribution.html">Attribution</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setCreator"><span class="type-signature"></span>setCreator(creator)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the creator
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>creator</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-|
-
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">ResourceReference representing the creator.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    This instance
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Attribution.html">Attribution</a></span>
+<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
 
@@ -1954,7 +2154,7 @@ and why they are making the contribution.
             
 <hr>
 <dt>
-    <h4 class="name" id="setModified"><span class="type-signature"></span>setModified(date)</h4>
+    <h4 class="name" id="setLang"><span class="type-signature"></span>setLang(lang)</h4>
     
     
 </dt>
@@ -1962,7 +2162,7 @@ and why they are making the contribution.
 
     
     <div class="description">
-        Set the modified timestamp
+        Set the language identifier.
     </div>
     
 
@@ -1997,16 +2197,13 @@ and why they are making the contribution.
 
         <tr>
             
-                <td class="name"><code>date</code></td>
+                <td class="name"><code>lang</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="Date.html">Date</a></span>
-|
-
-<span class="param-type">Number</span>
+<span class="param-type">String</span>
 
 
 
@@ -2017,7 +2214,7 @@ and why they are making the contribution.
 
             
 
-            <td class="description last">Integer timestamp (milliseconds since epoch) or JavaScript Date instance</td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -2034,6 +2231,179 @@ and why they are making the contribution.
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setLang">Conclusion#setLang</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    This instance.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setNotes"><span class="type-signature"></span>setNotes(notes)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the notes
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>notes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+|
+
+<span class="param-type">Array.&lt;<a href="Note.html">Note</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setNotes">Conclusion#setNotes</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -2092,7 +2462,171 @@ and why they are making the contribution.
     </dt>
     <dd>
         
-<span class="param-type"><a href="Attribution.html">Attribution</a></span>
+<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setSources"><span class="type-signature"></span>setSources(sources)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the sources
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sources</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+|
+
+<span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#setSources">Conclusion#setSources</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    This instance
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
 
 
 
@@ -2137,12 +2671,16 @@ and why they are making the contribution.
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="Conclusion.html#toJSON">Conclusion#toJSON</a>
+			</li>
+		</ul>
+	</dd>
+	
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="ExtensibleData.html#toJSON">ExtensibleData#toJSON</a>
-    </li></ul></dd>
     
 
     

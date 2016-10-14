@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>GedcomX JS Class: ExtensibleData</title>
+	<title>GedcomX JS Class: FieldValueDescriptor</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -54,13 +54,13 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: ExtensibleData</h1>
+	<h1 class="page-title">Class: FieldValueDescriptor</h1>
 <section>
 
 <header>
     
         <h2>
-        ExtensibleData
+        FieldValueDescriptor
         </h2>
         
     
@@ -73,7 +73,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="ExtensibleData"><span class="type-signature"></span>new ExtensibleData( [json])</h4>
+    <h4 class="name" id="FieldValueDescriptor"><span class="type-signature"></span>new FieldValueDescriptor( [json])</h4>
     
     
 </dt>
@@ -81,7 +81,8 @@
 
     
     <div class="description">
-        A set of data that supports extension elements.
+        Metadata about the structure and layout of a field, as well as the expected
+data to be extracted from a field.
     </div>
     
 
@@ -189,6 +190,13 @@
 	
 
 	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md#field-value-descriptor">GEDCOM X Records Spec</a></li>
+			</ul>
+	</dd>
+	
 
 	
 </dl>
@@ -219,7 +227,7 @@
 
 
     <ul>
-        <li><a href="Base.html">Base</a></li>
+        <li><a href="ExtensibleData.html">ExtensibleData</a></li>
     </ul>
 
 
@@ -269,6 +277,15 @@
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ExtensibleData.html#getId">ExtensibleData#getId</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -422,12 +439,16 @@
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ExtensibleData.html#init">ExtensibleData#init</a>
+			</li>
+		</ul>
+	</dd>
+	
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Base.html#init">Base#init</a>
-    </li></ul></dd>
     
 
     
@@ -485,154 +506,6 @@
     <dd>
         
 <span class="param-type"><a href="ExtensibleData.html">ExtensibleData</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".isInstance"><span class="type-signature">&lt;static> </span>isInstance(obj)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Check whether the given object is an instance of this class.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>obj</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Boolean</span>
 
 
 
@@ -726,6 +599,15 @@
 
 	
 
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ExtensibleData.html#setId">ExtensibleData#setId</a>
+			</li>
+		</ul>
+	</dd>
 	
 
     
@@ -829,12 +711,16 @@
 	
 
 	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="ExtensibleData.html#toJSON">ExtensibleData#toJSON</a>
+			</li>
+		</ul>
+	</dd>
+	
 
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Base.html#toJSON">Base#toJSON</a>
-    </li></ul></dd>
     
 
     
