@@ -11,8 +11,7 @@ the [GEDCOM X Records](https://github.com/FamilySearch/gedcomx-record/blob/maste
 and the [GEDCOM X Atom Extensions](https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/atom-model-specification.md) specifications.
 
 Read the [documentation](http://rootsdev.org/gedcomx-js/) for a list of all 
-classes and methods. [`GedcomX`](http://rootsdev.org/gedcomx-js/GedcomX.html) 
-is the root element that you'll usually start with.
+classes and methods.
 
 ## Usage
 
@@ -115,7 +114,7 @@ person.addName(
 );
 ```
 
-That's ~~hideous~~ a lot of work for one name. So you could create your own helper method
+That's a lot of work for one name. So you could create your own helper method
 by adding to the `GedcomX.Person` prototype.
 
 ```js
@@ -144,3 +143,89 @@ Then adding names is easy:
 ```js
 person.addSimpleName('Jonathan', 'Burrows');
 ```
+
+## Data Model Extensions
+
+GEDCOM X allows for it's data model to be [extended](https://github.com/FamilySearch/gedcomx/blob/master/specifications/conceptual-model-specification.md#extensibility).
+The [RS](https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/rs-specification.md)
+and [Records](https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md)
+specs are defined as extensions.
+
+There are two ways that the spec can be extended.
+
+### 1. Adding Properties to Existing Data Types
+
+Extensions can add properties to existing data types. For example the RS spec
+defines `resourceId` as an extension to `ResourceReference`. gedcomx-js supports 
+property extensions by using prototypical inheritance which allows for prototypes
+to be modified.
+
+There are three situations where extensions need to be accounted for:
+
+1. __Deserialization and Instantiation__: All classes have an `init()` method which
+can me overriden to account for additional properties.
+
+    ```js
+    // Override init() so that we can deserialize normalized values
+    var oldInit = GedcomX.ResourceReference.prototype.init;
+    GedcomX.ResourceReference.prototype.init = function(json){
+      oldInit.call(this, json);
+      if(json){
+        this.setResourceId(json.resourceId);
+      }
+    };
+    ```
+    
+2. __Getters and Setters__: Just extend the prototype.
+
+    ```js
+    /**
+     * Set the resourceId
+     * 
+     * @param {Boolean} resourceId
+     * @return {ResourceReference} this
+     */
+    GedcomX.ResourceReference.prototype.setResourceId = function(resourceId){
+      this.resourceId = resourceId;
+      return this;
+    };
+    
+    /**
+     * Get the resourceId
+     * 
+     * @return {Boolean} resourceId
+     */
+    GedcomX.ResourceReference.prototype.getResourceId = function(){
+      return this.resourceId;
+    };
+    ```
+    
+3. __Serialization__: Each class has a static `jsonProps` attribute which is
+a list of properties that should be serialized.
+
+    ```js
+    // Extend serialization properties
+    GedcomX.ResourceReference.jsonProps.push('resourceId');
+    ```
+    
+    Not only does it support extensibility but it also great reduces code duplication.
+
+### 2. Adding New Data Types
+
+New data types are added by setting a reference on the exported `GedcomX` object.
+
+```js
+var DisplayProperties = function(json){
+  // Constructor
+};
+
+// Lots of prototype setup...
+
+// Add to the GedcomX object
+GedcomX.DisplayProperties = DisplayProperties;
+```
+
+Next we need to configure when our new data type will be used. The example above
+uses `DisplayProperties` which is defined in the [RS spec](https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/rs-specification.md#extensions-person-data-type)
+as being an extension of `Person`. Thus we also must follow the method described
+above for adding the new property `display` to the existing data type `Person`.
