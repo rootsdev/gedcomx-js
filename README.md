@@ -70,6 +70,20 @@ var doc = new GedcomX({
 });
 ```
 
+### RS Spec, Records Spec, and Atom Extensions
+
+The RS, Records, and Atom extensions are disabled by default. They must be
+explicitly enabled.
+
+```js
+GedcomX.enableRsExtensions();
+GedcomX.enableRecordsExtensions();
+GedcomX.enableAtomExtensions();
+```
+
+Note that the Atom extensions depend on the RS extensions thus calling
+`enableAtomExtensions()` will also call `enableRsExtensions()`.
+
 ## Installation
 
 ```
