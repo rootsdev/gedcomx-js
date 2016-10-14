@@ -8,7 +8,7 @@ module.exports = function(GedcomX){
    * 
    * @see {@link https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md#field-value-descriptor|GEDCOM X Records Spec}
    * 
-   * @class
+   * @class FieldValueDescriptor
    * @extends ExtensibleData
    * @param {Object} [json]
    */

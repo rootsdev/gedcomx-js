@@ -6,7 +6,7 @@ var utils = require('../utils'),
  * 
  * @see {@link https://tools.ietf.org/html/rfc4287#page-7|RFC 4287}
  * 
- * @class
+ * @class AtomCommon
  * @extends Base
  * @param {Object} [json]
  */

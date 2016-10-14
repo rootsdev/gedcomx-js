@@ -12,7 +12,7 @@ module.exports = function(GedcomX){
    * 
    * {@link https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/rs-specification.md#family-view|GEDCOM X RS Spec}
    * 
-   * @class
+   * @class FamilyView
    * @extends Base
    * @param {Object} [json]
    */

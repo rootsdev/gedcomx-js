@@ -8,7 +8,7 @@ module.exports = function(GedcomX){
    * 
    * {@link https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/rs-specification.md#link|GEDCOM X RS Spec}
    * 
-   * @class
+   * @class Link
    * @extends Base
    * @param {Object} [json]
    */

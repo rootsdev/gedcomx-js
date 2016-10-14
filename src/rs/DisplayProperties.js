@@ -8,7 +8,7 @@ module.exports = function(GedcomX){
    * 
    * @see {@link https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/rs-specification.md#display-properties-data-type|GEDCOM X RS Spec}
    * 
-   * @class
+   * @class DisplayProperties
    * @extends Base
    * @param {Object} [json]
    */

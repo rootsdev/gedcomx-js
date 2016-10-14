@@ -7,7 +7,7 @@ module.exports = function(GedcomX){
    * 
    * @see {@link https://github.com/FamilySearch/gedcomx-record/blob/master/specifications/record-specification.md#collection|GEDCOM X Records Spec}
    * 
-   * @class
+   * @class Collection
    * @extends ExtensibleData
    * @param {Object} [json]
    */
