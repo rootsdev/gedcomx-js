@@ -1,12 +1,11 @@
 var assert = require('chai').assert,
-    utils = require('../src/utils'),
     GedcomX = require('../');
 
 describe('utils', function(){
   
   it('removeEmpty', function(){
     assert.deepEqual(
-      utils.removeEmpty({
+      GedcomX.utils.removeEmpty({
         a: undefined,
         b: 0,
         c: false,
@@ -24,7 +23,7 @@ describe('utils', function(){
   
   it('pick', function(){
     assert.deepEqual(
-      utils.pick({
+      GedcomX.utils.pick({
         a: '1',
         b: 2,
         c: undefined,
@@ -41,7 +40,7 @@ describe('utils', function(){
     
     it('objects', function(){
       var dest = {},
-          merged = utils.merge(
+          merged = GedcomX.utils.merge(
             dest,
             {
               a: 1,
@@ -71,7 +70,7 @@ describe('utils', function(){
     
     it('arrays', function(){
       var dest = {},
-          merged = utils.merge(
+          merged = GedcomX.utils.merge(
             dest,
             {
               facts: [
@@ -101,7 +100,7 @@ describe('utils', function(){
     
     it('arrays', function(){
       assert.deepEqual(
-        utils.toJSON({
+        GedcomX.utils.toJSON({
           facts: [
             GedcomX.Fact({
               date: {

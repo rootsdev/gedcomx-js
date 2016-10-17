@@ -11,10 +11,12 @@ var GedcomX = function(json){
 // Export early so that circular dependencies work properly
 module.exports = GedcomX;
 
-// Expose all classes. ExtensibleData has to be first because many classes
-// extend it. Since dependencies are cyclical, they will require GedcomX
-// immediately so they can get ExtensibleData when setting up their prototype.
-// We also have to make sure any other inheritance heirarchy is assembled in order.
+// Expose utils so that extension libraries can use them
+GedcomX.utils = require('./utils');
+
+// Expose all classes. They have to be included in order so that the inheritance
+// hierarchy is properly assembled.
+GedcomX.Base = require('./Base');
 GedcomX.ExtensibleData = require('./core/ExtensibleData');
 GedcomX.Conclusion = require('./core/Conclusion');
 GedcomX.Subject = require('./core/Subject');

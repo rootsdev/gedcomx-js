@@ -4,9 +4,21 @@ var utils = require('./utils');
  * Base prototype that all other classes in this library extend
  * 
  * @class
+ * @param {Object} [json]
  */
-var Base = function(){
-  // Nothing to do here
+var Base = function(json){
+  
+  // Protect against forgetting the new keyword when calling the constructor
+  if(!(this instanceof Base)){
+    return new Base(json);
+  }
+  
+  // If the given object is already an instance then just return it. DON'T copy it.
+  if(Base.isInstance(json)){
+    return json;
+  }
+  
+  this.init(json);
 };
 
 Base._gedxClass = Base.prototype._gedxClass = 'GedcomX.Base';
