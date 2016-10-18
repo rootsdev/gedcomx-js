@@ -3,3 +3,7 @@ test
 coverage
 .c9
 dist
+.travis.yml
+deploy.sh
+deploy_key.enc
+jsdoc.json
