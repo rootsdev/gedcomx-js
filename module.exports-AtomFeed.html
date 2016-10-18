@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>GedcomX JS Class: PlaceDescription</title>
+	<title>GedcomX JS Class: AtomFeed</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -54,13 +54,15 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: PlaceDescription</h1>
+	<h1 class="page-title">Class: AtomFeed</h1>
 <section>
 
 <header>
     
         <h2>
-        PlaceDescription
+            <span class="ancestors"><a href="module.html#.exports">.exports</a>~</span>
+        
+        AtomFeed
         </h2>
         
     
@@ -73,7 +75,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="PlaceDescription"><span class="type-signature"></span>new PlaceDescription( [json])</h4>
+    <h4 class="name" id="AtomFeed"><span class="type-signature"></span>new AtomFeed( [json])</h4>
     
     
 </dt>
@@ -81,7 +83,8 @@
 
     
     <div class="description">
-        A description of a place
+        The Atom data formats provide a format for web content and metadata syndication.
+The JSON data format is specific to GEDCOM X and is a translation to JSON from the XML.
     </div>
     
 
@@ -192,7 +195,9 @@
 	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
 	<dd class="tag-see">
 		<ul>
-			<li><a href="https://github.com/FamilySearch/gedcomx/blob/master/specifications/json-format-specification.md#place-description">GEDCOM X JSON Spec</a></li>
+			<li><a href="https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/atom-model-specification.md#atom-json-media-type">GEDCOM X Atom JSON Spec</a></li>
+			
+			<li><a href="https://tools.ietf.org/html/rfc4287#section-4.1.1">RFC 4287</a></li>
 			</ul>
 	</dd>
 	
@@ -226,7 +231,7 @@
 
 
     <ul>
-        <li><a href="Subject.html">Subject</a></li>
+        <li><a href="AtomCommon.html">AtomCommon</a></li>
     </ul>
 
 
@@ -249,7 +254,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="addEvidence"><span class="type-signature"></span>addEvidence(evidence)</h4>
+    <h4 class="name" id="addAuthor"><span class="type-signature"></span>addAuthor(author)</h4>
     
     
 </dt>
@@ -257,7 +262,7 @@
 
     
     <div class="description">
-        Add evidence
+        Add a author
     </div>
     
 
@@ -292,344 +297,13 @@
 
         <tr>
             
-                <td class="name"><code>evidence</code></td>
+                <td class="name"><code>author</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
-|
-
-<span class="param-type"><a href="EvidenceReference.html">EvidenceReference</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Subject.html#addEvidence">Subject#addEvidence</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    This instance.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Subject.html">Subject</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="addMedia"><span class="type-signature"></span>addMedia(media)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Add media
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>media</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-|
-
-<span class="param-type"><a href="SourceReference.html">SourceReference</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Subject.html#addMedia">Subject#addMedia</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    This instance.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Subject.html">Subject</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="addName"><span class="type-signature"></span>addName(name)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Add the name
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="TextValue.html">TextValue</a></span>
-|
-
-<span class="param-type">Object</span>
+<span class="param-type"><a href="AtomPerson.html">AtomPerson</a></span>
 
 
 
@@ -703,6 +377,10 @@
     <h5>Returns:</h5>
     
             
+<div class="param-desc">
+    this
+</div>
+
 
 
 <dl>
@@ -711,7 +389,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -728,7 +406,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="addNote"><span class="type-signature"></span>addNote(note)</h4>
+    <h4 class="name" id="addCategorie"><span class="type-signature"></span>addCategorie(categorie)</h4>
     
     
 </dt>
@@ -736,7 +414,7 @@
 
     
     <div class="description">
-        Add a note
+        Add a categorie
     </div>
     
 
@@ -771,16 +449,13 @@
 
         <tr>
             
-                <td class="name"><code>note</code></td>
+                <td class="name"><code>categorie</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
-|
-
-<span class="param-type"><a href="Note.html">Note</a></span>
+<span class="param-type"><a href="AtomCategory.html">AtomCategory</a></span>
 
 
 
@@ -808,15 +483,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Conclusion.html#addNote">Conclusion#addNote</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -864,7 +530,7 @@
     
             
 <div class="param-desc">
-    This instance
+    this
 </div>
 
 
@@ -875,7 +541,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -892,7 +558,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="addSource"><span class="type-signature"></span>addSource(source)</h4>
+    <h4 class="name" id="addContributor"><span class="type-signature"></span>addContributor(contributor)</h4>
     
     
 </dt>
@@ -900,7 +566,7 @@
 
     
     <div class="description">
-        Add a source
+        Add a contributor
     </div>
     
 
@@ -935,13 +601,13 @@
 
         <tr>
             
-                <td class="name"><code>source</code></td>
+                <td class="name"><code>contributor</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="SourceReference.html">SourceReference</a></span>
+<span class="param-type"><a href="AtomPerson.html">AtomPerson</a></span>
 
 
 
@@ -970,15 +636,6 @@
 	
 
 	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Conclusion.html#addSource">Conclusion#addSource</a>
-			</li>
-		</ul>
-	</dd>
-	
 
     
 
@@ -1025,7 +682,7 @@
     
             
 <div class="param-desc">
-    This instance
+    this
 </div>
 
 
@@ -1036,7 +693,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -1053,7 +710,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getAnalysis"><span class="type-signature"></span>getAnalysis()</h4>
+    <h4 class="name" id="addEntry"><span class="type-signature"></span>addEntry(entry)</h4>
     
     
 </dt>
@@ -1061,7 +718,7 @@
 
     
     <div class="description">
-        Get analysis.
+        Add an entry
     </div>
     
 
@@ -1070,6 +727,56 @@
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>entry</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="AtomEntry.html">AtomEntry</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -1080,15 +787,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Conclusion.html#getAnalysis">Conclusion#getAnalysis</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -1136,7 +834,7 @@
     
             
 <div class="param-desc">
-    analysis
+    this
 </div>
 
 
@@ -1147,7 +845,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -1164,7 +862,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getAttribution"><span class="type-signature"></span>getAttribution()</h4>
+    <h4 class="name" id="addFacet"><span class="type-signature"></span>addFacet(facet)</h4>
     
     
 </dt>
@@ -1172,7 +870,463 @@
 
     
     <div class="description">
-        Get the attribution.
+        Add a facet
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>facet</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Field.html">Field</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="addLink"><span class="type-signature"></span>addLink(link)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a link
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>link</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Link.html">Link</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="addSearchInfo"><span class="type-signature"></span>addSearchInfo(searchInfo)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Add a searchInfo
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>searchInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">SearchInfo</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getAuthors"><span class="type-signature"></span>getAuthors()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the authors
     </div>
     
 
@@ -1191,15 +1345,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Conclusion.html#getAttribution">Conclusion#getAttribution</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -1254,7 +1399,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Attribution.html">Attribution</a></span>
+<span class="param-type">Array.&lt;<a href="AtomPerson.html">AtomPerson</a>></span>
 
 
 
@@ -1271,7 +1416,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getConfidence"><span class="type-signature"></span>getConfidence()</h4>
+    <h4 class="name" id="getBase"><span class="type-signature"></span>getBase()</h4>
     
     
 </dt>
@@ -1279,7 +1424,7 @@
 
     
     <div class="description">
-        Get the confidence.
+        Get the base
     </div>
     
 
@@ -1303,7 +1448,7 @@
 	<dd class="inherited-from">
 		<ul class="dummy">
 			<li>
-				<a href="Conclusion.html#getConfidence">Conclusion#getConfidence</a>
+				<a href="AtomCommon.html#getBase">AtomCommon#getBase</a>
 			</li>
 		</ul>
 	</dd>
@@ -1354,7 +1499,7 @@
     
             
 <div class="param-desc">
-    confidence
+    base
 </div>
 
 
@@ -1382,7 +1527,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getEvidence"><span class="type-signature"></span>getEvidence()</h4>
+    <h4 class="name" id="getCategories"><span class="type-signature"></span>getCategories()</h4>
     
     
 </dt>
@@ -1390,7 +1535,7 @@
 
     
     <div class="description">
-        Get the evidence.
+        Get the categories
     </div>
     
 
@@ -1409,15 +1554,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Subject.html#getEvidence">Subject#getEvidence</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -1472,7 +1608,505 @@
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;<a href="EvidenceReference.html">EvidenceReference</a>></span>
+<span class="param-type">Array.&lt;<a href="AtomCategory.html">AtomCategory</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getContributors"><span class="type-signature"></span>getContributors()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the contributors
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="AtomPerson.html">AtomPerson</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getEntries"><span class="type-signature"></span>getEntries()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the entries
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="AtomEntry.html">AtomEntry</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getFacets"><span class="type-signature"></span>getFacets()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the facets
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="Field.html">Field</a>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getGenerator"><span class="type-signature"></span>getGenerator()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the generator
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    generator
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="AtomGenerator.html">AtomGenerator</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getIcon"><span class="type-signature"></span>getIcon()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the icon
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    icon
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
 
 
 
@@ -1497,7 +2131,7 @@
 
     
     <div class="description">
-        Get the object's id.
+        Get the id
     </div>
     
 
@@ -1516,15 +2150,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="ExtensibleData.html#getId">ExtensibleData#getId</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -1572,7 +2197,7 @@
     
             
 <div class="param-desc">
-    Id
+    id
 </div>
 
 
@@ -1600,7 +2225,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getIdentifiers"><span class="type-signature"></span>getIdentifiers()</h4>
+    <h4 class="name" id="getIndex"><span class="type-signature"></span>getIndex()</h4>
     
     
 </dt>
@@ -1608,114 +2233,7 @@
 
     
     <div class="description">
-        Get the identifiers
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Subject.html#getIdentifiers">Subject#getIdentifiers</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Identifiers.html">Identifiers</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getJurisdiction"><span class="type-signature"></span>getJurisdiction()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get the jurisdiction
+        Get the index
     </div>
     
 
@@ -1780,6 +2298,10 @@
     <h5>Returns:</h5>
     
             
+<div class="param-desc">
+    index
+</div>
+
 
 
 <dl>
@@ -1788,7 +2310,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
+<span class="param-type">Integer</span>
 
 
 
@@ -1813,7 +2335,7 @@
 
     
     <div class="description">
-        Get the language identifier.
+        Get the lang
     </div>
     
 
@@ -1837,7 +2359,7 @@
 	<dd class="inherited-from">
 		<ul class="dummy">
 			<li>
-				<a href="Conclusion.html#getLang">Conclusion#getLang</a>
+				<a href="AtomCommon.html#getLang">AtomCommon#getLang</a>
 			</li>
 		</ul>
 	</dd>
@@ -1916,7 +2438,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getLatitude"><span class="type-signature"></span>getLatitude()</h4>
+    <h4 class="name" id="getLink"><span class="type-signature"></span>getLink(rel)</h4>
     
     
 </dt>
@@ -1924,7 +2446,155 @@
 
     
     <div class="description">
-        Get the latitude
+        Get a link
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>rel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Link.html">Link</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getLinks"><span class="type-signature"></span>getLinks()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the links
     </div>
     
 
@@ -1997,7 +2667,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Number</span>
+<span class="param-type">Array.&lt;<a href="Link.html">Link</a>></span>
 
 
 
@@ -2014,7 +2684,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getLongitude"><span class="type-signature"></span>getLongitude()</h4>
+    <h4 class="name" id="getLogo"><span class="type-signature"></span>getLogo()</h4>
     
     
 </dt>
@@ -2022,7 +2692,7 @@
 
     
     <div class="description">
-        Get the longitude
+        Get the logo
     </div>
     
 
@@ -2041,318 +2711,6 @@
 
 	
 
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Number</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getMedia"><span class="type-signature"></span>getMedia()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get the media references
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Subject.html#getMedia">Subject#getMedia</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getNames"><span class="type-signature"></span>getNames()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get the names
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;<a href="TextValue.html">TextValue</a>></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getNotes"><span class="type-signature"></span>getNotes()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get the notes
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Conclusion.html#getNotes">Conclusion#getNotes</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -2400,7 +2758,7 @@
     
             
 <div class="param-desc">
-    notes
+    logo
 </div>
 
 
@@ -2411,7 +2769,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;<a href="Note.html">Note</a>></span>
+<span class="param-type">String</span>
 
 
 
@@ -2428,7 +2786,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getPlace"><span class="type-signature"></span>getPlace()</h4>
+    <h4 class="name" id="getResults"><span class="type-signature"></span>getResults()</h4>
     
     
 </dt>
@@ -2436,7 +2794,7 @@
 
     
     <div class="description">
-        Get the place
+        Get the results
     </div>
     
 
@@ -2501,6 +2859,10 @@
     <h5>Returns:</h5>
     
             
+<div class="param-desc">
+    results
+</div>
+
 
 
 <dl>
@@ -2509,7 +2871,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
+<span class="param-type">Integer</span>
 
 
 
@@ -2526,7 +2888,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getSources"><span class="type-signature"></span>getSources()</h4>
+    <h4 class="name" id="getRights"><span class="type-signature"></span>getRights()</h4>
     
     
 </dt>
@@ -2534,114 +2896,7 @@
 
     
     <div class="description">
-        Get the sources
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Conclusion.html#getSources">Conclusion#getSources</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getSpatialDescription"><span class="type-signature"></span>getSpatialDescription()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get the spatial description
+        Get the rights
     </div>
     
 
@@ -2706,202 +2961,10 @@
     <h5>Returns:</h5>
     
             
+<div class="param-desc">
+    rights
+</div>
 
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getTemporalDescription"><span class="type-signature"></span>getTemporalDescription()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get the temporal description
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Date.html">Date</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getType"><span class="type-signature"></span>getType()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Get the type
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
 <dl>
@@ -2911,6 +2974,410 @@
     <dd>
         
 <span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getSearchInfo"><span class="type-signature"></span>getSearchInfo()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the searchInfo
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;SearchInfo></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getSubtitle"><span class="type-signature"></span>getSubtitle()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the subtitle
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    subtitle
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getTitle"><span class="type-signature"></span>getTitle()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the title
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    title
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getUpdated"><span class="type-signature"></span>getUpdated()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the updated
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    updated
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Date.html">Date</a></span>
 
 
 
@@ -3009,7 +3476,7 @@
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Subject.html#init">Subject#init</a>
+        <a href="AtomCommon.html#init">AtomCommon#init</a>
     </li></ul></dd>
     
 
@@ -3056,134 +3523,10 @@
     
             
 <div class="param-desc">
-    this
+    AtomFeed this
 </div>
 
 
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="isExtracted"><span class="type-signature"></span>isExtracted()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Is this an extracted conclusion?
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Subject.html#isExtracted">Subject#isExtracted</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    extracted
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Boolean</span>
-
-
-
-    </dd>
-</dl>
 
 
         
@@ -3343,7 +3686,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="setAnalysis"><span class="type-signature"></span>setAnalysis(analysis)</h4>
+    <h4 class="name" id="setAuthors"><span class="type-signature"></span>setAuthors(authors)</h4>
     
     
 </dt>
@@ -3351,7 +3694,7 @@
 
     
     <div class="description">
-        Set the analysis
+        Set the authors
     </div>
     
 
@@ -3386,16 +3729,13 @@
 
         <tr>
             
-                <td class="name"><code>analysis</code></td>
+                <td class="name"><code>authors</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
-|
-
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
+<span class="param-type">Array.&lt;<a href="AtomPerson.html">AtomPerson</a>></span>
 
 
 
@@ -3423,15 +3763,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Conclusion.html#setAnalysis">Conclusion#setAnalysis</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -3479,7 +3810,7 @@
     
             
 <div class="param-desc">
-    This instance
+    this
 </div>
 
 
@@ -3490,7 +3821,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -3507,7 +3838,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="setAttribution"><span class="type-signature"></span>setAttribution(attribution)</h4>
+    <h4 class="name" id="setBase"><span class="type-signature"></span>setBase(base)</h4>
     
     
 </dt>
@@ -3515,7 +3846,7 @@
 
     
     <div class="description">
-        Set the attribution
+        Set the base attribute
     </div>
     
 
@@ -3550,171 +3881,7 @@
 
         <tr>
             
-                <td class="name"><code>attribution</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-|
-
-<span class="param-type"><a href="Attribution.html">Attribution</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Conclusion.html#setAttribution">Conclusion#setAttribution</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    This instance
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setConfidence"><span class="type-signature"></span>setConfidence(confidence)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the confidence.
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>confidence</code></td>
+                <td class="name"><code>base</code></td>
             
 
             <td class="type">
@@ -3753,7 +3920,7 @@
 	<dd class="inherited-from">
 		<ul class="dummy">
 			<li>
-				<a href="Conclusion.html#setConfidence">Conclusion#setConfidence</a>
+				<a href="AtomCommon.html#setBase">AtomCommon#setBase</a>
 			</li>
 		</ul>
 	</dd>
@@ -3804,7 +3971,7 @@
     
             
 <div class="param-desc">
-    This instance
+    this
 </div>
 
 
@@ -3815,7 +3982,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+<span class="param-type"><a href="AtomCommon.html">AtomCommon</a></span>
 
 
 
@@ -3832,7 +3999,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="setEvidence"><span class="type-signature"></span>setEvidence(evidence)</h4>
+    <h4 class="name" id="setCategories"><span class="type-signature"></span>setCategories(categories)</h4>
     
     
 </dt>
@@ -3840,7 +4007,7 @@
 
     
     <div class="description">
-        Set the evidence. This method will replace existing evidence entries with new entries.
+        Set the categories
     </div>
     
 
@@ -3875,16 +4042,13 @@
 
         <tr>
             
-                <td class="name"><code>evidence</code></td>
+                <td class="name"><code>categories</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array.&lt;Object></span>
-|
-
-<span class="param-type">Array.&lt;<a href="EvidenceReference.html">EvidenceReference</a>></span>
+<span class="param-type">Array.&lt;<a href="AtomCategory.html">AtomCategory</a>></span>
 
 
 
@@ -3912,15 +4076,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Subject.html#setEvidence">Subject#setEvidence</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -3968,7 +4123,7 @@
     
             
 <div class="param-desc">
-    This instance.
+    this
 </div>
 
 
@@ -3979,7 +4134,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Subject.html">Subject</a></span>
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -3996,7 +4151,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="setExtracted"><span class="type-signature"></span>setExtracted(extracted)</h4>
+    <h4 class="name" id="setContributors"><span class="type-signature"></span>setContributors(contributors)</h4>
     
     
 </dt>
@@ -4004,7 +4159,7 @@
 
     
     <div class="description">
-        Set the extracted property
+        Set the contributors
     </div>
     
 
@@ -4039,13 +4194,13 @@
 
         <tr>
             
-                <td class="name"><code>extracted</code></td>
+                <td class="name"><code>contributors</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Boolean</span>
+<span class="param-type">Array.&lt;<a href="AtomPerson.html">AtomPerson</a>></span>
 
 
 
@@ -4073,15 +4228,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Subject.html#setExtracted">Subject#setExtracted</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -4129,7 +4275,7 @@
     
             
 <div class="param-desc">
-    This instance.
+    this
 </div>
 
 
@@ -4140,7 +4286,615 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Subject.html">Subject</a></span>
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setEntries"><span class="type-signature"></span>setEntries(entries)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the entries
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>entries</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="AtomEntry.html">AtomEntry</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setFacets"><span class="type-signature"></span>setFacets(facets)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the facets
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>facets</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="Field.html">Field</a>></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setGenerator"><span class="type-signature"></span>setGenerator(generator)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the generator
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>generator</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="AtomGenerator.html">AtomGenerator</a></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setIcon"><span class="type-signature"></span>setIcon(icon)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the icon
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>icon</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -4165,7 +4919,7 @@
 
     
     <div class="description">
-        Set the object's id.
+        Set the id
     </div>
     
 
@@ -4235,15 +4989,6 @@
 	
 
 	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="ExtensibleData.html#setId">ExtensibleData#setId</a>
-			</li>
-		</ul>
-	</dd>
-	
 
     
 
@@ -4290,7 +5035,7 @@
     
             
 <div class="param-desc">
-    This object, for chaining.
+    this
 </div>
 
 
@@ -4301,7 +5046,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="ExtensibleData.html">ExtensibleData</a></span>
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -4318,7 +5063,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="setIdentifiers"><span class="type-signature"></span>setIdentifiers(identifiers)</h4>
+    <h4 class="name" id="setIndex"><span class="type-signature"></span>setIndex(index)</h4>
     
     
 </dt>
@@ -4326,7 +5071,7 @@
 
     
     <div class="description">
-        Set the identifiers
+        Set the index
     </div>
     
 
@@ -4361,177 +5106,13 @@
 
         <tr>
             
-                <td class="name"><code>identifiers</code></td>
+                <td class="name"><code>index</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
-|
-
-<span class="param-type"><a href="Identifiers.html">Identifiers</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Subject.html#setIdentifiers">Subject#setIdentifiers</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    This instance
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Subject.html">Subject</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setJurisdiction"><span class="type-signature"></span>setJurisdiction(jurisdiction)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the jurisdiction
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>jurisdiction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
+<span class="param-type">Integer</span>
 
 
 
@@ -4605,6 +5186,10 @@
     <h5>Returns:</h5>
     
             
+<div class="param-desc">
+    this
+</div>
+
 
 
 <dl>
@@ -4613,7 +5198,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -4638,7 +5223,7 @@
 
     
     <div class="description">
-        Set the language identifier.
+        Set the lang
     </div>
     
 
@@ -4712,7 +5297,7 @@
 	<dd class="inherited-from">
 		<ul class="dummy">
 			<li>
-				<a href="Conclusion.html#setLang">Conclusion#setLang</a>
+				<a href="AtomCommon.html#setLang">AtomCommon#setLang</a>
 			</li>
 		</ul>
 	</dd>
@@ -4763,7 +5348,7 @@
     
             
 <div class="param-desc">
-    This instance.
+    this
 </div>
 
 
@@ -4774,7 +5359,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+<span class="param-type"><a href="AtomCommon.html">AtomCommon</a></span>
 
 
 
@@ -4791,7 +5376,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="setLatitude"><span class="type-signature"></span>setLatitude(latitude)</h4>
+    <h4 class="name" id="setLinks"><span class="type-signature"></span>setLinks(links)</h4>
     
     
 </dt>
@@ -4799,7 +5384,7 @@
 
     
     <div class="description">
-        Set the latutide
+        Set the links
     </div>
     
 
@@ -4834,13 +5419,13 @@
 
         <tr>
             
-                <td class="name"><code>latitude</code></td>
+                <td class="name"><code>links</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type"><a href="Links.html">Links</a></span>
 
 
 
@@ -4868,605 +5453,6 @@
 
 	
 
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setLongitude"><span class="type-signature"></span>setLongitude(longitude)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the latutide
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>longitude</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setMedia"><span class="type-signature"></span>setMedia(media)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the media references
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>media</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;Object></span>
-|
-
-<span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Subject.html#setMedia">Subject#setMedia</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setNames"><span class="type-signature"></span>setNames(names)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the names
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>names</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;<a href="TextValue.html">TextValue</a>></span>
-|
-
-<span class="param-type">Array.&lt;Object></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setNotes"><span class="type-signature"></span>setNotes(notes)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the notes
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>notes</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;Object></span>
-|
-
-<span class="param-type">Array.&lt;<a href="Note.html">Note</a>></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Conclusion.html#setNotes">Conclusion#setNotes</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -5514,7 +5500,7 @@
     
             
 <div class="param-desc">
-    This instance
+    this
 </div>
 
 
@@ -5525,7 +5511,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -5542,7 +5528,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="setPlace"><span class="type-signature"></span>setPlace(place)</h4>
+    <h4 class="name" id="setLogo"><span class="type-signature"></span>setLogo(logo)</h4>
     
     
 </dt>
@@ -5550,7 +5536,7 @@
 
     
     <div class="description">
-        Set the place
+        Set the logo
     </div>
     
 
@@ -5585,615 +5571,7 @@
 
         <tr>
             
-                <td class="name"><code>place</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setSources"><span class="type-signature"></span>setSources(sources)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the sources
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>sources</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Array.&lt;Object></span>
-|
-
-<span class="param-type">Array.&lt;<a href="SourceReference.html">SourceReference</a>></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="Conclusion.html#setSources">Conclusion#setSources</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    This instance
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="Conclusion.html">Conclusion</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setSpatialDescription"><span class="type-signature"></span>setSpatialDescription(spatial)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the spatial description
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>spatial</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ResourceReference.html">ResourceReference</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setTemporalDescription"><span class="type-signature"></span>setTemporalDescription(date)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the temporal description
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>date</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="Date.html">Date</a></span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setType"><span class="type-signature"></span>setType(type)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Set the type
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>logo</code></td>
             
 
             <td class="type">
@@ -6273,6 +5651,10 @@
     <h5>Returns:</h5>
     
             
+<div class="param-desc">
+    this
+</div>
+
 
 
 <dl>
@@ -6281,7 +5663,922 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="PlaceDescription.html">PlaceDescription</a></span>
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setResults"><span class="type-signature"></span>setResults(results)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the results
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>results</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setRights"><span class="type-signature"></span>setRights(rights)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the rights
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>rights</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setSearchInfo"><span class="type-signature"></span>setSearchInfo(searchInfo)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the searchInfo
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>searchInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;SearchInfo></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setSubtitle"><span class="type-signature"></span>setSubtitle(subtitle)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the subtitle
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>subtitle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setTitle"><span class="type-signature"></span>setTitle(title)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the title
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setUpdated"><span class="type-signature"></span>setUpdated(updated)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the updated
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>updated</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Date.html">Date</a></span>
+|
+
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">AtomFeed</span>
 
 
 
@@ -6330,7 +6627,7 @@
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="Subject.html#toJSON">Subject#toJSON</a>
+        <a href="AtomCommon.html#toJSON">AtomCommon#toJSON</a>
     </li></ul></dd>
     
 
