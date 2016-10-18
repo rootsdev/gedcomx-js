@@ -57,7 +57,7 @@ module.exports = function(GedcomX){
    * Get a link
    * 
    * @param {String} rel
-   * @return {Links}
+   * @return {Link}
    */
   GedcomX.ExtensibleData.prototype.getLink = function(rel){
     if(this.links){

@@ -72,5 +72,6 @@ GedcomX.enableRecordsExtensions = function(){
  */
 GedcomX.enableAtomExtensions = function(){
   this.enableRsExtensions(); // depends on RS extensions
+  this.enableRecordsExtensions(); // depend on Record extensions
   require('./atom')(GedcomX);
 };
