@@ -1,6 +1,6 @@
 {
   "name": "gedcomx-js",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "JavaScript object model for GEDCOM X",
   "main": "src/index.js",
   "scripts": {
