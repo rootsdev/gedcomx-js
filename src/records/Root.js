@@ -19,6 +19,9 @@ module.exports = function(GedcomX){
   /**
    * Set the record descriptors
    * 
+   * @function setRecordDescriptors
+   * @instance
+   * @memberof Root
    * @param {RecordDescriptor[]} recordDescriptors
    * @return {Root} this
    */
@@ -29,6 +32,9 @@ module.exports = function(GedcomX){
   /**
    * Add a record descriptor
    * 
+   * @function addRecordDescriptor
+   * @instance
+   * @memberof Root
    * @param {RecordDescriptor} recordDescriptor
    * @return {Root} this
    */
@@ -39,6 +45,9 @@ module.exports = function(GedcomX){
   /**
    * Get the recordDescriptors
    * 
+   * @function getRecordDescriptors
+   * @instance
+   * @memberof Root
    * @return {Boolean} recordDescriptors
    */
   GedcomX.Root.prototype.getRecordDescriptors = function(){
@@ -48,6 +57,9 @@ module.exports = function(GedcomX){
   /**
    * Set the collections
    * 
+   * @function setCollections
+   * @instance
+   * @memberof Root
    * @param {Collection[]} collections
    * @return {Root} this
    */
@@ -58,6 +70,9 @@ module.exports = function(GedcomX){
   /**
    * Add a collection
    * 
+   * @function addCollection
+   * @instance
+   * @memberof Root
    * @param {Collection} collection
    * @return {Root} this
    */
@@ -68,6 +83,9 @@ module.exports = function(GedcomX){
   /**
    * Get the collections
    * 
+   * @function getCollections
+   * @instance
+   * @memberof Root
    * @return {Collection[]} collections
    */
   GedcomX.Root.prototype.getCollections = function(){
