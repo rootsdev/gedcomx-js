@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>GedcomX JS Class: Links</title>
+	<title>GedcomX JS Class: AtomFeed</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -54,13 +54,13 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Links</h1>
+	<h1 class="page-title">Class: AtomFeed</h1>
 <section>
 
 <header>
     
         <h2>
-        Links
+        AtomFeed
         </h2>
         
     
@@ -73,7 +73,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Links"><span class="type-signature"></span>new Links( [json])</h4>
+    <h4 class="name" id="AtomFeed"><span class="type-signature"></span>new AtomFeed( [json])</h4>
     
     
 </dt>
@@ -81,9 +81,8 @@
 
     
     <div class="description">
-        A list of Links
-
-<a href="https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/rs-specification.md#json-type-member">GEDCOM X RS Spec</a>
+        The Atom data formats provide a format for web content and metadata syndication.
+The JSON data format is specific to GEDCOM X and is a translation to JSON from the XML.
     </div>
     
 
@@ -191,6 +190,15 @@
 	
 
 	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="https://github.com/FamilySearch/gedcomx-rs/blob/master/specifications/atom-model-specification.md#atom-json-media-type">GEDCOM X Atom JSON Spec</a></li>
+			
+			<li><a href="https://tools.ietf.org/html/rfc4287#section-4.1.1">RFC 4287</a></li>
+			</ul>
+	</dd>
+	
 
 	
 </dl>
@@ -221,7 +229,7 @@
 
 
     <ul>
-        <li><a href="Base.html">Base</a></li>
+        <li><a href="AtomCommon.html">AtomCommon</a></li>
     </ul>
 
 
@@ -241,6 +249,228 @@
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="getBase"><span class="type-signature"></span>getBase()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the base
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="AtomCommon.html#getBase">AtomCommon#getBase</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    base
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getLang"><span class="type-signature"></span>getLang()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Get the lang
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="AtomCommon.html#getLang">AtomCommon#getLang</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    lang
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
             
 <hr>
 <dt>
@@ -326,7 +556,7 @@
 	<dd class="inherited-from">
 		<ul class="dummy">
 			<li>
-				<a href="Base.html#init">Base#init</a>
+				<a href="AtomCommon.html#init">AtomCommon#init</a>
 			</li>
 		</ul>
 	</dd>
@@ -388,7 +618,329 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="Base.html">Base</a></span>
+<span class="param-type"><a href="AtomCommon.html">AtomCommon</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setBase"><span class="type-signature"></span>setBase(base)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the base attribute
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>base</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="AtomCommon.html#setBase">AtomCommon#setBase</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="AtomCommon.html">AtomCommon</a></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setLang"><span class="type-signature"></span>setLang(lang)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Set the lang
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lang</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From:</dt>
+	<dd class="inherited-from">
+		<ul class="dummy">
+			<li>
+				<a href="AtomCommon.html#setLang">AtomCommon#setLang</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    this
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="AtomCommon.html">AtomCommon</a></span>
 
 
 
@@ -437,7 +989,7 @@
 	<dd class="inherited-from">
 		<ul class="dummy">
 			<li>
-				<a href="Base.html#toJSON">Base#toJSON</a>
+				<a href="AtomCommon.html#toJSON">AtomCommon#toJSON</a>
 			</li>
 		</ul>
 	</dd>
