@@ -18,6 +18,9 @@ module.exports = function(GedcomX){
   /**
    * Set the sortKey
    * 
+   * @function setSortKey
+   * @instance
+   * @memberof Conclusion
    * @param {Boolean} sortKey
    * @return {Conclusion} this
    */
@@ -29,6 +32,9 @@ module.exports = function(GedcomX){
   /**
    * Get the sortKey
    * 
+   * @function getSortKey
+   * @instance
+   * @memberof Conclusion
    * @return {Boolean} sortKey
    */
   GedcomX.Conclusion.prototype.getSortKey = function(){

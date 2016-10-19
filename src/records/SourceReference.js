@@ -18,6 +18,9 @@ module.exports = function(GedcomX){
   /**
    * Set the qualifiers
    * 
+   * @function setQualifiers
+   * @instance
+   * @memberof SourceReference
    * @param {Qualifier[]} qualifiers
    * @return {SourceReference} this
    */
@@ -28,6 +31,9 @@ module.exports = function(GedcomX){
   /**
    * Add a qualifier
    * 
+   * @function addQualifier
+   * @instance
+   * @memberof SourceReference
    * @param {Qualifiers} qualifier
    * @return {SourceReference} this
    */
@@ -38,6 +44,9 @@ module.exports = function(GedcomX){
   /**
    * Get the qualifiers
    * 
+   * @function getQualifiers
+   * @instance
+   * @memberof SourceReference
    * @return {Qualifier[]} qualifiers
    */
   GedcomX.SourceReference.prototype.getQualifiers = function(){

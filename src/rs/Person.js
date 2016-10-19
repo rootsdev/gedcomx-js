@@ -19,6 +19,9 @@ module.exports = function(GedcomX){
   /**
    * Set the living flag
    * 
+   * @function setLiving
+   * @instance
+   * @memberof Person
    * @param {Boolean} living
    * @return {Person} this
    */
@@ -30,6 +33,9 @@ module.exports = function(GedcomX){
   /**
    * Get the living flag
    * 
+   * @function getLiving
+   * @instance
+   * @memberof Person
    * @return {Boolean} living
    */
   GedcomX.Person.prototype.getLiving = function(){
@@ -39,6 +45,9 @@ module.exports = function(GedcomX){
   /**
    * Set the display properties
    * 
+   * @function setDisplay
+   * @instance
+   * @memberof Person
    * @param {DisplayProperties} display
    * @return {Person} this
    */
@@ -52,6 +61,9 @@ module.exports = function(GedcomX){
   /**
    * Get the display properties
    * 
+   * @function getDisplay
+   * @instance
+   * @memberof Person
    * @return {DisplayProperties}
    */
   GedcomX.Person.prototype.getDisplay = function(){

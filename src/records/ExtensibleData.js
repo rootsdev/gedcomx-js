@@ -18,6 +18,9 @@ module.exports = function(GedcomX){
   /**
    * Set the fields
    * 
+   * @function setFields
+   * @instance
+   * @memberof ExtensibleData
    * @param {Field[]} fields
    * @return {ExtensibleData} this
    */
@@ -28,6 +31,9 @@ module.exports = function(GedcomX){
   /**
    * Add a field
    * 
+   * @function addField
+   * @instance
+   * @memberof ExtensibleData
    * @param {Field} field
    * @return {ExtensibleData} this
    */
@@ -38,6 +44,9 @@ module.exports = function(GedcomX){
   /**
    * Get the fields
    * 
+   * @function getFields
+   * @instance
+   * @memberof ExtensibleData
    * @return {Field[]}
    */
   GedcomX.ExtensibleData.prototype.getFields = function(){

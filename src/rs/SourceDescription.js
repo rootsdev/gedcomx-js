@@ -19,6 +19,9 @@ module.exports = function(GedcomX){
   /**
    * Set the sortKey
    * 
+   * @function setSortKey
+   * @instance
+   * @memberof SourceDescription
    * @param {Boolean} sortKey
    * @return {SourceDescription} this
    */
@@ -30,6 +33,9 @@ module.exports = function(GedcomX){
   /**
    * Get the sortKey
    * 
+   * @function getSortKey
+   * @instance
+   * @memberof SourceDescription
    * @return {Boolean} sortKey
    */
   GedcomX.SourceDescription.prototype.getSortKey = function(){
@@ -39,6 +45,9 @@ module.exports = function(GedcomX){
   /**
    * Set the version
    * 
+   * @function setVersion
+   * @instance
+   * @memberof SourceDescription
    * @param {String} version
    * @return {SourceDescription} this
    */
@@ -50,6 +59,9 @@ module.exports = function(GedcomX){
   /**
    * Get the version
    * 
+   * @function getVersion
+   * @instance
+   * @memberof SourceDescription
    * @return {String}
    */
   GedcomX.SourceDescription.prototype.getVersion = function(){

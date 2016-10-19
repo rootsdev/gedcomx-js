@@ -18,6 +18,9 @@ module.exports = function(GedcomX){
   /**
    * Set the normalized values
    * 
+   * @function setNormalized
+   * @instance
+   * @memberof PlaceReference
    * @param {TextValue[]} normalized
    * @return {PlaceReference} this
    */
@@ -28,6 +31,9 @@ module.exports = function(GedcomX){
   /**
    * Add a normalized value
    * 
+   * @function addNormalized
+   * @instance
+   * @memberof PlaceReference
    * @param {TextValue} normalized
    * @return {PlaceReference} this
    */
@@ -38,6 +44,9 @@ module.exports = function(GedcomX){
   /**
    * Get the normalized values
    * 
+   * @function getNormalized
+   * @instance
+   * @memberof PlaceReference
    * @return {TextValue[]}
    */
   GedcomX.PlaceReference.prototype.getNormalized = function(){

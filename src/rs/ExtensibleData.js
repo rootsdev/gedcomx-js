@@ -18,6 +18,9 @@ module.exports = function(GedcomX){
   /**
    * Set the links
    * 
+   * @function setLinks
+   * @instance
+   * @memberof ExtensibleData
    * @param {Links} links
    * @return {ExtensibleData} this
    */
@@ -31,6 +34,9 @@ module.exports = function(GedcomX){
   /**
    * Add a link
    * 
+   * @function addLink
+   * @instance
+   * @memberof ExtensibleData
    * @param {Link} link
    * @return {ExtensibleData} this
    */
@@ -47,6 +53,9 @@ module.exports = function(GedcomX){
   /**
    * Get the links
    * 
+   * @function getLinks
+   * @instance
+   * @memberof ExtensibleData
    * @return {Link[]}
    */
   GedcomX.ExtensibleData.prototype.getLinks = function(){
@@ -56,6 +65,9 @@ module.exports = function(GedcomX){
   /**
    * Get a link
    * 
+   * @function getLink
+   * @instance
+   * @memberof ExtensibleData
    * @param {String} rel
    * @return {Link}
    */

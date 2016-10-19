@@ -18,6 +18,9 @@ module.exports = function(GedcomX){
   /**
    * Set the normalized values
    * 
+   * @function setNormalized
+   * @instance
+   * @memberof Date
    * @param {TextValue[]} normalized
    * @return {Date} this
    */
@@ -28,6 +31,9 @@ module.exports = function(GedcomX){
   /**
    * Add a normalized value
    * 
+   * @function addNormalized
+   * @instance
+   * @memberof Date
    * @param {TextValue} normalized
    * @return {Date} this
    */
@@ -38,6 +44,9 @@ module.exports = function(GedcomX){
   /**
    * Get the normalized values
    * 
+   * @function getNormalized
+   * @instance
+   * @memberof Date
    * @return {TextValue[]}
    */
   GedcomX.Date.prototype.getNormalized = function(){

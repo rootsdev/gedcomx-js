@@ -18,6 +18,9 @@ module.exports = function(GedcomX){
   /**
    * Set the resourceId
    * 
+   * @function setResourceId
+   * @instance
+   * @memberof ResourceReference
    * @param {Boolean} resourceId
    * @return {ResourceReference} this
    */
@@ -29,6 +32,9 @@ module.exports = function(GedcomX){
   /**
    * Get the resourceId
    * 
+   * @function getResourceId
+   * @instance
+   * @memberof ResourceReference
    * @return {Boolean} resourceId
    */
   GedcomX.ResourceReference.prototype.getResourceId = function(){

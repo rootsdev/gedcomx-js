@@ -18,6 +18,9 @@ module.exports = function(GedcomX){
   /**
    * Set the principal flag
    * 
+   * @function setPrincipal
+   * @instance
+   * @memberof Person
    * @param {Boolean} principal
    * @return {Person} this
    */
@@ -29,6 +32,9 @@ module.exports = function(GedcomX){
   /**
    * Get the principal flag
    * 
+   * @function getPrincipal
+   * @instance
+   * @memberof Person
    * @return {Boolean}
    */
   GedcomX.Person.prototype.getPrincipal = function(){

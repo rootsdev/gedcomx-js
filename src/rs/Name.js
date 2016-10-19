@@ -18,6 +18,9 @@ module.exports = function(GedcomX){
   /**
    * Set the preferred flag
    * 
+   * @function setPreferred
+   * @instance
+   * @memberof Name
    * @param {Boolean} preferred
    * @return {Name} this
    */
@@ -29,6 +32,9 @@ module.exports = function(GedcomX){
   /**
    * Get the preferred flag
    * 
+   * @function getPreferred
+   * @instance
+   * @memberof Name
    * @return {Boolean} preferred
    */
   GedcomX.Name.prototype.getPreferred = function(){

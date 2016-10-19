@@ -18,6 +18,9 @@ module.exports = function(GedcomX){
   /**
    * Set the primary flag
    * 
+   * @function setPrimary
+   * @instance
+   * @memberof Fact
    * @param {Boolean} primary
    * @return {Fact} this
    */
@@ -29,6 +32,9 @@ module.exports = function(GedcomX){
   /**
    * Get the primary flag
    * 
+   * @function getPrimary
+   * @instance
+   * @memberof Fact
    * @return {Boolean}
    */
   GedcomX.Fact.prototype.getPrimary = function(){

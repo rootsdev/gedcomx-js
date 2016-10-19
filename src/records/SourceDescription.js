@@ -20,6 +20,9 @@ module.exports = function(GedcomX){
   /**
    * Set the title label
    * 
+   * @function setTitleLabel
+   * @instance
+   * @memberof SourceDescription
    * @param {String} titleLabel
    * @return {SourceDescription} this
    */
@@ -31,6 +34,9 @@ module.exports = function(GedcomX){
   /**
    * Get the title label
    * 
+   * @function getTitleLabel
+   * @instance
+   * @memberof SourceDescription
    * @return {String} titleLabel
    */
   GedcomX.SourceDescription.prototype.getTitleLabel = function(){
@@ -40,6 +46,9 @@ module.exports = function(GedcomX){
   /**
    * Set the sort key
    * 
+   * @function setSortKey
+   * @instance
+   * @memberof SourceDescription
    * @param {String} sortKey
    * @return {SourceDescription} this
    */
@@ -51,6 +60,9 @@ module.exports = function(GedcomX){
   /**
    * Get the sort key
    * 
+   * @function getSortKey
+   * @instance
+   * @memberof SourceDescription
    * @return {String} sortKey
    */
   GedcomX.SourceDescription.prototype.getSortKey = function(){
@@ -60,6 +72,9 @@ module.exports = function(GedcomX){
   /**
    * Set the descriptor ref
    * 
+   * @function setDescriptorRef
+   * @instance
+   * @memberof SourceDescription
    * @param {String} descriptorRef
    * @return {SourceDescription} this
    */
@@ -71,6 +86,9 @@ module.exports = function(GedcomX){
   /**
    * Get the descriptor ref
    * 
+   * @function getDescriptorRef
+   * @instance
+   * @memberof SourceDescription
    * @return {String}
    */
   GedcomX.SourceDescription.prototype.getDescriptorRef = function(){
