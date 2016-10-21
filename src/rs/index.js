@@ -8,6 +8,7 @@ module.exports = function(GedcomX){
   require('./Links')(GedcomX);
   require('./FamilyView')(GedcomX);
   require('./DisplayProperties')(GedcomX);
+  require('./PlaceDisplayProperties')(GedcomX);
   
   // Extend existing classes
   require('./ExtensibleData')(GedcomX);
@@ -18,4 +19,5 @@ module.exports = function(GedcomX){
   require('./ResourceReference')(GedcomX);
   require('./Conclusion')(GedcomX);
   require('./SourceDescription')(GedcomX);
+  require('./PlaceDescription')(GedcomX);
 };
