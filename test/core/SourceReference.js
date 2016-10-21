@@ -14,12 +14,14 @@ describe('SourceReference', function(){
     var ref = GedcomX.SourceReference({
       id: 'source-ref',
       description: 'http://some/uri',
+      descriptionId: 'some-id',
       attribution: {
         created: 11121211112
       }
     });
     assert.equal(ref.getId(), 'source-ref');
     assert.equal(ref.getDescription(), 'http://some/uri');
+    assert.equal(ref.getDescriptionId(), 'some-id');
     assert.equal(ref.getAttribution().getCreated().getTime(), 11121211112);
   });
   
@@ -27,12 +29,14 @@ describe('SourceReference', function(){
     var ref = GedcomX.SourceReference({
       id: 'source-ref',
       description: 'http://some/uri',
+      descriptionId: 'some-id',
       attribution: GedcomX.Attribution({
         created: 11121211112
       })
     });
     assert.equal(ref.getId(), 'source-ref');
     assert.equal(ref.getDescription(), 'http://some/uri');
+    assert.equal(ref.getDescriptionId(), 'some-id');
     assert.equal(ref.getAttribution().getCreated().getTime(), 11121211112);
   });
   
@@ -40,9 +44,11 @@ describe('SourceReference', function(){
     var ref = GedcomX.SourceReference()
       .setId('source-ref')
       .setDescription('http://some/uri')
+      .setDescriptionId('some-id')
       .setAttribution({ created: 11121211112 });
     assert.equal(ref.getId(), 'source-ref');
     assert.equal(ref.getDescription(), 'http://some/uri');
+    assert.equal(ref.getDescriptionId(), 'some-id');
     assert.equal(ref.getAttribution().getCreated().getTime(), 11121211112);
   });
   

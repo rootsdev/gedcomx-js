@@ -31,6 +31,7 @@ SourceReference._gedxClass = SourceReference.prototype._gedxClass = 'GedcomX.Sou
 
 SourceReference.jsonProps = [
   'description',
+  'descriptionId',
   'attribution'
 ];
 
@@ -56,6 +57,7 @@ SourceReference.prototype.init = function(json){
   
   if(json){
     this.setDescription(json.description);
+    this.setDescriptionId(json.descriptionId);
     this.setAttribution(json.attribution);
   }
   return this;
@@ -78,6 +80,26 @@ SourceReference.prototype.getDescription = function(){
  */
 SourceReference.prototype.setDescription = function(description){
   this.description = description;
+  return this;
+};
+
+/**
+ * Get the description id.
+ * 
+ * @returns {String}
+ */
+SourceReference.prototype.getDescriptionId = function(){
+  return this.descriptionId;
+};
+
+/**
+ * Set the description id.
+ * 
+ * @param {String} descriptionId
+ * @returns {SourceReference} This instance.
+ */
+SourceReference.prototype.setDescriptionId = function(descriptionId){
+  this.descriptionId = descriptionId;
   return this;
 };
 
