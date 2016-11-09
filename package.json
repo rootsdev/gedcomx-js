@@ -1,6 +1,6 @@
 {
   "name": "gedcomx-js",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "JavaScript object model for GEDCOM X",
   "main": "src/index.js",
   "scripts": {
@@ -10,10 +10,11 @@
     "test:records": "mocha test/records/*.js",
     "test:atom": "mocha test/atom/*.js",
     "docs": "jsdoc -c jsdoc.json",
+    "prepublish": "npm run build",
     "coverage": "istanbul cover --report lcovonly _mocha -- --recursive && codecov",
     "build": "mkdir -p dist && npm run build:full && npm run build:min",
-    "build:full": "webpack --output-filename gedcomx.$npm_package_version.js",
-    "build:min": "webpack --output-filename gedcomx.$npm_package_version.min.js --optimize-minimize"
+    "build:full": "webpack --output-filename gedcomx.js",
+    "build:min": "webpack --output-filename gedcomx.min.js --optimize-minimize"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -30,6 +31,10 @@
     "type": "git",
     "url": "git+https://github.com/rootsdev/gedcomx-js.git"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "keywords": [
     "gedcomx",
     "genealogy"

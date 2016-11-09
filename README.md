@@ -13,6 +13,20 @@ and the [GEDCOM X Atom Extensions](https://github.com/FamilySearch/gedcomx-rs/bl
 Read the [documentation](http://rootsdev.org/gedcomx-js/) for a list of all 
 classes and methods.
 
+## Install
+
+NPM
+
+```
+npm install --save gedcomx-js
+```
+
+CDN via [unpkg](https://unpkg.com/#/)
+
+```
+<script src="https://unpkg.com/gedcomx-js@2.5.1/dist/gedcomx.min.js"></script>
+```
+
 ## Usage
 
 Create a document from a JSON object.
