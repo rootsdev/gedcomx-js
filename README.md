@@ -15,17 +15,19 @@ classes and methods.
 
 ## Install
 
-NPM
+__NPM__
 
 ```
 npm install --save gedcomx-js
 ```
 
-CDN via [unpkg](https://unpkg.com/#/)
+__CDN via [unpkg](https://unpkg.com/#/)__
 
 ```html
 <script src="https://unpkg.com/gedcomx-js@2.5.1/dist/gedcomx.min.js"></script>
 ```
+
+In the browser, gedcomx-js is attached the `window` as a global named `GedcomX`.
 
 ## Usage
 
