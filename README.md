@@ -23,7 +23,7 @@ npm install --save gedcomx-js
 
 CDN via [unpkg](https://unpkg.com/#/)
 
-```
+```html
 <script src="https://unpkg.com/gedcomx-js@2.5.1/dist/gedcomx.min.js"></script>
 ```
 
