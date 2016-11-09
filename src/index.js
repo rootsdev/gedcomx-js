@@ -53,17 +53,28 @@ GedcomX.SourceReference = require('./core/SourceReference');
 GedcomX.TextValue = require('./core/TextValue');
 
 /**
+ * Enable a set of extensions
+ * 
+ * @param {Function} extensions
+ */
+GedcomX.addExtensions = function(extensions){
+  if(typeof extensions === 'function'){
+    extensions(this);
+  }
+};
+
+/**
  * Enable the GedcomX RS Extensions
  */
 GedcomX.enableRsExtensions = function(){
-  require('./rs')(GedcomX);
+  this.addExtensions(require('./rs'));
 };
 
 /**
  * Enable the GedcomX Records Extensions
  */
 GedcomX.enableRecordsExtensions = function(){
-  require('./records')(GedcomX);
+  this.addExtensions(require('./records'));
 };
 
 /**
@@ -73,5 +84,5 @@ GedcomX.enableRecordsExtensions = function(){
 GedcomX.enableAtomExtensions = function(){
   this.enableRsExtensions(); // depends on RS extensions
   this.enableRecordsExtensions(); // depend on Record extensions
-  require('./atom')(GedcomX);
+  this.addExtensions(require('./atom'));
 };
