@@ -27,7 +27,7 @@ __CDN via [unpkg](https://unpkg.com/#/)__
 <script src="https://unpkg.com/gedcomx-js@2.5.1/dist/gedcomx.min.js"></script>
 ```
 
-In the browser, gedcomx-js is attached the `window` as a global named `GedcomX`.
+In the browser, gedcomx-js is attached to the `window` as a global named `GedcomX`.
 
 ## Usage
 
