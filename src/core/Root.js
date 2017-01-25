@@ -151,12 +151,136 @@ Root.prototype.addPerson = function(person){
 };
 
 /**
- * Get the relationships
+ * Get the principle person, if one exists.
+ * 
+ * @returns {Person} Principal person if one exists; otherwise undefined.
+ */
+Root.prototype.getPrincipalPerson = function(){
+  return this.getPersons().find(function(p){
+    return p.getPrincipal();
+  });
+};
+
+/**
+ * Get the person matching a given ID.
+ * 
+ * @param {String|Integer} id Person ID
+ * @return {Person} Person matching the given ID.
+ */
+Root.prototype.getPersonById = function(id){
+  return this.getPersons().find(function(p){
+    return p.getId() === id;
+  });
+};
+
+/**
+ * Get all relationships
  * 
  * @returns {Relationship[]}
  */
 Root.prototype.getRelationships = function(){
   return this.relationships || [];
+};
+
+/**
+ * Get the relationships involving a specific person
+ * 
+ * @param {Person|String} person Person or person ID
+ * @return {Relationship[]} Person's relationships.
+ */
+Root.prototype.getPersonsRelationships = function(person){
+  return this.getRelationships().filter(function(rel){
+    return rel.involvesPerson(person);
+  });
+};
+
+/**
+ * Get a person's parent relationships, meaning relationships where the person
+ * is a child (relationships with their parents).
+ * 
+ * @param {Person|String} person Person or person ID
+ * @return {Relationship[]}
+ */
+Root.prototype.getPersonsParentRelationships = function(person){
+  return this.getPersonsRelationships(person).filter(function(rel){
+    return rel.getType() === 'http://gedcomx.org/ParentChild' && rel.getPerson2().matches(person);
+  });
+};
+
+/**
+ * Get a person's parents.
+ * 
+ * @param {Person|String} person Person or person ID
+ * @return {Person[]}
+ */
+Root.prototype.getPersonsParents = function(person){
+  var root = this;
+  return this.getPersonsParentRelationships(person).map(function(rel){
+    return root.getPersonById(rel.getPerson1().getResource().substring(1));
+  })
+  
+  // Remove any falsy values from the array. That can happen if the rel -> person
+  // mapping fails to find a matching person.
+  .filter(Boolean);
+};
+
+/**
+ * Get a person's couple relationships.
+ * 
+ * @param {Person|String} person Person or person ID
+ * @return {Relationship[]}
+ */
+Root.prototype.getPersonsCoupleRelationships = function(person){
+  return this.getPersonsRelationships(person).filter(function(rel){
+    return rel.getType() === 'http://gedcomx.org/Couple';
+  });
+};
+
+/**
+ * Get a person's spouses.
+ * 
+ * @param {Person|String} person Person or person ID
+ * @return {Person[]}
+ */
+Root.prototype.getPersonsSpouses = function(person){
+  var root = this;
+  return this.getPersonsCoupleRelationships().map(function(rel){
+    return root.getPersonById(rel.getOtherPerson(person).getResource().substring(1));
+  })
+  
+  // Remove any falsy values from the array. That can happen if the rel -> person
+  // mapping fails to find a matching person.
+  .filter(Boolean);
+};
+
+/**
+ * Get a person's child relationships, meaning relationships where the person
+ * is a parent (relationships with their children).
+ * 
+ * @param {Person|String} person Person or person ID
+ * @return {Relationship[]}
+ */
+Root.prototype.getPersonsChildRelationships = function(person){
+  return this.getPersonsRelationships(person).filter(function(rel){
+    return rel.getType() === 'http://gedcomx.org/ParentChild' && rel.getPerson1().matches(person);
+  });
+};
+
+/**
+ * Get a person's children.
+ * 
+ * @param {Person|String} person Person or person ID
+ * @return {Person[]}
+ */
+Root.prototype.getPersonsChildren = function(person){
+  var root = this;
+  return this.getPersonsChildRelationships(person).map(function(rel){
+    return root.getPersonById(rel.getPerson2().getResource().substring(1));
+  })
+  
+  // Remove any falsy values from the array. That can happen if the rel -> person
+  // mapping fails to find a matching person.
+  .filter(Boolean);
 };
 
 /**

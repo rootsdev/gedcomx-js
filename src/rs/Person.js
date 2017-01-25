@@ -70,4 +70,18 @@ module.exports = function(GedcomX){
     return this.display;
   };
   
+  /**
+   * Get a person's preferred name, if one exists.
+   * 
+   * @function getPreferredName
+   * @instance
+   * @memberof Person
+   * @return {Name}
+   */
+  GedcomX.Person.prototype.getPreferredName = function(){
+    return this.getNames().find(function(n){
+      return n.getPreferred();
+    });
+  };
+  
 };

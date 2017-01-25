@@ -130,6 +130,34 @@ Relationship.prototype.setPerson2 = function(person2){
 };
 
 /**
+ * Calculate whether a relationship involves a person
+ * 
+ * @param {Person|String} person Person object or person ID
+ * @return {Boolean}
+ */
+Relationship.prototype.involvesPerson = function(person){
+  if(this.person1 && this.person2){
+    return this.person1.matches(person) || this.person2.matches(person);
+  } else if(this.person1){
+    return this.person1.matches(person);
+  } else if(this.person2){
+    return this.person2.matches(person);
+  } else {
+    return false;
+  }
+};
+
+/**
+ * Given a person in this relationships, return the other person's resource reference.
+ * 
+ * @param {Person|String} person Person object or person ID
+ * @return {ResourceReference}
+ */
+Relationship.prototype.getOtherPerson = function(person){
+  return this.person1 && this.person1.matches(person) ? this.person2 : this.person1;
+};
+
+/**
  * Get the facts
  * 
  * @return {Fact[]}

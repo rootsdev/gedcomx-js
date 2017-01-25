@@ -78,6 +78,17 @@ ResourceReference.prototype.setResource = function(uri){
 };
 
 /**
+ * Check whether this reference matches the given resource.
+ * 
+ * @param {Base} resource Resource or ID
+ * @return {Boolean}
+ */
+ResourceReference.prototype.matches = function(resource){
+  var id = '#' + (typeof resource === 'string' ? resource : resource.getId());
+  return this.resource === id;
+};
+
+/**
  * Export the object as JSON
  * 
  * @return {Object} JSON object

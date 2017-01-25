@@ -108,6 +108,24 @@ Person.prototype.setGender = function(gender){
 };
 
 /**
+ * Check if the person's gender is male.
+ * 
+ * @returns {Boolean}
+ */
+Person.prototype.isMale = function(){
+  return this.gender && this.gender.getType() === 'http://gedcomx.org/Male';
+};
+
+/**
+ * Check if the person's gender is female.
+ * 
+ * @returns {Boolean}
+ */
+Person.prototype.isFemale = function(){
+  return this.gender && this.gender.getType() === 'http://gedcomx.org/Female';
+};
+
+/**
  * Get the names
  * 
  * @return {Name[]}
@@ -153,6 +171,18 @@ Person.prototype.getFacts = function(){
  */
 Person.prototype.setFacts = function(facts){
   return this._setArray(facts, 'facts', 'addFact');
+};
+
+/**
+ * Get facts matching the given type
+ * 
+ * @param {String} type Fact type
+ * @return {Fact[]}
+ */
+Person.prototype.getFactsByType = function(type){
+  return this.getFacts().filter(function(f){
+    return f.getType() === type;
+  });
 };
 
 /**
