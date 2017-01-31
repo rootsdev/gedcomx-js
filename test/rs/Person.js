@@ -1,7 +1,7 @@
 var assert = require('chai').assert,
     GedcomX = require('../../');
 
-describe.only('Person', function(){
+describe('Person', function(){
   
   var personJSON = {
     id: 'testPerson',
