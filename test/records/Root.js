@@ -21,6 +21,8 @@ describe('Root', function(){
     },
     persons: [
       {
+        id: 'testPerson',
+        principal: true,
         private: false,
         gender: {
           type: 'http://gedcomx.org/Female'
@@ -293,6 +295,7 @@ describe('Root', function(){
         GedcomX.Person()
           .setId('testPerson')
           .setPrivate(true)
+          .setPrincipal(true)
           .setGender(GedcomX.Gender().setType('http://gedcomx.org/Female'))
           .addName(GedcomX.Name().addNameForm(GedcomX.NameForm().setFullText('Joanna Hopkins')))
           .addFact(GedcomX.Fact().setDate(GedcomX.Date().setFormal('+2001-04-09')).setPlace(GedcomX.PlaceReference().setOriginal('Farm house')))
@@ -440,7 +443,8 @@ function tests(gedx){
   assert.equal(attribution.getModified().getTime(), 1111338494969, 'Modified date not saved when created with JSON');
   
   assert.equal(gedx.getPersons().length, 1);
-  var person = gedx.getPersons()[0];
+  var person = gedx.getPrincipalPerson();
+  assert(person.getPrincipal());
   assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');
   assert.equal(person.getNames().length, 1);
   assert.equal(person.getFacts().length, 1);

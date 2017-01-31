@@ -91,5 +91,19 @@ module.exports = function(GedcomX){
   GedcomX.Root.prototype.getCollections = function(){
     return this.collections || [];
   };
+
+  /**
+   * Get the principle person, if one exists.
+   * 
+   * @function getPrincipalPerson
+   * @instance
+   * @memberof Root
+   * @returns {Person} Principal person if one exists; otherwise undefined.
+   */
+  GedcomX.Root.prototype.getPrincipalPerson = function(){
+    return this.getPersons().find(function(p){
+      return p.getPrincipal();
+    });
+  };
   
 };

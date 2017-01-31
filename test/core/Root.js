@@ -593,6 +593,45 @@ describe('Root', function(){
     assert.strictEqual(obj1, obj2);
   });
   
+  it('getPersonById', function(){
+    var gedx = GedcomX({
+      persons: [{
+        id: 'personId'
+      }]
+    });
+    assert.equal(gedx.getPersonById('personId').getId(), 'personId');
+    assert.isUndefined(gedx.getPersonById('missing'));
+  });
+  
+  it('relationship getters', function(){
+    var gedx = GedcomX({
+      persons: [
+        {id: 'person'},
+        {id: 'spouse'},
+        {id: 'parent'},
+        {id: 'child'}
+      ],
+      relationships: [
+        {type: 'http://gedcomx.org/Couple', person1: {resource: '#person'}, person2: {resource: '#spouse'}},
+        {type: 'http://gedcomx.org/ParentChild', person1: {resource: '#person'}, person2: {resource: '#child'}},
+        {type: 'http://gedcomx.org/ParentChild', person1: {resource: '#parent'}, person2: {resource: '#person'}}
+      ]
+    });
+    assert.equal(gedx.getPersonsRelationships('person').length, 3);
+    assert.equal(gedx.getPersonsRelationships('missing').length, 0);
+    assert.equal(gedx.getPersonsParentRelationships('person').length, 1);
+    assert.equal(gedx.getPersonsParentRelationships('spouse').length, 0);
+    assert.equal(gedx.getPersonsParents('person')[0].getId(), 'parent');
+    assert.equal(gedx.getPersonsCoupleRelationships('person').length, 1);
+    assert.equal(gedx.getPersonsCoupleRelationships('child').length, 0);
+    assert.equal(gedx.getPersonsSpouses('person')[0].getId(), 'spouse');
+    assert.equal(gedx.getPersonsSpouses('child').length, 0);
+    assert.equal(gedx.getPersonsChildRelationships('person').length, 1);
+    assert.equal(gedx.getPersonsChildRelationships('child').length, 0);
+    assert.equal(gedx.getPersonsChildren('person')[0].getId(), 'child');
+    assert.equal(gedx.getPersonsChildren('child').length, 0);
+  });
+  
 });
 
 function tests(gedx){

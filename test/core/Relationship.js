@@ -91,4 +91,23 @@ describe('Relationship', function(){
     assert.strictEqual(obj1, obj2);
   });
   
+  it('involvesPerson()', function(){
+    var relationship = GedcomX.Relationship({
+      type: 'http://gedcomx.org/Couple',
+      person1: { resource: '#person1'},
+      person2: { resource: '#person2'}
+    });
+    assert(relationship.involvesPerson('person1'));
+    assert(!relationship.involvesPerson());
+  });
+  
+  it('getOtherPerson()', function(){
+    var relationship = GedcomX.Relationship({
+      type: 'http://gedcomx.org/Couple',
+      person1: { resource: '#person1'},
+      person2: { resource: '#person2'}
+    });
+    assert(relationship.getOtherPerson('person2').matches('person1'));
+  });
+  
 });

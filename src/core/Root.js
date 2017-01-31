@@ -151,17 +151,6 @@ Root.prototype.addPerson = function(person){
 };
 
 /**
- * Get the principle person, if one exists.
- * 
- * @returns {Person} Principal person if one exists; otherwise undefined.
- */
-Root.prototype.getPrincipalPerson = function(){
-  return this.getPersons().find(function(p){
-    return p.getPrincipal();
-  });
-};
-
-/**
  * Get the person matching a given ID.
  * 
  * @param {String|Integer} id Person ID
@@ -244,7 +233,7 @@ Root.prototype.getPersonsCoupleRelationships = function(person){
  */
 Root.prototype.getPersonsSpouses = function(person){
   var root = this;
-  return this.getPersonsCoupleRelationships().map(function(rel){
+  return this.getPersonsCoupleRelationships(person).map(function(rel){
     return root.getPersonById(rel.getOtherPerson(person).getResource().substring(1));
   })
   

@@ -36,4 +36,10 @@ describe('ResourceReference', function(){
     assert.strictEqual(obj1, obj2);
   });
   
+  it('matches()', function(){
+    var reference = GedcomX.ResourceReference({ resource: '#resource' });
+    assert(reference.matches('resource'));
+    assert(!reference.matches());
+  });
+  
 });

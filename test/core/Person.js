@@ -42,9 +42,13 @@ describe('Person', function(){
     assert.equal(person.getId(), 'testPerson');
     assert.equal(person.getPrivate(), true);
     assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');
+    assert(person.isFemale());
+    assert(!person.isMale());
     assert.equal(person.getNames()[0].getNameForms()[0].getFullText(), 'Joanna Hopkins');
-    assert.equal(person.getFacts()[0].getDate().getFormal(), '+2001-04-09');
-    assert.equal(person.getFacts()[0].getPlace().getOriginal(), 'Farm house');
+    var birth = person.getFactsByType('http://gedcomx.org/Birth')[0];
+    assert.equal(birth.getDate().getFormal(), '+2001-04-09');
+    assert.equal(birth.getPlace().getOriginal(), 'Farm house');
+    assert.equal(person.getFactsByType('http://gedcomx.org/Death').length, 0);
   });
   
   it('Create with mixed data', function(){
@@ -79,9 +83,13 @@ describe('Person', function(){
     assert.equal(person.getId(), 'testPerson');
     assert.equal(person.getPrivate(), true);
     assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');
+    assert(person.isFemale());
+    assert(!person.isMale());
     assert.equal(person.getNames()[0].getNameForms()[0].getFullText(), 'Joanna Hopkins');
-    assert.equal(person.getFacts()[0].getDate().getFormal(), '+2001-04-09');
-    assert.equal(person.getFacts()[0].getPlace().getOriginal(), 'Farm house');
+    var birth = person.getFactsByType('http://gedcomx.org/Birth')[0];
+    assert.equal(birth.getDate().getFormal(), '+2001-04-09');
+    assert.equal(birth.getPlace().getOriginal(), 'Farm house');
+    assert.equal(person.getFactsByType('http://gedcomx.org/Death').length, 0);
   });
   
   it('Build', function(){
@@ -90,13 +98,17 @@ describe('Person', function(){
       .setPrivate(true)
       .setGender(GedcomX.Gender().setType('http://gedcomx.org/Female'))
       .addName(GedcomX.Name().addNameForm(GedcomX.NameForm().setFullText('Joanna Hopkins')))
-      .addFact(GedcomX.Fact().setDate(GedcomX.Date().setFormal('+2001-04-09')).setPlace(GedcomX.PlaceReference().setOriginal('Farm house')));
+      .addFact(GedcomX.Fact().setType('http://gedcomx.org/Birth').setDate(GedcomX.Date().setFormal('+2001-04-09')).setPlace(GedcomX.PlaceReference().setOriginal('Farm house')));
     assert.equal(person.getId(), 'testPerson');
     assert.equal(person.getPrivate(), true);
     assert.equal(person.getGender().getType(), 'http://gedcomx.org/Female');
+    assert(person.isFemale());
+    assert(!person.isMale());
     assert.equal(person.getNames()[0].getNameForms()[0].getFullText(), 'Joanna Hopkins');
-    assert.equal(person.getFacts()[0].getDate().getFormal(), '+2001-04-09');
-    assert.equal(person.getFacts()[0].getPlace().getOriginal(), 'Farm house');
+    var birth = person.getFactsByType('http://gedcomx.org/Birth')[0];
+    assert.equal(birth.getDate().getFormal(), '+2001-04-09');
+    assert.equal(birth.getPlace().getOriginal(), 'Farm house');
+    assert.equal(person.getFactsByType('http://gedcomx.org/Death').length, 0);
   });
   
   it('toJSON', function(){

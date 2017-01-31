@@ -84,6 +84,9 @@ ResourceReference.prototype.setResource = function(uri){
  * @return {Boolean}
  */
 ResourceReference.prototype.matches = function(resource){
+  if(resource === undefined){
+    return false;
+  }
   var id = '#' + (typeof resource === 'string' ? resource : resource.getId());
   return this.resource === id;
 };

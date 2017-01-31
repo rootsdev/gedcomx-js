@@ -136,7 +136,9 @@ Relationship.prototype.setPerson2 = function(person2){
  * @return {Boolean}
  */
 Relationship.prototype.involvesPerson = function(person){
-  if(this.person1 && this.person2){
+  if(person === undefined){
+    return false;
+  } else if(this.person1 && this.person2){
     return this.person1.matches(person) || this.person2.matches(person);
   } else if(this.person1){
     return this.person1.matches(person);
