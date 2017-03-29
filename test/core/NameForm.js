@@ -104,4 +104,29 @@ describe('NameForm', function(){
     assert.strictEqual(obj1, obj2);
   });
   
+  it('getFullText(true) calculates full text', function(){
+    var nameForm = GedcomX.NameForm({
+      parts: [
+        {
+          type: 'http://gedcomx.org/Given',
+          value: 'Mr.'
+        },
+        {
+          type: 'http://gedcomx.org/Given',
+          value: 'Jonathan'
+        },
+        {
+          type: 'http://gedcomx.org/Given',
+          value: 'Scott'
+        },
+        {
+          type: 'http://gedcomx.org/Surname',
+          value: 'Burrows'
+        }
+      ]
+    });
+    assert.equal(nameForm.getFullText(), undefined);
+    assert.equal(nameForm.getFullText(true), 'Mr. Jonathan Scott Burrows');
+  });
+  
 });

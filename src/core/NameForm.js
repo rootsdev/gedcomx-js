@@ -87,10 +87,27 @@ NameForm.prototype.setLang = function(lang){
 /**
  * Get the full text
  * 
+ * @param {Boolean=} calculateIfMissing Calculate the full text if it's not set.
  * @returns {String} fullText
  */
-NameForm.prototype.getFullText = function(){
-  return this.fullText;
+NameForm.prototype.getFullText = function(calculateIfMissing){
+  if(this.fullText){
+    return this.fullText;
+  } else if(calculateIfMissing) {
+    var parts = [], nameForm = this;
+    ['Prefix', 'Given', 'Surname', 'Suffix'].forEach(function(type){
+      parts = parts.concat(nameForm.getParts('http://gedcomx.org/' + type).map(function(p){
+        return p.value;
+      }));
+      /*
+      var part = nameForm.getPart('http://gedcomx.org/' + type);
+      if(part){
+        parts.push(part.value);
+      }
+      */
+    });
+    return parts.join(' ');
+  }
 };
 
 /**
@@ -107,10 +124,25 @@ NameForm.prototype.setFullText = function(fullText){
 /**
  * Get the name parts
  * 
+ * @param {String=} type
  * @returns {NamePart[]}
  */
-NameForm.prototype.getParts = function(){
-  return this.parts || [];
+NameForm.prototype.getParts = function(type){
+  if(!this.parts){
+    return [];
+  }
+  else if(type){
+    var filtered = [];
+    for(var i = 0; i < this.parts.length; i++){
+      if(this.parts[i].getType() === type){
+        filtered.push(this.parts[i]);
+      }
+    }
+    return filtered;
+  } 
+  else {
+    return this.parts;
+  }
 };
 
 /**
